@@ -1,0 +1,537 @@
+{
+	"syncedAt": "2026-09-05T19:10:56.064Z",
+	"repos": [
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss-sv.vercel.app/",
+			"language": "Svelte",
+			"stars": 2,
+			"year": 2026,
+			"pushedAt": "2026-09-01T16:03:03Z"
+		},
+		{
+			"name": "evilcharts-sv",
+			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
+			"url": "https://github.com/mielsense/evilcharts-sv",
+			"homepage": "https://evilcharts-sv.vercel.app/",
+			"language": "Svelte",
+			"stars": 24,
+			"year": 2026,
+			"pushedAt": "2026-08-31T04:32:01Z"
+		},
+		{
+			"name": "sileo-svelte",
+			"description": "An opinionated, physics-based toast component",
+			"url": "https://github.com/mielsense/sileo-svelte",
+			"homepage": "https://sileo-svelte.vercel.app",
+			"language": "TypeScript",
+			"stars": 5,
+			"year": 2026,
+			"pushedAt": "2026-08-25T19:17:23Z"
+		},
+		{
+			"name": "qali",
+			"description": "Opiniated calendar app",
+			"url": "https://github.com/mielsense/qali",
+			"homepage": null,
+			"language": "TypeScript",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-08-24T18:25:43Z"
+		},
+		{
+			"name": "trovesv",
+			"description": "Svelte port of trove/cn",
+			"url": "https://github.com/mielsense/trovesv",
+			"homepage": null,
+			"language": null,
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-08-16T17:17:28Z"
+		},
+		{
+			"name": "mielsense",
+			"description": "Mwa",
+			"url": "https://github.com/mielsense/mielsense",
+			"homepage": null,
+			"language": null,
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-08-15T23:20:49Z"
+		},
+		{
+			"name": "csgo-analyser",
+			"description": "",
+			"url": "https://github.com/mielsense/csgo-analyser",
+			"homepage": null,
+			"language": "TypeScript",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-06-02T19:02:46Z"
+		},
+		{
+			"name": "portfolio",
+			"description": "Just me & my things",
+			"url": "https://github.com/mielsense/portfolio",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2025,
+			"pushedAt": "2025-08-20T13:02:48Z"
+		},
+		{
+			"name": "poc-liferay-angular",
+			"description": "",
+			"url": "https://github.com/mielsense/poc-liferay-angular",
+			"homepage": null,
+			"language": "HTML",
+			"stars": 0,
+			"year": 2025,
+			"pushedAt": "2025-04-08T13:25:16Z"
+		},
+		{
+			"name": "poc-benky-front",
+			"description": "",
+			"url": "https://github.com/mielsense/poc-benky-front",
+			"homepage": "https://poc-benky-front.vercel.app",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2025,
+			"pushedAt": "2025-03-12T23:36:29Z"
+		},
+		{
+			"name": "poc-benky-back",
+			"description": "",
+			"url": "https://github.com/mielsense/poc-benky-back",
+			"homepage": null,
+			"language": "TypeScript",
+			"stars": 0,
+			"year": 2025,
+			"pushedAt": "2025-03-12T13:35:31Z"
+		},
+		{
+			"name": "sveltebase",
+			"description": "A pocketbase port of svelte-firebase-state",
+			"url": "https://github.com/mielsense/sveltebase",
+			"homepage": null,
+			"language": "TypeScript",
+			"stars": 1,
+			"year": 2025,
+			"pushedAt": "2025-03-10T14:10:18Z"
+		},
+		{
+			"name": "sensel",
+			"description": "A selection of nice utils for svelte 5 (custom library + cli + motion wrapper)",
+			"url": "https://github.com/mielsense/sensel",
+			"homepage": "https://www.npmjs.com/settings/sensel/packages",
+			"language": "Svelte",
+			"stars": 3,
+			"year": 2025,
+			"pushedAt": "2025-02-18T11:10:52Z"
+		},
+		{
+			"name": "sensel-template",
+			"description": "Base svelte 5 template",
+			"url": "https://github.com/mielsense/sensel-template",
+			"homepage": null,
+			"language": "TypeScript",
+			"stars": 0,
+			"year": 2025,
+			"pushedAt": "2025-02-12T13:33:46Z"
+		},
+		{
+			"name": "betterstack-demo",
+			"description": "",
+			"url": "https://github.com/mielsense/betterstack-demo",
+			"homepage": null,
+			"language": "JavaScript",
+			"stars": 0,
+			"year": 2025,
+			"pushedAt": "2025-01-31T12:44:35Z"
+		},
+		{
+			"name": "zappy",
+			"description": "Local auto playing (ai) multiplayer game",
+			"url": "https://github.com/mielsense/zappy",
+			"homepage": null,
+			"language": "C++",
+			"stars": 0,
+			"year": 2024,
+			"pushedAt": "2024-12-17T13:08:30Z"
+		},
+		{
+			"name": "rtype",
+			"description": "An online retro multiplayer game (with no engine)",
+			"url": "https://github.com/mielsense/rtype",
+			"homepage": null,
+			"language": "C++",
+			"stars": 0,
+			"year": 2024,
+			"pushedAt": "2024-12-17T12:39:24Z"
+		},
+		{
+			"name": "kettle",
+			"description": "A glamourus boilerplate manager written in Rust i̷ͧ́̇̽̂̈̇ͨ͗͛͂ͬ̈́͌͊͆̽̆͊͋̒͊̾̃̅͊ͭͭ̋͂̇̒ͥ̓̍ͨ̍̑̈́̒ͩ̆͆͊̐̾͑̽́͒ͦͩͮ̐ͨ̒̓̈̊͐̂͊̚̚̚̕͏̸̷̴̴̷̸̸̵̧̨̢̡̨̛́́͘͢͡͠͝͏̵̷̶̷̸̷̷̶̢̧̢̢̡̡̧̛̀̀́͘͘͘̕͘͘͟͢͜͟͡͝͡͞͝͞͞͝͠͏̶̵̨̢́͏͞͏͏̛͕̳͍̮̠̘̣̬̜͍̹͖̳͙̮̪̝̗͕͍̫̼̱̙̲͍̠̹̠̝̭̠̟̟̱̠͇̟̜̩̞͚̮̗̺͎͚̮̬͇̪͖̺͈̫̮͍͎͎̞͈̦̤̤̟̥̰̗̩͈̼͉̟̣͕̪̼͍̫",
+			"url": "https://github.com/villeurbanne/kettle",
+			"homepage": "https://kettle-app.vercel.app/",
+			"language": "Rust",
+			"stars": 3,
+			"year": 2024,
+			"pushedAt": "2024-08-24T21:43:33Z"
+		},
+		{
+			"name": "flamme",
+			"description": "",
+			"url": "https://github.com/mielsense/flamme",
+			"homepage": "https://flamme-brown.vercel.app",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2024,
+			"pushedAt": "2024-05-24T12:31:19Z"
+		},
+		{
+			"name": "mathis",
+			"description": "A cool and creative portfolio idea",
+			"url": "https://github.com/mielsense/mathis",
+			"homepage": "https://mathis.website",
+			"language": "Svelte",
+			"stars": 1,
+			"year": 2024,
+			"pushedAt": "2024-03-14T12:49:10Z"
+		},
+		{
+			"name": "artly",
+			"description": "A cool app for artists to share multimedia art !",
+			"url": "https://github.com/mielsense/artly",
+			"homepage": "https://artly-ten.vercel.app",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2024,
+			"pushedAt": "2024-02-22T14:07:18Z"
+		},
+		{
+			"name": "project_template",
+			"description": "Project boiler plate for epitech projects",
+			"url": "https://github.com/mielsense/project_template",
+			"homepage": null,
+			"language": "C",
+			"stars": 1,
+			"year": 2023,
+			"pushedAt": "2023-05-25T18:00:34Z"
+		},
+		{
+			"name": "catshell",
+			"description": "My very own shell",
+			"url": "https://github.com/mielsense/catshell",
+			"homepage": null,
+			"language": "C",
+			"stars": 1,
+			"year": 2023,
+			"pushedAt": "2023-04-13T23:40:09Z"
+		},
+		{
+			"name": "battleship",
+			"description": "Simple battleship game built using signals",
+			"url": "https://github.com/mielsense/battleship",
+			"homepage": null,
+			"language": "C",
+			"stars": 1,
+			"year": 2023,
+			"pushedAt": "2023-04-13T13:37:05Z"
+		},
+		{
+			"name": "mini_lib",
+			"description": "Mini library repoducing most important C functions ! made at epitech",
+			"url": "https://github.com/mielsense/mini_lib",
+			"homepage": null,
+			"language": "C",
+			"stars": 0,
+			"year": 2023,
+			"pushedAt": "2023-02-07T10:38:40Z"
+		}
+	],
+	"commits": [
+		{
+			"repo": "coss-sv",
+			"message": "fix(packages/ui): toggle selected combobox objects",
+			"sha": "3cc0ab7",
+			"url": "https://github.com/mielsense/coss-sv/commit/3cc0ab7ce8e52ea467a9bb88f2477c5f43b4e097",
+			"date": "2026-09-01T14:08:41Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(docs): small style changes",
+			"sha": "58379de",
+			"url": "https://github.com/mielsense/coss-sv/commit/58379de2223dc7c8b4821d5f13c32aabdba86100",
+			"date": "2026-09-01T13:20:30Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "test(apps/ui): stabilize install tab coverage",
+			"sha": "edc577a",
+			"url": "https://github.com/mielsense/coss-sv/commit/edc577a191e4377c53c0f2476ad350867e94e6fb",
+			"date": "2026-09-01T13:02:12Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "feat(apps/ui): add package manager tabs to docs",
+			"sha": "cecafd4",
+			"url": "https://github.com/mielsense/coss-sv/commit/cecafd4873b674081109ba9d9706253e6e9d4acc",
+			"date": "2026-09-01T12:23:37Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(apps/ui): render particle sources without runtime fetches",
+			"sha": "a04a300",
+			"url": "https://github.com/mielsense/coss-sv/commit/a04a300ac939e5affd60796b7802488bf8144a2b",
+			"date": "2026-09-01T11:35:39Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(ci): wait for media query hydration",
+			"sha": "013b308",
+			"url": "https://github.com/mielsense/coss-sv/commit/013b308759ed09a17f473dd83b74cb38270c694a",
+			"date": "2026-09-01T03:12:30Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "chore(ci): upgrade pnpm setup runtime",
+			"sha": "481ff5e",
+			"url": "https://github.com/mielsense/coss-sv/commit/481ff5e8cc1210534d8865f0ec59869228085322",
+			"date": "2026-09-01T02:47:47Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(test): model intrinsic font widths",
+			"sha": "712d36b",
+			"url": "https://github.com/mielsense/coss-sv/commit/712d36b5956b96b77ff0c7a6f2c19ba455358300",
+			"date": "2026-09-01T02:25:26Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(test): allow browser pixel rounding",
+			"sha": "5139c7e",
+			"url": "https://github.com/mielsense/coss-sv/commit/5139c7e8dbec44f4538eba0b3587fd9fde74b890",
+			"date": "2026-09-01T02:06:57Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(ci): preserve vercel build artifacts",
+			"sha": "31503c2",
+			"url": "https://github.com/mielsense/coss-sv/commit/31503c26af8853f25f4ee44b33eac655635a90d7",
+			"date": "2026-09-01T01:51:05Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "feat: bring ECharts blocks to provider parity",
+			"sha": "8491081",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/8491081747e5ec83e7ce810368a85ff8f2fe8986",
+			"date": "2026-08-30T19:50:04Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "fix: preserve provider navigation and ECharts intros",
+			"sha": "e56bfe3",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/e56bfe3f1032357385e42b5654b80816de7f2932",
+			"date": "2026-08-30T18:58:23Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "docs(repo): add agent guide and review workflow",
+			"sha": "af287c7",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/af287c7a9847af4b409c6105b628b3c7f362b5f9",
+			"date": "2026-08-30T17:46:48Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "refactor(site): harden registry and docs delivery",
+			"sha": "c7c41c2",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/c7c41c2b933a9937ffd0178689f9de73387a1756",
+			"date": "2026-08-30T17:46:33Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "fix(charts): harden ECharts data contracts",
+			"sha": "c43b590",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/c43b59000d927b23773b72834703bd9b59a4561c",
+			"date": "2026-08-30T17:46:09Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "fix(site): move docs header notch left",
+			"sha": "f7fe70b",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/f7fe70b00a53c339bb8a227133997b93fda87243",
+			"date": "2026-08-30T16:12:49Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "ci: reuse built app for browser tests",
+			"sha": "e277829",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/e2778297453f350d3f5d37dfa9053c14e1de4e40",
+			"date": "2026-08-30T15:54:36Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "refactor(site): isolate landing card loading",
+			"sha": "ae9856e",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/ae9856e2a26711d3c0729ccc7713b0df3195bf8b",
+			"date": "2026-08-30T15:35:46Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "test(site): control reduced motion in stage tests",
+			"sha": "6005526",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/6005526473b9a1d30d91f1d99948a1ba3ea5b5f6",
+			"date": "2026-08-30T15:27:31Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "test(site): bound landing retry cycle",
+			"sha": "7a2ffa9",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/7a2ffa96c399e985a0eb70371e5f1370f8929ab7",
+			"date": "2026-08-30T15:23:06Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "refactor toast motion and harden release",
+			"sha": "4ad1296",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/4ad1296ed3b40f15eb0eaa6383cae741c21770d1",
+			"date": "2026-08-25T19:17:18Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "refactor: match upstream toast motion",
+			"sha": "1efcb1e",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/1efcb1e230c0c26d7106c7405db74ed6cbdf7b42",
+			"date": "2026-08-25T17:34:00Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "fix: align collapsed toast geometry",
+			"sha": "e4a77f7",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/e4a77f72a653e0fdcb4519306f2dcae5906547d3",
+			"date": "2026-08-25T11:38:17Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "refactor: move toast motion to Motion",
+			"sha": "ca144d6",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/ca144d61702f4c4cbed866f5efde713c8ccbfe17",
+			"date": "2026-08-25T11:09:57Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "fix: isolate playground notifications",
+			"sha": "dd1c3e7",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/dd1c3e70dea87559da3b13461f8defe85662e428",
+			"date": "2026-08-25T10:01:38Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "feat: rebuild documentation experience",
+			"sha": "cbddbaf",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/cbddbaf46ba16832811a78fecbc522e3fa298537",
+			"date": "2026-08-25T02:36:45Z"
+		},
+		{
+			"repo": "qali",
+			"message": "docs: refresh product screenshots",
+			"sha": "eb43b29",
+			"url": "https://github.com/mielsense/qali/commit/eb43b29110e207dc9443d92701b31e1053645f16",
+			"date": "2026-08-24T18:25:19Z"
+		},
+		{
+			"repo": "qali",
+			"message": "docs: show the Qali desktop app",
+			"sha": "068c707",
+			"url": "https://github.com/mielsense/qali/commit/068c7075d2d5c63c26be991914c1f64cacc48ab7",
+			"date": "2026-08-24T18:15:21Z"
+		},
+		{
+			"repo": "qali",
+			"message": "chore: refresh local event release inputs",
+			"sha": "494fe0c",
+			"url": "https://github.com/mielsense/qali/commit/494fe0cace691f6c8d3ad2065ad69e73c341bf62",
+			"date": "2026-08-24T18:02:12Z"
+		},
+		{
+			"repo": "qali",
+			"message": "chore: seal local event package inventory",
+			"sha": "aabb0fb",
+			"url": "https://github.com/mielsense/qali/commit/aabb0fb86214f1d94e657895dc26f75da0ab089b",
+			"date": "2026-08-24T18:01:50Z"
+		},
+		{
+			"repo": "qali",
+			"message": "chore: seal local event migration inputs",
+			"sha": "d83c3a7",
+			"url": "https://github.com/mielsense/qali/commit/d83c3a70351500d62beccb38d13aeb593bd44fc1",
+			"date": "2026-08-24T17:59:00Z"
+		},
+		{
+			"repo": "qali",
+			"message": "fix: tolerate legacy local event metadata",
+			"sha": "e4a0351",
+			"url": "https://github.com/mielsense/qali/commit/e4a0351928ed85b1c20a375e2cef6498636595f7",
+			"date": "2026-08-24T17:58:32Z"
+		},
+		{
+			"repo": "qali",
+			"message": "chore: seal migration package manifest",
+			"sha": "911a75d",
+			"url": "https://github.com/mielsense/qali/commit/911a75da0f7cebb7200542a046b2da2b38611cb6",
+			"date": "2026-08-24T17:47:05Z"
+		},
+		{
+			"repo": "qali",
+			"message": "chore: refresh migration package policy",
+			"sha": "a968a24",
+			"url": "https://github.com/mielsense/qali/commit/a968a24fd8fb04c8e435bf785493fcec4ae7e448",
+			"date": "2026-08-24T17:46:35Z"
+		},
+		{
+			"repo": "qali",
+			"message": "chore: seal migration release inputs",
+			"sha": "79ea318",
+			"url": "https://github.com/mielsense/qali/commit/79ea318bc884c865c2f4cb16eecc27813ad127b8",
+			"date": "2026-08-24T17:45:48Z"
+		},
+		{
+			"repo": "qali",
+			"message": "fix: recover labeled legacy calendar data",
+			"sha": "8daadc3",
+			"url": "https://github.com/mielsense/qali/commit/8daadc37a739041edf7c2b4150fc05e7dcc7f94b",
+			"date": "2026-08-24T17:45:17Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Configure Vercel deployment adapter and add deployment test",
+			"sha": "49fc56e",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/49fc56e8dd867aa62c0f11c6a414b1dcf1df5c6a",
+			"date": "2026-07-24T21:59:58Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Added syntax highlighting",
+			"sha": "fd081b6",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/fd081b6d685e16e8533d7845526f812ae88370e6",
+			"date": "2026-07-24T21:55:25Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Edited navbar",
+			"sha": "8176ccc",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/8176cccd3fa87b3496108d9231c5f5becc673379",
+			"date": "2026-07-24T21:25:04Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Harden docs metadata and reveals",
+			"sha": "6133819",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/6133819f37d9133cd416993439b77ebbfa0e008e",
+			"date": "2026-07-24T17:58:48Z"
+		}
+	]
+}
