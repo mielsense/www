@@ -4,6 +4,14 @@ on:
   schedule:
     - cron: '0 6 * * *' # daily, 06:00 UTC
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - src/lib/data/github.json # the bot's own commit must not start another run
+
+concurrency:
+  group: sync-github
+  cancel-in-progress: true
 
 permissions:
   contents: write
