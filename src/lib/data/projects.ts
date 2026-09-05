@@ -37,6 +37,7 @@ const hidden = new Set([
 
 /** Nicer copy and badges for the repos worth it. Anything else keeps its GitHub description. */
 const overrides: Record<string, Partial<Project>> = {
+	www: { description: 'This website', url: 'https://miel.my', kind: 'app' },
 	'evilcharts-sv': { description: 'Animated Svelte 5 charts on LayerChart or ECharts', kind: 'library' },
 	'coss-sv': { description: 'Svelte 5 port of COSS UI, built on Shards UI', kind: 'library' },
 	'sileo-svelte': { description: 'An opinionated, physics-based toast', kind: 'library' },
