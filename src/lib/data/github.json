@@ -1,35 +1,45 @@
 {
-	"syncedAt": "2026-09-05T19:10:56.064Z",
+	"syncedAt": "2026-09-05T23:50:34.598Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": null,
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-05T23:50:25Z"
+		},
 		{
 			"name": "coss-sv",
 			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
 			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss-sv.vercel.app/",
+			"homepage": "https://coss.miel.my",
 			"language": "Svelte",
 			"stars": 2,
 			"year": 2026,
-			"pushedAt": "2026-09-01T16:03:03Z"
+			"pushedAt": "2026-09-05T22:30:26Z"
 		},
 		{
 			"name": "evilcharts-sv",
 			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
 			"url": "https://github.com/mielsense/evilcharts-sv",
-			"homepage": "https://evilcharts-sv.vercel.app/",
+			"homepage": "https://charts.miel.my",
 			"language": "Svelte",
 			"stars": 24,
 			"year": 2026,
-			"pushedAt": "2026-08-31T04:32:01Z"
+			"pushedAt": "2026-09-05T22:30:24Z"
 		},
 		{
 			"name": "sileo-svelte",
 			"description": "An opinionated, physics-based toast component",
 			"url": "https://github.com/mielsense/sileo-svelte",
-			"homepage": "https://sileo-svelte.vercel.app",
+			"homepage": "https://sileo.miel.my",
 			"language": "TypeScript",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-08-25T19:17:23Z"
+			"pushedAt": "2026-09-05T22:30:22Z"
 		},
 		{
 			"name": "qali",
@@ -254,6 +264,48 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "ci: run the GitHub sync on push as well",
+			"sha": "496f848",
+			"url": "https://github.com/mielsense/www/commit/496f848401f62e1f0cac751b151fcc7d349d97ff",
+			"date": "2026-09-05T23:50:22Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: ignore .env.local",
+			"sha": "3f214f0",
+			"url": "https://github.com/mielsense/www/commit/3f214f06925a66961212b0592f1e53ab6a656847",
+			"date": "2026-09-05T23:50:00Z"
+		},
+		{
+			"repo": "www",
+			"message": "feat: personal site, first cut",
+			"sha": "abf3855",
+			"url": "https://github.com/mielsense/www/commit/abf3855aa9436ae843250e0886d870cae71894e9",
+			"date": "2026-09-05T23:45:34Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "docs(readme): point website links to coss.miel.my",
+			"sha": "946479b",
+			"url": "https://github.com/mielsense/coss-sv/commit/946479bdb12623e84a349a084ea9ca3bab617358",
+			"date": "2026-09-05T22:30:25Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "docs(readme): point website links to charts.miel.my",
+			"sha": "4e0080b",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/4e0080b81a0adf778f96e9aa2e03236e7e9d945b",
+			"date": "2026-09-05T22:30:23Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "docs(readme): point website links to sileo.miel.my",
+			"sha": "9981411",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/9981411f9f7b1f1a7581bcceaaf6416ac07abfc1",
+			"date": "2026-09-05T22:30:22Z"
+		},
+		{
 			"repo": "coss-sv",
 			"message": "fix(packages/ui): toggle selected combobox objects",
 			"sha": "3cc0ab7",
@@ -317,13 +369,6 @@
 			"date": "2026-09-01T02:06:57Z"
 		},
 		{
-			"repo": "coss-sv",
-			"message": "fix(ci): preserve vercel build artifacts",
-			"sha": "31503c2",
-			"url": "https://github.com/mielsense/coss-sv/commit/31503c26af8853f25f4ee44b33eac655635a90d7",
-			"date": "2026-09-01T01:51:05Z"
-		},
-		{
 			"repo": "evilcharts-sv",
 			"message": "feat: bring ECharts blocks to provider parity",
 			"sha": "8491081",
@@ -385,13 +430,6 @@
 			"sha": "6005526",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/6005526473b9a1d30d91f1d99948a1ba3ea5b5f6",
 			"date": "2026-08-30T15:27:31Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "test(site): bound landing retry cycle",
-			"sha": "7a2ffa9",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/7a2ffa96c399e985a0eb70371e5f1370f8929ab7",
-			"date": "2026-08-30T15:23:06Z"
 		},
 		{
 			"repo": "sileo-svelte",
@@ -504,34 +542,6 @@
 			"sha": "8daadc3",
 			"url": "https://github.com/mielsense/qali/commit/8daadc37a739041edf7c2b4150fc05e7dcc7f94b",
 			"date": "2026-08-24T17:45:17Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "Configure Vercel deployment adapter and add deployment test",
-			"sha": "49fc56e",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/49fc56e8dd867aa62c0f11c6a414b1dcf1df5c6a",
-			"date": "2026-07-24T21:59:58Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "Added syntax highlighting",
-			"sha": "fd081b6",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/fd081b6d685e16e8533d7845526f812ae88370e6",
-			"date": "2026-07-24T21:55:25Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "Edited navbar",
-			"sha": "8176ccc",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/8176cccd3fa87b3496108d9231c5f5becc673379",
-			"date": "2026-07-24T21:25:04Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "Harden docs metadata and reveals",
-			"sha": "6133819",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/6133819f37d9133cd416993439b77ebbfa0e008e",
-			"date": "2026-07-24T17:58:48Z"
 		}
 	]
 }
