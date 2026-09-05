@@ -1,7 +1,7 @@
 // Pulls public repo data from GitHub and writes src/lib/data/github.json.
 // Run by .github/workflows/sync-github.yml on a schedule, or by hand with `pnpm sync`.
 
-import { writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 const USER = 'mielsense';
 // repos that live outside the user account but belong on the site
@@ -74,6 +74,14 @@ const commits = (
 	.sort((a, b) => b.date.localeCompare(a.date))
 	.slice(0, 40);
 
-const data = { syncedAt: new Date().toISOString(), repos, commits };
-writeFileSync(OUT, JSON.stringify(data, null, '\t') + '\n');
-console.log(`wrote ${repos.length} repos and ${commits.length} commits to src/lib/data/github.json`);
+// only touch the file when the data moved, so the workflow's commit doesn't fire on every run
+const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : null;
+const same =
+	previous && JSON.stringify({ repos: previous.repos, commits: previous.commits }) === JSON.stringify({ repos, commits });
+if (same) {
+	console.log('github data unchanged');
+} else {
+	const data = { syncedAt: new Date().toISOString(), repos, commits };
+	writeFileSync(OUT, JSON.stringify(data, null, '\t') + '\n');
+	console.log(`wrote ${repos.length} repos and ${commits.length} commits to src/lib/data/github.json`);
+}

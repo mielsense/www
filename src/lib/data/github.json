@@ -1,15 +1,15 @@
 {
-	"syncedAt": "2026-09-05T23:50:34.598Z",
+	"syncedAt": "2026-09-05T23:53:13.135Z",
 	"repos": [
 		{
 			"name": "www",
 			"description": "Portfolio website",
 			"url": "https://github.com/mielsense/www",
-			"homepage": null,
+			"homepage": "https://miel-my.vercel.app",
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-05T23:50:25Z"
+			"pushedAt": "2026-09-05T23:52:31Z"
 		},
 		{
 			"name": "coss-sv",
@@ -263,6 +263,27 @@
 		}
 	],
 	"commits": [
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "fd1133c",
+			"url": "https://github.com/mielsense/www/commit/fd1133cea805cc57646d828aeb98f659f2933f0a",
+			"date": "2026-09-05T23:52:30Z"
+		},
+		{
+			"repo": "www",
+			"message": "data: describe this repo in the overrides",
+			"sha": "861fe09",
+			"url": "https://github.com/mielsense/www/commit/861fe09b4ca48e0f93d0f2c98ae1fa25b89bdd9f",
+			"date": "2026-09-05T23:52:17Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "267f9bc",
+			"url": "https://github.com/mielsense/www/commit/267f9bc5588cb6dfcf49dc5c11f4c70e4b7c2c69",
+			"date": "2026-09-05T23:50:34Z"
+		},
 		{
 			"repo": "www",
 			"message": "ci: run the GitHub sync on push as well",
@@ -521,27 +542,6 @@
 			"sha": "911a75d",
 			"url": "https://github.com/mielsense/qali/commit/911a75da0f7cebb7200542a046b2da2b38611cb6",
 			"date": "2026-08-24T17:47:05Z"
-		},
-		{
-			"repo": "qali",
-			"message": "chore: refresh migration package policy",
-			"sha": "a968a24",
-			"url": "https://github.com/mielsense/qali/commit/a968a24fd8fb04c8e435bf785493fcec4ae7e448",
-			"date": "2026-08-24T17:46:35Z"
-		},
-		{
-			"repo": "qali",
-			"message": "chore: seal migration release inputs",
-			"sha": "79ea318",
-			"url": "https://github.com/mielsense/qali/commit/79ea318bc884c865c2f4cb16eecc27813ad127b8",
-			"date": "2026-08-24T17:45:48Z"
-		},
-		{
-			"repo": "qali",
-			"message": "fix: recover labeled legacy calendar data",
-			"sha": "8daadc3",
-			"url": "https://github.com/mielsense/qali/commit/8daadc37a739041edf7c2b4150fc05e7dcc7f94b",
-			"date": "2026-08-24T17:45:17Z"
 		}
 	]
 }
