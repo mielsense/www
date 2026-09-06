@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@devmischief/shaders-svelte':
+        specifier: ^0.0.9
+        version: 0.0.9(svelte@5.57.0)
       '@hugeicons/core-free-icons':
         specifier: 4.3.0
         version: 4.3.0
@@ -26,6 +29,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      cuelume:
+        specifier: ^0.2.2
+        version: 0.2.2
       d3-shape:
         specifier: ^3.2.0
         version: 3.2.0
@@ -77,6 +83,11 @@ packages:
 
   '@dagrejs/graphlib@3.0.4':
     resolution: {integrity: sha512-HxZ7fCvAwTLCWCO0WjDkzAFQze8LdC6iOpKbetDKHIuDfIgMlIzYzqZ4nxwLlclQX+3ZVeZ1K2OuaOE2WWcyOg==}
+
+  '@devmischief/shaders-svelte@0.0.9':
+    resolution: {integrity: sha512-l/8JU60fVk7CCP1jr99Qh4Ze/fc2Vh90PT3mCMFotwR+2S3ZM0HeNlasNjHcCI34XS4asORJtESxZmeprGz/TQ==}
+    peerDependencies:
+      svelte: ^5.0.0
 
   '@esbuild/aix-ppc64@0.28.2':
     resolution: {integrity: sha512-XExcO+dvLKvVtNTibSTBej1NCAbaGhWn9Ww1ZPx80qsahhPFe/8jgWP0IchNe0F3HwkU7n8ejhH8bjonqht8mQ==}
@@ -296,6 +307,9 @@ packages:
 
   '@oxc-project/types@0.148.0':
     resolution: {integrity: sha512-Nm4s/jB+4FpFsPhWGEC4h7rzksesmtnMXomo6rCMcg/b8zLQuOziRgkCS1fxDCXOlJB/6Q8oABOZ/OP6RIPj9A==}
+
+  '@paper-design/shaders@0.0.76':
+    resolution: {integrity: sha512-AcNDY4J66YQHUfQYFInkCP7M9VOje0od7wLpOR7LtCmc532opJy6ll+h1W9zBovz8tt9U7OADUmJ/qKEXyOX/A==}
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -656,6 +670,9 @@ packages:
   cookie@0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
+
+  cuelume@0.2.2:
+    resolution: {integrity: sha512-TiNzJRjhddjC4jy4M7sv63V/86VaFhdIs6iHUCrc4CKhqypaxRBv1aedCBGebrz/cO7nroPkEfqHe/P7fOE2GQ==}
 
   d3-array@2.12.1:
     resolution: {integrity: sha512-B0ErZK/66mHtEsR1TkPEEkwdy+WDesimkM5gpZr5Dsg54BiTA5RXtYW5qTLIAcekaS9xfZrzBLF/OAkB3Qn1YQ==}
@@ -1322,6 +1339,11 @@ snapshots:
 
   '@dagrejs/graphlib@3.0.4': {}
 
+  '@devmischief/shaders-svelte@0.0.9(svelte@5.57.0)':
+    dependencies:
+      '@paper-design/shaders': 0.0.76
+      svelte: 5.57.0
+
   '@esbuild/aix-ppc64@0.28.2':
     optional: true
 
@@ -1491,6 +1513,8 @@ snapshots:
       - supports-color
 
   '@oxc-project/types@0.148.0': {}
+
+  '@paper-design/shaders@0.0.76': {}
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -1752,6 +1776,8 @@ snapshots:
   consola@3.4.2: {}
 
   cookie@0.6.0: {}
+
+  cuelume@0.2.2: {}
 
   d3-array@2.12.1:
     dependencies:

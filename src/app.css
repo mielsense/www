@@ -231,6 +231,17 @@
 	color: var(--bg);
 }
 
+/* the command palette's backdrop frosts the page behind it, and the popup sits nearer the middle */
+[data-slot='command-dialog-backdrop'] {
+	backdrop-filter: blur(6px) saturate(1.2);
+}
+
+@media (width > 640px) {
+	[data-slot='command-dialog-viewport'] {
+		padding-block-start: 30vh;
+	}
+}
+
 /* ---- chrome ---- */
 
 .comment {
@@ -253,6 +264,8 @@ h2.comment {
 }
 
 .bar {
+	position: relative;
+	isolation: isolate;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -367,6 +380,7 @@ h2.comment {
 
 .title {
 	@apply link-rule;
+	justify-self: start;
 	font-weight: 600;
 	overflow-wrap: anywhere;
 }
@@ -427,7 +441,7 @@ h2.comment {
 	}
 
 	.list {
-		gap: 0.8rem;
+		gap: 0.5rem;
 	}
 
 	.portrait {

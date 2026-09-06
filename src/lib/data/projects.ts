@@ -101,7 +101,7 @@ export const projects: Project[] = [...manual, ...synced].sort((a, b) => b.year 
 export const byName = (name: string) => projects.find((p) => p.name === name);
 
 /** The front page picks. */
-export const featured = ['benky', 'reecall dashboard', 'qali', 'sensel', 'rtype', 'zappy']
+export const featured = ['benky', 'reecall dashboard', 'qali', 'sensel', 'rtype', 'zappy', 'www']
 	.map(byName)
 	.filter((p): p is Project => p !== undefined);
 

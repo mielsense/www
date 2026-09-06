@@ -13,6 +13,7 @@
 	class="press relative text-muted-foreground hover:text-foreground focus-visible:text-foreground"
 	aria-label="Toggle dark and light theme"
 	onclick={() => theme.toggle()}
+	data-cuelume-toggle
 >
 	<HugeiconsIcon icon={Sun03Icon} size={15} strokeWidth={1.75} class="icon sun absolute" aria-hidden="true" />
 	<HugeiconsIcon icon={Moon02Icon} size={15} strokeWidth={1.75} class="icon moon absolute" aria-hidden="true" />

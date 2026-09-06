@@ -17,7 +17,7 @@ pnpm sync      # refresh src/lib/data/github.json from the GitHub API
 - `/rss.xml` is the commit feed behind `/now`.
 - Any other path lands on the same editor layout with the status code.
 
-On `/projects` and `/now`, `j` and `k` move between rows and `b` goes home.
+Keyboard: `⌘K` opens the command palette anywhere (pages, actions, links, projects; ↓ or typing unfolds it, Enter runs), `n` and `p` jump to now and projects. On `/projects`, `/now` and the error page, `j` and `k` move between rows and `b` goes home.
 
 ## Where things live
 
@@ -26,7 +26,7 @@ On `/projects` and `/now`, `j` and `k` move between rows and `b` goes home.
 - `src/lib/data/site.ts` is who and what: name, links, the track in the player, the availability flag, the "lately" lines.
 - `src/lib/data/projects.ts` merges `github.json` with hand-written overrides: hidden repos, better descriptions, badges, the entries that aren't repos, and which names are featured or listed as open source.
 - `src/lib/data/stack.ts` lists the badges. `src/lib/data/palette.ts` is the six chart colors that every section and group borrows for its accent.
-- `src/lib/motion.ts` is the one easing and two durations behind every state swap. `theme.svelte.ts` mirrors the theme class.
+- `src/lib/motion.ts` is the one easing and two durations behind every state swap (`@humanspeak/svelte-motion`). `theme.svelte.ts` mirrors the theme class, `sound.svelte.ts` owns the cuelume press and toggle cues and the mute preference, `palette.svelte.ts` the ⌘K open state, `player.svelte.ts` the shared audio element.
 
 ## Data
 
@@ -36,6 +36,7 @@ Nothing in the chart, the counts or the lists is typed by hand. `scripts/sync-gi
 
 - Tokens sit at the top of `src/app.css`. Dark is `#0c0d0d` on `#f3f2f2`, light is the inverse. An inline script in `app.html` applies the stored choice before first paint.
 - JetBrains Mono for text, Geist Pixel for section headings and the marquee. Both preload.
+- A faint dither shader (`BarShader.svelte`, `@devmischief/shaders-svelte`) sits behind the footer, the music strip, the availability pill, the top-left of the header and the palette's input row. Nowhere page-wide.
 - Tailwind utilities where they fit; custom CSS for the grid, the viewport lock, the editor rail and the keyframes. A `short` variant covers screens under 950px tall. Layout class names avoid Tailwind utility names because installed components use them.
 - Imports use `@/` for `src/lib`, set in `vite.config.ts` and `components.json`.
 

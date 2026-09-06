@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Calendar03Icon } from '@hugeicons/core-free-icons';
 	import { motion } from '@humanspeak/svelte-motion';
+	import BarShader from '@/components/site/BarShader.svelte';
 	import { site } from '@/data/site';
 	import HugeiconsIcon from '@/hugeicons-icon.svelte';
 	import { above, below, grown, shown, shrunk, swap } from '@/motion';
@@ -26,7 +27,7 @@
 		if (!inside) hot = false;
 	}
 
-	const pill = 'pill inline-flex h-[1.9rem] items-center gap-[0.9ch] whitespace-nowrap px-3.5 text-[0.8rem] font-medium';
+	const pill = 'pill inline-flex h-[1.9rem] items-center gap-[0.9ch] whitespace-nowrap border px-3.5 text-[0.8rem] font-medium';
 </script>
 
 <svelte:window onpointermove={hot ? track : undefined} />
@@ -45,12 +46,13 @@
 		href={site.cal}
 		target="_blank"
 		rel="noreferrer"
-		class="{pill} absolute inset-y-0 start-0 overflow-hidden"
+		class="{pill} absolute inset-y-0 start-0 isolate overflow-hidden"
 		initial={false}
 		animate={{ width: hot ? actionWidth : statusWidth }}
 		whileTap={{ scale: 0.96 }}
 		{transition}
 	>
+		<BarShader />
 		<span class="relative size-3.5 shrink-0" aria-hidden="true">
 			<motion.span
 				class="dot absolute inset-0 m-auto size-1.5 rounded-full {site.available ? 'bg-lime-500 dark:bg-lime-400' : 'bg-muted-foreground'}"

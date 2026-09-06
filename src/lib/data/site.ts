@@ -23,8 +23,6 @@ export const site = {
 		spotify: 'https://open.spotify.com/search/Asinine%20Que%20du%20vent'
 	},
 	now: 'porting the things I like to Svelte 5',
-	/** Short lines for the "# lately" block under open source. Keep them true. */
-	lately: ['listening to Asinine on repeat', 'porting things to Svelte 5, one library at a time'],
 	/** Flips the pill under the top bar between "free to work" and "booked". */
 	available: true
 };

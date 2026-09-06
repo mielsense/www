@@ -46,7 +46,7 @@
 					<HugeiconsIcon icon={ArrowLeft01Icon} size={15} strokeWidth={1.75} aria-hidden="true" />
 					back
 				</Button>
-				<span class="comment ms-auto hidden text-[0.8rem] sm:inline">j / k to move · b to go back</span>
+				<span class="comment ms-auto hidden text-[0.8rem] sm:inline">j / k to move · b to go back · n now · p projects</span>
 			</div>
 			<div class="code-line" aria-hidden="true"></div>
 			{@render children()}

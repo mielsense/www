@@ -25,12 +25,14 @@
 		"vite": "^8.0.16"
 	},
 	"dependencies": {
+		"@devmischief/shaders-svelte": "^0.0.9",
 		"@hugeicons/core-free-icons": "4.3.0",
 		"@humanspeak/svelte-motion": "^0.9.4",
 		"@shardsui/svelte": "0.1.0-beta.0",
 		"@types/d3-shape": "^3.2.0",
 		"@vercel/analytics": "^2.0.1",
 		"clsx": "^2.1.1",
+		"cuelume": "^0.2.2",
 		"d3-shape": "^3.2.0",
 		"layerchart": "^2.4.0",
 		"tailwind-merge": "^3.6.0"

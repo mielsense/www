@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Mail01Icon, Tick02Icon } from '@hugeicons/core-free-icons';
+	import { Copy01Icon, Mail01Icon, Tick02Icon } from '@hugeicons/core-free-icons';
 	import { motion } from '@humanspeak/svelte-motion';
 	import HugeiconsIcon from '@/hugeicons-icon.svelte';
 	import { above, below, grown, shown, shrunk, swap } from '@/motion';
@@ -27,7 +27,7 @@
 	}
 </script>
 
-<a href="mailto:{email}" class="link-rule inline-flex items-center gap-[1.2ch]" onclick={copy}>
+<a href="mailto:{email}" class="link-rule group inline-flex items-center gap-[1.2ch]" data-copied={copied || undefined} onclick={copy}>
 	<span class="relative size-4 shrink-0 text-muted-foreground" aria-hidden="true">
 		<motion.span class="absolute inset-0" initial={false} animate={copied ? shrunk : grown} {transition}>
 			<HugeiconsIcon icon={Mail01Icon} size={16} strokeWidth={1.75} />
@@ -42,5 +42,13 @@
 			copied
 		</motion.span>
 	</span>
+	<!-- like the arrow on the links above, but it says copy -->
+	<HugeiconsIcon
+		icon={Copy01Icon}
+		size={13}
+		strokeWidth={2}
+		class="-ms-[0.6ch] -translate-x-1 translate-y-1 text-muted-foreground opacity-0 transition-[opacity,transform] duration-200 ease-(--ease-out) group-hover:translate-0 group-hover:opacity-100 group-focus-visible:translate-0 group-focus-visible:opacity-100 group-data-copied:opacity-0 motion-reduce:transition-none"
+		aria-hidden="true"
+	/>
 	<span class="sr-only" role="status">{copied ? 'Email address copied' : ''}</span>
 </a>

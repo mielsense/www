@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ArrowUpRight01Icon, GithubIcon, NewTwitterIcon, StarIcon } from '@hugeicons/core-free-icons';
 	import Availability from '@/components/site/Availability.svelte';
+	import BarShader from '@/components/site/BarShader.svelte';
 	import Cat from '@/components/site/Cat.svelte';
 	import CopyLink from '@/components/site/CopyLink.svelte';
 	import LanguagesChart from '@/components/site/LanguagesChart.svelte';
@@ -51,7 +52,7 @@
 					Currently working on benky, <ProjectLink project={coss} /> and <ProjectLink project={evilcharts} />.
 				</p>
 			</div>
-			<div class="dock"><NowPlaying /></div>
+			<div class="dock relative isolate"><BarShader /><NowPlaying /></div>
 		</section>
 	</div>
 
@@ -132,12 +133,6 @@
 					</li>
 				{/each}
 			</ul>
-			<div class="mt-auto flex flex-col gap-0.5 border-t pt-3 short:hidden">
-				<p class="comment text-[0.85rem]"># lately</p>
-				{#each site.lately as line (line)}
-					<p class="text-[0.85rem] text-muted-foreground">{line}</p>
-				{/each}
-			</div>
 		</section>
 	</div>
 </main>

@@ -41,7 +41,7 @@
 	});
 </script>
 
-<pre class="mt-7 overflow-x-auto font-[inherit] text-[0.95rem] leading-[1.3] text-muted-foreground short:mt-5 short:text-[0.85rem]" aria-hidden="true">{cat.above} |\      {cat.back}
+<pre class="mt-7 overflow-x-auto font-[inherit] text-[0.95rem] leading-[1.3] text-muted-foreground short:mt-4 short:text-[0.85rem]" aria-hidden="true">{cat.above} |\      {cat.back}
 {cat.beside} /,`.-'`'    -.  ;-;;,_
        |,4-  ) )-,_. ,\ (  `'-'
       '---''(_/--'  {cat.tail}  miel</pre>

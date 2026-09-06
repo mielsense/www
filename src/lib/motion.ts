@@ -2,7 +2,7 @@ import { cubicBezier } from '@humanspeak/svelte-motion';
 import { prefersReducedMotion } from 'svelte/motion';
 
 // One easing and two durations for every state swap on the site. Reduced motion collapses them to instant.
-export const easeOut = cubicBezier(0.23, 1, 0.32, 1);
+const easeOut = cubicBezier(0.23, 1, 0.32, 1);
 
 const seconds = (s: number) => (prefersReducedMotion.current ? 0 : s);
 export const swap = () => ({ duration: seconds(0.26), ease: easeOut });

@@ -5,19 +5,19 @@
 	import HugeiconsIcon from '@/hugeicons-icon.svelte';
 	import { site } from '@/data/site';
 	import { grown, quick, shrunk } from '@/motion';
+	import { player } from '@/player.svelte';
 
 	const { track } = site;
 
 	let audio: HTMLAudioElement | undefined = $state();
-	let playing = $state(false);
 	let progress = $state(0);
 	const transition = $derived(quick());
+	const playing = $derived(player.playing);
 
-	function toggle() {
-		if (!audio) return;
-		if (audio.paused) audio.play();
-		else audio.pause();
-	}
+	$effect(() => {
+		player.attach(audio);
+		return () => player.attach(undefined);
+	});
 </script>
 
 <div class="player relative flex items-center gap-[0.9rem] py-[0.85rem]" style:--progress={progress}>
@@ -33,13 +33,14 @@
 			size="icon-xs"
 			aria-label={playing ? `Pause ${track.title}` : `Play a preview of ${track.title}`}
 			aria-pressed={playing}
-			onclick={toggle}
+			onclick={() => player.toggle()}
+			data-cuelume-toggle
 		>
-			<span class="relative size-[15px]" aria-hidden="true">
-				<motion.span class="absolute inset-0" initial={false} animate={playing ? shrunk : grown} {transition}>
+			<span class="relative flex size-4 items-center justify-center" aria-hidden="true">
+				<motion.span class="absolute inset-0 flex items-center justify-center" initial={false} animate={playing ? shrunk : grown} {transition}>
 					<HugeiconsIcon icon={PlayIcon} size={15} strokeWidth={2} />
 				</motion.span>
-				<motion.span class="absolute inset-0" initial={false} animate={playing ? grown : shrunk} {transition}>
+				<motion.span class="absolute inset-0 flex items-center justify-center" initial={false} animate={playing ? grown : shrunk} {transition}>
 					<HugeiconsIcon icon={PauseIcon} size={15} strokeWidth={2} />
 				</motion.span>
 			</span>
@@ -60,8 +61,8 @@
 		bind:this={audio}
 		src={track.preview}
 		preload="none"
-		onplay={() => (playing = true)}
-		onpause={() => (playing = false)}
+		onplay={() => (player.playing = true)}
+		onpause={() => (player.playing = false)}
 		ontimeupdate={() => (progress = audio?.duration ? audio.currentTime / audio.duration : 0)}
 		onended={() => (progress = 0)}
 	></audio>
