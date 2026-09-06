@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-06T01:08:48.307Z",
+	"syncedAt": "2026-09-06T10:25:27.494Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-06T01:08:40Z"
+			"pushedAt": "2026-09-06T01:08:49Z"
 		},
 		{
 			"name": "coss-sv",
@@ -263,6 +263,13 @@
 		}
 	],
 	"commits": [
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "6837a39",
+			"url": "https://github.com/mielsense/www/commit/6837a39828bc54f4a8b2d67f72bafc5ded638f71",
+			"date": "2026-09-06T01:08:48Z"
+		},
 		{
 			"repo": "www",
 			"message": "feat: command palette, sounds, shortcuts, dither accents",
@@ -535,13 +542,6 @@
 			"sha": "d83c3a7",
 			"url": "https://github.com/mielsense/qali/commit/d83c3a70351500d62beccb38d13aeb593bd44fc1",
 			"date": "2026-08-24T17:59:00Z"
-		},
-		{
-			"repo": "qali",
-			"message": "fix: tolerate legacy local event metadata",
-			"sha": "e4a0351",
-			"url": "https://github.com/mielsense/qali/commit/e4a0351928ed85b1c20a375e2cef6498636595f7",
-			"date": "2026-08-24T17:58:32Z"
 		}
 	]
 }
