@@ -1,15 +1,15 @@
 {
-	"syncedAt": "2026-09-05T23:53:13.135Z",
+	"syncedAt": "2026-09-06T01:08:48.307Z",
 	"repos": [
 		{
 			"name": "www",
 			"description": "Portfolio website",
 			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel-my.vercel.app",
+			"homepage": "https://miel.my",
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-05T23:52:31Z"
+			"pushedAt": "2026-09-06T01:08:40Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,44 +265,51 @@
 	"commits": [
 		{
 			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "fd1133c",
-			"url": "https://github.com/mielsense/www/commit/fd1133cea805cc57646d828aeb98f659f2933f0a",
-			"date": "2026-09-05T23:52:30Z"
+			"message": "feat: command palette, sounds, shortcuts, dither accents",
+			"sha": "64e8e7f",
+			"url": "https://github.com/mielsense/www/commit/64e8e7fdd99f0cbfc8a541e5bef9b4a80ddfeaf4",
+			"date": "2026-09-06T01:08:38Z"
+		},
+		{
+			"repo": "www",
+			"message": "ci: sync writes only when the data changed",
+			"sha": "f445741",
+			"url": "https://github.com/mielsense/www/commit/f44574185d66dd3c433878b6432785f2ccf36946",
+			"date": "2026-09-05T23:53:34Z"
 		},
 		{
 			"repo": "www",
 			"message": "data: describe this repo in the overrides",
-			"sha": "861fe09",
-			"url": "https://github.com/mielsense/www/commit/861fe09b4ca48e0f93d0f2c98ae1fa25b89bdd9f",
+			"sha": "1a286da",
+			"url": "https://github.com/mielsense/www/commit/1a286daa25a75b485128440195198cc28acd2903",
 			"date": "2026-09-05T23:52:17Z"
 		},
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
-			"sha": "267f9bc",
-			"url": "https://github.com/mielsense/www/commit/267f9bc5588cb6dfcf49dc5c11f4c70e4b7c2c69",
+			"sha": "87da2b4",
+			"url": "https://github.com/mielsense/www/commit/87da2b4b776a665683ad77a2e1c9488695b29537",
 			"date": "2026-09-05T23:50:34Z"
 		},
 		{
 			"repo": "www",
 			"message": "ci: run the GitHub sync on push as well",
-			"sha": "496f848",
-			"url": "https://github.com/mielsense/www/commit/496f848401f62e1f0cac751b151fcc7d349d97ff",
+			"sha": "cf06c7c",
+			"url": "https://github.com/mielsense/www/commit/cf06c7c6691ac04494e000d7453d15fd27f5409f",
 			"date": "2026-09-05T23:50:22Z"
 		},
 		{
 			"repo": "www",
 			"message": "chore: ignore .env.local",
-			"sha": "3f214f0",
-			"url": "https://github.com/mielsense/www/commit/3f214f06925a66961212b0592f1e53ab6a656847",
+			"sha": "fb08aeb",
+			"url": "https://github.com/mielsense/www/commit/fb08aeb611afae32a8df31ba1359bf4a5e2db8c5",
 			"date": "2026-09-05T23:50:00Z"
 		},
 		{
 			"repo": "www",
 			"message": "feat: personal site, first cut",
-			"sha": "abf3855",
-			"url": "https://github.com/mielsense/www/commit/abf3855aa9436ae843250e0886d870cae71894e9",
+			"sha": "e6ea6b8",
+			"url": "https://github.com/mielsense/www/commit/e6ea6b8b174b95c0e00a08494bc9f640f26ea03b",
 			"date": "2026-09-05T23:45:34Z"
 		},
 		{
@@ -535,13 +542,6 @@
 			"sha": "e4a0351",
 			"url": "https://github.com/mielsense/qali/commit/e4a0351928ed85b1c20a375e2cef6498636595f7",
 			"date": "2026-08-24T17:58:32Z"
-		},
-		{
-			"repo": "qali",
-			"message": "chore: seal migration package manifest",
-			"sha": "911a75d",
-			"url": "https://github.com/mielsense/qali/commit/911a75da0f7cebb7200542a046b2da2b38611cb6",
-			"date": "2026-08-24T17:47:05Z"
 		}
 	]
 }
