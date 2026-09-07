@@ -1,15 +1,15 @@
 {
-	"syncedAt": "2026-09-06T10:25:27.494Z",
+	"syncedAt": "2026-09-07T11:46:55.550Z",
 	"repos": [
 		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
+			"name": "mielsense",
+			"description": "Mwa",
+			"url": "https://github.com/mielsense/mielsense",
+			"homepage": null,
+			"language": null,
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-06T01:08:49Z"
+			"pushedAt": "2026-09-07T09:32:01Z"
 		},
 		{
 			"name": "coss-sv",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 2,
 			"year": 2026,
-			"pushedAt": "2026-09-05T22:30:26Z"
+			"pushedAt": "2026-09-07T04:31:42Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -29,7 +29,17 @@
 			"language": "Svelte",
 			"stars": 24,
 			"year": 2026,
-			"pushedAt": "2026-09-05T22:30:24Z"
+			"pushedAt": "2026-09-07T04:31:02Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-06T10:25:28Z"
 		},
 		{
 			"name": "sileo-svelte",
@@ -60,16 +70,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-08-16T17:17:28Z"
-		},
-		{
-			"name": "mielsense",
-			"description": "Mwa",
-			"url": "https://github.com/mielsense/mielsense",
-			"homepage": null,
-			"language": null,
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-08-15T23:20:49Z"
 		},
 		{
 			"name": "csgo-analyser",
@@ -263,6 +263,13 @@
 		}
 	],
 	"commits": [
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "32704b6",
+			"url": "https://github.com/mielsense/www/commit/32704b6e77d3da70b35d5933cce978521b032e9d",
+			"date": "2026-09-06T10:25:27Z"
+		},
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
@@ -535,13 +542,6 @@
 			"sha": "aabb0fb",
 			"url": "https://github.com/mielsense/qali/commit/aabb0fb86214f1d94e657895dc26f75da0ab089b",
 			"date": "2026-08-24T18:01:50Z"
-		},
-		{
-			"repo": "qali",
-			"message": "chore: seal local event migration inputs",
-			"sha": "d83c3a7",
-			"url": "https://github.com/mielsense/qali/commit/d83c3a70351500d62beccb38d13aeb593bd44fc1",
-			"date": "2026-08-24T17:59:00Z"
 		}
 	]
 }
