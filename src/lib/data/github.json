@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-08T10:45:02.526Z",
+	"syncedAt": "2026-09-08T15:37:03.438Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,17 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-07T11:46:56Z"
+			"pushedAt": "2026-09-08T15:36:53Z"
+		},
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 2,
+			"year": 2026,
+			"pushedAt": "2026-09-08T13:15:33Z"
 		},
 		{
 			"name": "mielsense",
@@ -20,16 +30,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-09-07T09:32:01Z"
-		},
-		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
-			"language": "Svelte",
-			"stars": 2,
-			"year": 2026,
-			"pushedAt": "2026-09-07T04:31:42Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -265,6 +265,83 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "fix: link open source projects to their websites",
+			"sha": "91327ee",
+			"url": "https://github.com/mielsense/www/commit/91327ee80c54901d1179459849e9f5fe6a728168",
+			"date": "2026-09-08T15:36:51Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "docs(site): switch published URLs to coss.miel.my",
+			"sha": "894a728",
+			"url": "https://github.com/mielsense/coss-sv/commit/894a728b6b50e9f755820e5730f837a0d4f27a62",
+			"date": "2026-09-08T13:02:28Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "chore(repo): keep porting docs local only",
+			"sha": "2cfc3f2",
+			"url": "https://github.com/mielsense/coss-sv/commit/2cfc3f24b5e23d42763abb0dcc7796d910002d1d",
+			"date": "2026-09-08T12:58:10Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "docs(porting): record live analytics provider failures",
+			"sha": "dc1d759",
+			"url": "https://github.com/mielsense/coss-sv/commit/dc1d75935c6d692246c68fddee687fff401972d6",
+			"date": "2026-09-08T12:47:57Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "docs(porting): record complete audit and verification results",
+			"sha": "4e5a503",
+			"url": "https://github.com/mielsense/coss-sv/commit/4e5a5033c9f7b3c2be3f3999b382e98357a94da4",
+			"date": "2026-09-08T12:46:21Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "chore(registry): regenerate audited component sources",
+			"sha": "dd5f9e7",
+			"url": "https://github.com/mielsense/coss-sv/commit/dd5f9e7b1b9651ef1e113f24a0a7231d725cea3b",
+			"date": "2026-09-08T12:32:39Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(packages/ui): retain composed combobox queries",
+			"sha": "2863e09",
+			"url": "https://github.com/mielsense/coss-sv/commit/2863e09296e89b0435b85323e1ee502c3330874c",
+			"date": "2026-09-08T12:31:22Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(packages/ui): preserve combobox queries during item refresh",
+			"sha": "4c8908a",
+			"url": "https://github.com/mielsense/coss-sv/commit/4c8908ad255fd3500cfc7219041d66ee9bdfc8b7",
+			"date": "2026-09-08T12:26:34Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "test(apps/ui): align assertions with corrected component docs",
+			"sha": "752bd39",
+			"url": "https://github.com/mielsense/coss-sv/commit/752bd395c7c7b21beaddde7923b73373c36347d9",
+			"date": "2026-09-08T12:16:05Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(packages/ui): synchronize combobox selection labels",
+			"sha": "27d9abe",
+			"url": "https://github.com/mielsense/coss-sv/commit/27d9abe5503f1145e46eb48a3e52fc11e9c39220",
+			"date": "2026-09-08T12:15:26Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "fa37fd0",
+			"url": "https://github.com/mielsense/www/commit/fa37fd06a10bf9b0232fe68f83474215b6a4f763",
+			"date": "2026-09-08T10:45:02Z"
+		},
+		{
+			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "b93783e",
 			"url": "https://github.com/mielsense/www/commit/b93783ef428e50ca3aff9d95be9924106b89b514",
@@ -320,27 +397,6 @@
 			"date": "2026-09-05T23:50:22Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: ignore .env.local",
-			"sha": "fb08aeb",
-			"url": "https://github.com/mielsense/www/commit/fb08aeb611afae32a8df31ba1359bf4a5e2db8c5",
-			"date": "2026-09-05T23:50:00Z"
-		},
-		{
-			"repo": "www",
-			"message": "feat: personal site, first cut",
-			"sha": "e6ea6b8",
-			"url": "https://github.com/mielsense/www/commit/e6ea6b8b174b95c0e00a08494bc9f640f26ea03b",
-			"date": "2026-09-05T23:45:34Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "docs(readme): point website links to coss.miel.my",
-			"sha": "946479b",
-			"url": "https://github.com/mielsense/coss-sv/commit/946479bdb12623e84a349a084ea9ca3bab617358",
-			"date": "2026-09-05T22:30:25Z"
-		},
-		{
 			"repo": "evilcharts-sv",
 			"message": "docs(readme): point website links to charts.miel.my",
 			"sha": "4e0080b",
@@ -353,69 +409,6 @@
 			"sha": "9981411",
 			"url": "https://github.com/mielsense/sileo-svelte/commit/9981411f9f7b1f1a7581bcceaaf6416ac07abfc1",
 			"date": "2026-09-05T22:30:22Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(packages/ui): toggle selected combobox objects",
-			"sha": "3cc0ab7",
-			"url": "https://github.com/mielsense/coss-sv/commit/3cc0ab7ce8e52ea467a9bb88f2477c5f43b4e097",
-			"date": "2026-09-01T14:08:41Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(docs): small style changes",
-			"sha": "58379de",
-			"url": "https://github.com/mielsense/coss-sv/commit/58379de2223dc7c8b4821d5f13c32aabdba86100",
-			"date": "2026-09-01T13:20:30Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "test(apps/ui): stabilize install tab coverage",
-			"sha": "edc577a",
-			"url": "https://github.com/mielsense/coss-sv/commit/edc577a191e4377c53c0f2476ad350867e94e6fb",
-			"date": "2026-09-01T13:02:12Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "feat(apps/ui): add package manager tabs to docs",
-			"sha": "cecafd4",
-			"url": "https://github.com/mielsense/coss-sv/commit/cecafd4873b674081109ba9d9706253e6e9d4acc",
-			"date": "2026-09-01T12:23:37Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(apps/ui): render particle sources without runtime fetches",
-			"sha": "a04a300",
-			"url": "https://github.com/mielsense/coss-sv/commit/a04a300ac939e5affd60796b7802488bf8144a2b",
-			"date": "2026-09-01T11:35:39Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(ci): wait for media query hydration",
-			"sha": "013b308",
-			"url": "https://github.com/mielsense/coss-sv/commit/013b308759ed09a17f473dd83b74cb38270c694a",
-			"date": "2026-09-01T03:12:30Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "chore(ci): upgrade pnpm setup runtime",
-			"sha": "481ff5e",
-			"url": "https://github.com/mielsense/coss-sv/commit/481ff5e8cc1210534d8865f0ec59869228085322",
-			"date": "2026-09-01T02:47:47Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(test): model intrinsic font widths",
-			"sha": "712d36b",
-			"url": "https://github.com/mielsense/coss-sv/commit/712d36b5956b96b77ff0c7a6f2c19ba455358300",
-			"date": "2026-09-01T02:25:26Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(test): allow browser pixel rounding",
-			"sha": "5139c7e",
-			"url": "https://github.com/mielsense/coss-sv/commit/5139c7e8dbec44f4538eba0b3587fd9fde74b890",
-			"date": "2026-09-01T02:06:57Z"
 		},
 		{
 			"repo": "evilcharts-sv",
@@ -542,6 +535,13 @@
 			"sha": "494fe0c",
 			"url": "https://github.com/mielsense/qali/commit/494fe0cace691f6c8d3ad2065ad69e73c341bf62",
 			"date": "2026-08-24T18:02:12Z"
+		},
+		{
+			"repo": "qali",
+			"message": "chore: seal local event package inventory",
+			"sha": "aabb0fb",
+			"url": "https://github.com/mielsense/qali/commit/aabb0fb86214f1d94e657895dc26f75da0ab089b",
+			"date": "2026-08-24T18:01:50Z"
 		}
 	]
 }
