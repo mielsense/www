@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-08T15:37:03.438Z",
+	"syncedAt": "2026-09-08T15:40:36.382Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-08T15:36:53Z"
+			"pushedAt": "2026-09-08T15:40:27Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "fix: use repository website metadata for Kettle",
+			"sha": "93da70f",
+			"url": "https://github.com/mielsense/www/commit/93da70ff28ea5c1135b5f1416c51f37f00d94874",
+			"date": "2026-09-08T15:40:25Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "582445a",
+			"url": "https://github.com/mielsense/www/commit/582445a063a880f9cd361c48e664f997034cc1b2",
+			"date": "2026-09-08T15:37:03Z"
+		},
+		{
+			"repo": "www",
 			"message": "fix: link open source projects to their websites",
 			"sha": "91327ee",
 			"url": "https://github.com/mielsense/www/commit/91327ee80c54901d1179459849e9f5fe6a728168",
@@ -381,20 +395,6 @@
 			"sha": "1a286da",
 			"url": "https://github.com/mielsense/www/commit/1a286daa25a75b485128440195198cc28acd2903",
 			"date": "2026-09-05T23:52:17Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "87da2b4",
-			"url": "https://github.com/mielsense/www/commit/87da2b4b776a665683ad77a2e1c9488695b29537",
-			"date": "2026-09-05T23:50:34Z"
-		},
-		{
-			"repo": "www",
-			"message": "ci: run the GitHub sync on push as well",
-			"sha": "cf06c7c",
-			"url": "https://github.com/mielsense/www/commit/cf06c7c6691ac04494e000d7453d15fd27f5409f",
-			"date": "2026-09-05T23:50:22Z"
 		},
 		{
 			"repo": "evilcharts-sv",
