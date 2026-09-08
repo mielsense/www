@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-09-07T11:46:55.550Z",
+	"syncedAt": "2026-09-08T10:45:02.526Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-07T11:46:56Z"
+		},
 		{
 			"name": "mielsense",
 			"description": "Mwa",
@@ -30,16 +40,6 @@
 			"stars": 24,
 			"year": 2026,
 			"pushedAt": "2026-09-07T04:31:02Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-09-06T10:25:28Z"
 		},
 		{
 			"name": "sileo-svelte",
@@ -263,6 +263,13 @@
 		}
 	],
 	"commits": [
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "b93783e",
+			"url": "https://github.com/mielsense/www/commit/b93783ef428e50ca3aff9d95be9924106b89b514",
+			"date": "2026-09-07T11:46:55Z"
+		},
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
@@ -535,13 +542,6 @@
 			"sha": "494fe0c",
 			"url": "https://github.com/mielsense/qali/commit/494fe0cace691f6c8d3ad2065ad69e73c341bf62",
 			"date": "2026-08-24T18:02:12Z"
-		},
-		{
-			"repo": "qali",
-			"message": "chore: seal local event package inventory",
-			"sha": "aabb0fb",
-			"url": "https://github.com/mielsense/qali/commit/aabb0fb86214f1d94e657895dc26f75da0ab089b",
-			"date": "2026-08-24T18:01:50Z"
 		}
 	]
 }
