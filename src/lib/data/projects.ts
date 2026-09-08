@@ -48,7 +48,11 @@ const overrides: Record<string, Partial<Project>> = {
 	sveltebase: { description: 'PocketBase port of svelte-firebase-state', kind: 'library' },
 	'sensel-template': { description: 'Base Svelte 5 template', kind: 'template' },
 	portfolio: { description: 'Just me & my things, the previous version of this site', kind: 'app' },
-	kettle: { description: 'A glamorous boilerplate manager, written in Rust', kind: 'toolkit' },
+	kettle: {
+		description: 'A glamorous boilerplate manager, written in Rust',
+		kind: 'toolkit',
+		url: 'https://github.com/villeurbanne/kettle'
+	},
 	zappy: { description: 'Auto-playing multiplayer game with AI agents', kind: 'game' },
 	rtype: { description: 'Online retro shooter, no engine', kind: 'game' },
 	artly: { description: 'Multimedia art sharing for artists', kind: 'app' },

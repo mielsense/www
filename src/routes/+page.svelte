@@ -124,7 +124,7 @@
 			<ul class="list short:gap-2.5">
 				{#each openSource as repo (repo.name)}
 					<li class="item">
-						<ProjectLink project={{ ...repo, url: repo.repo ?? repo.url }} class="title" />
+						<ProjectLink project={repo} class="title" />
 						<span class="inline-flex items-center gap-[0.5ch] text-[0.8rem] text-muted-foreground tabular-nums">
 							<HugeiconsIcon icon={StarIcon} size={12} strokeWidth={2} aria-hidden="true" />
 							{repo.stars}
