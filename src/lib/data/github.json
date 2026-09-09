@@ -1,16 +1,6 @@
 {
-	"syncedAt": "2026-09-08T15:40:36.382Z",
+	"syncedAt": "2026-09-09T10:53:02.232Z",
 	"repos": [
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-09-08T15:40:27Z"
-		},
 		{
 			"name": "coss-sv",
 			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
@@ -19,7 +9,27 @@
 			"language": "Svelte",
 			"stars": 2,
 			"year": 2026,
-			"pushedAt": "2026-09-08T13:15:33Z"
+			"pushedAt": "2026-09-08T18:05:59Z"
+		},
+		{
+			"name": "sileo-svelte",
+			"description": "An opinionated, physics-based toast component",
+			"url": "https://github.com/mielsense/sileo-svelte",
+			"homepage": "https://sileo.miel.my",
+			"language": "TypeScript",
+			"stars": 5,
+			"year": 2026,
+			"pushedAt": "2026-09-08T18:01:48Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-08T15:40:37Z"
 		},
 		{
 			"name": "mielsense",
@@ -40,16 +50,6 @@
 			"stars": 24,
 			"year": 2026,
 			"pushedAt": "2026-09-07T04:31:02Z"
-		},
-		{
-			"name": "sileo-svelte",
-			"description": "An opinionated, physics-based toast component",
-			"url": "https://github.com/mielsense/sileo-svelte",
-			"homepage": "https://sileo.miel.my",
-			"language": "TypeScript",
-			"stars": 5,
-			"year": 2026,
-			"pushedAt": "2026-09-05T22:30:22Z"
 		},
 		{
 			"name": "qali",
@@ -185,7 +185,7 @@
 			"name": "kettle",
 			"description": "A glamourus boilerplate manager written in Rust i̷ͧ́̇̽̂̈̇ͨ͗͛͂ͬ̈́͌͊͆̽̆͊͋̒͊̾̃̅͊ͭͭ̋͂̇̒ͥ̓̍ͨ̍̑̈́̒ͩ̆͆͊̐̾͑̽́͒ͦͩͮ̐ͨ̒̓̈̊͐̂͊̚̚̚̕͏̸̷̴̴̷̸̸̵̧̨̢̡̨̛́́͘͢͡͠͝͏̵̷̶̷̸̷̷̶̢̧̢̢̡̡̧̛̀̀́͘͘͘̕͘͘͟͢͜͟͡͝͡͞͝͞͞͝͠͏̶̵̨̢́͏͞͏͏̛͕̳͍̮̠̘̣̬̜͍̹͖̳͙̮̪̝̗͕͍̫̼̱̙̲͍̠̹̠̝̭̠̟̟̱̠͇̟̜̩̞͚̮̗̺͎͚̮̬͇̪͖̺͈̫̮͍͎͎̞͈̦̤̤̟̥̰̗̩͈̼͉̟̣͕̪̼͍̫",
 			"url": "https://github.com/villeurbanne/kettle",
-			"homepage": "https://kettle-app.vercel.app/",
+			"homepage": null,
 			"language": "Rust",
 			"stars": 3,
 			"year": 2024,
@@ -264,6 +264,125 @@
 	],
 	"commits": [
 		{
+			"repo": "coss-sv",
+			"message": "docs(apps/ui): track svelte fixes and installation updates",
+			"sha": "e0b6135",
+			"url": "https://github.com/mielsense/coss-sv/commit/e0b6135d1ad8dbd510d0ea7d5e3a3789155c75d6",
+			"date": "2026-09-08T18:03:42Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Fix frosted glass expansion and widen docs for 0.2.1",
+			"sha": "fa0ef2a",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/fa0ef2ae80cf04cc18244fbe32526eca7b35485e",
+			"date": "2026-09-08T18:01:31Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "chore(registry): refresh filtered list implementations",
+			"sha": "b7c8af6",
+			"url": "https://github.com/mielsense/coss-sv/commit/b7c8af68d8d731b784d44e4cc54ea998a1df8a6b",
+			"date": "2026-09-08T17:37:13Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Remove local agent configuration from the repository",
+			"sha": "342af49",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/342af49575f1a3d81a327b45661104f469d30cf1",
+			"date": "2026-09-08T17:35:37Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(packages/ui): render filtered command and autocomplete groups",
+			"sha": "73879e6",
+			"url": "https://github.com/mielsense/coss-sv/commit/73879e679945354c7126e78fa5e5a537dc655e51",
+			"date": "2026-09-08T17:34:55Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Fix explicit local tarball path in npm release workflow",
+			"sha": "9f512cc",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/9f512ccc0abdaf03ae649beeedbd02bb0295cada",
+			"date": "2026-09-08T17:34:52Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Release sileo-svelte 0.2.0",
+			"sha": "0267fd0",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/0267fd034e21bd581bb02df9c7090c81612db39b",
+			"date": "2026-09-08T17:28:57Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "test(packages/ui): make drawer swipe timestamps deterministic",
+			"sha": "d94b31d",
+			"url": "https://github.com/mielsense/coss-sv/commit/d94b31d5a0595ae4e450db9f7904fc79d4f58400",
+			"date": "2026-09-08T17:27:12Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "test(apps/ui): align selection regressions with uncontrolled defaults",
+			"sha": "ef6fc0b",
+			"url": "https://github.com/mielsense/coss-sv/commit/ef6fc0b267cb3638f81f44f82360b631ca45f223",
+			"date": "2026-09-08T17:21:08Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Update integration skill and document the complete 0.2 release",
+			"sha": "e0c507c",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/e0c507cd46211b6004788444127d27ac22875ace",
+			"date": "2026-09-08T17:18:20Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "chore(repo): integrate parity regressions and refresh registry",
+			"sha": "b0558ba",
+			"url": "https://github.com/mielsense/coss-sv/commit/b0558ba603a2055fb3a0ae50ed80d8bf86f31320",
+			"date": "2026-09-08T17:15:53Z"
+		},
+		{
+			"repo": "sileo-svelte",
+			"message": "Prepare 0.2.0 with library fixes, docs playground, and automated npm releases",
+			"sha": "d3c1c6c",
+			"url": "https://github.com/mielsense/sileo-svelte/commit/d3c1c6cb221b9e7b31b10bb901aed746926f1adc",
+			"date": "2026-09-08T17:15:52Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(docs): align example defaults and mobile spacing",
+			"sha": "c23f43b",
+			"url": "https://github.com/mielsense/coss-sv/commit/c23f43bac43c70d4edeffde580f574aec8a07fd2",
+			"date": "2026-09-08T17:12:04Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(ui): preserve delegated attributes and bound comment checks",
+			"sha": "b569769",
+			"url": "https://github.com/mielsense/coss-sv/commit/b56976926121cb6a8b8f4c5e844f9a7dba7440b8",
+			"date": "2026-09-08T17:08:43Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "feat(combobox): add typed item collections",
+			"sha": "af4d63f",
+			"url": "https://github.com/mielsense/coss-sv/commit/af4d63f36befe2093a6ae7eeb491f40b40444201",
+			"date": "2026-09-08T17:00:18Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(combobox): align popup anchors and default selections",
+			"sha": "80214ea",
+			"url": "https://github.com/mielsense/coss-sv/commit/80214ea9387e2ed665fc906e102c2c48dc047dd3",
+			"date": "2026-09-08T16:52:04Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "b1f8f9d",
+			"url": "https://github.com/mielsense/www/commit/b1f8f9d4f4f4b0568ed265eb32294a3d28609050",
+			"date": "2026-09-08T15:40:36Z"
+		},
+		{
 			"repo": "www",
 			"message": "fix: use repository website metadata for Kettle",
 			"sha": "93da70f",
@@ -283,69 +402,6 @@
 			"sha": "91327ee",
 			"url": "https://github.com/mielsense/www/commit/91327ee80c54901d1179459849e9f5fe6a728168",
 			"date": "2026-09-08T15:36:51Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "docs(site): switch published URLs to coss.miel.my",
-			"sha": "894a728",
-			"url": "https://github.com/mielsense/coss-sv/commit/894a728b6b50e9f755820e5730f837a0d4f27a62",
-			"date": "2026-09-08T13:02:28Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "chore(repo): keep porting docs local only",
-			"sha": "2cfc3f2",
-			"url": "https://github.com/mielsense/coss-sv/commit/2cfc3f24b5e23d42763abb0dcc7796d910002d1d",
-			"date": "2026-09-08T12:58:10Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "docs(porting): record live analytics provider failures",
-			"sha": "dc1d759",
-			"url": "https://github.com/mielsense/coss-sv/commit/dc1d75935c6d692246c68fddee687fff401972d6",
-			"date": "2026-09-08T12:47:57Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "docs(porting): record complete audit and verification results",
-			"sha": "4e5a503",
-			"url": "https://github.com/mielsense/coss-sv/commit/4e5a5033c9f7b3c2be3f3999b382e98357a94da4",
-			"date": "2026-09-08T12:46:21Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "chore(registry): regenerate audited component sources",
-			"sha": "dd5f9e7",
-			"url": "https://github.com/mielsense/coss-sv/commit/dd5f9e7b1b9651ef1e113f24a0a7231d725cea3b",
-			"date": "2026-09-08T12:32:39Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(packages/ui): retain composed combobox queries",
-			"sha": "2863e09",
-			"url": "https://github.com/mielsense/coss-sv/commit/2863e09296e89b0435b85323e1ee502c3330874c",
-			"date": "2026-09-08T12:31:22Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(packages/ui): preserve combobox queries during item refresh",
-			"sha": "4c8908a",
-			"url": "https://github.com/mielsense/coss-sv/commit/4c8908ad255fd3500cfc7219041d66ee9bdfc8b7",
-			"date": "2026-09-08T12:26:34Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "test(apps/ui): align assertions with corrected component docs",
-			"sha": "752bd39",
-			"url": "https://github.com/mielsense/coss-sv/commit/752bd395c7c7b21beaddde7923b73373c36347d9",
-			"date": "2026-09-08T12:16:05Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(packages/ui): synchronize combobox selection labels",
-			"sha": "27d9abe",
-			"url": "https://github.com/mielsense/coss-sv/commit/27d9abe5503f1145e46eb48a3e52fc11e9c39220",
-			"date": "2026-09-08T12:15:26Z"
 		},
 		{
 			"repo": "www",
@@ -388,13 +444,6 @@
 			"sha": "f445741",
 			"url": "https://github.com/mielsense/www/commit/f44574185d66dd3c433878b6432785f2ccf36946",
 			"date": "2026-09-05T23:53:34Z"
-		},
-		{
-			"repo": "www",
-			"message": "data: describe this repo in the overrides",
-			"sha": "1a286da",
-			"url": "https://github.com/mielsense/www/commit/1a286daa25a75b485128440195198cc28acd2903",
-			"date": "2026-09-05T23:52:17Z"
 		},
 		{
 			"repo": "evilcharts-sv",
@@ -493,55 +542,6 @@
 			"sha": "e4a77f7",
 			"url": "https://github.com/mielsense/sileo-svelte/commit/e4a77f72a653e0fdcb4519306f2dcae5906547d3",
 			"date": "2026-08-25T11:38:17Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "refactor: move toast motion to Motion",
-			"sha": "ca144d6",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/ca144d61702f4c4cbed866f5efde713c8ccbfe17",
-			"date": "2026-08-25T11:09:57Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "fix: isolate playground notifications",
-			"sha": "dd1c3e7",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/dd1c3e70dea87559da3b13461f8defe85662e428",
-			"date": "2026-08-25T10:01:38Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "feat: rebuild documentation experience",
-			"sha": "cbddbaf",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/cbddbaf46ba16832811a78fecbc522e3fa298537",
-			"date": "2026-08-25T02:36:45Z"
-		},
-		{
-			"repo": "qali",
-			"message": "docs: refresh product screenshots",
-			"sha": "eb43b29",
-			"url": "https://github.com/mielsense/qali/commit/eb43b29110e207dc9443d92701b31e1053645f16",
-			"date": "2026-08-24T18:25:19Z"
-		},
-		{
-			"repo": "qali",
-			"message": "docs: show the Qali desktop app",
-			"sha": "068c707",
-			"url": "https://github.com/mielsense/qali/commit/068c7075d2d5c63c26be991914c1f64cacc48ab7",
-			"date": "2026-08-24T18:15:21Z"
-		},
-		{
-			"repo": "qali",
-			"message": "chore: refresh local event release inputs",
-			"sha": "494fe0c",
-			"url": "https://github.com/mielsense/qali/commit/494fe0cace691f6c8d3ad2065ad69e73c341bf62",
-			"date": "2026-08-24T18:02:12Z"
-		},
-		{
-			"repo": "qali",
-			"message": "chore: seal local event package inventory",
-			"sha": "aabb0fb",
-			"url": "https://github.com/mielsense/qali/commit/aabb0fb86214f1d94e657895dc26f75da0ab089b",
-			"date": "2026-08-24T18:01:50Z"
 		}
 	]
 }
