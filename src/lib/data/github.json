@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-09-09T10:53:02.232Z",
+	"syncedAt": "2026-09-10T10:48:11.479Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-09T10:53:03Z"
+		},
 		{
 			"name": "coss-sv",
 			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
@@ -20,16 +30,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-09-08T18:01:48Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-09-08T15:40:37Z"
 		},
 		{
 			"name": "mielsense",
@@ -264,6 +264,13 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "d1c6b5b",
+			"url": "https://github.com/mielsense/www/commit/d1c6b5b3c141ac15632956f37059468faab92977",
+			"date": "2026-09-09T10:53:02Z"
+		},
+		{
 			"repo": "coss-sv",
 			"message": "docs(apps/ui): track svelte fixes and installation updates",
 			"sha": "e0b6135",
@@ -437,13 +444,6 @@
 			"sha": "64e8e7f",
 			"url": "https://github.com/mielsense/www/commit/64e8e7fdd99f0cbfc8a541e5bef9b4a80ddfeaf4",
 			"date": "2026-09-06T01:08:38Z"
-		},
-		{
-			"repo": "www",
-			"message": "ci: sync writes only when the data changed",
-			"sha": "f445741",
-			"url": "https://github.com/mielsense/www/commit/f44574185d66dd3c433878b6432785f2ccf36946",
-			"date": "2026-09-05T23:53:34Z"
 		},
 		{
 			"repo": "evilcharts-sv",
