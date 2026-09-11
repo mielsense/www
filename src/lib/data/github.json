@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-11T09:51:09.663Z",
+	"syncedAt": "2026-09-11T10:44:48.954Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-11T09:50:59Z"
+			"pushedAt": "2026-09-11T09:51:10Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,13 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "76c9e6a",
+			"url": "https://github.com/mielsense/www/commit/76c9e6aab9e0386aae9f497fb4e3141aaea6e5de",
+			"date": "2026-09-11T09:51:09Z"
+		},
+		{
+			"repo": "www",
 			"message": "Reserve space for the intro player before sizing the portrait",
 			"sha": "bdbcefb",
 			"url": "https://github.com/mielsense/www/commit/bdbcefbbd8e36d270194ad747389772abd8c6312",
@@ -437,13 +444,6 @@
 			"sha": "93da70f",
 			"url": "https://github.com/mielsense/www/commit/93da70ff28ea5c1135b5f1416c51f37f00d94874",
 			"date": "2026-09-08T15:40:25Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "582445a",
-			"url": "https://github.com/mielsense/www/commit/582445a063a880f9cd361c48e664f997034cc1b2",
-			"date": "2026-09-08T15:37:03Z"
 		},
 		{
 			"repo": "evilcharts-sv",
