@@ -108,6 +108,7 @@
 						class="square"
 						data-date={day.date}
 						data-level={day.level}
+						style:--reveal-delay="{Math.floor((index + offset) / 7) * 18 + ((index + offset) % 7) * 10}ms"
 						class:selected={selected?.date === day.date}
 						tabindex={day.date === active ? 0 : -1}
 						aria-label={label(day)}
@@ -266,6 +267,27 @@
 		outline: 1px solid var(--fg);
 		outline-offset: 2px;
 		z-index: 1;
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		button.square {
+			animation: square-enter 360ms var(--ease-out) backwards;
+			animation-delay: calc(var(--cell-delay, 0ms) + 90ms + var(--reveal-delay));
+		}
+		button.square:focus-visible {
+			/* Reveal keyboard focus immediately without restarting the entrance on blur. */
+			opacity: 1 !important;
+			transform: none !important;
+		}
+	}
+	@keyframes square-enter {
+		from {
+			opacity: 0;
+			transform: translateY(4px) scale(0.85);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+		}
 	}
 	.detail {
 		font-size: 0.7rem;
