@@ -429,6 +429,17 @@ h2.comment {
 
 	.column:nth-child(1) > .cell {
 		grid-row: 1 / -1;
+		min-block-size: 0;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+	}
+
+	/* Reserve the intro and player first; the portrait uses the remaining height. */
+	.column:first-child .portrait {
+		block-size: 100%;
+		min-block-size: 0;
+		max-block-size: none;
 	}
 
 	.column:nth-child(2) > .cell:last-child {
