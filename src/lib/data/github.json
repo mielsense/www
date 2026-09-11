@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-11T09:36:07.458Z",
+	"syncedAt": "2026-09-11T09:46:26.751Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-11T09:35:55Z"
+			"pushedAt": "2026-09-11T09:46:17Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "Fit intro column to portrait width",
+			"sha": "e8ab137",
+			"url": "https://github.com/mielsense/www/commit/e8ab137ed296e03a832cda0acfb749c5d1d26465",
+			"date": "2026-09-11T09:46:14Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "0fb5eca",
+			"url": "https://github.com/mielsense/www/commit/0fb5ecac28292dee852e6ac30801e2a89187f979",
+			"date": "2026-09-11T09:36:07Z"
+		},
+		{
+			"repo": "www",
 			"message": "Update profile avatar and social preview images",
 			"sha": "065b4ce",
 			"url": "https://github.com/mielsense/www/commit/065b4ce908d8a20938f645bfe5d1f60bb4102a38",
@@ -430,20 +444,6 @@
 			"sha": "fa37fd0",
 			"url": "https://github.com/mielsense/www/commit/fa37fd06a10bf9b0232fe68f83474215b6a4f763",
 			"date": "2026-09-08T10:45:02Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "b93783e",
-			"url": "https://github.com/mielsense/www/commit/b93783ef428e50ca3aff9d95be9924106b89b514",
-			"date": "2026-09-07T11:46:55Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "32704b6",
-			"url": "https://github.com/mielsense/www/commit/32704b6e77d3da70b35d5933cce978521b032e9d",
-			"date": "2026-09-06T10:25:27Z"
 		},
 		{
 			"repo": "evilcharts-sv",
