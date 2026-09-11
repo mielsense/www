@@ -289,10 +289,12 @@ h2.comment {
 /* ---- home: the board ---- */
 
 .board {
+	--cell-x: clamp(16px, 2vw, 32px);
+	--intro-width: calc(52dvh + 2 * var(--cell-x));
 	position: relative;
 	flex: 1;
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: min(33.333333%, var(--intro-width)) repeat(2, minmax(0, 1fr));
 	border-block: 1px solid var(--border);
 	animation: fade-in 400ms var(--ease-out) backwards;
 }
@@ -317,7 +319,6 @@ h2.comment {
 
 .cell {
 	--cell-y: clamp(16px, 1.8vw, 28px);
-	--cell-x: clamp(16px, 2vw, 32px);
 	min-inline-size: 0;
 	display: flex;
 	flex-direction: column;
@@ -346,9 +347,9 @@ h2.comment {
 	> :nth-child(8) { --n: 7; }
 }
 
-/* a square as wide as the column, unless the viewport is too short for that */
+/* The intro track follows the portrait's height cap, including the cell padding. */
 .portrait {
-	inline-size: min(100%, 52dvh);
+	inline-size: 100%;
 	aspect-ratio: 1;
 	object-fit: cover;
 	object-position: 50% 30%;
@@ -436,6 +437,10 @@ h2.comment {
 }
 
 @media (width > 700px) and (height <= 950px) {
+	.board {
+		--intro-width: 100%;
+	}
+
 	.cell {
 		gap: 0.9rem;
 	}
@@ -445,14 +450,13 @@ h2.comment {
 	}
 
 	.portrait {
-		inline-size: 100%;
 		max-block-size: 38dvh;
 	}
 }
 
 @media (width <= 1100px) {
 	.board {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: min(50%, var(--intro-width)) minmax(0, 1fr);
 	}
 
 	.column:nth-child(3) {
