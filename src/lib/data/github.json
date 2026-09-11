@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-11T09:46:26.751Z",
+	"syncedAt": "2026-09-11T09:51:09.663Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-11T09:46:17Z"
+			"pushedAt": "2026-09-11T09:50:59Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "Reserve space for the intro player before sizing the portrait",
+			"sha": "bdbcefb",
+			"url": "https://github.com/mielsense/www/commit/bdbcefbbd8e36d270194ad747389772abd8c6312",
+			"date": "2026-09-11T09:50:57Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "6be2841",
+			"url": "https://github.com/mielsense/www/commit/6be284123b8ee824f964b2e7c2fbe91dfc662796",
+			"date": "2026-09-11T09:46:26Z"
+		},
+		{
+			"repo": "www",
 			"message": "Fit intro column to portrait width",
 			"sha": "e8ab137",
 			"url": "https://github.com/mielsense/www/commit/e8ab137ed296e03a832cda0acfb749c5d1d26465",
@@ -430,20 +444,6 @@
 			"sha": "582445a",
 			"url": "https://github.com/mielsense/www/commit/582445a063a880f9cd361c48e664f997034cc1b2",
 			"date": "2026-09-08T15:37:03Z"
-		},
-		{
-			"repo": "www",
-			"message": "fix: link open source projects to their websites",
-			"sha": "91327ee",
-			"url": "https://github.com/mielsense/www/commit/91327ee80c54901d1179459849e9f5fe6a728168",
-			"date": "2026-09-08T15:36:51Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "fa37fd0",
-			"url": "https://github.com/mielsense/www/commit/fa37fd06a10bf9b0232fe68f83474215b6a4f763",
-			"date": "2026-09-08T10:45:02Z"
 		},
 		{
 			"repo": "evilcharts-sv",
