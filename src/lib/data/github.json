@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-11T10:44:48.954Z",
+	"syncedAt": "2026-09-11T14:50:48.174Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-11T09:51:10Z"
+			"pushedAt": "2026-09-11T14:50:28Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "Update Benky link to benky.space",
+			"sha": "8f50636",
+			"url": "https://github.com/mielsense/www/commit/8f5063698b81f8fba7c08c01d0cab30d9b473627",
+			"date": "2026-09-11T14:50:22Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "19a2931",
+			"url": "https://github.com/mielsense/www/commit/19a2931e66692516d24fc682d087411837d11d1a",
+			"date": "2026-09-11T10:44:48Z"
+		},
+		{
+			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "76c9e6a",
 			"url": "https://github.com/mielsense/www/commit/76c9e6aab9e0386aae9f497fb4e3141aaea6e5de",
@@ -430,20 +444,6 @@
 			"sha": "80214ea",
 			"url": "https://github.com/mielsense/coss-sv/commit/80214ea9387e2ed665fc906e102c2c48dc047dd3",
 			"date": "2026-09-08T16:52:04Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "b1f8f9d",
-			"url": "https://github.com/mielsense/www/commit/b1f8f9d4f4f4b0568ed265eb32294a3d28609050",
-			"date": "2026-09-08T15:40:36Z"
-		},
-		{
-			"repo": "www",
-			"message": "fix: use repository website metadata for Kettle",
-			"sha": "93da70f",
-			"url": "https://github.com/mielsense/www/commit/93da70ff28ea5c1135b5f1416c51f37f00d94874",
-			"date": "2026-09-08T15:40:25Z"
 		},
 		{
 			"repo": "evilcharts-sv",
