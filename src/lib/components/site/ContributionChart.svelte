@@ -108,7 +108,7 @@
 						class="square"
 						data-date={day.date}
 						data-level={day.level}
-						style:--reveal-delay="{Math.floor((index + offset) / 7) * 18 + ((index + offset) % 7) * 10}ms"
+						style:--reveal-delay="{((index + offset) % 7) * 80}ms"
 						class:selected={selected?.date === day.date}
 						tabindex={day.date === active ? 0 : -1}
 						aria-label={label(day)}
