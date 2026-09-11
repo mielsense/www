@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-11T14:50:48.174Z",
+	"syncedAt": "2026-09-11T15:11:21.098Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-11T14:50:28Z"
+			"pushedAt": "2026-09-11T15:11:11Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "Replace language chart with GitHub contribution calendar",
+			"sha": "71688e8",
+			"url": "https://github.com/mielsense/www/commit/71688e86e1c3ea13ccc971691513e7256542471d",
+			"date": "2026-09-11T15:11:07Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "6dee510",
+			"url": "https://github.com/mielsense/www/commit/6dee510df3dd92fc7f8377cf86ea95e1461c8f37",
+			"date": "2026-09-11T14:50:48Z"
+		},
+		{
+			"repo": "www",
 			"message": "Update Benky link to benky.space",
 			"sha": "8f50636",
 			"url": "https://github.com/mielsense/www/commit/8f5063698b81f8fba7c08c01d0cab30d9b473627",
@@ -318,20 +332,6 @@
 			"sha": "065b4ce",
 			"url": "https://github.com/mielsense/www/commit/065b4ce908d8a20938f645bfe5d1f60bb4102a38",
 			"date": "2026-09-11T09:35:45Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "b28423d",
-			"url": "https://github.com/mielsense/www/commit/b28423dae8dc04e52675d727216f2bba2dccafed",
-			"date": "2026-09-10T10:48:11Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "d1c6b5b",
-			"url": "https://github.com/mielsense/www/commit/d1c6b5b3c141ac15632956f37059468faab92977",
-			"date": "2026-09-09T10:53:02Z"
 		},
 		{
 			"repo": "coss-sv",
