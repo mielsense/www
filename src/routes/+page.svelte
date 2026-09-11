@@ -29,7 +29,7 @@
 <svelte:head>
 	<title>@{site.handle} | portfolio</title>
 	<meta name="description" content={site.description} />
-	<link rel="preload" as="image" href="/avatar.webp" fetchpriority="high" />
+	<link rel="preload" as="image" href="/avatar.webp?v=20260911" fetchpriority="high" />
 </svelte:head>
 
 <main class="board">
@@ -39,7 +39,7 @@
 				<Availability />
 				<Marquee />
 			</div>
-			<img class="portrait" src="/avatar.webp" alt="Illustrated portrait of Mathis" width="460" height="460" fetchpriority="high" />
+			<img class="portrait" src="/avatar.webp?v=20260911" alt="Illustrated portrait of Mathis" width="460" height="460" fetchpriority="high" />
 			<h2 class="comment" id="intro-title"># intro</h2>
 			<div class="flex flex-col gap-3 short:gap-2.5 [&_a]:link-rule [&_a]:font-semibold [&_strong]:font-semibold">
 				<p><strong>{site.name}</strong>. Computer science student at Epitech, in France.</p>

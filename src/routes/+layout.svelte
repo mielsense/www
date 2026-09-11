@@ -34,7 +34,7 @@
 		name: site.name,
 		alternateName: site.handle,
 		url: site.url,
-		image: `${site.url}/avatar.webp`,
+		image: `${site.url}/avatar.webp?v=20260911`,
 		email: site.email,
 		jobTitle: 'Software developer',
 		worksFor: { '@type': 'Organization', name: site.work.name, url: site.work.url },
@@ -78,11 +78,13 @@
 	<meta property="og:title" content="@{site.handle} | portfolio" />
 	<meta property="og:description" content={site.description} />
 	<meta property="og:url" content={canonical} />
-	<meta property="og:image" content="{site.url}/og.png" />
+	<meta property="og:image" content="{site.url}/og.png?v=20260911" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="mielsense, Mathis. Computer science student at Epitech, in France." />
 	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="{site.url}/og.png?v=20260911" />
+	<meta name="twitter:image:alt" content="mielsense, Mathis. Computer science student at Epitech, in France." />
 	<meta name="twitter:site" content="@mielsense" />
 	<meta name="twitter:creator" content="@mielsense" />
 	{@html `<script type="application/ld+json">${person}</script>`}
