@@ -63,7 +63,7 @@ const manual: Project[] = [
 	{
 		name: 'benky',
 		description: 'A learning platform for students, in progress',
-		url: 'https://github.com/getbenky',
+		url: 'https://benky.space',
 		year: 2026,
 		lang: 'Svelte',
 		kind: 'soon'
