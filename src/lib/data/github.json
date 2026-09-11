@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-11T15:12:54.972Z",
+	"syncedAt": "2026-09-11T15:13:51.853Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-11T15:12:43Z"
+			"pushedAt": "2026-09-11T15:13:42Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "Reveal contribution grid row by row",
+			"sha": "4c1ef0b",
+			"url": "https://github.com/mielsense/www/commit/4c1ef0bd71b1ce7248a6ba6d985cd5c0260a82d2",
+			"date": "2026-09-11T15:13:21Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "29c4a76",
+			"url": "https://github.com/mielsense/www/commit/29c4a76e3fe36fc78db70ddfccba511540f9a9ce",
+			"date": "2026-09-11T15:12:55Z"
+		},
+		{
+			"repo": "www",
 			"message": "Animate contribution squares on page entry",
 			"sha": "10c9303",
 			"url": "https://github.com/mielsense/www/commit/10c9303bd74ef2138e420afd6399ee62015d31d6",
@@ -318,20 +332,6 @@
 			"sha": "bdbcefb",
 			"url": "https://github.com/mielsense/www/commit/bdbcefbbd8e36d270194ad747389772abd8c6312",
 			"date": "2026-09-11T09:50:57Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "6be2841",
-			"url": "https://github.com/mielsense/www/commit/6be284123b8ee824f964b2e7c2fbe91dfc662796",
-			"date": "2026-09-11T09:46:26Z"
-		},
-		{
-			"repo": "www",
-			"message": "Fit intro column to portrait width",
-			"sha": "e8ab137",
-			"url": "https://github.com/mielsense/www/commit/e8ab137ed296e03a832cda0acfb749c5d1d26465",
-			"date": "2026-09-11T09:46:14Z"
 		},
 		{
 			"repo": "coss-sv",
