@@ -4,14 +4,15 @@
 	import BarShader from '@/components/site/BarShader.svelte';
 	import Cat from '@/components/site/Cat.svelte';
 	import CopyLink from '@/components/site/CopyLink.svelte';
-	import LanguagesChart from '@/components/site/LanguagesChart.svelte';
+	import ContributionChart from '@/components/site/ContributionChart.svelte';
 	import Marquee from '@/components/site/Marquee.svelte';
 	import NowPlaying from '@/components/site/NowPlaying.svelte';
 	import ProjectLink from '@/components/site/ProjectLink.svelte';
 	import Stack from '@/components/site/Stack.svelte';
 	import { Badge } from '@/components/ui/badge/index.js';
 	import { accent } from '@/data/palette';
-	import { byName, featured, openSource, projects, repoCount } from '@/data/projects';
+	import { byName, featured, openSource, projects } from '@/data/projects';
+	import github from '@/data/github.json';
 	import { site } from '@/data/site';
 	import { code, tools } from '@/data/stack';
 	import HugeiconsIcon from '@/hugeicons-icon.svelte';
@@ -107,9 +108,9 @@
 	</div>
 
 	<div class="column">
-		<section class="cell" style:--i="2" style:--cell-accent={accent(3)} aria-labelledby="languages-title">
-			<h2 class="comment" id="languages-title"># languages · {repoCount} repos</h2>
-			<LanguagesChart />
+		<section class="cell" style:--i="2" style:--cell-accent={accent(3)} aria-labelledby="activity-title">
+			<h2 class="comment" id="activity-title"># contributions</h2>
+			<ContributionChart days={github.contributions} href={site.github} />
 		</section>
 
 		<section class="cell" style:--i="3" style:--cell-accent={accent(4)} aria-labelledby="stack-title">

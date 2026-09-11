@@ -2,6 +2,7 @@
 // Run by .github/workflows/sync-github.yml on a schedule, or by hand with `pnpm sync`.
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { fetchContributions } from './github-contributions.mjs';
 
 const USER = 'mielsense';
 // repos that live outside the user account but belong on the site
@@ -11,7 +12,9 @@ const OUT = new URL('../src/lib/data/github.json', import.meta.url);
 const headers = {
 	Accept: 'application/vnd.github+json',
 	'User-Agent': `${USER}-site-sync`,
-	...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {})
+	...(process.env.GITHUB_TOKEN
+		? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+		: {})
 };
 
 async function get(path) {
@@ -43,7 +46,9 @@ function shape(r) {
 	};
 }
 
-const own = await get(`/users/${USER}/repos?per_page=100&type=owner&sort=pushed`);
+const own = await get(
+	`/users/${USER}/repos?per_page=100&type=owner&sort=pushed`
+);
 const extra = await Promise.all(EXTRA.map((full) => get(`/repos/${full}`)));
 
 const repos = [...own, ...extra]
@@ -58,7 +63,9 @@ const commits = (
 		recent.map(async (r) => {
 			const full = r.url.replace('https://github.com/', '');
 			// an empty repo answers 409
-			const list = await get(`/repos/${full}/commits?per_page=10`).catch(() => []);
+			const list = await get(`/repos/${full}/commits?per_page=10`).catch(
+				() => []
+			);
 			return list.map((c) => ({
 				repo: r.name,
 				message: c.commit.message.split('\n')[0].slice(0, 120),
@@ -76,12 +83,30 @@ const commits = (
 
 // only touch the file when the data moved, so the workflow's commit doesn't fire on every run
 const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : null;
+// Preserve the last successful calendar if GitHub is temporarily unavailable.
+const contributions = await fetchContributions(USER).catch((error) => {
+	if (!previous?.contributions) throw error;
+	console.warn(`Keeping previous contributions: ${error.message}`);
+	return previous.contributions;
+});
 const same =
-	previous && JSON.stringify({ repos: previous.repos, commits: previous.commits }) === JSON.stringify({ repos, commits });
+	previous &&
+	JSON.stringify({
+		repos: previous.repos,
+		commits: previous.commits,
+		contributions: previous.contributions
+	}) === JSON.stringify({ repos, commits, contributions });
 if (same) {
 	console.log('github data unchanged');
 } else {
-	const data = { syncedAt: new Date().toISOString(), repos, commits };
+	const data = {
+		syncedAt: new Date().toISOString(),
+		repos,
+		commits,
+		contributions
+	};
 	writeFileSync(OUT, JSON.stringify(data, null, '\t') + '\n');
-	console.log(`wrote ${repos.length} repos and ${commits.length} commits to src/lib/data/github.json`);
+	console.log(
+		`wrote ${repos.length} repos and ${commits.length} commits to src/lib/data/github.json`
+	);
 }
