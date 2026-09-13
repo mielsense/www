@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-09-12T10:13:40.018Z",
+	"syncedAt": "2026-09-13T11:14:19.102Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-12T10:13:40Z"
+		},
 		{
 			"name": "qali",
 			"description": "Opiniated calendar app",
@@ -10,16 +20,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-09-11T15:46:46Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-09-11T15:13:52Z"
 		},
 		{
 			"name": "coss-sv",
@@ -264,6 +264,13 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "a7d71af",
+			"url": "https://github.com/mielsense/www/commit/a7d71afd964daf6839f9d190b6fbccd24faedba0",
+			"date": "2026-09-12T10:13:40Z"
+		},
+		{
 			"repo": "qali",
 			"message": "feat: refine calendar surfaces and command center",
 			"sha": "57320a5",
@@ -332,13 +339,6 @@
 			"sha": "19a2931",
 			"url": "https://github.com/mielsense/www/commit/19a2931e66692516d24fc682d087411837d11d1a",
 			"date": "2026-09-11T10:44:48Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "76c9e6a",
-			"url": "https://github.com/mielsense/www/commit/76c9e6aab9e0386aae9f497fb4e3141aaea6e5de",
-			"date": "2026-09-11T09:51:09Z"
 		},
 		{
 			"repo": "coss-sv",
@@ -545,41 +545,6 @@
 		}
 	],
 	"contributions": [
-		{
-			"date": "2025-09-07",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-08",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-09",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-10",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-11",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-12",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-13",
-			"count": 0,
-			"level": 0
-		},
 		{
 			"date": "2025-09-14",
 			"count": 0,
@@ -2397,6 +2362,11 @@
 		},
 		{
 			"date": "2026-09-12",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-09-13",
 			"count": 0,
 			"level": 0
 		}
