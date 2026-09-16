@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-15T11:15:55.215Z",
+	"syncedAt": "2026-09-16T10:58:01.071Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-14T12:01:39Z"
+			"pushedAt": "2026-09-15T11:15:56Z"
 		},
 		{
 			"name": "coss-sv",
@@ -130,16 +130,6 @@
 			"stars": 1,
 			"year": 2025,
 			"pushedAt": "2025-03-10T14:10:18Z"
-		},
-		{
-			"name": "sensel",
-			"description": "A selection of nice utils for svelte 5 (custom library + cli + motion wrapper)",
-			"url": "https://github.com/mielsense/sensel",
-			"homepage": "https://www.npmjs.com/settings/sensel/packages",
-			"language": "Svelte",
-			"stars": 3,
-			"year": 2025,
-			"pushedAt": "2025-02-18T11:10:52Z"
 		},
 		{
 			"name": "sensel-template",
@@ -266,6 +256,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "3272e14",
+			"url": "https://github.com/mielsense/www/commit/3272e1448bf096b39a5f40885efd9f83b7713b9f",
+			"date": "2026-09-15T11:15:55Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "7bf111f",
 			"url": "https://github.com/mielsense/www/commit/7bf111f261fb53ee064b021aa394e9f3c00f6198",
 			"date": "2026-09-14T12:01:38Z"
@@ -332,13 +329,6 @@
 			"sha": "71688e8",
 			"url": "https://github.com/mielsense/www/commit/71688e86e1c3ea13ccc971691513e7256542471d",
 			"date": "2026-09-11T15:11:07Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "6dee510",
-			"url": "https://github.com/mielsense/www/commit/6dee510df3dd92fc7f8377cf86ea95e1461c8f37",
-			"date": "2026-09-11T14:50:48Z"
 		},
 		{
 			"repo": "coss-sv",
@@ -2377,6 +2367,11 @@
 		},
 		{
 			"date": "2026-09-15",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-09-16",
 			"count": 0,
 			"level": 0
 		}
