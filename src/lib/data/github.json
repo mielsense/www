@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-16T10:58:01.071Z",
+	"syncedAt": "2026-09-17T11:08:33.938Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-15T11:15:56Z"
+			"pushedAt": "2026-09-16T10:58:02Z"
 		},
 		{
 			"name": "coss-sv",
@@ -17,7 +17,7 @@
 			"url": "https://github.com/mielsense/coss-sv",
 			"homepage": "https://coss.miel.my",
 			"language": "Svelte",
-			"stars": 2,
+			"stars": 3,
 			"year": 2026,
 			"pushedAt": "2026-09-14T04:31:36Z"
 		},
@@ -256,6 +256,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "f69bbb1",
+			"url": "https://github.com/mielsense/www/commit/f69bbb15ec5da8791393a46dfacda9b982297973",
+			"date": "2026-09-16T10:58:01Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "3272e14",
 			"url": "https://github.com/mielsense/www/commit/3272e1448bf096b39a5f40885efd9f83b7713b9f",
 			"date": "2026-09-15T11:15:55Z"
@@ -322,13 +329,6 @@
 			"sha": "ca9a2ba",
 			"url": "https://github.com/mielsense/www/commit/ca9a2ba3becf23984aca41afd2ee6a23a0ffa795",
 			"date": "2026-09-11T15:11:21Z"
-		},
-		{
-			"repo": "www",
-			"message": "Replace language chart with GitHub contribution calendar",
-			"sha": "71688e8",
-			"url": "https://github.com/mielsense/www/commit/71688e86e1c3ea13ccc971691513e7256542471d",
-			"date": "2026-09-11T15:11:07Z"
 		},
 		{
 			"repo": "coss-sv",
@@ -2372,6 +2372,11 @@
 		},
 		{
 			"date": "2026-09-16",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-09-17",
 			"count": 0,
 			"level": 0
 		}
