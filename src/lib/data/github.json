@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-19T10:26:50.716Z",
+	"syncedAt": "2026-09-20T10:47:44.698Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-18T10:42:32Z"
+			"pushedAt": "2026-09-19T10:26:51Z"
 		},
 		{
 			"name": "coss-sv",
@@ -27,7 +27,7 @@
 			"url": "https://github.com/mielsense/evilcharts-sv",
 			"homepage": "https://charts.miel.my",
 			"language": "Svelte",
-			"stars": 24,
+			"stars": 25,
 			"year": 2026,
 			"pushedAt": "2026-09-14T04:30:21Z"
 		},
@@ -256,6 +256,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "f96124f",
+			"url": "https://github.com/mielsense/www/commit/f96124fd78425d9baf3e3067af670d16a529cb73",
+			"date": "2026-09-19T10:26:50Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "429a220",
 			"url": "https://github.com/mielsense/www/commit/429a22076cdadcc387f291c346f30201ae0133fd",
 			"date": "2026-09-18T10:42:31Z"
@@ -322,13 +329,6 @@
 			"sha": "4c1ef0b",
 			"url": "https://github.com/mielsense/www/commit/4c1ef0bd71b1ce7248a6ba6d985cd5c0260a82d2",
 			"date": "2026-09-11T15:13:21Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "29c4a76",
-			"url": "https://github.com/mielsense/www/commit/29c4a76e3fe36fc78db70ddfccba511540f9a9ce",
-			"date": "2026-09-11T15:12:55Z"
 		},
 		{
 			"repo": "coss-sv",
@@ -535,41 +535,6 @@
 		}
 	],
 	"contributions": [
-		{
-			"date": "2025-09-14",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-15",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-16",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-17",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-18",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-19",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-09-20",
-			"count": 0,
-			"level": 0
-		},
 		{
 			"date": "2025-09-21",
 			"count": 0,
@@ -2387,6 +2352,11 @@
 		},
 		{
 			"date": "2026-09-19",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-09-20",
 			"count": 0,
 			"level": 0
 		}
