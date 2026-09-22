@@ -1,15 +1,15 @@
 {
-	"syncedAt": "2026-09-21T12:11:44.306Z",
+	"syncedAt": "2026-09-22T11:05:59.611Z",
 	"repos": [
 		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
+			"name": "mielui",
+			"description": "Svelte 5 component library based on Sivir UI",
+			"url": "https://github.com/mielsense/mielui",
+			"homepage": "https://ui.miel.my",
 			"language": "Svelte",
-			"stars": 3,
+			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-09-21T04:31:40Z"
+			"pushedAt": "2026-09-22T00:49:59Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,17 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-20T10:47:46Z"
+			"pushedAt": "2026-09-21T12:11:45Z"
+		},
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 3,
+			"year": 2026,
+			"pushedAt": "2026-09-21T04:31:40Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -256,6 +266,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "3a968f9",
+			"url": "https://github.com/mielsense/www/commit/3a968f9bddf0361d70e38fb1fc8b2a4024af67b5",
+			"date": "2026-09-21T12:11:44Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "4bd874e",
 			"url": "https://github.com/mielsense/www/commit/4bd874e712672c0541d3ba80b81f8c99796cdb99",
 			"date": "2026-09-20T10:47:44Z"
@@ -296,6 +313,41 @@
 			"date": "2026-09-15T11:15:55Z"
 		},
 		{
+			"repo": "mielui",
+			"message": "test(docs): allow subsequent changelog versions",
+			"sha": "2064d64",
+			"url": "https://github.com/mielsense/mielui/commit/2064d64b9c8381c431e3aa09d53e84019265f9ee",
+			"date": "2026-09-14T16:54:17Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(brand): apply approved compact cat icon",
+			"sha": "8d94462",
+			"url": "https://github.com/mielsense/mielui/commit/8d944624b16213b7582f528254bb3a3d9f9b26a0",
+			"date": "2026-09-14T16:53:35Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(repo): correct initial version and branding",
+			"sha": "a29435b",
+			"url": "https://github.com/mielsense/mielui/commit/a29435b1fa3a133a0e03e43bad7c8f7adfddba9c",
+			"date": "2026-09-14T16:45:38Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "chore(repo): initialize mielui from sivir ui",
+			"sha": "4b14230",
+			"url": "https://github.com/mielsense/mielui/commit/4b142307d4d1a369f881598b16c946f6b08e00ef",
+			"date": "2026-09-14T15:50:51Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "Initial commit",
+			"sha": "e0d0a68",
+			"url": "https://github.com/mielsense/mielui/commit/e0d0a6820c91f8b4243df5057ddde8ee1b57daa4",
+			"date": "2026-09-14T15:38:03Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "7bf111f",
@@ -322,13 +374,6 @@
 			"sha": "57320a5",
 			"url": "https://github.com/mielsense/qali/commit/57320a5a5133da71e8e0ab50d3d281ff8d41292f",
 			"date": "2026-09-11T15:46:33Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "b0001ea",
-			"url": "https://github.com/mielsense/www/commit/b0001ea5bd5ccef8c2f86479085a7a29a0d05dfd",
-			"date": "2026-09-11T15:13:51Z"
 		},
 		{
 			"repo": "coss-sv",
@@ -497,41 +542,6 @@
 			"sha": "f7fe70b",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/f7fe70b00a53c339bb8a227133997b93fda87243",
 			"date": "2026-08-30T16:12:49Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "ci: reuse built app for browser tests",
-			"sha": "e277829",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/e2778297453f350d3f5d37dfa9053c14e1de4e40",
-			"date": "2026-08-30T15:54:36Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "refactor(site): isolate landing card loading",
-			"sha": "ae9856e",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/ae9856e2a26711d3c0729ccc7713b0df3195bf8b",
-			"date": "2026-08-30T15:35:46Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "test(site): control reduced motion in stage tests",
-			"sha": "6005526",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/6005526473b9a1d30d91f1d99948a1ba3ea5b5f6",
-			"date": "2026-08-30T15:27:31Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "refactor toast motion and harden release",
-			"sha": "4ad1296",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/4ad1296ed3b40f15eb0eaa6383cae741c21770d1",
-			"date": "2026-08-25T19:17:18Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "refactor: match upstream toast motion",
-			"sha": "1efcb1e",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/1efcb1e230c0c26d7106c7405db74ed6cbdf7b42",
-			"date": "2026-08-25T17:34:00Z"
 		}
 	],
 	"contributions": [
@@ -2327,8 +2337,8 @@
 		},
 		{
 			"date": "2026-09-14",
-			"count": 0,
-			"level": 0
+			"count": 7,
+			"level": 1
 		},
 		{
 			"date": "2026-09-15",
@@ -2337,8 +2347,8 @@
 		},
 		{
 			"date": "2026-09-16",
-			"count": 0,
-			"level": 0
+			"count": 1,
+			"level": 1
 		},
 		{
 			"date": "2026-09-17",
@@ -2362,6 +2372,11 @@
 		},
 		{
 			"date": "2026-09-21",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-09-22",
 			"count": 0,
 			"level": 0
 		}
