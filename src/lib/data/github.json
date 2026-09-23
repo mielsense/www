@@ -1,15 +1,15 @@
 {
-	"syncedAt": "2026-09-22T11:05:59.611Z",
+	"syncedAt": "2026-09-23T10:55:47.140Z",
 	"repos": [
 		{
 			"name": "mielui",
-			"description": "Svelte 5 component library based on Sivir UI",
+			"description": "Tasteful svelte 5 component library",
 			"url": "https://github.com/mielsense/mielui",
 			"homepage": "https://ui.miel.my",
 			"language": "Svelte",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-09-22T00:49:59Z"
+			"pushedAt": "2026-09-23T10:42:16Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-21T12:11:45Z"
+			"pushedAt": "2026-09-22T11:06:00Z"
 		},
 		{
 			"name": "coss-sv",
@@ -266,6 +266,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "26d9acc",
+			"url": "https://github.com/mielsense/www/commit/26d9accc346c42b4ad285f671a938421b2fd00f5",
+			"date": "2026-09-22T11:05:59Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "3a968f9",
 			"url": "https://github.com/mielsense/www/commit/3a968f9bddf0361d70e38fb1fc8b2a4024af67b5",
 			"date": "2026-09-21T12:11:44Z"
@@ -360,13 +367,6 @@
 			"sha": "9558c0f",
 			"url": "https://github.com/mielsense/www/commit/9558c0fcb6981c7c9f88b4c43aa971b7d683d95b",
 			"date": "2026-09-13T11:14:19Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "a7d71af",
-			"url": "https://github.com/mielsense/www/commit/a7d71afd964daf6839f9d190b6fbccd24faedba0",
-			"date": "2026-09-12T10:13:40Z"
 		},
 		{
 			"repo": "qali",
@@ -2377,6 +2377,11 @@
 		},
 		{
 			"date": "2026-09-22",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-09-23",
 			"count": 0,
 			"level": 0
 		}
