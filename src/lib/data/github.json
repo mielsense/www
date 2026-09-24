@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-23T10:55:47.140Z",
+	"syncedAt": "2026-09-24T11:15:24.010Z",
 	"repos": [
 		{
 			"name": "mielui",
@@ -7,9 +7,9 @@
 			"url": "https://github.com/mielsense/mielui",
 			"homepage": "https://ui.miel.my",
 			"language": "Svelte",
-			"stars": 1,
+			"stars": 2,
 			"year": 2026,
-			"pushedAt": "2026-09-23T10:42:16Z"
+			"pushedAt": "2026-09-23T23:11:30Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-22T11:06:00Z"
+			"pushedAt": "2026-09-23T10:55:48Z"
 		},
 		{
 			"name": "coss-sv",
@@ -264,6 +264,48 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "feat(theme): support single or double borders across framed surfaces",
+			"sha": "42fbe44",
+			"url": "https://github.com/mielsense/mielui/commit/42fbe44ff1e07f22907112cf376b7f445b152d76",
+			"date": "2026-09-23T23:11:27Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "feat(studio): organize appearance and interaction settings",
+			"sha": "46f4a4d",
+			"url": "https://github.com/mielsense/mielui/commit/46f4a4d392d2f96594360cf949ab96bfdb83ea54",
+			"date": "2026-09-23T23:01:20Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "docs(workflow): document multi-PR releases and optional stacks",
+			"sha": "1eb070d",
+			"url": "https://github.com/mielsense/mielui/commit/1eb070d422d69b7216a1d311bd5df9dd8efc1ea5",
+			"date": "2026-09-23T22:51:08Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(menu): extend separators across the panel width",
+			"sha": "f3e13c9",
+			"url": "https://github.com/mielsense/mielui/commit/f3e13c97f6fc87b3e0c0fc7cfb99d1d0b6a0946c",
+			"date": "2026-09-23T22:51:04Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "chore(release): v0.1.1 (#2)",
+			"sha": "4fc813c",
+			"url": "https://github.com/mielsense/mielui/commit/4fc813c5aebfc90e24d8dce3a4c9c9b23104413d",
+			"date": "2026-09-23T21:10:18Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "584c1f7",
+			"url": "https://github.com/mielsense/www/commit/584c1f7fe6f67921b53ad90d4e71b9aa1bd5c120",
+			"date": "2026-09-23T10:55:47Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "26d9acc",
@@ -360,13 +402,6 @@
 			"sha": "7bf111f",
 			"url": "https://github.com/mielsense/www/commit/7bf111f261fb53ee064b021aa394e9f3c00f6198",
 			"date": "2026-09-14T12:01:38Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "9558c0f",
-			"url": "https://github.com/mielsense/www/commit/9558c0fcb6981c7c9f88b4c43aa971b7d683d95b",
-			"date": "2026-09-13T11:14:19Z"
 		},
 		{
 			"repo": "qali",
@@ -507,41 +542,6 @@
 			"sha": "8491081",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/8491081747e5ec83e7ce810368a85ff8f2fe8986",
 			"date": "2026-08-30T19:50:04Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "fix: preserve provider navigation and ECharts intros",
-			"sha": "e56bfe3",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/e56bfe3f1032357385e42b5654b80816de7f2932",
-			"date": "2026-08-30T18:58:23Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "docs(repo): add agent guide and review workflow",
-			"sha": "af287c7",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/af287c7a9847af4b409c6105b628b3c7f362b5f9",
-			"date": "2026-08-30T17:46:48Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "refactor(site): harden registry and docs delivery",
-			"sha": "c7c41c2",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/c7c41c2b933a9937ffd0178689f9de73387a1756",
-			"date": "2026-08-30T17:46:33Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "fix(charts): harden ECharts data contracts",
-			"sha": "c43b590",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/c43b59000d927b23773b72834703bd9b59a4561c",
-			"date": "2026-08-30T17:46:09Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "fix(site): move docs header notch left",
-			"sha": "f7fe70b",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/f7fe70b00a53c339bb8a227133997b93fda87243",
-			"date": "2026-08-30T16:12:49Z"
 		}
 	],
 	"contributions": [
@@ -2382,8 +2382,13 @@
 		},
 		{
 			"date": "2026-09-23",
-			"count": 0,
-			"level": 0
+			"count": 3,
+			"level": 1
+		},
+		{
+			"date": "2026-09-24",
+			"count": 10,
+			"level": 1
 		}
 	]
 }
