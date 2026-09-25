@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-24T11:15:24.010Z",
+	"syncedAt": "2026-09-25T11:20:10.783Z",
 	"repos": [
 		{
 			"name": "mielui",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 2,
 			"year": 2026,
-			"pushedAt": "2026-09-23T23:11:30Z"
+			"pushedAt": "2026-09-25T08:21:47Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-23T10:55:48Z"
+			"pushedAt": "2026-09-24T11:15:25Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,27 @@
 	"commits": [
 		{
 			"repo": "mielui",
+			"message": "docs(readme): refresh homepage screenshot",
+			"sha": "36a9a79",
+			"url": "https://github.com/mielsense/mielui/commit/36a9a7990fbfc5b67e5bd55139ae2e421528cb89",
+			"date": "2026-09-25T08:21:34Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "feat(ui): refine component surfaces and unify docs and studio workspaces (#12)",
+			"sha": "9723f5e",
+			"url": "https://github.com/mielsense/mielui/commit/9723f5e25e8cc31f31d8f9aed492d2fca06fab86",
+			"date": "2026-09-25T08:18:38Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "3932d79",
+			"url": "https://github.com/mielsense/www/commit/3932d79f0e81c6f4e499d4d6b2c33c1ad9921a29",
+			"date": "2026-09-24T11:15:24Z"
+		},
+		{
+			"repo": "mielui",
 			"message": "feat(theme): support single or double borders across framed surfaces",
 			"sha": "42fbe44",
 			"url": "https://github.com/mielsense/mielui/commit/42fbe44ff1e07f22907112cf376b7f445b152d76",
@@ -381,27 +402,6 @@
 			"sha": "a29435b",
 			"url": "https://github.com/mielsense/mielui/commit/a29435b1fa3a133a0e03e43bad7c8f7adfddba9c",
 			"date": "2026-09-14T16:45:38Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "chore(repo): initialize mielui from sivir ui",
-			"sha": "4b14230",
-			"url": "https://github.com/mielsense/mielui/commit/4b142307d4d1a369f881598b16c946f6b08e00ef",
-			"date": "2026-09-14T15:50:51Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "Initial commit",
-			"sha": "e0d0a68",
-			"url": "https://github.com/mielsense/mielui/commit/e0d0a6820c91f8b4243df5057ddde8ee1b57daa4",
-			"date": "2026-09-14T15:38:03Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "7bf111f",
-			"url": "https://github.com/mielsense/www/commit/7bf111f261fb53ee064b021aa394e9f3c00f6198",
-			"date": "2026-09-14T12:01:38Z"
 		},
 		{
 			"repo": "qali",
@@ -2388,6 +2388,11 @@
 		{
 			"date": "2026-09-24",
 			"count": 10,
+			"level": 1
+		},
+		{
+			"date": "2026-09-25",
+			"count": 2,
 			"level": 1
 		}
 	]
