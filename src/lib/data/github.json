@@ -1,16 +1,6 @@
 {
-	"syncedAt": "2026-09-25T11:20:10.783Z",
+	"syncedAt": "2026-09-25T17:27:50.105Z",
 	"repos": [
-		{
-			"name": "mielui",
-			"description": "Tasteful svelte 5 component library",
-			"url": "https://github.com/mielsense/mielui",
-			"homepage": "https://ui.miel.my",
-			"language": "Svelte",
-			"stars": 2,
-			"year": 2026,
-			"pushedAt": "2026-09-25T08:21:47Z"
-		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -19,7 +9,27 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-24T11:15:25Z"
+			"pushedAt": "2026-09-25T17:27:40Z"
+		},
+		{
+			"name": "qali",
+			"description": "Opiniated calendar app",
+			"url": "https://github.com/mielsense/qali",
+			"homepage": null,
+			"language": "TypeScript",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-25T17:25:31Z"
+		},
+		{
+			"name": "mielui",
+			"description": "Tasteful svelte 5 component library",
+			"url": "https://github.com/mielsense/mielui",
+			"homepage": "https://ui.miel.my",
+			"language": "Svelte",
+			"stars": 2,
+			"year": 2026,
+			"pushedAt": "2026-09-25T12:24:50Z"
 		},
 		{
 			"name": "coss-sv",
@@ -40,16 +50,6 @@
 			"stars": 25,
 			"year": 2026,
 			"pushedAt": "2026-09-14T04:30:21Z"
-		},
-		{
-			"name": "qali",
-			"description": "Opiniated calendar app",
-			"url": "https://github.com/mielsense/qali",
-			"homepage": null,
-			"language": "TypeScript",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-09-11T15:46:46Z"
 		},
 		{
 			"name": "sileo-svelte",
@@ -264,6 +264,55 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "feat: feature mielui at the top of projects",
+			"sha": "6aef55f",
+			"url": "https://github.com/mielsense/www/commit/6aef55f723281210640cb0a8ae7d26a592aff613",
+			"date": "2026-09-25T17:27:35Z"
+		},
+		{
+			"repo": "qali",
+			"message": "fix: rediscover Codex upgrades and use primary chat colors",
+			"sha": "5afe379",
+			"url": "https://github.com/mielsense/qali/commit/5afe379cfc1ae0b9307abf5e7cfa303a8855a86a",
+			"date": "2026-09-25T17:25:16Z"
+		},
+		{
+			"repo": "qali",
+			"message": "fix: restore frosted menu blur and flatten popup edges",
+			"sha": "6b2091f",
+			"url": "https://github.com/mielsense/qali/commit/6b2091f49be7aeac14253c086a6d3805de956041",
+			"date": "2026-09-25T17:03:18Z"
+		},
+		{
+			"repo": "qali",
+			"message": "fix: simplify tooltips and remove workspace top edge",
+			"sha": "60acdad",
+			"url": "https://github.com/mielsense/qali/commit/60acdad31f4862c20b8c341f1b4c0ec5978c9162",
+			"date": "2026-09-25T16:47:37Z"
+		},
+		{
+			"repo": "qali",
+			"message": "fix: prevent description editor crash and add app recovery",
+			"sha": "b7aa657",
+			"url": "https://github.com/mielsense/qali/commit/b7aa6573e1a7041692fbfb47ad572b68bca6f719",
+			"date": "2026-09-25T16:40:03Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "feat(themes): add Daydream preset and fix Studio preset handling (#14)",
+			"sha": "6f698e6",
+			"url": "https://github.com/mielsense/mielui/commit/6f698e6f66911bdf5e81e5ac35331c17fc1fc35a",
+			"date": "2026-09-25T12:24:47Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "43accf2",
+			"url": "https://github.com/mielsense/www/commit/43accf25d9f1afde9b6b3605bc49577e3da55789",
+			"date": "2026-09-25T11:20:10Z"
+		},
+		{
 			"repo": "mielui",
 			"message": "docs(readme): refresh homepage screenshot",
 			"sha": "36a9a79",
@@ -369,20 +418,6 @@
 			"date": "2026-09-17T11:08:33Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "f69bbb1",
-			"url": "https://github.com/mielsense/www/commit/f69bbb15ec5da8791393a46dfacda9b982297973",
-			"date": "2026-09-16T10:58:01Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "3272e14",
-			"url": "https://github.com/mielsense/www/commit/3272e1448bf096b39a5f40885efd9f83b7713b9f",
-			"date": "2026-09-15T11:15:55Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "test(docs): allow subsequent changelog versions",
 			"sha": "2064d64",
@@ -395,13 +430,6 @@
 			"sha": "8d94462",
 			"url": "https://github.com/mielsense/mielui/commit/8d944624b16213b7582f528254bb3a3d9f9b26a0",
 			"date": "2026-09-14T16:53:35Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(repo): correct initial version and branding",
-			"sha": "a29435b",
-			"url": "https://github.com/mielsense/mielui/commit/a29435b1fa3a133a0e03e43bad7c8f7adfddba9c",
-			"date": "2026-09-14T16:45:38Z"
 		},
 		{
 			"repo": "qali",
@@ -514,34 +542,6 @@
 			"sha": "af4d63f",
 			"url": "https://github.com/mielsense/coss-sv/commit/af4d63f36befe2093a6ae7eeb491f40b40444201",
 			"date": "2026-09-08T17:00:18Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(combobox): align popup anchors and default selections",
-			"sha": "80214ea",
-			"url": "https://github.com/mielsense/coss-sv/commit/80214ea9387e2ed665fc906e102c2c48dc047dd3",
-			"date": "2026-09-08T16:52:04Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "docs(readme): point website links to charts.miel.my",
-			"sha": "4e0080b",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/4e0080b81a0adf778f96e9aa2e03236e7e9d945b",
-			"date": "2026-09-05T22:30:23Z"
-		},
-		{
-			"repo": "sileo-svelte",
-			"message": "docs(readme): point website links to sileo.miel.my",
-			"sha": "9981411",
-			"url": "https://github.com/mielsense/sileo-svelte/commit/9981411f9f7b1f1a7581bcceaaf6416ac07abfc1",
-			"date": "2026-09-05T22:30:22Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "feat: bring ECharts blocks to provider parity",
-			"sha": "8491081",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/8491081747e5ec83e7ce810368a85ff8f2fe8986",
-			"date": "2026-08-30T19:50:04Z"
 		}
 	],
 	"contributions": [
@@ -2392,7 +2392,7 @@
 		},
 		{
 			"date": "2026-09-25",
-			"count": 2,
+			"count": 9,
 			"level": 1
 		}
 	]
