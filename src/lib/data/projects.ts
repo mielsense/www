@@ -37,6 +37,7 @@ const hidden = new Set([
 
 /** Nicer copy and badges for the repos worth it. Anything else keeps its GitHub description. */
 const overrides: Record<string, Partial<Project>> = {
+	mielui: { description: 'Tasteful Svelte 5 component library', kind: 'library' },
 	www: { description: 'This website', url: 'https://miel.my', kind: 'app' },
 	'evilcharts-sv': { description: 'Animated Svelte 5 charts on LayerChart or ECharts', kind: 'library' },
 	'coss-sv': { description: 'Svelte 5 port of COSS UI, built on Shards UI', kind: 'library' },
@@ -95,13 +96,15 @@ const synced: Project[] = github.repos
 		...overrides[r.name]
 	}));
 
-/** Everything worth listing, newest first. Manual entries lead their year. */
-export const projects: Project[] = [...manual, ...synced].sort((a, b) => b.year - a.year);
+/** Everything worth listing, newest first. Mielui leads its year, then manual entries. */
+export const projects: Project[] = [...manual, ...synced].sort(
+	(a, b) => b.year - a.year || Number(b.name === 'mielui') - Number(a.name === 'mielui')
+);
 
 export const byName = (name: string) => projects.find((p) => p.name === name);
 
 /** The front page picks. */
-export const featured = ['benky', 'reecall dashboard', 'qali', 'sensel', 'rtype', 'zappy', 'www']
+export const featured = ['mielui', 'benky', 'reecall dashboard', 'qali', 'sensel', 'rtype', 'zappy', 'www']
 	.map(byName)
 	.filter((p): p is Project => p !== undefined);
 
