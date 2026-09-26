@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-25T17:27:50.105Z",
+	"syncedAt": "2026-09-26T10:57:06.047Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-25T17:27:40Z"
+			"pushedAt": "2026-09-25T17:27:50Z"
 		},
 		{
 			"name": "qali",
@@ -265,6 +265,13 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "8349783",
+			"url": "https://github.com/mielsense/www/commit/83497836880fbfaaccbf90e1223e82595aa015c1",
+			"date": "2026-09-25T17:27:50Z"
+		},
+		{
+			"repo": "www",
 			"message": "feat: feature mielui at the top of projects",
 			"sha": "6aef55f",
 			"url": "https://github.com/mielsense/www/commit/6aef55f723281210640cb0a8ae7d26a592aff613",
@@ -409,13 +416,6 @@
 			"sha": "429a220",
 			"url": "https://github.com/mielsense/www/commit/429a22076cdadcc387f291c346f30201ae0133fd",
 			"date": "2026-09-18T10:42:31Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "f1b80dd",
-			"url": "https://github.com/mielsense/www/commit/f1b80dd28f01246ab111a1c7ba0db404a51222c0",
-			"date": "2026-09-17T11:08:33Z"
 		},
 		{
 			"repo": "mielui",
@@ -2392,8 +2392,13 @@
 		},
 		{
 			"date": "2026-09-25",
-			"count": 9,
+			"count": 10,
 			"level": 1
+		},
+		{
+			"date": "2026-09-26",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
