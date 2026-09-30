@@ -2,7 +2,7 @@ export const site = {
 	url: 'https://miel.my',
 	name: 'Mathis',
 	description:
-		'Mathis, computer science student at Epitech, building Svelte 5 libraries and real-time voice AI at Reecall.',
+		'Mathis, computer science student in the final years of a master\'s degree in France, building Svelte 5 libraries and real-time voice AI at Reecall.',
 	work: {
 		name: 'Reecall',
 		url: 'https://reecall.com/',

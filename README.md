@@ -43,6 +43,6 @@ Nothing in the chart, the counts or the lists is typed by hand. `scripts/sync-gi
 ## Shipping
 
 - Site URL is `https://miel.my`, set once in `data/site.ts` and used for canonical, Open Graph, JSON-LD, the sitemap and the feed.
-- `static/og.png` is the share card, rendered once from an HTML template with the site fonts. Regenerate it if the intro changes.
+- `static/og.png` is the share card. Run `python3 -m http.server 8765` from the repo root, open `http://localhost:8765/scripts/share-card.html`, and capture it at 1200 × 630 with the site fonts loaded. Regenerate it if the portrait or intro changes, and bump the image version in the page and layout.
 - Vercel Web Analytics is wired in the root layout. Turn on Analytics for the project in the Vercel dashboard.
 - Deploy through the Vercel Git integration so the sync workflow's commits redeploy. The adapter pins the Node 22 runtime.

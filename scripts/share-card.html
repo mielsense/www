@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>miel.my share card</title>
+		<style>
+			@font-face {
+				font-family: Mono;
+				src: url('/node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2');
+				font-weight: 100 800;
+			}
+			@font-face {
+				font-family: Pixel;
+				src: url('/src/lib/assets/fonts/GeistPixel-Square.woff2');
+			}
+			body { margin: 0; background: #0c0d0d; }
+			canvas { display: block; width: 1200px; height: 630px; }
+		</style>
+	</head>
+	<body>
+		<script type="module">
+			// Render the same card at its export size, independent of display pixel density.
+			window.shareCardReady = (async () => {
+				await Promise.all([document.fonts.load('36px Mono'), document.fonts.load('24px Pixel')]);
+				const portrait = new Image();
+				portrait.src = '/static/avatar.webp?v=20261001';
+				await portrait.decode();
+				const canvas = document.createElement('canvas');
+				canvas.width = 1200;
+				canvas.height = 630;
+				const ctx = canvas.getContext('2d');
+				ctx.fillStyle = '#0c0d0d';
+				ctx.fillRect(0, 0, 1200, 630);
+				const cropWidth = portrait.naturalHeight * 471 / 630;
+				ctx.drawImage(portrait, (portrait.naturalWidth - cropWidth) / 2, 0, cropWidth, portrait.naturalHeight, 729, 0, 471, 630);
+				const text = (value, x, y, font, color = '#898989') => {
+					ctx.font = font;
+					ctx.fillStyle = color;
+					ctx.fillText(value, x, y);
+				};
+				text('@mielsense', 72, 90, '24px Pixel');
+				ctx.beginPath();
+				ctx.roundRect(218, 64, 276, 36, 8);
+				ctx.fillStyle = '#171818';
+				ctx.fill();
+				ctx.strokeStyle = '#363737';
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.arc(239, 82, 4, 0, Math.PI * 2);
+				ctx.fillStyle = '#b4f34b';
+				ctx.fill();
+				text('currently free to work', 253, 88, '600 18px Mono', '#f3f2f2');
+				text('# intro', 72, 171, '28px Pixel');
+				text('Mathis.', 72, 236, '700 36px Mono', '#f3f2f2');
+				text(' Computer science', 223.2, 236, '500 36px Mono', '#f3f2f2');
+				text('student in the final years', 72, 282, '500 36px Mono', '#f3f2f2');
+				text("of my master's in France.", 72, 328, '500 36px Mono', '#f3f2f2');
+				text('Svelte 5 libraries, real-', 72, 392, '500 36px Mono');
+				text('time voice AI at Reecall, a', 72, 438, '500 36px Mono');
+				text('bit of design.', 72, 484, '500 36px Mono');
+				text('miel.my', 72, 560, '22px Pixel');
+				text('# eof', 596, 560, '22px Pixel');
+				canvas.setAttribute('role', 'img');
+				canvas.setAttribute('aria-label', "Mathis, computer science student in the final years of my master's degree in France, with an illustrated portrait.");
+				document.body.replaceChildren(canvas);
+				return canvas.toDataURL('image/png');
+			})();
+		</script>
+	</body>
+</html>

@@ -223,7 +223,7 @@
 		},
 		{
 			"name": "project_template",
-			"description": "Project boiler plate for epitech projects",
+			"description": "Project boilerplate for coursework",
 			"url": "https://github.com/mielsense/project_template",
 			"homepage": null,
 			"language": "C",
@@ -253,7 +253,7 @@
 		},
 		{
 			"name": "mini_lib",
-			"description": "Mini library repoducing most important C functions ! made at epitech",
+			"description": "The important C functions, rewritten",
 			"url": "https://github.com/mielsense/mini_lib",
 			"homepage": null,
 			"language": "C",

@@ -24,7 +24,7 @@
 
 <svelte:head>
 	<title>@{site.handle} | projects</title>
-	<meta name="description" content="Everything Mathis has built and shipped, from C at Epitech to Svelte 5 libraries." />
+	<meta name="description" content="Everything Mathis has built and shipped, from C projects to Svelte 5 libraries." />
 </svelte:head>
 
 <Editor label="All projects">
