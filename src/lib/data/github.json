@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-09-29T12:17:14.479Z",
+	"syncedAt": "2026-09-30T12:02:47.699Z",
 	"repos": [
+		{
+			"name": "mielui",
+			"description": "Tasteful svelte 5 component library",
+			"url": "https://github.com/mielsense/mielui",
+			"homepage": "https://ui.miel.my",
+			"language": "Svelte",
+			"stars": 2,
+			"year": 2026,
+			"pushedAt": "2026-09-30T00:46:54Z"
+		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -9,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-28T13:07:29Z"
+			"pushedAt": "2026-09-29T12:17:15Z"
 		},
 		{
 			"name": "coss-sv",
@@ -40,16 +50,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-09-25T17:25:31Z"
-		},
-		{
-			"name": "mielui",
-			"description": "Tasteful svelte 5 component library",
-			"url": "https://github.com/mielsense/mielui",
-			"homepage": "https://ui.miel.my",
-			"language": "Svelte",
-			"stars": 2,
-			"year": 2026,
-			"pushedAt": "2026-09-25T12:24:50Z"
 		},
 		{
 			"name": "sileo-svelte",
@@ -264,6 +264,62 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "fix(file-diff): keep file headers above patches",
+			"sha": "5f62d87",
+			"url": "https://github.com/mielsense/mielui/commit/5f62d87f539d8c5a7b72a59e67100619679581e5",
+			"date": "2026-09-29T23:08:39Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(data-table): compact filter editors",
+			"sha": "ce2eea3",
+			"url": "https://github.com/mielsense/mielui/commit/ce2eea3ba794102a1945de3b7ebfcc2ac58f00bf",
+			"date": "2026-09-29T23:01:30Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(studio): add invoice toast action strip",
+			"sha": "5799dfa",
+			"url": "https://github.com/mielsense/mielui/commit/5799dfa51ebc5217d85a171af209a03e9b5db7ad",
+			"date": "2026-09-29T22:44:09Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(ui): restore checkbox and overlay appearance",
+			"sha": "ca15fa1",
+			"url": "https://github.com/mielsense/mielui/commit/ca15fa1247007f26b572efa1e701f792936b4ea4",
+			"date": "2026-09-29T22:22:20Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(ui): refine composer and theme defaults",
+			"sha": "5979ad1",
+			"url": "https://github.com/mielsense/mielui/commit/5979ad16b69ccf3d11a2bd2c501976527a6bdd28",
+			"date": "2026-09-29T21:30:10Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(ui): restore composer chrome and raise section badges",
+			"sha": "64e8728",
+			"url": "https://github.com/mielsense/mielui/commit/64e872846d7394594a8bcfa08166928fcff09e9a",
+			"date": "2026-09-29T20:47:39Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "feat(ui)!: add attachment chips and refine shared surfaces",
+			"sha": "b31ef25",
+			"url": "https://github.com/mielsense/mielui/commit/b31ef25f5980ac0c5bc59bd50299cc8712a110f4",
+			"date": "2026-09-29T20:36:42Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "5d7d9e5",
+			"url": "https://github.com/mielsense/www/commit/5d7d9e596e6b06b400e66bef22958048270e2349",
+			"date": "2026-09-29T12:17:14Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "2a58cba",
@@ -362,41 +418,6 @@
 			"date": "2026-09-24T11:15:24Z"
 		},
 		{
-			"repo": "mielui",
-			"message": "feat(theme): support single or double borders across framed surfaces",
-			"sha": "42fbe44",
-			"url": "https://github.com/mielsense/mielui/commit/42fbe44ff1e07f22907112cf376b7f445b152d76",
-			"date": "2026-09-23T23:11:27Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "feat(studio): organize appearance and interaction settings",
-			"sha": "46f4a4d",
-			"url": "https://github.com/mielsense/mielui/commit/46f4a4d392d2f96594360cf949ab96bfdb83ea54",
-			"date": "2026-09-23T23:01:20Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "docs(workflow): document multi-PR releases and optional stacks",
-			"sha": "1eb070d",
-			"url": "https://github.com/mielsense/mielui/commit/1eb070d422d69b7216a1d311bd5df9dd8efc1ea5",
-			"date": "2026-09-23T22:51:08Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(menu): extend separators across the panel width",
-			"sha": "f3e13c9",
-			"url": "https://github.com/mielsense/mielui/commit/f3e13c97f6fc87b3e0c0fc7cfb99d1d0b6a0946c",
-			"date": "2026-09-23T22:51:04Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "chore(release): v0.1.1 (#2)",
-			"sha": "4fc813c",
-			"url": "https://github.com/mielsense/mielui/commit/4fc813c5aebfc90e24d8dce3a4c9c9b23104413d",
-			"date": "2026-09-23T21:10:18Z"
-		},
-		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "584c1f7",
@@ -409,27 +430,6 @@
 			"sha": "26d9acc",
 			"url": "https://github.com/mielsense/www/commit/26d9accc346c42b4ad285f671a938421b2fd00f5",
 			"date": "2026-09-22T11:05:59Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "3a968f9",
-			"url": "https://github.com/mielsense/www/commit/3a968f9bddf0361d70e38fb1fc8b2a4024af67b5",
-			"date": "2026-09-21T12:11:44Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "test(docs): allow subsequent changelog versions",
-			"sha": "2064d64",
-			"url": "https://github.com/mielsense/mielui/commit/2064d64b9c8381c431e3aa09d53e84019265f9ee",
-			"date": "2026-09-14T16:54:17Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(brand): apply approved compact cat icon",
-			"sha": "8d94462",
-			"url": "https://github.com/mielsense/mielui/commit/8d944624b16213b7582f528254bb3a3d9f9b26a0",
-			"date": "2026-09-14T16:53:35Z"
 		},
 		{
 			"repo": "qali",
@@ -2377,8 +2377,13 @@
 		},
 		{
 			"date": "2026-09-29",
-			"count": 0,
-			"level": 0
+			"count": 4,
+			"level": 1
+		},
+		{
+			"date": "2026-09-30",
+			"count": 6,
+			"level": 1
 		}
 	]
 }
