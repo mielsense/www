@@ -1,6 +1,26 @@
 {
-	"syncedAt": "2026-09-30T12:02:47.699Z",
+	"syncedAt": "2026-09-30T23:57:04.254Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-30T23:56:47Z"
+		},
+		{
+			"name": "mielsense",
+			"description": "Mwa",
+			"url": "https://github.com/mielsense/mielsense",
+			"homepage": null,
+			"language": null,
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-09-30T23:53:28Z"
+		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -10,16 +30,6 @@
 			"stars": 2,
 			"year": 2026,
 			"pushedAt": "2026-09-30T00:46:54Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-09-29T12:17:15Z"
 		},
 		{
 			"name": "coss-sv",
@@ -60,16 +70,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-09-08T18:01:48Z"
-		},
-		{
-			"name": "mielsense",
-			"description": "Mwa",
-			"url": "https://github.com/mielsense/mielsense",
-			"homepage": null,
-			"language": null,
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-09-07T09:32:01Z"
 		},
 		{
 			"name": "trovesv",
@@ -223,7 +223,7 @@
 		},
 		{
 			"name": "project_template",
-			"description": "Project boilerplate for coursework",
+			"description": "Project boiler plate for epitech projects",
 			"url": "https://github.com/mielsense/project_template",
 			"homepage": null,
 			"language": "C",
@@ -253,7 +253,7 @@
 		},
 		{
 			"name": "mini_lib",
-			"description": "The important C functions, rewritten",
+			"description": "Mini library repoducing most important C functions ! made at epitech",
 			"url": "https://github.com/mielsense/mini_lib",
 			"homepage": null,
 			"language": "C",
@@ -263,6 +263,20 @@
 		}
 	],
 	"commits": [
+		{
+			"repo": "www",
+			"message": "Update portrait, social preview, and education bio",
+			"sha": "c4c9042",
+			"url": "https://github.com/mielsense/www/commit/c4c9042bb97f0442938e4b3d13d11c4021f5ebe0",
+			"date": "2026-09-30T23:56:44Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "a19aaf4",
+			"url": "https://github.com/mielsense/www/commit/a19aaf4539164d62430c31939965e95cd8494366",
+			"date": "2026-09-30T12:02:47Z"
+		},
 		{
 			"repo": "mielui",
 			"message": "fix(file-diff): keep file headers above patches",
@@ -416,20 +430,6 @@
 			"sha": "3932d79",
 			"url": "https://github.com/mielsense/www/commit/3932d79f0e81c6f4e499d4d6b2c33c1ad9921a29",
 			"date": "2026-09-24T11:15:24Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "584c1f7",
-			"url": "https://github.com/mielsense/www/commit/584c1f7fe6f67921b53ad90d4e71b9aa1bd5c120",
-			"date": "2026-09-23T10:55:47Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "26d9acc",
-			"url": "https://github.com/mielsense/www/commit/26d9accc346c42b4ad285f671a938421b2fd00f5",
-			"date": "2026-09-22T11:05:59Z"
 		},
 		{
 			"repo": "qali",
