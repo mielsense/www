@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-09-30T23:57:04.254Z",
+	"syncedAt": "2026-10-01T12:35:54.037Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-30T23:56:47Z"
+			"pushedAt": "2026-09-30T23:57:05Z"
 		},
 		{
 			"name": "mielsense",
@@ -265,6 +265,13 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "f11ee06",
+			"url": "https://github.com/mielsense/www/commit/f11ee060db0c9dcd2e900d0ba1c738603187e330",
+			"date": "2026-09-30T23:57:04Z"
+		},
+		{
+			"repo": "www",
 			"message": "Update portrait, social preview, and education bio",
 			"sha": "c4c9042",
 			"url": "https://github.com/mielsense/www/commit/c4c9042bb97f0442938e4b3d13d11c4021f5ebe0",
@@ -423,13 +430,6 @@
 			"sha": "9723f5e",
 			"url": "https://github.com/mielsense/mielui/commit/9723f5e25e8cc31f31d8f9aed492d2fca06fab86",
 			"date": "2026-09-25T08:18:38Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "3932d79",
-			"url": "https://github.com/mielsense/www/commit/3932d79f0e81c6f4e499d4d6b2c33c1ad9921a29",
-			"date": "2026-09-24T11:15:24Z"
 		},
 		{
 			"repo": "qali",
@@ -2383,6 +2383,11 @@
 		{
 			"date": "2026-09-30",
 			"count": 6,
+			"level": 1
+		},
+		{
+			"date": "2026-10-01",
+			"count": 2,
 			"level": 1
 		}
 	]
