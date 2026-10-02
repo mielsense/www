@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-10-01T12:35:54.037Z",
+	"syncedAt": "2026-10-02T12:00:15.030Z",
 	"repos": [
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 3,
+			"year": 2026,
+			"pushedAt": "2026-10-01T16:02:11Z"
+		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -9,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-09-30T23:57:05Z"
+			"pushedAt": "2026-10-01T12:35:55Z"
 		},
 		{
 			"name": "mielsense",
@@ -30,16 +40,6 @@
 			"stars": 2,
 			"year": 2026,
 			"pushedAt": "2026-09-30T00:46:54Z"
-		},
-		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
-			"language": "Svelte",
-			"stars": 3,
-			"year": 2026,
-			"pushedAt": "2026-09-28T04:32:42Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -266,6 +266,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "6e798c1",
+			"url": "https://github.com/mielsense/www/commit/6e798c108584ffda33f4494125682ecbe4e0e3eb",
+			"date": "2026-10-01T12:35:54Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "f11ee06",
 			"url": "https://github.com/mielsense/www/commit/f11ee060db0c9dcd2e900d0ba1c738603187e330",
 			"date": "2026-09-30T23:57:04Z"
@@ -409,13 +416,6 @@
 			"sha": "6f698e6",
 			"url": "https://github.com/mielsense/mielui/commit/6f698e6f66911bdf5e81e5ac35331c17fc1fc35a",
 			"date": "2026-09-25T12:24:47Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "43accf2",
-			"url": "https://github.com/mielsense/www/commit/43accf25d9f1afde9b6b3605bc49577e3da55789",
-			"date": "2026-09-25T11:20:10Z"
 		},
 		{
 			"repo": "mielui",
@@ -2389,6 +2389,11 @@
 			"date": "2026-10-01",
 			"count": 2,
 			"level": 1
+		},
+		{
+			"date": "2026-10-02",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
