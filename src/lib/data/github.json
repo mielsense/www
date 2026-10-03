@@ -1,16 +1,6 @@
 {
-	"syncedAt": "2026-10-02T12:00:15.030Z",
+	"syncedAt": "2026-10-03T11:13:27.497Z",
 	"repos": [
-		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
-			"language": "Svelte",
-			"stars": 3,
-			"year": 2026,
-			"pushedAt": "2026-10-01T16:02:11Z"
-		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -19,7 +9,17 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-01T12:35:55Z"
+			"pushedAt": "2026-10-02T12:00:16Z"
+		},
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 8,
+			"year": 2026,
+			"pushedAt": "2026-10-01T16:02:11Z"
 		},
 		{
 			"name": "mielsense",
@@ -37,7 +37,7 @@
 			"url": "https://github.com/mielsense/mielui",
 			"homepage": "https://ui.miel.my",
 			"language": "Svelte",
-			"stars": 2,
+			"stars": 4,
 			"year": 2026,
 			"pushedAt": "2026-09-30T00:46:54Z"
 		},
@@ -47,7 +47,7 @@
 			"url": "https://github.com/mielsense/evilcharts-sv",
 			"homepage": "https://charts.miel.my",
 			"language": "Svelte",
-			"stars": 26,
+			"stars": 27,
 			"year": 2026,
 			"pushedAt": "2026-09-28T04:31:52Z"
 		},
@@ -67,7 +67,7 @@
 			"url": "https://github.com/mielsense/sileo-svelte",
 			"homepage": "https://sileo.miel.my",
 			"language": "TypeScript",
-			"stars": 5,
+			"stars": 6,
 			"year": 2026,
 			"pushedAt": "2026-09-08T18:01:48Z"
 		},
@@ -266,6 +266,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "cd062dd",
+			"url": "https://github.com/mielsense/www/commit/cd062dd0a860bb0b7ca26cb230f20cd205979ec3",
+			"date": "2026-10-02T12:00:15Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "6e798c1",
 			"url": "https://github.com/mielsense/www/commit/6e798c108584ffda33f4494125682ecbe4e0e3eb",
 			"date": "2026-10-01T12:35:54Z"
@@ -374,13 +381,6 @@
 			"sha": "8349783",
 			"url": "https://github.com/mielsense/www/commit/83497836880fbfaaccbf90e1223e82595aa015c1",
 			"date": "2026-09-25T17:27:50Z"
-		},
-		{
-			"repo": "www",
-			"message": "feat: feature mielui at the top of projects",
-			"sha": "6aef55f",
-			"url": "https://github.com/mielsense/www/commit/6aef55f723281210640cb0a8ae7d26a592aff613",
-			"date": "2026-09-25T17:27:35Z"
 		},
 		{
 			"repo": "qali",
@@ -2392,6 +2392,11 @@
 		},
 		{
 			"date": "2026-10-02",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-10-03",
 			"count": 0,
 			"level": 0
 		}
