@@ -1,6 +1,26 @@
 {
-	"syncedAt": "2026-10-05T13:50:00.735Z",
+	"syncedAt": "2026-10-06T12:54:07.925Z",
 	"repos": [
+		{
+			"name": "mielui",
+			"description": "Tasteful svelte 5 component library",
+			"url": "https://github.com/mielsense/mielui",
+			"homepage": "https://ui.miel.my",
+			"language": "Svelte",
+			"stars": 5,
+			"year": 2026,
+			"pushedAt": "2026-10-05T21:59:27Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-05T13:50:02Z"
+		},
 		{
 			"name": "evilcharts-sv",
 			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
@@ -22,16 +42,6 @@
 			"pushedAt": "2026-10-05T04:33:04Z"
 		},
 		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-04T11:53:14Z"
-		},
-		{
 			"name": "mielsense",
 			"description": "Mwa",
 			"url": "https://github.com/mielsense/mielsense",
@@ -40,16 +50,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-09-30T23:53:28Z"
-		},
-		{
-			"name": "mielui",
-			"description": "Tasteful svelte 5 component library",
-			"url": "https://github.com/mielsense/mielui",
-			"homepage": "https://ui.miel.my",
-			"language": "Svelte",
-			"stars": 5,
-			"year": 2026,
-			"pushedAt": "2026-09-30T00:46:54Z"
 		},
 		{
 			"name": "qali",
@@ -264,6 +264,20 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "feat(ui)!: polish components and docs for 0.2.0",
+			"sha": "891d7be",
+			"url": "https://github.com/mielsense/mielui/commit/891d7be1889bbf486d0976685d36d4c86666b144",
+			"date": "2026-10-05T21:59:03Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "1764863",
+			"url": "https://github.com/mielsense/www/commit/176486385a3962f79214733e97a83c87c88be482",
+			"date": "2026-10-05T13:50:00Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "5fa85c8",
@@ -376,13 +390,6 @@
 			"date": "2026-09-28T13:07:28Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "84221c2",
-			"url": "https://github.com/mielsense/www/commit/84221c24dbc63754e0a22de488f3f68e294f8a0d",
-			"date": "2026-09-27T11:33:24Z"
-		},
-		{
 			"repo": "qali",
 			"message": "fix: rediscover Codex upgrades and use primary chat colors",
 			"sha": "5afe379",
@@ -423,13 +430,6 @@
 			"sha": "36a9a79",
 			"url": "https://github.com/mielsense/mielui/commit/36a9a7990fbfc5b67e5bd55139ae2e421528cb89",
 			"date": "2026-09-25T08:21:34Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "feat(ui): refine component surfaces and unify docs and studio workspaces (#12)",
-			"sha": "9723f5e",
-			"url": "https://github.com/mielsense/mielui/commit/9723f5e25e8cc31f31d8f9aed492d2fca06fab86",
-			"date": "2026-09-25T08:18:38Z"
 		},
 		{
 			"repo": "qali",
@@ -2372,6 +2372,11 @@
 		},
 		{
 			"date": "2026-10-05",
+			"count": 2,
+			"level": 1
+		},
+		{
+			"date": "2026-10-06",
 			"count": 0,
 			"level": 0
 		}
