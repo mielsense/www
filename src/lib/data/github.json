@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-07T12:48:00.454Z",
+	"syncedAt": "2026-10-08T12:57:06.154Z",
 	"repos": [
 		{
 			"name": "mielui",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-10-07T11:51:34Z"
+			"pushedAt": "2026-10-07T13:11:22Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-06T12:54:09Z"
+			"pushedAt": "2026-10-07T12:48:01Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -264,6 +264,20 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "feat(ui)!: redesign docs and Studio and refine components for 0.2.1 (#19)",
+			"sha": "336e8b5",
+			"url": "https://github.com/mielsense/mielui/commit/336e8b506484d1193ec6c7e402d0a0139f8bdfd6",
+			"date": "2026-10-07T13:11:00Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "e2b14d7",
+			"url": "https://github.com/mielsense/www/commit/e2b14d744c198f7f0ec62f391a58d2a17e426fd5",
+			"date": "2026-10-07T12:48:00Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "2a21b68",
@@ -383,13 +397,6 @@
 			"date": "2026-09-29T20:36:42Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "5d7d9e5",
-			"url": "https://github.com/mielsense/www/commit/5d7d9e596e6b06b400e66bef22958048270e2349",
-			"date": "2026-09-29T12:17:14Z"
-		},
-		{
 			"repo": "qali",
 			"message": "fix: rediscover Codex upgrades and use primary chat colors",
 			"sha": "5afe379",
@@ -423,13 +430,6 @@
 			"sha": "6f698e6",
 			"url": "https://github.com/mielsense/mielui/commit/6f698e6f66911bdf5e81e5ac35331c17fc1fc35a",
 			"date": "2026-09-25T12:24:47Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "docs(readme): refresh homepage screenshot",
-			"sha": "36a9a79",
-			"url": "https://github.com/mielsense/mielui/commit/36a9a7990fbfc5b67e5bd55139ae2e421528cb89",
-			"date": "2026-09-25T08:21:34Z"
 		},
 		{
 			"repo": "qali",
@@ -2382,8 +2382,13 @@
 		},
 		{
 			"date": "2026-10-07",
-			"count": 1,
+			"count": 2,
 			"level": 1
+		},
+		{
+			"date": "2026-10-08",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
