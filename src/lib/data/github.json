@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-09T12:42:57.539Z",
+	"syncedAt": "2026-10-10T12:01:52.062Z",
 	"repos": [
 		{
 			"name": "mielui",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-10-09T12:26:17Z"
+			"pushedAt": "2026-10-10T01:55:10Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-08T12:57:07Z"
+			"pushedAt": "2026-10-09T12:42:58Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -264,6 +264,13 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "2f85563",
+			"url": "https://github.com/mielsense/www/commit/2f855639ef9e60fd1224428e1967f194cab7a96f",
+			"date": "2026-10-09T12:42:57Z"
+		},
+		{
 			"repo": "mielui",
 			"message": "feat(docs): add composer footer and glow button, and open up the docs shell (#21)",
 			"sha": "97b76b8",
@@ -353,13 +360,6 @@
 			"sha": "f11ee06",
 			"url": "https://github.com/mielsense/www/commit/f11ee060db0c9dcd2e900d0ba1c738603187e330",
 			"date": "2026-09-30T23:57:04Z"
-		},
-		{
-			"repo": "www",
-			"message": "Update portrait, social preview, and education bio",
-			"sha": "c4c9042",
-			"url": "https://github.com/mielsense/www/commit/c4c9042bb97f0442938e4b3d13d11c4021f5ebe0",
-			"date": "2026-09-30T23:56:44Z"
 		},
 		{
 			"repo": "mielui",
@@ -2392,8 +2392,13 @@
 		},
 		{
 			"date": "2026-10-09",
-			"count": 8,
+			"count": 9,
 			"level": 1
+		},
+		{
+			"date": "2026-10-10",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
