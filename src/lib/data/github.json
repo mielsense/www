@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-10-12T14:38:35.452Z",
+	"syncedAt": "2026-10-13T13:42:49.151Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-12T14:38:36Z"
+		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -22,22 +32,12 @@
 			"pushedAt": "2026-10-12T12:34:12Z"
 		},
 		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-11T12:14:53Z"
-		},
-		{
 			"name": "coss-sv",
 			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
 			"url": "https://github.com/mielsense/coss-sv",
 			"homepage": "https://coss.miel.my",
 			"language": "Svelte",
-			"stars": 15,
+			"stars": 16,
 			"year": 2026,
 			"pushedAt": "2026-10-05T04:33:04Z"
 		},
@@ -266,6 +266,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "8456274",
+			"url": "https://github.com/mielsense/www/commit/8456274b8b87668f08c620922b3f5ebbd0feb5ef",
+			"date": "2026-10-12T14:38:35Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "da35912",
 			"url": "https://github.com/mielsense/www/commit/da3591227ed23fd87eba1704124a170533f88272",
 			"date": "2026-10-11T12:14:53Z"
@@ -353,13 +360,6 @@
 			"sha": "42646a2",
 			"url": "https://github.com/mielsense/www/commit/42646a2775cd3a0fedb3d8c0e6aae92cf7f29b0e",
 			"date": "2026-10-03T11:13:27Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "cd062dd",
-			"url": "https://github.com/mielsense/www/commit/cd062dd0a860bb0b7ca26cb230f20cd205979ec3",
-			"date": "2026-10-02T12:00:15Z"
 		},
 		{
 			"repo": "mielui",
@@ -2372,7 +2372,12 @@
 		},
 		{
 			"date": "2026-10-12",
-			"count": 7,
+			"count": 9,
+			"level": 1
+		},
+		{
+			"date": "2026-10-13",
+			"count": 1,
 			"level": 1
 		}
 	]
