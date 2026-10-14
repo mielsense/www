@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-13T13:42:49.151Z",
+	"syncedAt": "2026-10-14T11:21:25.589Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-12T14:38:36Z"
+			"pushedAt": "2026-10-13T13:42:50Z"
 		},
 		{
 			"name": "mielui",
@@ -266,6 +266,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "30058d2",
+			"url": "https://github.com/mielsense/www/commit/30058d29bb13c9d869b98fd15551df7407704635",
+			"date": "2026-10-13T13:42:49Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "8456274",
 			"url": "https://github.com/mielsense/www/commit/8456274b8b87668f08c620922b3f5ebbd0feb5ef",
 			"date": "2026-10-12T14:38:35Z"
@@ -353,13 +360,6 @@
 			"sha": "5fa85c8",
 			"url": "https://github.com/mielsense/www/commit/5fa85c8b8347673c727cfc2e3bf9e2d3a88a1c11",
 			"date": "2026-10-04T11:53:13Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "42646a2",
-			"url": "https://github.com/mielsense/www/commit/42646a2775cd3a0fedb3d8c0e6aae92cf7f29b0e",
-			"date": "2026-10-03T11:13:27Z"
 		},
 		{
 			"repo": "mielui",
@@ -2377,6 +2377,11 @@
 		},
 		{
 			"date": "2026-10-13",
+			"count": 2,
+			"level": 1
+		},
+		{
+			"date": "2026-10-14",
 			"count": 1,
 			"level": 1
 		}
