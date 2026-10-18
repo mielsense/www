@@ -1,16 +1,6 @@
 {
-	"syncedAt": "2026-10-17T10:15:47.695Z",
+	"syncedAt": "2026-10-18T10:31:20.815Z",
 	"repos": [
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-16T10:52:28Z"
-		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -19,7 +9,17 @@
 			"language": "Svelte",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-10-16T00:46:42Z"
+			"pushedAt": "2026-10-17T17:38:04Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-17T10:15:48Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -264,6 +264,27 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "chore(release): v0.3.0 (#23)",
+			"sha": "8e4c5ca",
+			"url": "https://github.com/mielsense/mielui/commit/8e4c5ca7a32edf56dd27a371c025cfed6cfb568d",
+			"date": "2026-10-17T17:37:45Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "feat(ui)!: redesign the default theme, docs shell, and Studio for 0.3.0 (#22)",
+			"sha": "030b437",
+			"url": "https://github.com/mielsense/mielui/commit/030b43732dfc6a48dda9650ce98d1b00b2a2baab",
+			"date": "2026-10-17T17:09:12Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "846ea2c",
+			"url": "https://github.com/mielsense/www/commit/846ea2c1c1a6eccbbd84dee102f4410939a84e53",
+			"date": "2026-10-17T10:15:47Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "7edcd1a",
@@ -348,13 +369,6 @@
 			"date": "2026-10-07T13:11:00Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "e2b14d7",
-			"url": "https://github.com/mielsense/www/commit/e2b14d744c198f7f0ec62f391a58d2a17e426fd5",
-			"date": "2026-10-07T12:48:00Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "feat(ui)!: polish components and docs for 0.2.0",
 			"sha": "891d7be",
@@ -388,20 +402,6 @@
 			"sha": "ca15fa1",
 			"url": "https://github.com/mielsense/mielui/commit/ca15fa1247007f26b572efa1e701f792936b4ea4",
 			"date": "2026-09-29T22:22:20Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(ui): refine composer and theme defaults",
-			"sha": "5979ad1",
-			"url": "https://github.com/mielsense/mielui/commit/5979ad16b69ccf3d11a2bd2c501976527a6bdd28",
-			"date": "2026-09-29T21:30:10Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(ui): restore composer chrome and raise section badges",
-			"sha": "64e8728",
-			"url": "https://github.com/mielsense/mielui/commit/64e872846d7394594a8bcfa08166928fcff09e9a",
-			"date": "2026-09-29T20:47:39Z"
 		},
 		{
 			"repo": "qali",
@@ -545,41 +545,6 @@
 		}
 	],
 	"contributions": [
-		{
-			"date": "2025-10-12",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-13",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-14",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-15",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-16",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-17",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-18",
-			"count": 0,
-			"level": 0
-		},
 		{
 			"date": "2025-10-19",
 			"count": 0,
@@ -2397,6 +2362,11 @@
 		},
 		{
 			"date": "2026-10-17",
+			"count": 5,
+			"level": 1
+		},
+		{
+			"date": "2026-10-18",
 			"count": 0,
 			"level": 0
 		}
