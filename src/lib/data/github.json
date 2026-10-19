@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-18T10:31:20.815Z",
+	"syncedAt": "2026-10-19T12:22:25.951Z",
 	"repos": [
 		{
 			"name": "mielui",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-10-17T17:38:04Z"
+			"pushedAt": "2026-10-19T11:49:15Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-17T10:15:48Z"
+			"pushedAt": "2026-10-18T10:31:22Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -265,6 +265,27 @@
 	"commits": [
 		{
 			"repo": "mielui",
+			"message": "fix(docs): make sidebar navigation instant and smooth the edge blurs (#25)",
+			"sha": "13d516d",
+			"url": "https://github.com/mielsense/mielui/commit/13d516da158731d4c0334acf7fc1d30493e525a3",
+			"date": "2026-10-19T11:49:13Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "perf(docs): prerender pages and defer non-critical UI (#24)",
+			"sha": "7b928c5",
+			"url": "https://github.com/mielsense/mielui/commit/7b928c58ba7bf9798f66f767e3eb4f2b1c353271",
+			"date": "2026-10-19T09:31:07Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "895b4be",
+			"url": "https://github.com/mielsense/www/commit/895b4be028f0317c9b14de8e330d3025b33a0db9",
+			"date": "2026-10-18T10:31:20Z"
+		},
+		{
+			"repo": "mielui",
 			"message": "chore(release): v0.3.0 (#23)",
 			"sha": "8e4c5ca",
 			"url": "https://github.com/mielsense/mielui/commit/8e4c5ca7a32edf56dd27a371c025cfed6cfb568d",
@@ -355,13 +376,6 @@
 			"date": "2026-10-08T20:40:32Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "af14817",
-			"url": "https://github.com/mielsense/www/commit/af148173a9c9277fa7835c308f88f5e00d65b6c9",
-			"date": "2026-10-08T12:57:06Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "feat(ui)!: redesign docs and Studio and refine components for 0.2.1 (#19)",
 			"sha": "336e8b5",
@@ -388,20 +402,6 @@
 			"sha": "ce2eea3",
 			"url": "https://github.com/mielsense/mielui/commit/ce2eea3ba794102a1945de3b7ebfcc2ac58f00bf",
 			"date": "2026-09-29T23:01:30Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(studio): add invoice toast action strip",
-			"sha": "5799dfa",
-			"url": "https://github.com/mielsense/mielui/commit/5799dfa51ebc5217d85a171af209a03e9b5db7ad",
-			"date": "2026-09-29T22:44:09Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(ui): restore checkbox and overlay appearance",
-			"sha": "ca15fa1",
-			"url": "https://github.com/mielsense/mielui/commit/ca15fa1247007f26b572efa1e701f792936b4ea4",
-			"date": "2026-09-29T22:22:20Z"
 		},
 		{
 			"repo": "qali",
@@ -2369,6 +2369,11 @@
 			"date": "2026-10-18",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-10-19",
+			"count": 5,
+			"level": 1
 		}
 	]
 }
