@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-10-19T12:22:25.951Z",
+	"syncedAt": "2026-10-20T11:01:56.227Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-19T12:22:26Z"
+		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -10,16 +20,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-10-19T11:49:15Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-18T10:31:22Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -264,6 +264,13 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "d06b51f",
+			"url": "https://github.com/mielsense/www/commit/d06b51fb40cabde72d33497efdf20ba52404d2dd",
+			"date": "2026-10-19T12:22:25Z"
+		},
+		{
 			"repo": "mielui",
 			"message": "fix(docs): make sidebar navigation instant and smooth the edge blurs (#25)",
 			"sha": "13d516d",
@@ -353,13 +360,6 @@
 			"sha": "3906622",
 			"url": "https://github.com/mielsense/www/commit/390662256a0629a64a52a340f260094bcff9d8df",
 			"date": "2026-10-10T12:01:52Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "2f85563",
-			"url": "https://github.com/mielsense/www/commit/2f855639ef9e60fd1224428e1967f194cab7a96f",
-			"date": "2026-10-09T12:42:57Z"
 		},
 		{
 			"repo": "mielui",
@@ -2372,8 +2372,13 @@
 		},
 		{
 			"date": "2026-10-19",
-			"count": 5,
+			"count": 6,
 			"level": 1
+		},
+		{
+			"date": "2026-10-20",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
