@@ -1,16 +1,6 @@
 {
-	"syncedAt": "2026-10-20T11:01:56.227Z",
+	"syncedAt": "2026-10-21T11:18:42.521Z",
 	"repos": [
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-19T12:22:26Z"
-		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -19,7 +9,17 @@
 			"language": "Svelte",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-10-19T11:49:15Z"
+			"pushedAt": "2026-10-21T00:19:01Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-20T11:01:57Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -264,6 +264,62 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "fix(docs): load the next page in full after a deploy",
+			"sha": "2681949",
+			"url": "https://github.com/mielsense/mielui/commit/2681949a4aba31535a6eb5d13829712ba28e5521",
+			"date": "2026-10-21T00:18:40Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "perf(docs): stop scroll fades from restyling the whole page each frame",
+			"sha": "b7147f9",
+			"url": "https://github.com/mielsense/mielui/commit/b7147f9f7bd9e6404ab10b05a40c2d5ab16cfcde",
+			"date": "2026-10-21T00:15:26Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(docs): restore the loading optimisations from #24 and #25",
+			"sha": "cef0ac2",
+			"url": "https://github.com/mielsense/mielui/commit/cef0ac236af68af88d7148e34408abf6225bceec",
+			"date": "2026-10-21T00:11:28Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "revert(docs): undo the loading optimisations from #24 and #25",
+			"sha": "6a8b507",
+			"url": "https://github.com/mielsense/mielui/commit/6a8b507de4009259c48b98338331e31b8ffdb2ac",
+			"date": "2026-10-21T00:01:20Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(docs): render component pages whole and reset scroll before paint",
+			"sha": "556aab2",
+			"url": "https://github.com/mielsense/mielui/commit/556aab2c0ec6333e78f92f59f19a35db0c47cdbe",
+			"date": "2026-10-20T23:25:24Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(docs): render offscreen examples right after paint instead of idle batches",
+			"sha": "34f5a86",
+			"url": "https://github.com/mielsense/mielui/commit/34f5a862f5c340bc6edff82afb209c84f1c41ef4",
+			"date": "2026-10-20T22:43:00Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(docs): stop blank pages from stacked sidebar label blurs",
+			"sha": "f1e9a7d",
+			"url": "https://github.com/mielsense/mielui/commit/f1e9a7d03f2d96cb197fd48814dd35689511bf92",
+			"date": "2026-10-20T22:29:10Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "36aa436",
+			"url": "https://github.com/mielsense/www/commit/36aa436e4e7f77223604266925231decaba54a14",
+			"date": "2026-10-20T11:01:56Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "d06b51f",
@@ -297,13 +353,6 @@
 			"sha": "8e4c5ca",
 			"url": "https://github.com/mielsense/mielui/commit/8e4c5ca7a32edf56dd27a371c025cfed6cfb568d",
 			"date": "2026-10-17T17:37:45Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "feat(ui)!: redesign the default theme, docs shell, and Studio for 0.3.0 (#22)",
-			"sha": "030b437",
-			"url": "https://github.com/mielsense/mielui/commit/030b43732dfc6a48dda9650ce98d1b00b2a2baab",
-			"date": "2026-10-17T17:09:12Z"
 		},
 		{
 			"repo": "www",
@@ -353,55 +402,6 @@
 			"sha": "da35912",
 			"url": "https://github.com/mielsense/www/commit/da3591227ed23fd87eba1704124a170533f88272",
 			"date": "2026-10-11T12:14:53Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "3906622",
-			"url": "https://github.com/mielsense/www/commit/390662256a0629a64a52a340f260094bcff9d8df",
-			"date": "2026-10-10T12:01:52Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "feat(docs): add composer footer and glow button, and open up the docs shell (#21)",
-			"sha": "97b76b8",
-			"url": "https://github.com/mielsense/mielui/commit/97b76b82cb84630e5692c5e416d92236ce03db63",
-			"date": "2026-10-09T01:07:50Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(group): match outline button borders to the group frame (#20)",
-			"sha": "4c599a9",
-			"url": "https://github.com/mielsense/mielui/commit/4c599a989a951bf9d79d7bc1008801d7e9694b27",
-			"date": "2026-10-08T20:40:32Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "feat(ui)!: redesign docs and Studio and refine components for 0.2.1 (#19)",
-			"sha": "336e8b5",
-			"url": "https://github.com/mielsense/mielui/commit/336e8b506484d1193ec6c7e402d0a0139f8bdfd6",
-			"date": "2026-10-07T13:11:00Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "feat(ui)!: polish components and docs for 0.2.0",
-			"sha": "891d7be",
-			"url": "https://github.com/mielsense/mielui/commit/891d7be1889bbf486d0976685d36d4c86666b144",
-			"date": "2026-10-05T21:59:03Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(file-diff): keep file headers above patches",
-			"sha": "5f62d87",
-			"url": "https://github.com/mielsense/mielui/commit/5f62d87f539d8c5a7b72a59e67100619679581e5",
-			"date": "2026-09-29T23:08:39Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(data-table): compact filter editors",
-			"sha": "ce2eea3",
-			"url": "https://github.com/mielsense/mielui/commit/ce2eea3ba794102a1945de3b7ebfcc2ac58f00bf",
-			"date": "2026-09-29T23:01:30Z"
 		},
 		{
 			"repo": "qali",
@@ -2377,8 +2377,13 @@
 		},
 		{
 			"date": "2026-10-20",
-			"count": 0,
-			"level": 0
+			"count": 1,
+			"level": 1
+		},
+		{
+			"date": "2026-10-21",
+			"count": 7,
+			"level": 1
 		}
 	]
 }
