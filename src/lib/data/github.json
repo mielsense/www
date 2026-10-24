@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-10-23T11:08:49.321Z",
+	"syncedAt": "2026-10-24T10:26:05.301Z",
 	"repos": [
+		{
+			"name": "mielui",
+			"description": "Tasteful svelte 5 component library",
+			"url": "https://github.com/mielsense/mielui",
+			"homepage": "https://ui.miel.my",
+			"language": "Svelte",
+			"stars": 5,
+			"year": 2026,
+			"pushedAt": "2026-10-24T00:48:13Z"
+		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -9,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-22T11:18:04Z"
+			"pushedAt": "2026-10-23T11:08:50Z"
 		},
 		{
 			"name": "coss-sv",
@@ -20,16 +30,6 @@
 			"stars": 16,
 			"year": 2026,
 			"pushedAt": "2026-10-21T12:16:22Z"
-		},
-		{
-			"name": "mielui",
-			"description": "Tasteful svelte 5 component library",
-			"url": "https://github.com/mielsense/mielui",
-			"homepage": "https://ui.miel.my",
-			"language": "Svelte",
-			"stars": 5,
-			"year": 2026,
-			"pushedAt": "2026-10-21T00:19:01Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -264,6 +264,27 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "fix(docs): keep fast scrolling painted by clipping the shell plate round (#27)",
+			"sha": "27f8ef7",
+			"url": "https://github.com/mielsense/mielui/commit/27f8ef729978ceb2926eccf056a02ccfb8ad578e",
+			"date": "2026-10-24T00:48:10Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(docs): render catalog previews with the page (#26)",
+			"sha": "bc59b59",
+			"url": "https://github.com/mielsense/mielui/commit/bc59b599a260fbb56658651b4425f7563d2b7c43",
+			"date": "2026-10-24T00:44:08Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "3b1feff",
+			"url": "https://github.com/mielsense/www/commit/3b1feffc04afc9a35bee05d763f979f39bbc7789",
+			"date": "2026-10-23T11:08:49Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "ba09476",
@@ -348,25 +369,11 @@
 			"date": "2026-10-19T11:49:13Z"
 		},
 		{
-			"repo": "mielui",
-			"message": "perf(docs): prerender pages and defer non-critical UI (#24)",
-			"sha": "7b928c5",
-			"url": "https://github.com/mielsense/mielui/commit/7b928c58ba7bf9798f66f767e3eb4f2b1c353271",
-			"date": "2026-10-19T09:31:07Z"
-		},
-		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "895b4be",
 			"url": "https://github.com/mielsense/www/commit/895b4be028f0317c9b14de8e330d3025b33a0db9",
 			"date": "2026-10-18T10:31:20Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "chore(release): v0.3.0 (#23)",
-			"sha": "8e4c5ca",
-			"url": "https://github.com/mielsense/mielui/commit/8e4c5ca7a32edf56dd27a371c025cfed6cfb568d",
-			"date": "2026-10-17T17:37:45Z"
 		},
 		{
 			"repo": "www",
@@ -395,13 +402,6 @@
 			"sha": "d80ab79",
 			"url": "https://github.com/mielsense/www/commit/d80ab79c8f0cd5b89df44babc407d3a839400032",
 			"date": "2026-10-14T11:21:25Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "30058d2",
-			"url": "https://github.com/mielsense/www/commit/30058d29bb13c9d869b98fd15551df7407704635",
-			"date": "2026-10-13T13:42:49Z"
 		},
 		{
 			"repo": "qali",
@@ -2394,6 +2394,11 @@
 			"date": "2026-10-23",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-10-24",
+			"count": 4,
+			"level": 1
 		}
 	]
 }
