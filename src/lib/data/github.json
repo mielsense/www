@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-10-24T10:26:05.301Z",
+	"syncedAt": "2026-10-25T10:53:06.625Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-24T10:26:06Z"
+		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -10,16 +20,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-10-24T00:48:13Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-23T11:08:50Z"
 		},
 		{
 			"name": "coss-sv",
@@ -264,6 +264,13 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "262869d",
+			"url": "https://github.com/mielsense/www/commit/262869d7914a9b6fb2c14f0154e953bf31768bfa",
+			"date": "2026-10-24T10:26:05Z"
+		},
+		{
 			"repo": "mielui",
 			"message": "fix(docs): keep fast scrolling painted by clipping the shell plate round (#27)",
 			"sha": "27f8ef7",
@@ -395,13 +402,6 @@
 			"sha": "d0f9bb1",
 			"url": "https://github.com/mielsense/www/commit/d0f9bb146dfb8363502836265f526d4a36b67354",
 			"date": "2026-10-15T10:58:29Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "d80ab79",
-			"url": "https://github.com/mielsense/www/commit/d80ab79c8f0cd5b89df44babc407d3a839400032",
-			"date": "2026-10-14T11:21:25Z"
 		},
 		{
 			"repo": "qali",
@@ -545,41 +545,6 @@
 		}
 	],
 	"contributions": [
-		{
-			"date": "2025-10-19",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-20",
-			"count": 1,
-			"level": 1
-		},
-		{
-			"date": "2025-10-21",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-22",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-23",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-24",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-25",
-			"count": 0,
-			"level": 0
-		},
 		{
 			"date": "2025-10-26",
 			"count": 0,
@@ -2399,6 +2364,11 @@
 			"date": "2026-10-24",
 			"count": 4,
 			"level": 1
+		},
+		{
+			"date": "2026-10-25",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
