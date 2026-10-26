@@ -129,7 +129,7 @@
 		<header class="flex h-14 sm:h-(--gutter) items-center gap-2 px-4 sm:px-6" style:view-transition-name="topbar">
 			<a href="/" class="me-auto flex shrink-0 items-center gap-2.5 rounded-full" aria-label="{site.handle}, home">
 				<Avatar.Root size="sm">
-					<Avatar.Image src="/avatar.webp?v=20261001" alt="" />
+					<Avatar.Image src="/avatar-288.webp?v=20261001" alt="" />
 					<Avatar.Fallback>M</Avatar.Fallback>
 				</Avatar.Root>
 				<span class="hidden text-base font-medium tracking-[-0.01em] text-strong sm:inline">{site.handle}</span>

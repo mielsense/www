@@ -1,6 +1,14 @@
 @import '@mielui/svelte/ui.css';
-@import '@fontsource/instrument-serif/latin-400-italic.css';
 @import 'lenis/dist/lenis.css';
+
+/* Instrument Serif italic, cut down to basic Latin: it only sets one word per headline */
+@font-face {
+	font-family: 'Instrument Serif';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/instrument-serif-italic.woff2') format('woff2');
+}
 /* ui.css scans every Mielui file for classes; skip the ones this site never renders (66% of the CSS) */
 @source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/{ai-components,blocks,themes,_manifest}';
 @source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/chart-components/{chart,gauge,pie-chart}';

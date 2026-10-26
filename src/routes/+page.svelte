@@ -208,7 +208,7 @@
 				<div class="relative -mt-9 flex items-end gap-3 ps-4">
 					<button type="button" class="shrink-0 rounded-full" aria-label="Wave hello" data-sound="pop" onclick={() => (waving = true)} onanimationend={() => (waving = false)}>
 						<img
-							src="/avatar.webp?v=20261001"
+							src="/avatar-288.webp?v=20261001"
 							alt=""
 							width="96"
 							height="96"
