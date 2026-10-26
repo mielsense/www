@@ -1,6 +1,11 @@
 @import '@mielui/svelte/ui.css';
 @import '@fontsource/instrument-serif/latin-400-italic.css';
 @import 'lenis/dist/lenis.css';
+/* ui.css scans every Mielui file for classes; skip the ones this site never renders (66% of the CSS) */
+@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/{ai-components,blocks,themes,_manifest}';
+@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/chart-components/{chart,gauge,pie-chart}';
+@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/actions/{morph,shimmer}';
+@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/components/{accordion,alert,alert-dialog,breadcrumb,calendar,card,checkbox,collapsible,combobox,context-menu,date-picker,date-range-picker,dialog,drawer,dropdown-menu,field,fieldset,file-upload,form,gauge,group,hover-card,input,kbd,label,native-select,number-field,otp-field,pagination,pie-chart,popover,progress,radio-group,range-calendar,scroll-area,select,separator,sheet,skeleton,slider,spinner,switch,table,tag-input,textarea,toggle,toggle-group,tooltip}';
 
 /*
  * Five colors and six sizes. strong / default / subtle are the three inks, selected is the
