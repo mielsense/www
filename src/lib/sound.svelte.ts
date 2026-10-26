@@ -1,7 +1,5 @@
 import { browser } from '$app/environment';
-import { definePatch, ensureReady, setMasterVolume } from '@web-kits/audio';
-import soft from '@/data/sounds-soft.json';
-import type { SoundPatch } from '@web-kits/audio';
+import type { SoundPatch, definePatch } from '@web-kits/audio';
 
 const PRESSABLE = 'a[href], button, [role="button"], [role="tab"]';
 const KEY = 'sound';
@@ -9,6 +7,10 @@ const KEY = 'sound';
 // "soft" from @web-kits/audio: warm triangle tones with no sharp attack. Created on the first
 // press, because browsers refuse an AudioContext made before a user gesture.
 let patch: ReturnType<typeof definePatch> | undefined;
+
+// The audio engine stays out of the first load; it is fetched once the page is idle, well before a first press.
+let kit: Promise<[typeof import('@web-kits/audio'), SoundPatch]> | undefined;
+const load = () => (kit ??= Promise.all([import('@web-kits/audio'), import('@/data/sounds-soft.json').then((m) => m.default as SoundPatch)]));
 
 /**
  * Interaction sounds. Every link and button plays `tap` on press; elements can ask for another
@@ -28,13 +30,15 @@ class Sound {
 			},
 			{ passive: true }
 		);
+		(window.requestIdleCallback ?? setTimeout)(() => load());
 	}
 
 	async play(name: string) {
 		if (!this.enabled || !browser) return;
+		const [{ definePatch, ensureReady, setMasterVolume }, soft] = await load();
 		await ensureReady();
 		if (!patch) setMasterVolume(0.5);
-		patch ??= definePatch(soft as SoundPatch);
+		patch ??= definePatch(soft);
 		patch.play(name);
 	}
 

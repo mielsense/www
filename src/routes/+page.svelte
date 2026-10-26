@@ -4,7 +4,7 @@
 	import * as Heatmap from '@mielui/svelte/components/heatmap';
 	import { numberShuffle } from '@mielui/svelte/actions/number-shuffle';
 	import { browser } from '$app/environment';
-	import Lenis from 'lenis';
+	import type Lenis from 'lenis';
 	import Cat from '@/components/site/Cat.svelte';
 	import Clock from '@/components/site/Clock.svelte';
 	import Icon from '@/components/site/Icon.svelte';
@@ -94,15 +94,20 @@
 		const observer = new ResizeObserver(measure);
 		observer.observe(el);
 		const wide = matchMedia('(min-width: 64rem)');
+		let gone = false;
 		const start = () => {
 			lenis?.destroy();
-			lenis = wide.matches && !calm()
-				? new Lenis({ wrapper: el, content: el, orientation: 'horizontal', gestureOrientation: 'horizontal', allowNestedScroll: true, autoRaf: true })
-				: undefined;
+			lenis = undefined;
+			if (!wide.matches || calm()) return;
+			import('lenis').then(({ default: Lenis }) => {
+				if (gone || !wide.matches || lenis) return;
+				lenis = new Lenis({ wrapper: el, content: el, orientation: 'horizontal', gestureOrientation: 'horizontal', allowNestedScroll: true, autoRaf: true });
+			});
 		};
 		start();
 		wide.addEventListener('change', start);
 		return () => {
+			gone = true;
 			observer.disconnect();
 			wide.removeEventListener('change', start);
 			lenis?.destroy();

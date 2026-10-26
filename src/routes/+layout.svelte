@@ -5,7 +5,6 @@
 	import { page } from '$app/state';
 	import * as Avatar from '@mielui/svelte/components/avatar';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import Lenis from 'lenis';
 	import favicon from '@/assets/favicon.svg';
 	import Icon from '@/components/site/Icon.svelte';
 	import Clock from '@/components/site/Clock.svelte';
@@ -69,10 +68,18 @@
 
 	// Smooth page scrolling. The home rail runs its own sideways instance on wide screens, so this one leaves it alone.
 	$effect(() => {
-		if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		// touch scrolling is native either way, so phones skip loading it
+		if (matchMedia('(prefers-reduced-motion: reduce), (pointer: coarse)').matches) return;
 		const wide = matchMedia('(min-width: 64rem)');
-		const lenis = new Lenis({ autoRaf: true, allowNestedScroll: true, prevent: (node) => wide.matches && node.hasAttribute('data-rail') });
-		return () => lenis.destroy();
+		let lenis: import('lenis').default | undefined;
+		let gone = false;
+		import('lenis').then(({ default: Lenis }) => {
+			if (!gone) lenis = new Lenis({ autoRaf: true, allowNestedScroll: true, prevent: (node) => wide.matches && node.hasAttribute('data-rail') });
+		});
+		return () => {
+			gone = true;
+			lenis?.destroy();
+		};
 	});
 
 	// The reveal animations belong to the first page load only. Once the visitor moves around the
