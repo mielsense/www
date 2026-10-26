@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-10-26T12:24:09.562Z",
+	"syncedAt": "2026-10-26T20:05:33.010Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-26T20:05:06Z"
+		},
 		{
 			"name": "coss-sv",
 			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
@@ -20,16 +30,6 @@
 			"stars": 29,
 			"year": 2026,
 			"pushedAt": "2026-10-26T05:34:38Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-25T10:53:07Z"
 		},
 		{
 			"name": "mielui",
@@ -265,6 +265,62 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "perf: move the banner drift to the compositor",
+			"sha": "e0a01e0",
+			"url": "https://github.com/mielsense/www/commit/e0a01e0bea729300a997615afeee80c2adeaa607",
+			"date": "2026-10-26T20:04:50Z"
+		},
+		{
+			"repo": "www",
+			"message": "perf: smaller avatar, subset serif font, longer caching",
+			"sha": "9a3a8fb",
+			"url": "https://github.com/mielsense/www/commit/9a3a8fb980bfbf6c28ba0e559ad6fb854aab3549",
+			"date": "2026-10-26T20:04:50Z"
+		},
+		{
+			"repo": "www",
+			"message": "perf: load the sound engine and smooth scroll after first paint",
+			"sha": "acaa1a4",
+			"url": "https://github.com/mielsense/www/commit/acaa1a42689161a10a39a5fb2e856b87a96d1222",
+			"date": "2026-10-26T20:04:50Z"
+		},
+		{
+			"repo": "www",
+			"message": "perf(css): skip unused Mielui components when generating styles",
+			"sha": "cc3097e",
+			"url": "https://github.com/mielsense/www/commit/cc3097ed478c6cf15c1ee461f0740857fb712dd1",
+			"date": "2026-10-26T20:04:50Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: remove unused components and assets",
+			"sha": "cab42f1",
+			"url": "https://github.com/mielsense/www/commit/cab42f16c3cd7967eda65d4fbca1f9b19a87811f",
+			"date": "2026-10-26T20:04:49Z"
+		},
+		{
+			"repo": "www",
+			"message": "feat: new minimal favicon",
+			"sha": "be1a846",
+			"url": "https://github.com/mielsense/www/commit/be1a8467a6e675c5be00fdcbcb57daec0673819e",
+			"date": "2026-10-26T20:04:49Z"
+		},
+		{
+			"repo": "www",
+			"message": "feat: redesign the site as sideways columns",
+			"sha": "d7e2835",
+			"url": "https://github.com/mielsense/www/commit/d7e2835b7ba6c51723ee69f2ee876229e6735230",
+			"date": "2026-10-26T20:04:49Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "4d8b10e",
+			"url": "https://github.com/mielsense/www/commit/4d8b10e886758bbc799c8cc784e7cc95da8e7f92",
+			"date": "2026-10-26T12:24:09Z"
+		},
+		{
+			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "84376e7",
 			"url": "https://github.com/mielsense/www/commit/84376e783ff1d62af8ef9b5e9c021701ff7b3605",
@@ -290,27 +346,6 @@
 			"sha": "bc59b59",
 			"url": "https://github.com/mielsense/mielui/commit/bc59b599a260fbb56658651b4425f7563d2b7c43",
 			"date": "2026-10-24T00:44:08Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "3b1feff",
-			"url": "https://github.com/mielsense/www/commit/3b1feffc04afc9a35bee05d763f979f39bbc7789",
-			"date": "2026-10-23T11:08:49Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "ba09476",
-			"url": "https://github.com/mielsense/www/commit/ba0947614163025019f301ef0e5c2675c7a6538e",
-			"date": "2026-10-22T11:18:03Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "58f7881",
-			"url": "https://github.com/mielsense/www/commit/58f7881805b501addcfd1f7706e2ea0f38eb12ae",
-			"date": "2026-10-21T11:18:42Z"
 		},
 		{
 			"repo": "mielui",
@@ -362,46 +397,11 @@
 			"date": "2026-10-20T22:29:10Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "36aa436",
-			"url": "https://github.com/mielsense/www/commit/36aa436e4e7f77223604266925231decaba54a14",
-			"date": "2026-10-20T11:01:56Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "d06b51f",
-			"url": "https://github.com/mielsense/www/commit/d06b51fb40cabde72d33497efdf20ba52404d2dd",
-			"date": "2026-10-19T12:22:25Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "fix(docs): make sidebar navigation instant and smooth the edge blurs (#25)",
 			"sha": "13d516d",
 			"url": "https://github.com/mielsense/mielui/commit/13d516da158731d4c0334acf7fc1d30493e525a3",
 			"date": "2026-10-19T11:49:13Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "895b4be",
-			"url": "https://github.com/mielsense/www/commit/895b4be028f0317c9b14de8e330d3025b33a0db9",
-			"date": "2026-10-18T10:31:20Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "846ea2c",
-			"url": "https://github.com/mielsense/www/commit/846ea2c1c1a6eccbbd84dee102f4410939a84e53",
-			"date": "2026-10-17T10:15:47Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "7edcd1a",
-			"url": "https://github.com/mielsense/www/commit/7edcd1a6d75dceeaca2355c618b9db8ff21380bb",
-			"date": "2026-10-16T10:52:27Z"
 		},
 		{
 			"repo": "qali",
