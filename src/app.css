@@ -1,142 +1,104 @@
-@import 'tailwindcss';
-@import '@fontsource-variable/jetbrains-mono';
+@import '@mielui/svelte/ui.css';
+@import '@fontsource/instrument-serif/latin-400-italic.css';
+@import 'lenis/dist/lenis.css';
 
-@custom-variant dark (&:is(.dark *));
+/*
+ * Five colors and six sizes. strong / default / subtle are the three inks, selected is the
+ * hover and current-row fill, border the hairline. Mielui's tokens are pointed at them so its
+ * components speak the same palette. Dark is the same recipe re-inked.
+ */
+@theme {
+	--font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter Tight', system-ui, sans-serif;
+	--font-mono: 'SF Mono', ui-monospace, 'Geist Mono', monospace;
+	/* the italic accent word in headlines */
+	--font-serif: 'Instrument Serif', Georgia, serif;
 
-@font-face {
-	font-family: 'Geist Pixel';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('./lib/assets/fonts/GeistPixel-Square.woff2') format('woff2');
-}
+	--color-strong: #292929;
+	--color-default: #5d5d5d;
+	--color-subtle: #7f7f7f;
+	--color-selected: #f5f5f5;
+	--color-page: #f5f5f5;
+	--color-plate: #ffffff;
+	--color-frame: #dcdcdc;
 
-/* ---- COSS for Svelte tokens (https://coss-sv.vercel.app/docs/styling) ---- */
+	--color-background: var(--color-page);
+	--color-card: var(--color-plate);
+	--color-panel: var(--color-plate);
+	--color-secondary: var(--color-selected);
+	--color-foreground: var(--color-strong);
+	--color-foreground-muted: var(--color-subtle);
+	--color-border: #ebebeb;
+	--color-border-strong: #dedede;
+	--color-input: #e8e8e8;
+	--color-wash: var(--color-selected);
+	--color-field-hover: var(--color-selected);
+	--color-primary: var(--color-strong);
+	--color-primary-hover: color-mix(in srgb, var(--color-strong) 88%, white);
+	--color-on-primary: #ffffff;
+	--color-ring: color-mix(in srgb, var(--color-strong) 22%, transparent);
+	--chart-1: var(--color-strong);
 
-@theme inline {
-	--font-sans: var(--font-sans);
-	--font-heading: var(--font-sans);
-	--font-mono: var(--font-mono);
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--color-card: var(--card);
-	--color-card-foreground: var(--card-foreground);
-	--color-popover: var(--popover);
-	--color-popover-foreground: var(--popover-foreground);
-	--color-primary: var(--primary);
-	--color-primary-foreground: var(--primary-foreground);
-	--color-secondary: var(--secondary);
-	--color-secondary-foreground: var(--secondary-foreground);
-	--color-muted: var(--muted);
-	--color-muted-foreground: var(--muted-foreground);
-	--color-accent: var(--accent);
-	--color-accent-foreground: var(--accent-foreground);
-	--color-destructive: var(--destructive);
-	--color-destructive-foreground: var(--destructive-foreground);
-	--color-info: var(--info);
-	--color-info-foreground: var(--info-foreground);
-	--color-success: var(--success);
-	--color-success-foreground: var(--success-foreground);
-	--color-warning: var(--warning);
-	--color-warning-foreground: var(--warning-foreground);
-	--color-border: var(--border);
-	--color-input: var(--input);
-	--color-ring: var(--ring);
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
-	--animate-skeleton: skeleton 2s -1s infinite linear;
-
-	@keyframes skeleton {
-		to {
-			background-position: -200% 0;
-		}
-	}
-}
-
-:root {
-	--font-sans: 'JetBrains Mono Variable', ui-monospace, monospace;
-	--font-mono: var(--font-sans);
-	--font-pixel: 'Geist Pixel', var(--font-sans);
-	--radius: 0.625rem;
-
-	/* light: the inverse of the dark pair */
-	--background: #f3f2f2;
-	--foreground: #0c0d0d;
-	--card: #ffffff;
-	--card-foreground: var(--foreground);
-	--popover: var(--background);
-	--popover-foreground: var(--foreground);
-	--primary: var(--foreground);
-	--primary-foreground: var(--background);
-	--secondary: --alpha(var(--color-black) / 4%);
-	--secondary-foreground: var(--foreground);
-	--muted: --alpha(var(--color-black) / 4%);
-	--muted-foreground: color-mix(in srgb, var(--color-neutral-500) 90%, var(--color-black));
-	--accent: --alpha(var(--color-black) / 6%);
-	--accent-foreground: var(--foreground);
-	--destructive: var(--color-red-500);
-	--destructive-foreground: var(--color-red-700);
-	--info: var(--color-blue-500);
-	--info-foreground: var(--color-blue-700);
-	--success: var(--color-emerald-500);
-	--success-foreground: var(--color-emerald-700);
-	--warning: var(--color-amber-500);
-	--warning-foreground: var(--color-amber-700);
-	--border: --alpha(var(--color-black) / 8%);
-	--input: --alpha(var(--color-black) / 10%);
-	--ring: var(--color-neutral-400);
-
-	/* page chrome */
-	--bg: var(--background);
-	--fg: var(--foreground);
-	--rule: --alpha(var(--color-black) / 10%);
-	--rule-strong: --alpha(var(--color-black) / 22%);
-	--pad-x: clamp(16px, 2.5vw, 40px);
-	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-	--gap: clamp(12px, 1.5vw, 20px);
+	/* 12, 13 (body), 14, 16, 18 and 24 */
+	--font-size-badge: 12px;
+	--font-size-body: 13px;
+	--font-size-label: 13px;
+	--font-size-button: 13px;
+	--font-size-header: 16px;
+	--font-size-title: 18px;
+	--font-size-display: 24px;
+	--text-xs: 12px;
+	--text-sm: 13px;
+	--text-base: 14px;
+	--text-lg: 16px;
+	--text-xl: 18px;
+	--text-2xl: 24px;
+	--text-3xl: 24px;
+	/* display sizes, for headlines only */
+	--text-4xl: 36px;
+	--text-5xl: 48px;
+	--text-6xl: 60px;
+	--text-7xl: 76px;
 }
 
 .dark {
-	--background: #0c0d0d;
-	--foreground: #f3f2f2;
-	--card: #121313;
-	--secondary: --alpha(var(--color-white) / 4%);
-	--muted: --alpha(var(--color-white) / 4%);
-	--muted-foreground: color-mix(in srgb, var(--color-neutral-500) 90%, var(--color-white));
-	--accent: --alpha(var(--color-white) / 8%);
-	--destructive: color-mix(in srgb, var(--color-red-500) 90%, var(--color-white));
-	--destructive-foreground: var(--color-red-400);
-	--info-foreground: var(--color-blue-400);
-	--success-foreground: var(--color-emerald-400);
-	--warning-foreground: var(--color-amber-400);
-	--border: --alpha(var(--color-white) / 6%);
-	--input: --alpha(var(--color-white) / 8%);
-	--ring: var(--color-neutral-500);
+	--color-strong: #ededed;
+	--color-default: #b4b4b4;
+	--color-subtle: #858585;
+	--color-selected: #1d1d1d;
+	--color-page: #0e0e0e;
+	--color-plate: #161616;
+	--color-frame: #2a2a2a;
 
-	--rule: --alpha(var(--color-white) / 9%);
-	--rule-strong: --alpha(var(--color-white) / 20%);
+	/* Mielui's own .dark block re-sets these, so they are repeated here */
+	--color-background: var(--color-page);
+	--color-card: var(--color-plate);
+	--color-panel: #1a1a1a;
+	--color-secondary: var(--color-selected);
+	--color-foreground: var(--color-strong);
+	--color-foreground-muted: var(--color-subtle);
+	--color-wash: var(--color-selected);
+	--color-field: var(--color-plate);
+	--color-primary: var(--color-strong);
+	--color-primary-stroke: transparent;
+	--color-border: #232323;
+	--color-border-strong: #2e2e2e;
+	--color-input: #2a2a2a;
+	--color-primary-hover: color-mix(in srgb, var(--color-strong) 88%, black);
+	--color-on-primary: #141414;
 }
 
 @layer base {
-	*,
-	::before,
-	::after {
-		border-color: var(--border);
+	:root {
+		/* one tile of film grain, shared by everything grainy */
+		--noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 	}
 
 	html {
-		background: var(--bg);
-		color: var(--fg);
+		background-color: var(--color-page);
+		scrollbar-gutter: stable;
 		color-scheme: light;
-		font-family: var(--font-sans);
-		font-size: 15px;
-		line-height: 1.6;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		text-wrap: pretty;
-		overflow-x: hidden;
 	}
 
 	html.dark {
@@ -144,455 +106,331 @@
 	}
 
 	body {
-		position: relative;
-		overflow-x: hidden;
+		margin: 0;
+		background-color: var(--color-background);
+		color: var(--color-default);
+		font-family: var(--font-sans);
+		font-size: var(--font-size-body);
+		line-height: 1.5;
+		font-synthesis-weight: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
-	::selection {
-		background: var(--fg);
-		color: var(--bg);
+	img {
+		outline: 1px solid rgb(0 0 0 / 0.1);
+		outline-offset: -1px;
+	}
+
+	.dark img {
+		outline-color: rgb(255 255 255 / 0.1);
 	}
 
 	h1,
 	h2,
-	p,
-	pre {
-		font: inherit;
-		color: inherit;
+	h3 {
+		color: var(--color-strong);
+		font-weight: 500;
+		text-wrap: balance;
 	}
 
-	a {
-		color: inherit;
-		text-decoration: none;
+	p {
+		text-wrap: pretty;
 	}
 
-	ul {
-		list-style: none;
+	/* one visible focus ring for custom links and buttons; :where keeps it overridable */
+	:where(a, button, [role='button'], summary):focus-visible {
+		outline: 2px solid color-mix(in oklab, var(--color-strong) 45%, transparent);
+		outline-offset: 2px;
+		border-radius: 6px;
 	}
 
-	@media (width <= 700px) {
-		html {
-			font-size: 14px;
-		}
-	}
-}
-
-/* short laptop screens: the home page tightens its rhythm so it still fits 100dvh */
-@custom-variant short (@media (width > 700px) and (height <= 950px));
-
-/* press feedback for buttons */
-@utility press {
-	transition:
-		transform 150ms var(--ease-out),
-		color 150ms ease,
-		box-shadow 150ms ease;
-
-	&:active {
-		transform: scale(0.96);
+	::selection {
+		background: var(--color-strong);
+		color: var(--color-page);
 	}
 }
 
-/* small outline pill, the recipe of the COSS outline button: translucent border, faint fill, hairline highlight */
-@utility pill {
-	gap: 0.6ch;
-	border-radius: var(--radius-md);
-	border-color: --alpha(var(--border) / 80%);
-	background: --alpha(var(--input) / 30%);
-	font-size: 0.8rem;
-	font-weight: 500;
-	box-shadow: 0 1px 2px --alpha(var(--color-black) / 6%);
-}
-
-.dark .pill {
-	background: --alpha(var(--input) / 40%);
-	box-shadow: inset 0 1px 0 --alpha(var(--color-white) / 5%);
-}
-
-/* hairline underline that darkens on hover */
-@utility link-rule {
+/* A link inside a sentence. */
+@utility link {
+	color: var(--color-strong);
 	text-decoration-line: underline;
 	text-decoration-thickness: 1px;
-	text-underline-offset: 0.22em;
-	text-decoration-color: var(--rule-strong);
-	transition: text-decoration-color 140ms ease;
+	text-underline-offset: 3px;
+	text-decoration-color: var(--color-border-strong);
+	transition: text-decoration-color var(--motion-duration-hover) ease;
 
-	&:hover,
-	&:focus-visible {
-		text-decoration-color: var(--cell-accent, currentColor);
-		outline: none;
+	&:hover {
+		text-decoration-color: currentColor;
 	}
 }
 
-/* each home block borrows one of the chart colors for its hover and selection */
-.cell ::selection,
-.cell::selection,
-.code-line ::selection {
-	background: var(--cell-accent, var(--fg));
-	color: var(--bg);
-}
-
-/* the command palette's backdrop frosts the page behind it, and the popup sits nearer the middle */
-[data-slot='command-dialog-backdrop'] {
-	backdrop-filter: blur(6px) saturate(1.2);
-}
-
-@media (width > 640px) {
-	[data-slot='command-dialog-viewport'] {
-		padding-block-start: 30vh;
-	}
-}
-
-/* ---- chrome ---- */
-
-.comment {
-	color: var(--muted-foreground);
-}
-
-h1.comment,
-h2.comment {
-	font-family: var(--font-pixel);
-	font-size: 1.05rem;
-	letter-spacing: 0.02em;
-}
-
-.page {
-	position: relative;
-	isolation: isolate;
-	display: flex;
-	flex-direction: column;
-	min-block-size: 100dvh;
-}
-
-.bar {
-	position: relative;
-	isolation: isolate;
+/* A list row or nav row: muted until hovered, filled when current. */
+@utility row {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	gap: 2ch;
-	padding: 10px clamp(16px, 2vw, 32px);
-	font-size: 0.85rem;
-	color: var(--muted-foreground);
-}
-
-.nav-link {
-	transition: color 140ms ease;
+	gap: calc(var(--spacing) * 2.5);
+	border-radius: var(--radius-md);
 
 	&:hover,
-	&:focus-visible,
 	&[aria-current='page'] {
-		color: var(--fg);
+		background-color: var(--color-selected);
+		color: var(--color-strong);
+	}
+
+	&:focus-visible {
 		outline: none;
+		box-shadow: var(--focus-ring);
 	}
 }
 
-/* ---- home: the board ---- */
+/* Pages cross-fade; the top bar and footer stay put. */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 180ms;
+	animation-timing-function: var(--ease-out);
+}
 
-.board {
-	--cell-x: clamp(16px, 2vw, 32px);
-	--intro-width: calc(52dvh + 2 * var(--cell-x));
+::view-transition-group(topbar),
+::view-transition-group(footer) {
+	animation: none;
+}
+
+/* The italic serif word inside a sans headline. */
+@utility accent {
+	font-family: var(--font-serif);
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: -0.01em;
+}
+
+/* Headlines: SF Pro Display picks itself up at these sizes; tracking tightens as they grow. */
+@utility display {
+	color: var(--color-strong);
+	font-weight: 500;
+	letter-spacing: -0.035em;
+	line-height: 1.02;
+}
+
+/* The double-bordered card, from madebyhex.com: a faint rim holding a white sheet.
+   Radii are concentric: sheet = shell 18 - padding 4 - border 1. */
+@utility shell {
+	padding: 4px;
+	border: 1px solid color-mix(in oklab, var(--color-strong) 9%, transparent);
+	border-radius: 18px;
+	background-color: color-mix(in oklab, var(--color-strong) 3.5%, transparent);
+}
+
+@utility sheet {
 	position: relative;
-	flex: 1;
+	border-radius: 13px;
+	background-color: var(--color-plate);
+	box-shadow:
+		0 0 0 1px color-mix(in oklab, var(--color-strong) 7%, transparent),
+		0 1px 3px rgb(0 0 0 / 0.05),
+		0 5px 5px -1px rgb(0 0 0 / 0.04),
+		0 11px 6px -2px rgb(0 0 0 / 0.02);
+}
+
+/* A small raised square holding a glyph or a link, like a logo chip. */
+@utility chip {
 	display: grid;
-	grid-template-columns: min(33.333333%, var(--intro-width)) repeat(2, minmax(0, 1fr));
-	border-block: 1px solid var(--border);
-	animation: fade-in 400ms var(--ease-out) backwards;
+	flex-shrink: 0;
+	place-items: center;
+	border-radius: 8px;
+	background-color: var(--color-plate);
+	color: var(--color-strong);
+	box-shadow:
+		0 0 0 1px color-mix(in oklab, var(--color-strong) 9%, transparent),
+		0 1px 2px rgb(0 0 0 / 0.07);
 }
 
-.column {
-	display: flex;
-	flex-direction: column;
-	border-inline-start: 1px solid var(--border);
+/* Press feedback: a small scale while held, transform only so hover colors stay instant. */
+@utility press {
+	transition: transform 100ms ease-out;
 
-	&:first-child {
-		border-inline-start: 0;
+	&:active:not(:disabled) {
+		transform: scale(0.97);
 	}
 
-	> .cell + .cell {
-		border-block-start: 1px solid var(--border);
-	}
-
-	> .cell:last-child {
-		flex: 1;
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
 	}
 }
 
-.cell {
-	--cell-y: clamp(16px, 1.8vw, 28px);
-	min-inline-size: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 1.1rem;
-	padding: var(--cell-y) var(--cell-x);
-	--cell-delay: calc(60ms + var(--i, 0) * 50ms);
+/* Large pressables shrink less. */
+@utility press-soft {
+	transition: transform 120ms ease-out;
 
-	/* each child reveals on its own, like the lines on the editor pages. The portrait and the
-	   chart canvas skip the blur: filtering a large bitmap every frame is what stutters. */
-	> * {
-		animation: line-enter 450ms var(--ease-out) backwards;
-		animation-delay: calc(var(--cell-delay) + var(--n, 0) * 45ms);
+	&:active {
+		transform: scale(0.99);
 	}
 
-	> .portrait,
-	> .chart {
-		animation-name: rise;
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
 	}
-
-	> :nth-child(2) { --n: 1; }
-	> :nth-child(3) { --n: 2; }
-	> :nth-child(4) { --n: 3; }
-	> :nth-child(5) { --n: 4; }
-	> :nth-child(6) { --n: 5; }
-	> :nth-child(7) { --n: 6; }
-	> :nth-child(8) { --n: 7; }
 }
 
-/* The intro track follows the portrait's height cap, including the cell padding. */
-.portrait {
-	inline-size: 100%;
-	aspect-ratio: 1;
-	object-fit: cover;
-	object-position: 50% 30%;
-	border-radius: 4px;
+/* Section rule: dashed, running across the gutter to the outer frame line. */
+@utility rule {
+	margin-inline: calc(-1 * var(--gutter, 0px));
+	border: 0;
+	border-top: 1px dashed var(--color-frame);
 }
 
-/* sits on the bottom edge of its column, ruled like the grid */
-.dock {
-	margin-block-start: auto;
-	margin-inline: calc(-1 * var(--cell-x));
-	margin-block-end: calc(-1 * var(--cell-y));
-	padding-inline: var(--cell-x);
-	border-block-start: 1px solid var(--border);
-}
-
-.list {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-}
-
-.item {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) auto;
+/* Small mono tag. */
+@utility tag {
+	display: inline-flex;
 	align-items: center;
-	column-gap: 1ch;
-	row-gap: 0.15rem;
+	gap: 5px;
+	border-radius: 6px;
+	padding: 2px 7px;
+	background-color: color-mix(in oklab, var(--color-strong) 7%, transparent);
+	color: var(--color-strong);
+	font-family: var(--font-mono);
+	font-size: 11px;
 }
 
-.title {
-	@apply link-rule;
-	justify-self: start;
-	font-weight: 600;
-	overflow-wrap: anywhere;
+/* Mielui buttons get the same press. */
+[data-ui='button'] {
+	transition-property: transform, background-color, color, box-shadow;
 }
 
-.desc {
-	grid-column: 1 / -1;
-	color: var(--muted-foreground);
-	font-size: 0.9rem;
+[data-ui='button']:active:not(:disabled) {
+	transform: scale(0.97);
 }
 
-/* desktop: lock to the viewport, columns scroll on their own only if they must */
-@media (width > 700px) {
-	.page {
-		block-size: 100dvh;
-		overflow: hidden;
-	}
-
-	.board {
-		min-block-size: 0;
-		overflow: hidden;
-	}
-
-	.column {
-		min-block-size: 0;
-		overflow: hidden auto;
-		scrollbar-width: none;
-
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
+/* Horizontal scroll fade: only the edge that still has content behind it. */
+@property --fade-start {
+	syntax: '<length>';
+	inherits: false;
+	initial-value: 0px;
 }
 
-/* three columns: the first row of blocks shares a height so the rules line up */
-@media (width > 1100px) {
-	.board {
-		grid-template-rows: auto auto minmax(0, 1fr);
-	}
+@property --fade-end {
+	syntax: '<length>';
+	inherits: false;
+	initial-value: 0px;
+}
 
-	.column {
-		display: grid;
-		grid-template-rows: subgrid;
-		grid-row: 1 / -1;
+@keyframes fade-start {
+	from {
+		--fade-start: 0px;
 	}
-
-	.column:nth-child(1) > .cell {
-		grid-row: 1 / -1;
-		min-block-size: 0;
-		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		grid-template-rows: auto minmax(0, 1fr) auto auto auto;
-	}
-
-	/* Reserve the intro and player first; the portrait uses the remaining height. */
-	.column:first-child .portrait {
-		block-size: 100%;
-		min-block-size: 0;
-		max-block-size: none;
-	}
-
-	.column:nth-child(2) > .cell:last-child {
-		grid-row: 2 / -1;
+	to {
+		--fade-start: 2.5rem;
 	}
 }
 
-@media (width > 700px) and (height <= 950px) {
-	.board {
-		--intro-width: 100%;
+@keyframes fade-end {
+	from {
+		--fade-end: 2.5rem;
 	}
-
-	.cell {
-		gap: 0.9rem;
-	}
-
-	.list {
-		gap: 0.5rem;
-	}
-
-	.portrait {
-		max-block-size: 38dvh;
+	to {
+		--fade-end: 0px;
 	}
 }
 
-@media (width <= 1100px) {
-	.board {
-		grid-template-columns: min(50%, var(--intro-width)) minmax(0, 1fr);
+@utility scroll-fade-x {
+	scrollbar-width: none;
+	mask-image: linear-gradient(to right, transparent, black var(--fade-start), black calc(100% - var(--fade-end)), transparent);
+
+	&::-webkit-scrollbar {
+		display: none;
 	}
 
-	.column:nth-child(3) {
-		grid-column: 1 / -1;
-		border-inline-start: 0;
-		border-block-start: 1px solid var(--border);
-	}
-}
-
-@media (width <= 700px) {
-	.board {
-		grid-template-columns: minmax(0, 1fr);
-	}
-
-	.column {
-		border-inline-start: 0;
-	}
-
-	.column + .column {
-		border-block-start: 1px solid var(--border);
+	@supports (animation-timeline: scroll()) {
+		animation:
+			fade-start 1ms linear both,
+			fade-end 1ms linear both;
+		animation-range:
+			0 3rem,
+			calc(100% - 3rem) 100%;
+		animation-timeline: scroll(self x);
 	}
 }
 
-/* ---- projects: the editor ---- */
-
-.editor {
-	--gutter-width: 4ch;
-	--line: 1.7em;
-	flex: 1;
-	min-block-size: 0;
-	overflow-y: auto;
-	scrollbar-width: thin;
-	scrollbar-color: var(--rule-strong) transparent;
-}
-
-/* the rail needs the full content height, so it hangs off this wrapper, not the scroller */
-.sheet {
+/* Film grain over whatever background the element has: an SVG noise tile, blended into the color only. */
+@utility grain {
 	position: relative;
-	padding: var(--pad-x) 0 calc(var(--pad-x) * 2);
-}
-
-.line-rail {
-	position: absolute;
-	inset: var(--pad-x) auto 0 0;
-	width: calc(var(--gutter-width) + var(--pad-x) - 2.5ch);
+	isolation: isolate;
 	overflow: hidden;
-	color: var(--muted-foreground);
-	opacity: 0.55;
-	font-variant-numeric: tabular-nums;
-	line-height: var(--line);
-	text-align: right;
-	pointer-events: none;
-	user-select: none;
 
-	span {
-		display: block;
-		block-size: var(--line);
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+		background-image: var(--noise);
+		background-size: 200px 200px;
+		opacity: 0.22;
+		mix-blend-mode: overlay;
 	}
 }
 
-.code-line {
-	position: relative;
-	min-block-size: var(--line);
-	line-height: var(--line);
-	padding: 0 var(--pad-x) 0 calc(var(--gutter-width) + var(--pad-x));
-	animation: line-enter 400ms var(--ease-out) backwards;
-	animation-delay: var(--enter-delay, 0s);
+/* The warm booking card: soft blobs over orange. Pair with grain. */
+@utility sunrise {
+	background:
+		radial-gradient(circle at 18% 20%, #ffe14d 0, transparent 55%),
+		radial-gradient(circle at 85% 25%, #ff7a1a 0, transparent 50%),
+		radial-gradient(circle at 60% 100%, #ff2d87 0, transparent 60%),
+		#ffb21a;
 }
 
-.back {
-	position: sticky;
-	top: 0;
-	z-index: 2;
-	display: flex;
-	align-items: center;
-	padding-block: 0.35rem;
-	background: var(--bg);
-}
+/* Cool lavender mesh for the profile banner. Pair with grain. The mesh is drawn larger than the
+   banner and drifts across it very slowly, so the banner feels alive without anything moving fast. */
+@utility dusk {
+	background:
+		radial-gradient(ellipse at 12% 110%, #ffd9e8 0, transparent 45%),
+		radial-gradient(ellipse at 30% 0%, #8fa2ff 0, transparent 55%),
+		radial-gradient(ellipse at 85% 85%, #6b6bff 0, transparent 55%),
+		radial-gradient(ellipse at 75% 10%, #f1dcff 0, transparent 50%),
+		#b8b4ff;
+	background-size: 160% 160%;
+	animation: drift 22s ease-in-out infinite alternate;
 
-/* keyboard focus on a row reads like the hover state */
-.project:focus-visible {
-	outline: none;
-}
-
-.project {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0 2ch;
-
-	> span:first-child {
-		@apply link-rule;
-		font-weight: 600;
-		transition:
-			background-color 140ms ease,
-			text-decoration-color 140ms ease;
-	}
-
-	&:hover > span:first-child,
-	&:focus-visible > span:first-child {
-		background: color-mix(in srgb, var(--cell-accent, var(--fg)) 18%, transparent);
-	}
-
-	.lang {
-		margin-inline-start: auto;
-		color: var(--muted-foreground);
-		font-size: 0.85rem;
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
 	}
 }
 
-@media (width <= 700px) {
-	.editor {
-		--gutter-width: 3ch;
+@keyframes drift {
+	from {
+		background-position: 0% 0%;
 	}
-
-	.project .lang {
-		margin-inline-start: 0;
-	}
-
-	.project:has(> .desc-line) {
-		min-block-size: calc(var(--line) * 2);
-		align-content: center;
-		margin-block-end: var(--line);
+	to {
+		background-position: 100% 100%;
 	}
 }
 
+/* For Mielui's glow button: a white lit fill in light mode. In dark mode white light can't
+   show on white, so the fill drops to a lifted grey with light ink. */
+@utility glow-plain {
+	--mielui-glow-color: #fff;
+
+	.dark & {
+		--mielui-glow-color: #333;
+		--mielui-glow-light: 0.45;
+		color: var(--color-strong);
+	}
+}
+
+/* The arrow on the sideways-scroll button leans right now and then. */
+@keyframes nudge {
+	0%,
+	60%,
+	100% {
+		transform: translateX(0);
+	}
+	30% {
+		transform: translateX(3px);
+	}
+}
+
+/* ---- reveal ----
+   Each line of a section fades up out of a slight blur, staggered down the section and across
+   the columns, like the old site's editor lines. Big surfaces only rise: blurring a large bitmap
+   every frame is what stutters. Runs once on load, CSS only, so it needs no JavaScript. */
 @keyframes line-enter {
 	0% {
 		opacity: 0;
@@ -604,34 +442,150 @@ h2.comment {
 @keyframes rise {
 	0% {
 		opacity: 0;
-		transform: translateY(0.4em);
+		transform: translateY(10px);
 	}
 }
 
-@keyframes fade-in {
-	0% {
-		opacity: 0;
+@utility stagger {
+	--stagger-delay: calc(80ms + var(--col, 0) * 70ms + var(--s, 0) * 90ms);
+
+	&:nth-of-type(2) {
+		--s: 1;
+	}
+	&:nth-of-type(3) {
+		--s: 2;
+	}
+
+	& > * {
+		animation: line-enter 520ms var(--ease-out) backwards;
+		animation-delay: calc(var(--stagger-delay) + var(--n, 0) * 50ms);
+	}
+	& > .shell,
+	& > ul,
+	& > img {
+		animation-name: rise;
+	}
+	& > :nth-child(2) {
+		--n: 1;
+	}
+	& > :nth-child(3) {
+		--n: 2;
+	}
+	& > :nth-child(4) {
+		--n: 3;
+	}
+	& > :nth-child(5) {
+		--n: 4;
+	}
+	& > :nth-child(6) {
+		--n: 5;
+	}
+	& > :nth-child(n + 7) {
+		--n: 6;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		& > * {
+			animation: none;
+		}
 	}
 }
 
-/* route changes: content cross-fades under a pinned top bar and footer */
-::view-transition-old(root),
-::view-transition-new(root) {
-	animation-duration: 220ms;
-	animation-timing-function: var(--ease-out);
-}
-
-::view-transition-old(topbar),
-::view-transition-new(topbar),
-::view-transition-old(footer),
-::view-transition-new(footer) {
+/* After the first navigation the reveal is done for the visit; pages just appear. */
+html.revealed :is(.stagger > *, .reveal-once) {
 	animation: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-	.board,
-	.cell > *,
-	.code-line {
-		animation: none;
+/* Vertical scroll fade: only the edge with content behind it. Shares the fade keyframes above. */
+@utility scroll-fade-y {
+	mask-image: linear-gradient(to bottom, transparent, black var(--fade-start), black calc(100% - var(--fade-end)), transparent);
+
+	@supports (animation-timeline: scroll()) {
+		animation:
+			fade-start 1ms linear both,
+			fade-end 1ms linear both;
+		animation-range:
+			0 3rem,
+			calc(100% - 3rem) 100%;
+		animation-timeline: scroll(self y);
 	}
+}
+
+/* The theme switch dithers in from the toggle; the mask frames come from src/lib/dither.ts. */
+html.theming::view-transition-old(root),
+html.theming::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
+}
+
+html.theming::view-transition-new(root) {
+	mask-size: 100% 100%;
+	mask-repeat: no-repeat;
+}
+
+html.theming :is(header, footer) {
+	view-transition-name: none !important;
+}
+
+/* The clock's colon breathes once a second. */
+@keyframes tick {
+	50% {
+		opacity: 0.35;
+	}
+}
+
+/* A little wave when the portrait is clicked. */
+@keyframes wave {
+	0%,
+	100% {
+		transform: rotate(0);
+	}
+	20% {
+		transform: rotate(-9deg) scale(1.04);
+	}
+	45% {
+		transform: rotate(7deg) scale(1.04);
+	}
+	70% {
+		transform: rotate(-4deg);
+	}
+}
+
+/* Bars grow from their start edge. */
+@keyframes grow {
+	0% {
+		transform: scaleX(0);
+	}
+}
+
+/* Mielui's glow for a white button on color. Its light is white, which can't show on a white
+   fill, so the depth comes from elsewhere: bright white at the top easing to a warm grey at the
+   bottom, a crisp top edge, a soft warm shade inside the bottom, a warm drop shadow, and a faint
+   white halo on the color around it. */
+@utility glow-white {
+	--mielui-glow-color: #fff;
+	--mielui-glow-top: #ffffff;
+	--mielui-glow-bottom: #efe6df;
+	--mielui-glow-shadow:
+		inset 0 1px 0 #fff,
+		inset 0 -2px 4px rgb(150 70 20 / 0.14),
+		0 0 0 1px rgb(120 40 0 / 0.14),
+		0 1px 2px rgb(120 40 0 / 0.16),
+		0 10px 28px -6px rgb(120 30 0 / 0.38),
+		0 0 0 5px rgb(255 255 255 / 0.12);
+}
+
+/* Mielui's primary button turns near-white in dark mode, where its white light can't show.
+   Every primary button gets the white glow there instead: neutral, with dark shadows and a faint
+   halo for the dark page. Matched by the variant's own glow-color class, so it covers them all. */
+.dark [data-ui='button'][class*='--mielui-glow-color:var(--color-primary)'] {
+	--mielui-glow-top: #ffffff;
+	--mielui-glow-bottom: #d4d4d4;
+	--mielui-glow-shadow:
+		inset 0 1px 0 #fff,
+		inset 0 -2px 4px rgb(0 0 0 / 0.14),
+		0 0 0 1px rgb(0 0 0 / 0.6),
+		0 1px 2px rgb(0 0 0 / 0.5),
+		0 8px 22px -6px rgb(0 0 0 / 0.7),
+		0 0 18px rgb(255 255 255 / 0.07);
 }

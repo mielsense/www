@@ -14,4 +14,5 @@
 	});
 </script>
 
-<span class="tabular-nums">local time <time>{now ?? '--:--'}</time> · {label}</span>
+<!-- the colon breathes once a second, so the clock reads as live -->
+<span class="tabular-nums">{label} <time datetime={now ?? undefined}>{(now ?? '--:--').slice(0, 2)}<span class="motion-safe:animate-[tick_2s_steps(1,end)_infinite]">:</span>{(now ?? '--:--').slice(3)}</time></span>

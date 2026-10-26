@@ -1,51 +1,19 @@
 <script lang="ts">
-	import { Moon02Icon, Sun03Icon } from '@hugeicons/core-free-icons';
-	import { Button } from '@/components/ui/button/index.js';
-	import HugeiconsIcon from '@/hugeicons-icon.svelte';
+	import { Button } from '@mielui/svelte/components/button';
+	import Icon from '@/components/site/Icon.svelte';
+	import { MoonIcon, SunIcon } from '@/icons';
 	import { theme } from '@/theme.svelte';
 </script>
 
-<!-- both icons are always rendered; CSS picks one so the prerendered HTML never guesses wrong,
-     and the swap rotates through rather than blinking -->
+<!-- both glyphs are rendered and CSS picks one, so the prerendered page never shows the wrong one -->
 <Button
 	variant="ghost"
-	size="icon-xs"
-	class="press relative text-muted-foreground hover:text-foreground focus-visible:text-foreground"
-	aria-label="Toggle dark and light theme"
-	onclick={() => theme.toggle()}
-	data-cuelume-toggle
+	size="icon"
+	class="relative size-7 text-subtle hover:text-strong"
+	aria-label="Switch between light and dark"
+	onclick={(event) => theme.toggle({ x: event.clientX, y: event.clientY })}
+	data-sound={theme.dark ? 'toggle-off' : 'toggle-on'}
 >
-	<HugeiconsIcon icon={Sun03Icon} size={15} strokeWidth={1.75} class="icon sun absolute" aria-hidden="true" />
-	<HugeiconsIcon icon={Moon02Icon} size={15} strokeWidth={1.75} class="icon moon absolute" aria-hidden="true" />
+	<Icon icon={MoonIcon} size={15} class="absolute transition-[opacity,scale] duration-200 dark:scale-50 dark:opacity-0" />
+	<Icon icon={SunIcon} size={15} class="absolute scale-50 opacity-0 transition-[opacity,scale] duration-200 dark:scale-100 dark:opacity-100" />
 </Button>
-
-<style>
-	:global(.icon.sun),
-	:global(.icon.moon) {
-		transition:
-			opacity 220ms var(--ease-out),
-			transform 220ms var(--ease-out);
-	}
-
-	:global(.icon.sun) {
-		opacity: 0;
-		transform: rotate(-90deg) scale(0.6);
-	}
-
-	:global(.dark .icon.sun) {
-		opacity: 1;
-		transform: none;
-	}
-
-	:global(.dark .icon.moon) {
-		opacity: 0;
-		transform: rotate(90deg) scale(0.6);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		:global(.icon.sun),
-		:global(.icon.moon) {
-			transition: none;
-		}
-	}
-</style>
