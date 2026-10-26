@@ -393,26 +393,37 @@
 /* Cool lavender mesh for the profile banner. Pair with grain. The mesh is drawn larger than the
    banner and drifts across it very slowly, so the banner feels alive without anything moving fast. */
 @utility dusk {
-	background:
-		radial-gradient(ellipse at 12% 110%, #ffd9e8 0, transparent 45%),
-		radial-gradient(ellipse at 30% 0%, #8fa2ff 0, transparent 55%),
-		radial-gradient(ellipse at 85% 85%, #6b6bff 0, transparent 55%),
-		radial-gradient(ellipse at 75% 10%, #f1dcff 0, transparent 50%),
-		#b8b4ff;
-	background-size: 160% 160%;
-	animation: drift 22s ease-in-out infinite alternate;
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
 
-	@media (prefers-reduced-motion: reduce) {
-		animation: none;
+	/* the mesh is an oversized layer that slides, so the drift runs on the compositor instead of repainting */
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 160%;
+		height: 160%;
+		z-index: -1;
+		background:
+			radial-gradient(ellipse at 12% 110%, #ffd9e8 0, transparent 45%),
+			radial-gradient(ellipse at 30% 0%, #8fa2ff 0, transparent 55%),
+			radial-gradient(ellipse at 85% 85%, #6b6bff 0, transparent 55%),
+			radial-gradient(ellipse at 75% 10%, #f1dcff 0, transparent 50%),
+			#b8b4ff;
+		animation: drift 22s ease-in-out infinite alternate;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
 	}
 }
 
 @keyframes drift {
-	from {
-		background-position: 0% 0%;
-	}
 	to {
-		background-position: 100% 100%;
+		/* 0.6 / 1.6 of the layer: the same path the old background-position 0% to 100% took */
+		translate: -37.5% -37.5%;
 	}
 }
 
@@ -475,7 +486,8 @@
 	}
 	& > .shell,
 	& > ul,
-	& > img {
+	& > img,
+	& > [data-rise] {
 		animation-name: rise;
 	}
 	& > :nth-child(2) {

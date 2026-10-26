@@ -202,7 +202,7 @@
 	<!-- profile -->
 	<div class={col()} style:--col={0}>
 		<section class={block}>
-			<div>
+			<div data-rise>
 				<div class="shell"><div class="grain dusk h-40 rounded-[13px]"></div></div>
 				<!-- the avatar overlaps the banner by a third; the name sits beside it, bottoms aligned, clear of the banner -->
 				<div class="relative -mt-9 flex items-end gap-3 ps-4">
