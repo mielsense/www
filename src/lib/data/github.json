@@ -1,6 +1,26 @@
 {
-	"syncedAt": "2026-10-25T10:53:06.625Z",
+	"syncedAt": "2026-10-26T12:24:09.562Z",
 	"repos": [
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 16,
+			"year": 2026,
+			"pushedAt": "2026-10-26T05:35:13Z"
+		},
+		{
+			"name": "evilcharts-sv",
+			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
+			"url": "https://github.com/mielsense/evilcharts-sv",
+			"homepage": "https://charts.miel.my",
+			"language": "Svelte",
+			"stars": 29,
+			"year": 2026,
+			"pushedAt": "2026-10-26T05:34:38Z"
+		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -9,7 +29,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-24T10:26:06Z"
+			"pushedAt": "2026-10-25T10:53:07Z"
 		},
 		{
 			"name": "mielui",
@@ -20,26 +40,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-10-24T00:48:13Z"
-		},
-		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
-			"language": "Svelte",
-			"stars": 16,
-			"year": 2026,
-			"pushedAt": "2026-10-21T12:16:22Z"
-		},
-		{
-			"name": "evilcharts-sv",
-			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
-			"url": "https://github.com/mielsense/evilcharts-sv",
-			"homepage": "https://charts.miel.my",
-			"language": "Svelte",
-			"stars": 29,
-			"year": 2026,
-			"pushedAt": "2026-10-12T12:34:12Z"
 		},
 		{
 			"name": "mielsense",
@@ -266,6 +266,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "84376e7",
+			"url": "https://github.com/mielsense/www/commit/84376e783ff1d62af8ef9b5e9c021701ff7b3605",
+			"date": "2026-10-25T10:53:06Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "262869d",
 			"url": "https://github.com/mielsense/www/commit/262869d7914a9b6fb2c14f0154e953bf31768bfa",
 			"date": "2026-10-24T10:26:05Z"
@@ -395,13 +402,6 @@
 			"sha": "7edcd1a",
 			"url": "https://github.com/mielsense/www/commit/7edcd1a6d75dceeaca2355c618b9db8ff21380bb",
 			"date": "2026-10-16T10:52:27Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "d0f9bb1",
-			"url": "https://github.com/mielsense/www/commit/d0f9bb146dfb8363502836265f526d4a36b67354",
-			"date": "2026-10-15T10:58:29Z"
 		},
 		{
 			"repo": "qali",
@@ -2369,6 +2369,11 @@
 			"date": "2026-10-25",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-10-26",
+			"count": 1,
+			"level": 1
 		}
 	]
 }
