@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-26T20:05:33.010Z",
+	"syncedAt": "2026-10-27T00:58:08.895Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-26T20:05:06Z"
+			"pushedAt": "2026-10-27T00:57:59Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "copy: scroll sideways to see more",
+			"sha": "f9ffb94",
+			"url": "https://github.com/mielsense/www/commit/f9ffb94919d9f5f3e2e35d4b24273d407868750f",
+			"date": "2026-10-27T00:57:56Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "56a69fd",
+			"url": "https://github.com/mielsense/www/commit/56a69fde3e75ce4f9e797aa66812b7821a4fe1ce",
+			"date": "2026-10-26T20:05:33Z"
+		},
+		{
+			"repo": "www",
 			"message": "perf: move the banner drift to the compositor",
 			"sha": "e0a01e0",
 			"url": "https://github.com/mielsense/www/commit/e0a01e0bea729300a997615afeee80c2adeaa607",
@@ -318,20 +332,6 @@
 			"sha": "4d8b10e",
 			"url": "https://github.com/mielsense/www/commit/4d8b10e886758bbc799c8cc784e7cc95da8e7f92",
 			"date": "2026-10-26T12:24:09Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "84376e7",
-			"url": "https://github.com/mielsense/www/commit/84376e783ff1d62af8ef9b5e9c021701ff7b3605",
-			"date": "2026-10-25T10:53:06Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "262869d",
-			"url": "https://github.com/mielsense/www/commit/262869d7914a9b6fb2c14f0154e953bf31768bfa",
-			"date": "2026-10-24T10:26:05Z"
 		},
 		{
 			"repo": "mielui",
@@ -2372,6 +2372,11 @@
 		},
 		{
 			"date": "2026-10-26",
+			"count": 8,
+			"level": 1
+		},
+		{
+			"date": "2026-10-27",
 			"count": 1,
 			"level": 1
 		}
