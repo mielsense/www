@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-27T00:58:08.895Z",
+	"syncedAt": "2026-10-27T11:43:01.611Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-27T00:57:59Z"
+			"pushedAt": "2026-10-27T00:58:09Z"
 		},
 		{
 			"name": "coss-sv",
@@ -265,6 +265,13 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "f31c35e",
+			"url": "https://github.com/mielsense/www/commit/f31c35ed90bc5dcb3b3c1deea4ae174a2f49ae1f",
+			"date": "2026-10-27T00:58:08Z"
+		},
+		{
+			"repo": "www",
 			"message": "copy: scroll sideways to see more",
 			"sha": "f9ffb94",
 			"url": "https://github.com/mielsense/www/commit/f9ffb94919d9f5f3e2e35d4b24273d407868750f",
@@ -325,13 +332,6 @@
 			"sha": "d7e2835",
 			"url": "https://github.com/mielsense/www/commit/d7e2835b7ba6c51723ee69f2ee876229e6735230",
 			"date": "2026-10-26T20:04:49Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "4d8b10e",
-			"url": "https://github.com/mielsense/www/commit/4d8b10e886758bbc799c8cc784e7cc95da8e7f92",
-			"date": "2026-10-26T12:24:09Z"
 		},
 		{
 			"repo": "mielui",
