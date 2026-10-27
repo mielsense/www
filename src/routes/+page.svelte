@@ -543,7 +543,7 @@
 					<Icon icon={ArrowLeftIcon} size={14} />
 					Back to start
 				{:else}
-					Scroll sideways
+					Scroll sideways to see more
 					<Icon icon={ChevronRightIcon} size={14} class="motion-safe:animate-[nudge_1.6s_ease-in-out_infinite]" />
 				{/if}
 			</Button>
