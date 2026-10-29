@@ -6,13 +6,10 @@
 	import * as Avatar from '@mielui/svelte/components/avatar';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import favicon from '@/assets/favicon.svg';
-	import Icon from '@/components/site/Icon.svelte';
-	import Clock from '@/components/site/Clock.svelte';
 	import SoundToggle from '@/components/site/SoundToggle.svelte';
 	import ThemeToggle from '@/components/site/ThemeToggle.svelte';
 	import { site } from '@/data/site';
 	import { theme } from '@/theme.svelte';
-	import { GithubIcon, RssIcon, XIcon } from '@/icons';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
@@ -122,52 +119,35 @@
 
 <svelte:window onkeydown={onKey} />
 
-<!-- the page sits in a double frame: a solid outer line, and a dashed one a gutter inside it -->
-<div class="min-h-dvh w-full sm:border-x sm:border-frame sm:[--gutter:3rem]">
-	<div class="flex min-h-dvh flex-col sm:mx-[var(--gutter)] sm:border-x sm:border-dashed sm:border-frame">
-		<!-- top and bottom bands are as tall as the side gutters are wide -->
-		<header class="flex h-14 sm:h-(--gutter) items-center gap-2 px-4 sm:px-6" style:view-transition-name="topbar">
-			<a href="/" class="me-auto flex shrink-0 items-center gap-2.5 rounded-full" aria-label="{site.handle}, home">
-				<Avatar.Root size="sm">
-					<Avatar.Image src="/avatar-288.webp?v=20261001" alt="" />
-					<Avatar.Fallback>M</Avatar.Fallback>
-				</Avatar.Root>
-				<span class="hidden text-base font-medium tracking-[-0.01em] text-strong sm:inline">{site.handle}</span>
-			</a>
-			<nav aria-label="Site" class="flex items-center gap-1.5">
+<!-- edge to edge, no frame; the nav floats at the bottom, so pages leave room under their last line -->
+<div class="flex min-h-dvh flex-col">
+	<header class="fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 pointer-events-none" style:view-transition-name="dock">
+		<div class="shell pointer-events-auto rounded-full p-1 backdrop-blur-xl">
+			<nav aria-label="Site" class="sheet flex h-10 items-center gap-1 rounded-full ps-1.5 pe-1">
+				<a href="/" class="press flex shrink-0 items-center rounded-full focus-visible:shadow-[var(--focus-ring)] focus-visible:outline-none" aria-label="{site.handle}, home" aria-current={path === '/' ? 'page' : undefined}>
+					<Avatar.Root size="sm">
+						<Avatar.Image src="/avatar-288.webp?v=20261001" alt="" />
+						<Avatar.Fallback>M</Avatar.Fallback>
+					</Avatar.Root>
+				</a>
+				<span class="mx-1 h-4 w-px bg-border" aria-hidden="true"></span>
 				{#each pages.slice(1) as item (item.href)}
 					<a
 						href={item.href}
 						aria-current={path === item.href ? 'page' : undefined}
-						class="press flex h-8 items-center rounded-[9px] px-3 text-sm text-default hover:bg-selected hover:text-strong focus-visible:shadow-[var(--focus-ring)] focus-visible:outline-none aria-[current=page]:bg-selected aria-[current=page]:text-strong"
+						class="press flex h-8 items-center rounded-full px-3 text-sm text-default hover:bg-selected hover:text-strong focus-visible:shadow-[var(--focus-ring)] focus-visible:outline-none aria-[current=page]:bg-selected aria-[current=page]:text-strong"
 					>
 						{item.label}
 					</a>
 				{/each}
-				<span class="ms-1 flex items-center"><SoundToggle /><ThemeToggle /></span>
+				<span class="mx-1 h-4 w-px bg-border" aria-hidden="true"></span>
+				<span class="flex items-center"><SoundToggle /><ThemeToggle /></span>
 			</nav>
-		</header>
-		<hr class="rule" />
-
-		<div class="flex flex-1 flex-col">
-			{@render children()}
 		</div>
+	</header>
 
-		<footer style:view-transition-name="footer">
-			<div class="flex h-14 items-center justify-between gap-6 px-4 sm:h-(--gutter) sm:px-6">
-				<span class="flex items-center gap-2 text-xs text-subtle">
-					<span class="size-1.5 rounded-full {site.available ? 'bg-success' : 'bg-subtle'}" aria-hidden="true"></span>
-					<span class="text-default">{site.available ? 'Open to work' : 'Booked for now'}</span>
-					<span aria-hidden="true">·</span>
-					<Clock />
-				</span>
-				<nav aria-label="Elsewhere" class="flex items-center gap-1">
-					<a href={site.github} target="_blank" rel="me noreferrer" class="chip press size-7 hover:text-default" aria-label="GitHub"><Icon icon={GithubIcon} size={13} /></a>
-					<a href={site.x} target="_blank" rel="me noreferrer" class="chip press size-7 hover:text-default" aria-label="X"><Icon icon={XIcon} size={13} /></a>
-					<a href="/rss.xml" class="chip press size-7 hover:text-default" aria-label="RSS feed"><Icon icon={RssIcon} size={13} /></a>
-				</nav>
-			</div>
-		</footer>
+	<div class="flex flex-1 flex-col pb-24 lg:has-[[data-rail]]:pb-0">
+		{@render children()}
 	</div>
 </div>
 

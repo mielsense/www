@@ -49,6 +49,7 @@
 		'evilcharts-sv': 'radial-gradient(circle at 15% 30%, #f9731a 0, transparent 55%), radial-gradient(circle at 90% 10%, #fff3e0 0, transparent 50%), #f8b46b',
 		'coss-sv': 'radial-gradient(ellipse at 10% 100%, #ffe1ec 0, transparent 45%), radial-gradient(ellipse at 80% 70%, #6f7dff 0, transparent 55%), #a9b6ff',
 		'sileo-svelte': 'radial-gradient(circle at 85% 15%, #e450c8 0, transparent 50%), radial-gradient(circle at 15% 85%, #ffc2d6 0, transparent 55%), #f08fc0',
+		mielwm: 'radial-gradient(circle at 20% 15%, #ccfbf1 0, transparent 55%), radial-gradient(circle at 85% 85%, #0891b2 0, transparent 60%), #2dd4bf',
 		kettle: 'radial-gradient(circle at 20% 20%, #d9f99d 0, transparent 55%), radial-gradient(circle at 85% 80%, #22b07d 0, transparent 55%), #7bd6a3'
 	};
 
@@ -151,10 +152,10 @@
 
 	// On wide screens the page reads left to right: fixed columns that each scroll on their own,
 	// fading their bottom edge while there is more below.
-	const col = (min = 'lg:min-w-[26rem]') =>
-		`flex flex-col ${min} lg:flex-1 lg:shrink-0 lg:overflow-y-auto lg:scroll-fade-y lg:border-s lg:border-dashed lg:border-frame lg:[scrollbar-width:none] lg:[--gutter:0px] lg:first:border-s-0`;
+	const col = (min = 'lg:min-w-[28rem]') =>
+		`flex flex-col ${min} lg:flex-1 lg:shrink-0 lg:overflow-y-auto lg:scroll-fade-y lg:border-s lg:border-frame lg:pb-20 lg:[scrollbar-width:none] lg:first:border-s-0`;
 	// sections reveal line by line on load
-	const block = 'stagger group/section flex flex-col gap-4 px-4 py-6 sm:px-6';
+	const block = 'stagger group/section flex flex-col gap-5 px-5 py-8 sm:px-8 lg:py-10';
 	// small arrows lean toward where they go when their row is hovered
 	const lean = 'transition-transform duration-150 ease-out group-hover:translate-x-0.5 motion-reduce:transition-none';
 	const leanOut = 'transition-transform duration-150 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none';
@@ -194,13 +195,13 @@
 
 <div class="relative">
 <main
-	class="flex flex-col lg:h-[calc(100dvh-2*var(--gutter)-2px)] lg:flex-row lg:overflow-x-auto lg:[scrollbar-width:thin]"
+	class="flex flex-col lg:h-dvh lg:flex-row lg:overflow-x-auto lg:[scrollbar-width:thin]"
 	data-rail
 	onscroll={measure}
 	{@attach railed}
 >
 	<!-- profile -->
-	<div class={col()} style:--col={0}>
+	<div class="{col()} lg:[&>section]:ps-12" style:--col={0}>
 		<section class={block}>
 			<div data-rise>
 				<div class="shell"><div class="grain dusk h-40 rounded-[13px]"></div></div>
@@ -298,7 +299,7 @@
 								href={project.url}
 								target="_blank"
 								rel="noreferrer"
-								class="group press-soft flex items-center gap-3 px-3.5 py-3 outline-offset-[-2px] hover:bg-selected/60"
+								class="group press-soft flex items-center gap-3 px-4 py-3.5 outline-offset-[-2px] hover:bg-selected/60"
 								data-row
 							>
 								<span class="chip size-9"><Icon icon={glyphOf(project)} size={16} /></span>
@@ -323,7 +324,7 @@
 			<div class="shell">
 				<ul class="sheet flex flex-col">
 					{#each experience as job (job.place)}
-						<li class="flex items-center gap-3 border-t border-border px-3.5 py-3 first:border-t-0">
+						<li class="flex items-center gap-3 border-t border-border px-4 py-3.5 first:border-t-0">
 							<span class="chip size-9"><Icon icon={job.icon} size={16} /></span>
 							<span class="flex min-w-0 flex-1 flex-col">
 								{#if job.url}
@@ -373,8 +374,8 @@
 		<section class={block} aria-labelledby="hello">
 			{@render heading('hello', 'Say hello', ChatIcon, coral)}
 			<div class="shell">
-				<div class="grain sunrise flex min-h-96 flex-col justify-end gap-6 rounded-[13px] p-6 text-white">
-					<p class="text-4xl leading-[1.05] font-medium tracking-[-0.03em] text-balance">Book a 15&#8209;min intro call</p>
+				<div class="grain sunrise flex min-h-96 flex-col justify-end gap-6 rounded-[13px] p-5 text-white">
+					<p class="max-w-[11ch] text-4xl leading-[1.05] font-medium tracking-[-0.03em] text-balance">Book a 15&#8209;min intro call</p>
 					<!-- a lit white button; see glow-white in app.css for why white needs its own glow -->
 					<Button
 						variant="glow"
@@ -410,7 +411,7 @@
 			<ul class="flex flex-col">
 				{#each commits.filter((c) => !c.message.startsWith('chore: sync github data')).slice(0, 7) as commit (commit.sha)}
 					<li>
-						<a href={commit.url} target="_blank" rel="noreferrer" class="row press-soft -mx-2.5 gap-3 px-2.5 py-2" data-row>
+						<a href={commit.url} target="_blank" rel="noreferrer" class="row press-soft -mx-2.5 gap-3 px-2.5 py-2.5" data-row>
 							<Icon icon={CommitIcon} size={14} class="shrink-0 text-subtle" />
 							<span class="min-w-0 flex-1 truncate text-sm text-strong">{commit.message}</span>
 							<span class="shrink-0 text-xs text-subtle">{commit.repo}</span>
@@ -436,7 +437,7 @@
 		<section class={block} aria-labelledby="oss">
 			<div class="flex items-center justify-between">
 				{@render heading('oss', 'Open source', StarIcon, aura['evilcharts-sv'])}
-				<span class="text-sm text-subtle">Mielui and Svelte 5 ports</span>
+				<span class="text-sm text-subtle">Libraries and tools</span>
 			</div>
 			{#each openSource as repo (repo.name)}
 				<article class="shell group">
@@ -446,12 +447,14 @@
 							class="grain h-32 origin-top [mask-image:linear-gradient(to_bottom,black_35%,transparent)] transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-y-110 motion-reduce:transition-none"
 							style:background={aura[repo.name] ?? aura['coss-sv']}
 						></div>
-						<div class="flex flex-col gap-1 p-4">
+						<div class="flex flex-col gap-1 p-5">
 							<span class="flex items-center justify-between gap-2">
 								<h3 class="text-lg">{repo.name}</h3>
-								<span class="flex items-center gap-1 text-xs text-subtle tabular-nums" aria-label="{repo.stars} stars">
-									<Icon icon={StarIcon} size={11} /><span use:roll={{ value: repo.stars ?? 0 }}>{repo.stars}</span>
-								</span>
+								{#if repo.stars}
+									<span class="flex items-center gap-1 text-xs text-subtle tabular-nums" aria-label="{repo.stars} stars">
+										<Icon icon={StarIcon} size={11} /><span use:roll={{ value: repo.stars }}>{repo.stars}</span>
+									</span>
+								{/if}
 							</span>
 							<p class="text-sm text-subtle">{repo.description}</p>
 							<div class="mt-3 flex flex-wrap gap-2">
@@ -475,7 +478,7 @@
 	<hr class="rule lg:hidden" />
 
 	<!-- archive: older work and the languages behind it -->
-	<div class={col()} style:--col={4}>
+	<div class="{col()} lg:[&>section]:pe-12" style:--col={4}>
 		<section class={block} aria-labelledby="archive">
 			<div class="flex items-center justify-between">
 				{@render heading('archive', 'Archive', ClockIcon, graphite)}
@@ -487,7 +490,7 @@
 			<ul class="flex flex-col">
 				{#each archive as project (project.name)}
 					<li class="border-t border-border first:border-t-0">
-						<a href={project.url} target="_blank" rel="noreferrer" class="group press-soft flex items-center gap-3 py-2.5" data-row>
+						<a href={project.url} target="_blank" rel="noreferrer" class="group press-soft flex items-center gap-3 py-3" data-row>
 							<span class="shrink-0 text-base text-strong">{project.name}</span>
 							<span class="min-w-0 flex-1 truncate text-sm text-subtle group-hover:text-default">{project.description}</span>
 							<span class="shrink-0 text-xs text-subtle tabular-nums">{project.year}</span>
@@ -527,27 +530,25 @@
 	{#if scrollMax > 0}
 		<div class="pointer-events-none absolute inset-y-0 start-0 hidden w-16 bg-linear-to-r from-page transition-opacity duration-300 lg:block" class:opacity-0={scrolled <= 4} aria-hidden="true"></div>
 		<div class="pointer-events-none absolute inset-y-0 end-0 hidden w-24 bg-linear-to-l from-page transition-opacity duration-300 lg:block" class:opacity-0={atEnd} aria-hidden="true"></div>
-		<div class="absolute end-5 bottom-5 z-10 hidden items-center gap-2 lg:flex">
-			{#if scrolled > 4 && !atEnd}
-				<Button size="icon" onclick={() => slide(-1)} data-sound="swoosh" class="size-10 rounded-full shadow-[var(--mielui-glow-shadow),0_6px_20px_rgb(0_0_0/0.18)]" aria-label="Scroll back">
-					<Icon icon={ArrowLeftIcon} size={14} />
-				</Button>
-			{/if}
-			<!-- the same lit dark button as Book a call; padding is shaved on whichever side holds the icon -->
-			<Button
-				onclick={() => (atEnd ? slideTo(0) : slide(1))}
-				data-sound="swoosh"
-				class="h-10 rounded-full shadow-[var(--mielui-glow-shadow),0_6px_20px_rgb(0_0_0/0.18)] {atEnd ? 'ps-3.5 pe-4' : 'ps-4 pe-3.5'}"
-			>
-				{#if atEnd}
-					<Icon icon={ArrowLeftIcon} size={14} />
-					Back to start
-				{:else}
-					Scroll sideways to see more
-					<Icon icon={ChevronRightIcon} size={14} class="motion-safe:animate-[nudge_1.6s_ease-in-out_infinite]" />
+		<!-- the same pill as the floating nav, on the same baseline -->
+		<div class="shell absolute end-4 bottom-4 z-10 hidden rounded-full p-1 backdrop-blur-xl lg:block">
+			<div class="sheet flex h-10 items-center gap-1 rounded-full px-1">
+				{#if scrolled > 4 && !atEnd}
+					<button type="button" onclick={() => slide(-1)} data-sound="swoosh" class="press flex h-8 items-center gap-1.5 rounded-full text-sm text-default hover:bg-selected hover:text-strong focus-visible:shadow-[var(--focus-ring)] focus-visible:outline-none w-8 justify-center" aria-label="Scroll back">
+						<Icon icon={ArrowLeftIcon} size={13} />
+					</button>
+					<span class="mx-0.5 h-4 w-px bg-border" aria-hidden="true"></span>
 				{/if}
-			</Button>
+				<button type="button" onclick={() => (atEnd ? slideTo(0) : slide(1))} data-sound="swoosh" class="press flex h-8 items-center gap-1.5 rounded-full text-sm text-default hover:bg-selected hover:text-strong focus-visible:shadow-[var(--focus-ring)] focus-visible:outline-none {atEnd ? 'ps-2.5 pe-3' : 'ps-3 pe-2.5'}">
+					{#if atEnd}
+						<Icon icon={ArrowLeftIcon} size={13} />
+						Back to start
+					{:else}
+						Scroll sideways to see more
+						<Icon icon={ChevronRightIcon} size={13} class="motion-safe:animate-[nudge_1.6s_ease-in-out_infinite]" />
+					{/if}
+				</button>
+			</div>
 		</div>
 	{/if}
 </div>
-<hr class="rule" />

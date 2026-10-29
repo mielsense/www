@@ -32,7 +32,7 @@
 </svelte:head>
 
 <main>
-	<header class="stagger flex flex-col gap-8 px-4 py-14 sm:px-6 lg:py-20">
+	<header class="stagger flex flex-col gap-8 px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
 		<div class="flex flex-col gap-5">
 			<h1 class="display text-5xl sm:text-6xl">Everything I've <span class="accent">shipped</span></h1>
 			<p class="max-w-xl text-lg text-subtle">{projects.length} projects, newest first, from C to Svelte. Synced from GitHub on {synced}.</p>
@@ -70,7 +70,7 @@
 			<div class="shell">
 				<ul class="sheet flex flex-col">
 					{#each shown.filter((p) => p.year === year) as project (project.name)}
-						<li class="relative flex items-center gap-4 border-t border-border px-4 py-3.5 first:border-t-0 sm:px-5">
+						<li class="relative flex items-center gap-3 border-t border-border px-4 py-3.5 first:border-t-0">
 							<span class="chip size-9"><Icon icon={glyphOf(project)} size={16} /></span>
 							<div class="flex min-w-0 flex-1 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-3">
 								<span class="flex shrink-0 items-center gap-2">

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Badge } from '@mielui/svelte/components/badge';
 	import * as EmptyState from '@mielui/svelte/components/empty-state';
 	import Icon from '@/components/site/Icon.svelte';
 	import Section from '@/components/site/Section.svelte';
@@ -23,22 +24,22 @@
 </svelte:head>
 
 <main>
-	<header class="stagger flex flex-col gap-5 px-4 py-14 sm:px-6 lg:py-20">
+	<header class="stagger flex flex-col gap-5 px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
 		<h1 class="display text-5xl sm:text-6xl">What's happening <span class="accent">now</span></h1>
 		<p class="max-w-xl text-lg text-subtle">Currently {site.now}. The list below comes straight from my public commits.</p>
 	</header>
 	<hr class="rule" />
 
-	<Section id="building" class="grid grid-cols-1 gap-3 md:grid-cols-2">
+	<Section id="building" class="grid grid-cols-1 gap-4 md:grid-cols-2">
 		{#snippet title()}Building{/snippet}
 		{#each building as p (p.name)}
 			<a href={p.url} target="_blank" rel="noreferrer" class="shell">
-				<div class="sheet flex h-full items-center gap-4 p-5">
-					<span class="chip size-11"><Icon icon={glyphOf(p)} size={20} /></span>
+				<div class="sheet flex h-full items-center gap-3 p-5">
+					<span class="chip size-9"><Icon icon={glyphOf(p)} size={16} /></span>
 					<div class="flex min-w-0 flex-col gap-0.5">
-						<span class="flex items-center gap-2 text-lg text-strong">
+						<span class="flex items-center gap-2 text-base text-strong">
 							{p.name}
-							<span class="text-xs text-subtle">{p.kind === 'soon' ? 'In progress' : 'Day job'}</span>
+							<Badge variant="secondary">{p.kind === 'soon' ? 'In progress' : 'Day job'}</Badge>
 						</span>
 						<span class="text-sm text-subtle">{p.description}</span>
 					</div>
@@ -61,7 +62,7 @@
 			<div class="shell">
 				<div class="sheet flex flex-col">
 					{#each days as group (group.label)}
-						<div class="grid grid-cols-[minmax(0,1fr)] gap-x-8 border-t border-border px-4 py-3 first:border-t-0 sm:px-5 lg:grid-cols-[12rem_minmax(0,1fr)]">
+						<div class="grid grid-cols-[minmax(0,1fr)] gap-x-8 border-t border-border px-4 py-3 first:border-t-0 lg:grid-cols-[12rem_minmax(0,1fr)]">
 							<h3 class="py-2 text-sm font-medium text-strong">{group.label}</h3>
 							<ul class="flex flex-col">
 								{#each group.commits as commit (commit.sha)}
@@ -79,7 +80,7 @@
 					{/each}
 				</div>
 			</div>
-			<p class="px-1 pt-4 text-sm text-subtle">
+			<p class="pt-5 text-sm text-subtle">
 				Also as an <a class="link" href="/rss.xml">RSS feed</a>. Repos touched:
 				{#each [...new Set(commits.map((c) => c.repo))] as name, i (name)}{i ? ', ' : ''}<a class="link" href={repoUrl(name)} target="_blank" rel="noreferrer">{name}</a>{/each}.
 			</p>

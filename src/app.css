@@ -51,19 +51,19 @@
 	--color-ring: color-mix(in srgb, var(--color-strong) 22%, transparent);
 	--chart-1: var(--color-strong);
 
-	/* 12, 13 (body), 14, 16, 18 and 24 */
+	/* 12, 14 (body), 15, 17, 20 and 24 */
 	--font-size-badge: 12px;
-	--font-size-body: 13px;
-	--font-size-label: 13px;
-	--font-size-button: 13px;
-	--font-size-header: 16px;
-	--font-size-title: 18px;
+	--font-size-body: 14px;
+	--font-size-label: 14px;
+	--font-size-button: 14px;
+	--font-size-header: 17px;
+	--font-size-title: 20px;
 	--font-size-display: 24px;
 	--text-xs: 12px;
-	--text-sm: 13px;
-	--text-base: 14px;
-	--text-lg: 16px;
-	--text-xl: 18px;
+	--text-sm: 14px;
+	--text-base: 15px;
+	--text-lg: 17px;
+	--text-xl: 20px;
 	--text-2xl: 24px;
 	--text-3xl: 24px;
 	/* display sizes, for headlines only */
@@ -196,15 +196,14 @@
 	}
 }
 
-/* Pages cross-fade; the top bar and footer stay put. */
+/* Pages cross-fade; the floating nav stays put. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
 	animation-duration: 180ms;
 	animation-timing-function: var(--ease-out);
 }
 
-::view-transition-group(topbar),
-::view-transition-group(footer) {
+::view-transition-group(dock) {
 	animation: none;
 }
 
@@ -283,11 +282,10 @@
 	}
 }
 
-/* Section rule: dashed, running across the gutter to the outer frame line. */
+/* Section rule: a full line, edge to edge. */
 @utility rule {
-	margin-inline: calc(-1 * var(--gutter, 0px));
 	border: 0;
-	border-top: 1px dashed var(--color-frame);
+	border-top: 1px solid var(--color-frame);
 }
 
 /* Small mono tag. */
@@ -548,7 +546,7 @@ html.theming::view-transition-new(root) {
 	mask-repeat: no-repeat;
 }
 
-html.theming :is(header, footer) {
+html.theming header {
 	view-transition-name: none !important;
 }
 
