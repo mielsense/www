@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-28T12:16:22.215Z",
+	"syncedAt": "2026-10-29T12:25:43.635Z",
 	"repos": [
 		{
 			"name": "mielui",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-10-28T03:50:26Z"
+			"pushedAt": "2026-10-28T14:25:57Z"
 		},
 		{
 			"name": "mielwm",
@@ -19,7 +19,17 @@
 			"language": "Swift",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-27T21:14:53Z"
+			"pushedAt": "2026-10-28T13:57:43Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-28T12:16:23Z"
 		},
 		{
 			"name": "mielsense",
@@ -30,16 +40,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-10-27T19:44:17Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-27T11:43:02Z"
 		},
 		{
 			"name": "coss-sv",
@@ -274,6 +274,27 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "chore(release): v0.4.0 (#29)",
+			"sha": "b7bdb26",
+			"url": "https://github.com/mielsense/mielui/commit/b7bdb26b4ef9f2801a7ddbd7e1baa693b24c7334",
+			"date": "2026-10-28T14:24:20Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "feat(docs)!: redesign the docs and make the default theme flat (#28)",
+			"sha": "caa356c",
+			"url": "https://github.com/mielsense/mielui/commit/caa356c0b12f36e42071d0192cec2fb4a8600dfb",
+			"date": "2026-10-28T14:04:08Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "1762954",
+			"url": "https://github.com/mielsense/www/commit/1762954625a7bc914028acb0c6cf2855b5644eb2",
+			"date": "2026-10-28T12:16:22Z"
+		},
+		{
 			"repo": "mielwm",
 			"message": "docs: add CLAUDE.md with the rules for working on mielwm",
 			"sha": "194a521",
@@ -393,13 +414,6 @@
 			"date": "2026-10-26T20:04:49Z"
 		},
 		{
-			"repo": "www",
-			"message": "feat: new minimal favicon",
-			"sha": "be1a846",
-			"url": "https://github.com/mielsense/www/commit/be1a8467a6e675c5be00fdcbcb57daec0673819e",
-			"date": "2026-10-26T20:04:49Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "fix(docs): keep fast scrolling painted by clipping the shell plate round (#27)",
 			"sha": "27f8ef7",
@@ -454,20 +468,6 @@
 			"sha": "34f5a86",
 			"url": "https://github.com/mielsense/mielui/commit/34f5a862f5c340bc6edff82afb209c84f1c41ef4",
 			"date": "2026-10-20T22:43:00Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(docs): stop blank pages from stacked sidebar label blurs",
-			"sha": "f1e9a7d",
-			"url": "https://github.com/mielsense/mielui/commit/f1e9a7d03f2d96cb197fd48814dd35689511bf92",
-			"date": "2026-10-20T22:29:10Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(docs): make sidebar navigation instant and smooth the edge blurs (#25)",
-			"sha": "13d516d",
-			"url": "https://github.com/mielsense/mielui/commit/13d516da158731d4c0334acf7fc1d30493e525a3",
-			"date": "2026-10-19T11:49:13Z"
 		},
 		{
 			"repo": "qali",
@@ -2392,8 +2392,13 @@
 		},
 		{
 			"date": "2026-10-28",
-			"count": 1,
+			"count": 5,
 			"level": 1
+		},
+		{
+			"date": "2026-10-29",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
