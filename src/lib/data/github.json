@@ -1,6 +1,26 @@
 {
-	"syncedAt": "2026-10-29T12:25:43.635Z",
+	"syncedAt": "2026-10-29T23:07:33.618Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-29T23:07:21Z"
+		},
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 16,
+			"year": 2026,
+			"pushedAt": "2026-10-29T22:51:14Z"
+		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -22,16 +42,6 @@
 			"pushedAt": "2026-10-28T13:57:43Z"
 		},
 		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-28T12:16:23Z"
-		},
-		{
 			"name": "mielsense",
 			"description": "Mwa",
 			"url": "https://github.com/mielsense/mielsense",
@@ -40,16 +50,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-10-27T19:44:17Z"
-		},
-		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
-			"language": "Svelte",
-			"stars": 16,
-			"year": 2026,
-			"pushedAt": "2026-10-26T05:35:13Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -274,6 +274,27 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "design: drop the frame for a floating nav, one spacing system, bigger type",
+			"sha": "1d1f865",
+			"url": "https://github.com/mielsense/www/commit/1d1f8657b4fdd171b408c4c26e5c089cbc910941",
+			"date": "2026-10-29T23:07:18Z"
+		},
+		{
+			"repo": "www",
+			"message": "content: lead with mielwm, add it to open source, drop qali from current",
+			"sha": "72f3bec",
+			"url": "https://github.com/mielsense/www/commit/72f3bec8a90db827057cd7fbaa392271a8042fc2",
+			"date": "2026-10-29T23:07:18Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "42c21ec",
+			"url": "https://github.com/mielsense/www/commit/42c21ec9cd9664cbbc5ecbe85408dd95c737628e",
+			"date": "2026-10-29T12:25:43Z"
+		},
+		{
 			"repo": "mielui",
 			"message": "chore(release): v0.4.0 (#29)",
 			"sha": "b7bdb26",
@@ -391,27 +412,6 @@
 			"sha": "9a3a8fb",
 			"url": "https://github.com/mielsense/www/commit/9a3a8fb980bfbf6c28ba0e559ad6fb854aab3549",
 			"date": "2026-10-26T20:04:50Z"
-		},
-		{
-			"repo": "www",
-			"message": "perf: load the sound engine and smooth scroll after first paint",
-			"sha": "acaa1a4",
-			"url": "https://github.com/mielsense/www/commit/acaa1a42689161a10a39a5fb2e856b87a96d1222",
-			"date": "2026-10-26T20:04:50Z"
-		},
-		{
-			"repo": "www",
-			"message": "perf(css): skip unused Mielui components when generating styles",
-			"sha": "cc3097e",
-			"url": "https://github.com/mielsense/www/commit/cc3097ed478c6cf15c1ee461f0740857fb712dd1",
-			"date": "2026-10-26T20:04:50Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: remove unused components and assets",
-			"sha": "cab42f1",
-			"url": "https://github.com/mielsense/www/commit/cab42f16c3cd7967eda65d4fbca1f9b19a87811f",
-			"date": "2026-10-26T20:04:49Z"
 		},
 		{
 			"repo": "mielui",
