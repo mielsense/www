@@ -7,6 +7,7 @@ import {
 	GamepadIcon,
 	GlobeIcon,
 	LayersIcon,
+	SidebarIcon,
 	SparkleIcon,
 	TerminalIcon,
 	WrenchIcon,
@@ -52,6 +53,7 @@ const hidden = new Set([
 /** Nicer copy and badges for the repos worth it. Anything else keeps its GitHub description. */
 const overrides: Record<string, Partial<Project>> = {
 	mielui: { description: 'Tasteful Svelte 5 component library', kind: 'library' },
+	mielwm: { description: 'A macOS tiling window manager on one endless canvas', kind: 'app' },
 	www: { description: 'This website', url: 'https://miel.my', kind: 'app' },
 	'evilcharts-sv': { description: 'Animated Svelte 5 charts on LayerChart or ECharts', kind: 'library' },
 	'coss-sv': { description: 'Svelte 5 port of COSS UI, built on Shards UI', kind: 'library' },
@@ -118,13 +120,14 @@ export const projects: Project[] = [...manual, ...synced].sort(
 export const byName = (name: string) => projects.find((p) => p.name === name);
 
 /** The front page picks: what is being worked on now. */
-export const featured = ['mielui', 'benky', 'reecall dashboard', 'qali', 'sensel']
+export const featured = ['mielwm', 'mielui', 'benky', 'reecall dashboard', 'sensel']
 	.map(byName)
 	.filter((p): p is Project => p !== undefined);
 
-/** Mielui leads; the ports follow by stars, which come from the sync. */
+/** Mielui and mielwm lead; the ports follow by stars, which come from the sync. */
 export const openSource = [
 	byName('mielui'),
+	byName('mielwm'),
 	...['evilcharts-sv', 'sileo-svelte', 'kettle', 'coss-sv'].map(byName).sort((a, b) => (b?.stars ?? 0) - (a?.stars ?? 0))
 ].filter((p): p is Project => p !== undefined);
 
@@ -148,6 +151,7 @@ export const commits: Commit[] = github.commits ?? [];
 
 const glyphs: Record<string, IconData> = {
 	mielui: SparkleIcon,
+	mielwm: SidebarIcon,
 	benky: BookIcon,
 	'reecall dashboard': ChartIcon,
 	qali: CalendarIcon,
