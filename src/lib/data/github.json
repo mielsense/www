@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-30T12:16:59.478Z",
+	"syncedAt": "2026-10-31T11:48:01.886Z",
 	"repos": [
 		{
 			"name": "mielwm",
@@ -9,7 +9,17 @@
 			"language": "Swift",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-30T11:10:54Z"
+			"pushedAt": "2026-10-30T22:05:26Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-10-30T12:17:00Z"
 		},
 		{
 			"name": "mielui",
@@ -20,16 +30,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-10-30T00:43:34Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-10-29T23:07:35Z"
 		},
 		{
 			"name": "coss-sv",
@@ -274,6 +274,69 @@
 	],
 	"commits": [
 		{
+			"repo": "mielwm",
+			"message": "chore: release 0.1.1",
+			"sha": "76a23e3",
+			"url": "https://github.com/mielsense/mielwm/commit/76a23e3af71d7a58cec6c52799db5d60b369f347",
+			"date": "2026-10-30T21:58:06Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "test: skip the IPC round trips that wait on the main queue on CI",
+			"sha": "da72e0f",
+			"url": "https://github.com/mielsense/mielwm/commit/da72e0fe8fd84649a9a00dda6f48c31a98667e17",
+			"date": "2026-10-30T21:51:45Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "fix: wrap Settings methods passed to Binding in closures",
+			"sha": "45b0ef6",
+			"url": "https://github.com/mielsense/mielwm/commit/45b0ef6f5e58924912cde25949691e5a8a6af6fe",
+			"date": "2026-10-30T21:46:10Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "fix: stopping the event tap on its own thread no longer waits on itself",
+			"sha": "71c1631",
+			"url": "https://github.com/mielsense/mielwm/commit/71c16310bdd000bc8ac5292167b23bfc313ec866",
+			"date": "2026-10-30T21:40:57Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "docs: say standalone chevrons and arrows are semibold",
+			"sha": "c8e4759",
+			"url": "https://github.com/mielsense/mielwm/commit/c8e47592e79cbad75d42fb2406ac44c58f9e446b",
+			"date": "2026-10-30T21:33:49Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "refactor: guard or explain the last sRGB force unwraps",
+			"sha": "5006d41",
+			"url": "https://github.com/mielsense/mielwm/commit/5006d4106aaac5d4d90ac9a422c5fe4aff30c8e1",
+			"date": "2026-10-30T21:33:21Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "refactor: no force unwraps in the capture manager",
+			"sha": "45ddff0",
+			"url": "https://github.com/mielsense/mielwm/commit/45ddff065b1e5b24ea97cafcd1a4ea52c71edbff",
+			"date": "2026-10-30T21:32:58Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "refactor: import the system layer without @preconcurrency",
+			"sha": "cc185e7",
+			"url": "https://github.com/mielsense/mielwm/commit/cc185e712303e2f153422a4b4adee8c3d2e126b3",
+			"date": "2026-10-30T21:31:37Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "63ce0df",
+			"url": "https://github.com/mielsense/www/commit/63ce0df477f1a21081b9fcff4e6a59af83a9a8bf",
+			"date": "2026-10-30T12:16:59Z"
+		},
+		{
 			"repo": "mielui",
 			"message": "fix(theme): apply dark-mode theme colors over the default dark palette",
 			"sha": "2556f7b",
@@ -356,13 +419,6 @@
 			"sha": "56a69fd",
 			"url": "https://github.com/mielsense/www/commit/56a69fde3e75ce4f9e797aa66812b7821a4fe1ce",
 			"date": "2026-10-26T20:05:33Z"
-		},
-		{
-			"repo": "www",
-			"message": "perf: move the banner drift to the compositor",
-			"sha": "e0a01e0",
-			"url": "https://github.com/mielsense/www/commit/e0a01e0bea729300a997615afeee80c2adeaa607",
-			"date": "2026-10-26T20:04:50Z"
 		},
 		{
 			"repo": "mielui",
@@ -496,62 +552,6 @@
 			"sha": "c23f43b",
 			"url": "https://github.com/mielsense/coss-sv/commit/c23f43bac43c70d4edeffde580f574aec8a07fd2",
 			"date": "2026-09-08T17:12:04Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(ui): preserve delegated attributes and bound comment checks",
-			"sha": "b569769",
-			"url": "https://github.com/mielsense/coss-sv/commit/b56976926121cb6a8b8f4c5e844f9a7dba7440b8",
-			"date": "2026-09-08T17:08:43Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "feat(combobox): add typed item collections",
-			"sha": "af4d63f",
-			"url": "https://github.com/mielsense/coss-sv/commit/af4d63f36befe2093a6ae7eeb491f40b40444201",
-			"date": "2026-09-08T17:00:18Z"
-		},
-		{
-			"repo": "coss-sv",
-			"message": "fix(combobox): align popup anchors and default selections",
-			"sha": "80214ea",
-			"url": "https://github.com/mielsense/coss-sv/commit/80214ea9387e2ed665fc906e102c2c48dc047dd3",
-			"date": "2026-09-08T16:52:04Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "docs(readme): point website links to charts.miel.my",
-			"sha": "4e0080b",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/4e0080b81a0adf778f96e9aa2e03236e7e9d945b",
-			"date": "2026-09-05T22:30:23Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "feat: bring ECharts blocks to provider parity",
-			"sha": "8491081",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/8491081747e5ec83e7ce810368a85ff8f2fe8986",
-			"date": "2026-08-30T19:50:04Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "fix: preserve provider navigation and ECharts intros",
-			"sha": "e56bfe3",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/e56bfe3f1032357385e42b5654b80816de7f2932",
-			"date": "2026-08-30T18:58:23Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "docs(repo): add agent guide and review workflow",
-			"sha": "af287c7",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/af287c7a9847af4b409c6105b628b3c7f362b5f9",
-			"date": "2026-08-30T17:46:48Z"
-		},
-		{
-			"repo": "evilcharts-sv",
-			"message": "refactor(site): harden registry and docs delivery",
-			"sha": "c7c41c2",
-			"url": "https://github.com/mielsense/evilcharts-sv/commit/c7c41c2b933a9937ffd0178689f9de73387a1756",
-			"date": "2026-08-30T17:46:33Z"
 		}
 	],
 	"contributions": [
@@ -2068,7 +2068,7 @@
 		{
 			"date": "2026-08-24",
 			"count": 86,
-			"level": 3
+			"level": 2
 		},
 		{
 			"date": "2026-08-25",
@@ -2083,22 +2083,22 @@
 		{
 			"date": "2026-08-27",
 			"count": 88,
-			"level": 3
+			"level": 2
 		},
 		{
 			"date": "2026-08-28",
 			"count": 123,
-			"level": 4
+			"level": 2
 		},
 		{
 			"date": "2026-08-29",
 			"count": 53,
-			"level": 2
+			"level": 1
 		},
 		{
 			"date": "2026-08-30",
 			"count": 65,
-			"level": 2
+			"level": 1
 		},
 		{
 			"date": "2026-08-31",
@@ -2138,17 +2138,17 @@
 		{
 			"date": "2026-09-07",
 			"count": 80,
-			"level": 3
+			"level": 2
 		},
 		{
 			"date": "2026-09-08",
 			"count": 95,
-			"level": 3
+			"level": 2
 		},
 		{
 			"date": "2026-09-09",
 			"count": 42,
-			"level": 2
+			"level": 1
 		},
 		{
 			"date": "2026-09-10",
@@ -2158,7 +2158,7 @@
 		{
 			"date": "2026-09-11",
 			"count": 43,
-			"level": 2
+			"level": 1
 		},
 		{
 			"date": "2026-09-12",
@@ -2402,8 +2402,13 @@
 		},
 		{
 			"date": "2026-10-30",
-			"count": 150,
+			"count": 278,
 			"level": 4
+		},
+		{
+			"date": "2026-10-31",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
