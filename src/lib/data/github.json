@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-10-31T11:48:01.886Z",
+	"syncedAt": "2026-11-01T12:47:37.463Z",
 	"repos": [
 		{
 			"name": "mielwm",
@@ -9,7 +9,7 @@
 			"language": "Swift",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-30T22:05:26Z"
+			"pushedAt": "2026-11-01T06:22:53Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-30T12:17:00Z"
+			"pushedAt": "2026-10-31T11:48:02Z"
 		},
 		{
 			"name": "mielui",
@@ -274,6 +274,13 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "857dc3d",
+			"url": "https://github.com/mielsense/www/commit/857dc3d258cece0410fe37d67a372a8eb52baab1",
+			"date": "2026-10-31T11:48:01Z"
+		},
+		{
 			"repo": "mielwm",
 			"message": "chore: release 0.1.1",
 			"sha": "76a23e3",
@@ -414,13 +421,6 @@
 			"date": "2026-10-27T00:57:56Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "56a69fd",
-			"url": "https://github.com/mielsense/www/commit/56a69fde3e75ce4f9e797aa66812b7821a4fe1ce",
-			"date": "2026-10-26T20:05:33Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "fix(docs): keep fast scrolling painted by clipping the shell plate round (#27)",
 			"sha": "27f8ef7",
@@ -555,41 +555,6 @@
 		}
 	],
 	"contributions": [
-		{
-			"date": "2025-10-26",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-27",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-28",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-29",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-30",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-10-31",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-01",
-			"count": 0,
-			"level": 0
-		},
 		{
 			"date": "2025-11-02",
 			"count": 0,
@@ -2407,6 +2372,11 @@
 		},
 		{
 			"date": "2026-10-31",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-11-01",
 			"count": 0,
 			"level": 0
 		}
