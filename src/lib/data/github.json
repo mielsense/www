@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-01T12:47:37.463Z",
+	"syncedAt": "2026-11-02T14:56:41.450Z",
 	"repos": [
 		{
 			"name": "mielwm",
@@ -9,7 +9,17 @@
 			"language": "Swift",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-11-01T06:22:53Z"
+			"pushedAt": "2026-11-02T09:11:42Z"
+		},
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 16,
+			"year": 2026,
+			"pushedAt": "2026-11-01T15:59:28Z"
 		},
 		{
 			"name": "www",
@@ -19,7 +29,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-10-31T11:48:02Z"
+			"pushedAt": "2026-11-01T12:47:38Z"
 		},
 		{
 			"name": "mielui",
@@ -30,16 +40,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-10-30T00:43:34Z"
-		},
-		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
-			"language": "Svelte",
-			"stars": 16,
-			"year": 2026,
-			"pushedAt": "2026-10-29T22:51:14Z"
 		},
 		{
 			"name": "mielsense",
@@ -274,67 +274,74 @@
 	],
 	"commits": [
 		{
+			"repo": "mielwm",
+			"message": "docs: plainer wording in the 0.1.3 changelog",
+			"sha": "401c12b",
+			"url": "https://github.com/mielsense/mielwm/commit/401c12b5f088569e3487d2e7ef0438e4cdd7dd2e",
+			"date": "2026-11-02T09:03:37Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "fix(core): a focus report replayed once a window shows still moves the camera",
+			"sha": "38fc9e9",
+			"url": "https://github.com/mielsense/mielwm/commit/38fc9e946505637a4d3adfa881de2aa6e1014a34",
+			"date": "2026-11-02T09:03:37Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "chore: release 0.1.3",
+			"sha": "00d2ae5",
+			"url": "https://github.com/mielsense/mielwm/commit/00d2ae59c992774928d577946bf0ca418ce339c2",
+			"date": "2026-11-02T08:56:06Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "fix(core): a focus blip in the same app no longer moves the camera",
+			"sha": "6062e02",
+			"url": "https://github.com/mielsense/mielwm/commit/6062e0215c9de62628c43e724ab1a9cb596c0099",
+			"date": "2026-11-02T08:56:06Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "docs: plainer wording in the 0.1.2 changelog",
+			"sha": "ec59fd0",
+			"url": "https://github.com/mielsense/mielwm/commit/ec59fd05f36fb33ea0dea1a666a8e5f935d4a304",
+			"date": "2026-11-02T00:01:30Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "docs: say when a Settings preview capture fails",
+			"sha": "117f81e",
+			"url": "https://github.com/mielsense/mielwm/commit/117f81e1c4eb5996012ed6e42b381152af0db916",
+			"date": "2026-11-02T00:01:30Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "fix(system): keep a window whose new element arrives before the old one goes",
+			"sha": "1df712b",
+			"url": "https://github.com/mielsense/mielwm/commit/1df712bc7ecc479c7c1026256e3c61436fe26d68",
+			"date": "2026-11-02T00:01:29Z"
+		},
+		{
+			"repo": "mielwm",
+			"message": "chore: release 0.1.2",
+			"sha": "2c2579d",
+			"url": "https://github.com/mielsense/mielwm/commit/2c2579d518e69f898e350f980869bcad10f14172",
+			"date": "2026-11-01T23:51:40Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "e1dd40c",
+			"url": "https://github.com/mielsense/www/commit/e1dd40c62c2c2846e9bc13e3dcd81a2e3e60226f",
+			"date": "2026-11-01T12:47:37Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "857dc3d",
 			"url": "https://github.com/mielsense/www/commit/857dc3d258cece0410fe37d67a372a8eb52baab1",
 			"date": "2026-10-31T11:48:01Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "chore: release 0.1.1",
-			"sha": "76a23e3",
-			"url": "https://github.com/mielsense/mielwm/commit/76a23e3af71d7a58cec6c52799db5d60b369f347",
-			"date": "2026-10-30T21:58:06Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "test: skip the IPC round trips that wait on the main queue on CI",
-			"sha": "da72e0f",
-			"url": "https://github.com/mielsense/mielwm/commit/da72e0fe8fd84649a9a00dda6f48c31a98667e17",
-			"date": "2026-10-30T21:51:45Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "fix: wrap Settings methods passed to Binding in closures",
-			"sha": "45b0ef6",
-			"url": "https://github.com/mielsense/mielwm/commit/45b0ef6f5e58924912cde25949691e5a8a6af6fe",
-			"date": "2026-10-30T21:46:10Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "fix: stopping the event tap on its own thread no longer waits on itself",
-			"sha": "71c1631",
-			"url": "https://github.com/mielsense/mielwm/commit/71c16310bdd000bc8ac5292167b23bfc313ec866",
-			"date": "2026-10-30T21:40:57Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "docs: say standalone chevrons and arrows are semibold",
-			"sha": "c8e4759",
-			"url": "https://github.com/mielsense/mielwm/commit/c8e47592e79cbad75d42fb2406ac44c58f9e446b",
-			"date": "2026-10-30T21:33:49Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "refactor: guard or explain the last sRGB force unwraps",
-			"sha": "5006d41",
-			"url": "https://github.com/mielsense/mielwm/commit/5006d4106aaac5d4d90ac9a422c5fe4aff30c8e1",
-			"date": "2026-10-30T21:33:21Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "refactor: no force unwraps in the capture manager",
-			"sha": "45ddff0",
-			"url": "https://github.com/mielsense/mielwm/commit/45ddff065b1e5b24ea97cafcd1a4ea52c71edbff",
-			"date": "2026-10-30T21:32:58Z"
-		},
-		{
-			"repo": "mielwm",
-			"message": "refactor: import the system layer without @preconcurrency",
-			"sha": "cc185e7",
-			"url": "https://github.com/mielsense/mielwm/commit/cc185e712303e2f153422a4b4adee8c3d2e126b3",
-			"date": "2026-10-30T21:31:37Z"
 		},
 		{
 			"repo": "www",
@@ -412,13 +419,6 @@
 			"sha": "f31c35e",
 			"url": "https://github.com/mielsense/www/commit/f31c35ed90bc5dcb3b3c1deea4ae174a2f49ae1f",
 			"date": "2026-10-27T00:58:08Z"
-		},
-		{
-			"repo": "www",
-			"message": "copy: scroll sideways to see more",
-			"sha": "f9ffb94",
-			"url": "https://github.com/mielsense/www/commit/f9ffb94919d9f5f3e2e35d4b24273d407868750f",
-			"date": "2026-10-27T00:57:56Z"
 		},
 		{
 			"repo": "mielui",
@@ -2379,6 +2379,11 @@
 			"date": "2026-11-01",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-11-02",
+			"count": 17,
+			"level": 1
 		}
 	]
 }
