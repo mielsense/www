@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-11-04T13:53:18.178Z",
+	"syncedAt": "2026-11-05T14:08:41.106Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-11-04T13:53:19Z"
+		},
 		{
 			"name": "coss-sv",
 			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
@@ -10,16 +20,6 @@
 			"stars": 16,
 			"year": 2026,
 			"pushedAt": "2026-11-03T20:27:10Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-11-03T13:44:51Z"
 		},
 		{
 			"name": "mielwm",
@@ -276,6 +276,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "6baa2ef",
+			"url": "https://github.com/mielsense/www/commit/6baa2efcff05932654075bfa6c511e14d905f585",
+			"date": "2026-11-04T13:53:18Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "ecbe53f",
 			"url": "https://github.com/mielsense/www/commit/ecbe53f76ea80344da2a1ccc1ad830483149d0f9",
 			"date": "2026-11-03T13:44:50Z"
@@ -412,13 +419,6 @@
 			"sha": "caa356c",
 			"url": "https://github.com/mielsense/mielui/commit/caa356c0b12f36e42071d0192cec2fb4a8600dfb",
 			"date": "2026-10-28T14:04:08Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "1762954",
-			"url": "https://github.com/mielsense/www/commit/1762954625a7bc914028acb0c6cf2855b5644eb2",
-			"date": "2026-10-28T12:16:22Z"
 		},
 		{
 			"repo": "mielui",
@@ -2394,6 +2394,11 @@
 			"date": "2026-11-04",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-11-05",
+			"count": 3,
+			"level": 1
 		}
 	]
 }
