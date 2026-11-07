@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-06T13:51:32.978Z",
+	"syncedAt": "2026-11-07T12:35:31.472Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-11-05T14:08:42Z"
+			"pushedAt": "2026-11-06T13:51:34Z"
 		},
 		{
 			"name": "coss-sv",
@@ -276,6 +276,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "6352cca",
+			"url": "https://github.com/mielsense/www/commit/6352cca0f4132bbf9604124f848f6797f1536686",
+			"date": "2026-11-06T13:51:33Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "d7ab217",
 			"url": "https://github.com/mielsense/www/commit/d7ab217bdc254a3703e7432f631e4f8b32dc0638",
 			"date": "2026-11-05T14:08:41Z"
@@ -397,13 +404,6 @@
 			"message": "design: drop the frame for a floating nav, one spacing system, bigger type",
 			"sha": "1d1f865",
 			"url": "https://github.com/mielsense/www/commit/1d1f8657b4fdd171b408c4c26e5c089cbc910941",
-			"date": "2026-10-29T23:07:18Z"
-		},
-		{
-			"repo": "www",
-			"message": "content: lead with mielwm, add it to open source, drop qali from current",
-			"sha": "72f3bec",
-			"url": "https://github.com/mielsense/www/commit/72f3bec8a90db827057cd7fbaa392271a8042fc2",
 			"date": "2026-10-29T23:07:18Z"
 		},
 		{
@@ -2402,6 +2402,11 @@
 		},
 		{
 			"date": "2026-11-06",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-11-07",
 			"count": 0,
 			"level": 0
 		}
