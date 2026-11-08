@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-07T12:35:31.472Z",
+	"syncedAt": "2026-11-08T12:52:47.804Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-11-06T13:51:34Z"
+			"pushedAt": "2026-11-07T12:35:32Z"
 		},
 		{
 			"name": "coss-sv",
@@ -276,6 +276,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "1d1196f",
+			"url": "https://github.com/mielsense/www/commit/1d1196f78126d32b1b30f28e379610b2ee3e69a2",
+			"date": "2026-11-07T12:35:31Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "6352cca",
 			"url": "https://github.com/mielsense/www/commit/6352cca0f4132bbf9604124f848f6797f1536686",
 			"date": "2026-11-06T13:51:33Z"
@@ -398,13 +405,6 @@
 			"sha": "0289338",
 			"url": "https://github.com/mielsense/www/commit/0289338ae93d66efcf0b8c4e89842317a12afe94",
 			"date": "2026-10-29T23:07:34Z"
-		},
-		{
-			"repo": "www",
-			"message": "design: drop the frame for a floating nav, one spacing system, bigger type",
-			"sha": "1d1f865",
-			"url": "https://github.com/mielsense/www/commit/1d1f8657b4fdd171b408c4c26e5c089cbc910941",
-			"date": "2026-10-29T23:07:18Z"
 		},
 		{
 			"repo": "mielui",
@@ -555,41 +555,6 @@
 		}
 	],
 	"contributions": [
-		{
-			"date": "2025-11-02",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-03",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-04",
-			"count": 1,
-			"level": 1
-		},
-		{
-			"date": "2025-11-05",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-06",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-07",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-08",
-			"count": 0,
-			"level": 0
-		},
 		{
 			"date": "2025-11-09",
 			"count": 0,
@@ -2407,6 +2372,11 @@
 		},
 		{
 			"date": "2026-11-07",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-11-08",
 			"count": 0,
 			"level": 0
 		}
