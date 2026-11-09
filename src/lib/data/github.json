@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-11-08T12:52:47.804Z",
+	"syncedAt": "2026-11-09T15:26:18.000Z",
 	"repos": [
+		{
+			"name": "evilcharts-sv",
+			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
+			"url": "https://github.com/mielsense/evilcharts-sv",
+			"homepage": "https://charts.miel.my",
+			"language": "Svelte",
+			"stars": 29,
+			"year": 2026,
+			"pushedAt": "2026-11-09T05:24:39Z"
+		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -9,7 +19,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-11-07T12:35:32Z"
+			"pushedAt": "2026-11-08T12:52:48Z"
 		},
 		{
 			"name": "coss-sv",
@@ -50,16 +60,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-10-27T19:44:17Z"
-		},
-		{
-			"name": "evilcharts-sv",
-			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
-			"url": "https://github.com/mielsense/evilcharts-sv",
-			"homepage": "https://charts.miel.my",
-			"language": "Svelte",
-			"stars": 29,
-			"year": 2026,
-			"pushedAt": "2026-10-26T05:34:38Z"
 		},
 		{
 			"name": "qali",
@@ -276,6 +276,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "8b88b01",
+			"url": "https://github.com/mielsense/www/commit/8b88b01fb49676b82b392878f128a1d755137168",
+			"date": "2026-11-08T12:52:47Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "1d1196f",
 			"url": "https://github.com/mielsense/www/commit/1d1196f78126d32b1b30f28e379610b2ee3e69a2",
 			"date": "2026-11-07T12:35:31Z"
@@ -398,13 +405,6 @@
 			"sha": "2556f7b",
 			"url": "https://github.com/mielsense/mielui/commit/2556f7b1571c600c44d394f66b7c851d34f29a2b",
 			"date": "2026-10-30T00:41:31Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "0289338",
-			"url": "https://github.com/mielsense/www/commit/0289338ae93d66efcf0b8c4e89842317a12afe94",
-			"date": "2026-10-29T23:07:34Z"
 		},
 		{
 			"repo": "mielui",
@@ -2379,6 +2379,11 @@
 			"date": "2026-11-08",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-11-09",
+			"count": 1,
+			"level": 1
 		}
 	]
 }
