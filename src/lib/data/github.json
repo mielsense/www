@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-11-09T15:26:18.000Z",
+	"syncedAt": "2026-11-10T14:27:43.601Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 0,
+			"year": 2026,
+			"pushedAt": "2026-11-09T15:26:19Z"
+		},
 		{
 			"name": "evilcharts-sv",
 			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
@@ -10,16 +20,6 @@
 			"stars": 29,
 			"year": 2026,
 			"pushedAt": "2026-11-09T05:24:39Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 0,
-			"year": 2026,
-			"pushedAt": "2026-11-08T12:52:48Z"
 		},
 		{
 			"name": "coss-sv",
@@ -276,6 +276,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "27a941d",
+			"url": "https://github.com/mielsense/www/commit/27a941dfb7817f27a050bf2c4ca0e5c6a40515d8",
+			"date": "2026-11-09T15:26:18Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "8b88b01",
 			"url": "https://github.com/mielsense/www/commit/8b88b01fb49676b82b392878f128a1d755137168",
 			"date": "2026-11-08T12:52:47Z"
@@ -391,13 +398,6 @@
 			"sha": "857dc3d",
 			"url": "https://github.com/mielsense/www/commit/857dc3d258cece0410fe37d67a372a8eb52baab1",
 			"date": "2026-10-31T11:48:01Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "63ce0df",
-			"url": "https://github.com/mielsense/www/commit/63ce0df477f1a21081b9fcff4e6a59af83a9a8bf",
-			"date": "2026-10-30T12:16:59Z"
 		},
 		{
 			"repo": "mielui",
@@ -2382,6 +2382,11 @@
 		},
 		{
 			"date": "2026-11-09",
+			"count": 36,
+			"level": 1
+		},
+		{
+			"date": "2026-11-10",
 			"count": 1,
 			"level": 1
 		}
