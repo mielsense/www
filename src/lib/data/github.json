@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-10T14:27:43.601Z",
+	"syncedAt": "2026-11-11T13:41:42.030Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 0,
 			"year": 2026,
-			"pushedAt": "2026-11-09T15:26:19Z"
+			"pushedAt": "2026-11-10T14:27:44Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -276,6 +276,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "3ed3d43",
+			"url": "https://github.com/mielsense/www/commit/3ed3d4349596d0f45e57021adfbc575c50b509bf",
+			"date": "2026-11-10T14:27:43Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "27a941d",
 			"url": "https://github.com/mielsense/www/commit/27a941dfb7817f27a050bf2c4ca0e5c6a40515d8",
 			"date": "2026-11-09T15:26:18Z"
@@ -391,13 +398,6 @@
 			"sha": "e1dd40c",
 			"url": "https://github.com/mielsense/www/commit/e1dd40c62c2c2846e9bc13e3dcd81a2e3e60226f",
 			"date": "2026-11-01T12:47:37Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "857dc3d",
-			"url": "https://github.com/mielsense/www/commit/857dc3d258cece0410fe37d67a372a8eb52baab1",
-			"date": "2026-10-31T11:48:01Z"
 		},
 		{
 			"repo": "mielui",
@@ -2387,8 +2387,13 @@
 		},
 		{
 			"date": "2026-11-10",
-			"count": 1,
+			"count": 6,
 			"level": 1
+		},
+		{
+			"date": "2026-11-11",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
