@@ -1,15 +1,15 @@
 {
-	"syncedAt": "2026-11-16T15:00:53.057Z",
+	"syncedAt": "2026-11-17T15:37:16.717Z",
 	"repos": [
 		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
+			"name": "mielui",
+			"description": "Tasteful svelte 5 component library",
+			"url": "https://github.com/mielsense/mielui",
+			"homepage": "https://ui.miel.my",
 			"language": "Svelte",
-			"stars": 1,
+			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-11-15T13:33:46Z"
+			"pushedAt": "2026-11-17T03:12:35Z"
 		},
 		{
 			"name": "coss-sv",
@@ -19,7 +19,17 @@
 			"language": "Svelte",
 			"stars": 16,
 			"year": 2026,
-			"pushedAt": "2026-11-14T01:42:20Z"
+			"pushedAt": "2026-11-16T15:50:23Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 1,
+			"year": 2026,
+			"pushedAt": "2026-11-16T15:00:54Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -40,16 +50,6 @@
 			"stars": 0,
 			"year": 2026,
 			"pushedAt": "2026-11-02T09:11:42Z"
-		},
-		{
-			"name": "mielui",
-			"description": "Tasteful svelte 5 component library",
-			"url": "https://github.com/mielsense/mielui",
-			"homepage": "https://ui.miel.my",
-			"language": "Svelte",
-			"stars": 5,
-			"year": 2026,
-			"pushedAt": "2026-10-30T00:43:34Z"
 		},
 		{
 			"name": "mielsense",
@@ -276,6 +276,13 @@
 		{
 			"repo": "www",
 			"message": "chore: sync github data",
+			"sha": "21eca4f",
+			"url": "https://github.com/mielsense/www/commit/21eca4faa95df9170e2ad31948c9a542c23a0f25",
+			"date": "2026-11-16T15:00:53Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
 			"sha": "d9ac0f1",
 			"url": "https://github.com/mielsense/www/commit/d9ac0f1a987d86162378aad87970008154dc188a",
 			"date": "2026-11-15T13:33:45Z"
@@ -335,13 +342,6 @@
 			"sha": "1d1196f",
 			"url": "https://github.com/mielsense/www/commit/1d1196f78126d32b1b30f28e379610b2ee3e69a2",
 			"date": "2026-11-07T12:35:31Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "6352cca",
-			"url": "https://github.com/mielsense/www/commit/6352cca0f4132bbf9604124f848f6797f1536686",
-			"date": "2026-11-06T13:51:33Z"
 		},
 		{
 			"repo": "mielwm",
@@ -2384,6 +2384,11 @@
 			"date": "2026-11-16",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-11-17",
+			"count": 3,
+			"level": 1
 		}
 	]
 }
