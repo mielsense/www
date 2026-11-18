@@ -50,15 +50,15 @@
 }
 
 .dark {
-	--color-page: #0c0d0d;
+	--color-page: #1c1c1c;
 	--color-strong: #f3f2f2;
 	--color-default: #a3a3a3;
 	--color-subtle: #8f8f8f;
 	--color-faint: #5d5d5d;
 	--color-hairline: rgb(255 255 255 / 0.08);
 	--color-fill: rgb(255 255 255 / 0.045);
-	--color-shell: #101111;
-	--color-sheet: #191a1a;
+	--color-shell: #252525;
+	--color-sheet: #2d2d2d;
 
 	--color-amber: #ffb21a;
 	--color-rose: #ff5c7a;
@@ -318,7 +318,7 @@
 	--duo-a: #7a7a7a;
 
 	.dark & {
-		--duo-b: #3f3f3f;
+		--duo-b: #4d4d4d;
 		--duo-a: #8f8f8f;
 	}
 

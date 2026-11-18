@@ -33,7 +33,7 @@ Nothing in the chart, the counts or the lists is typed by hand. `scripts/sync-gi
 
 ## Look
 
-- Tokens sit at the top of `src/app.css`. Dark is `#f3f2f2` on `#0c0d0d`, light is the inverse. An inline script in `app.html` applies the stored choice before first paint, falling back to the system setting.
+- Tokens sit at the top of `src/app.css`. Dark is `#f3f2f2` on `#1c1c1c`, light is `#0c0d0d` on `#f3f2f2`. An inline script in `app.html` applies the stored choice before first paint, falling back to the system setting.
 - Allo (OFL) for text, pinned to its rounded cut with only the weight axis kept, and FK Raster Roman Compact Smooth for the big words. Both are subset to Latin in `static/fonts` and preload. FK Raster is a commercial face: the site needs its web license.
 - Color comes only from the cats' collars: coral, pink, lavender, mint and friends. Links in the intro carry them as marker highlights, and the nav icons take them on hover.
 - Buttons, the double-bordered card (`shell` + `sheet`), the highlight (`mark`) and two-tone icons (`duo`) are utilities in `app.css`.
