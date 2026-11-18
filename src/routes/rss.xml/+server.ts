@@ -22,8 +22,8 @@ export function GET() {
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>${escape(`@${site.handle} · now`)}</title>
-		<link>${site.url}/now</link>
+		<title>${escape(`@${site.handle} · commits`)}</title>
+		<link>${site.url}/projects</link>
 		<description>${escape(`Recent commits by ${site.name}, straight from GitHub.`)}</description>
 		<language>en</language>
 		<atom:link href="${site.url}/rss.xml" rel="self" type="application/rss+xml" />${items}

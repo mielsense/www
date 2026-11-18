@@ -1,114 +1,75 @@
-@import '@mielui/svelte/ui.css';
-@import 'lenis/dist/lenis.css';
+@import 'tailwindcss';
 
-/* Instrument Serif italic, cut down to basic Latin: it only sets one word per headline */
+/* Allo, OFL, pinned to its fully rounded cut with only the weight axis left (src: AlloVariable, opsz 14, ROND 100) */
 @font-face {
-	font-family: 'Instrument Serif';
-	font-style: italic;
+	font-family: 'Allo';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('/fonts/allo.woff2') format('woff2');
+}
+
+/* FK Raster Roman Compact Smooth, basic Latin only: it sets the big words and nothing else */
+@font-face {
+	font-family: 'FK Raster Roman Compact';
+	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/instrument-serif-italic.woff2') format('woff2');
+	src: url('/fonts/fk-raster-roman-compact-smooth.woff2') format('woff2');
 }
-/* ui.css scans every Mielui file for classes; skip the ones this site never renders (66% of the CSS) */
-@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/{ai-components,blocks,themes,_manifest}';
-@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/chart-components/{chart,gauge,pie-chart}';
-@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/actions/{morph,shimmer}';
-@source not '../node_modules/.pnpm/@mielui+svelte@*/node_modules/@mielui/svelte/dist/svelte/components/{accordion,alert,alert-dialog,breadcrumb,calendar,card,checkbox,collapsible,combobox,context-menu,date-picker,date-range-picker,dialog,drawer,dropdown-menu,field,fieldset,file-upload,form,gauge,group,hover-card,input,kbd,label,native-select,number-field,otp-field,pagination,pie-chart,popover,progress,radio-group,range-calendar,scroll-area,select,separator,sheet,skeleton,slider,spinner,switch,table,tag-input,textarea,toggle,toggle-group,tooltip}';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 /*
- * Five colors and six sizes. strong / default / subtle are the three inks, selected is the
- * hover and current-row fill, border the hairline. Mielui's tokens are pointed at them so its
- * components speak the same palette. Dark is the same recipe re-inked.
+ * Light is the inverse of dark. Four inks (strong, default, subtle, faint), the page, and the two
+ * layers of the double-bordered card. The link colors come from the cats' coats in the sea: amber,
+ * rose and periwinkle, a touch deeper on light so they still read on the pale page.
  */
 @theme {
-	--font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter Tight', system-ui, sans-serif;
-	--font-mono: 'SF Mono', ui-monospace, 'Geist Mono', monospace;
-	/* the italic accent word in headlines */
-	--font-serif: 'Instrument Serif', Georgia, serif;
+	--font-sans: 'Allo', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+	--font-display: 'FK Raster Roman Compact', 'Allo', system-ui, sans-serif;
+	--font-mono: 'SF Mono', ui-monospace, 'Geist Mono', Menlo, monospace;
 
-	--color-strong: #292929;
-	--color-default: #5d5d5d;
-	--color-subtle: #7f7f7f;
-	--color-selected: #f5f5f5;
-	--color-page: #f5f5f5;
-	--color-plate: #ffffff;
-	--color-frame: #dcdcdc;
+	--color-page: #f3f2f2;
+	--color-strong: #0c0d0d;
+	--color-default: #5b5b5b;
+	--color-subtle: #737373;
+	--color-faint: #9d9d9d;
+	--color-hairline: rgb(12 13 13 / 0.1);
+	--color-fill: rgb(12 13 13 / 0.05);
+	--color-shell: #e8e7e7;
+	--color-sheet: #ffffff;
 
-	--color-background: var(--color-page);
-	--color-card: var(--color-plate);
-	--color-panel: var(--color-plate);
-	--color-secondary: var(--color-selected);
-	--color-foreground: var(--color-strong);
-	--color-foreground-muted: var(--color-subtle);
-	--color-border: #ebebeb;
-	--color-border-strong: #dedede;
-	--color-input: #e8e8e8;
-	--color-wash: var(--color-selected);
-	--color-field-hover: var(--color-selected);
-	--color-primary: var(--color-strong);
-	--color-primary-hover: color-mix(in srgb, var(--color-strong) 88%, white);
-	--color-on-primary: #ffffff;
-	--color-ring: color-mix(in srgb, var(--color-strong) 22%, transparent);
-	--chart-1: var(--color-strong);
+	--color-amber: #f0a000;
+	--color-rose: #e8456a;
+	--color-periwinkle: #7b7ff0;
+	--color-lavender: #8266d6;
+	--color-mint: #289c70;
 
-	/* 12, 14 (body), 15, 17, 20 and 24 */
-	--font-size-badge: 12px;
-	--font-size-body: 14px;
-	--font-size-label: 14px;
-	--font-size-button: 14px;
-	--font-size-header: 17px;
-	--font-size-title: 20px;
-	--font-size-display: 24px;
-	--text-xs: 12px;
-	--text-sm: 14px;
-	--text-base: 15px;
-	--text-lg: 17px;
-	--text-xl: 20px;
-	--text-2xl: 24px;
-	--text-3xl: 24px;
-	/* display sizes, for headlines only */
-	--text-4xl: 36px;
-	--text-5xl: 48px;
-	--text-6xl: 60px;
-	--text-7xl: 76px;
+	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .dark {
-	--color-strong: #ededed;
-	--color-default: #b4b4b4;
-	--color-subtle: #858585;
-	--color-selected: #1d1d1d;
-	--color-page: #0e0e0e;
-	--color-plate: #161616;
-	--color-frame: #2a2a2a;
+	--color-page: #0c0d0d;
+	--color-strong: #f3f2f2;
+	--color-default: #a3a3a3;
+	--color-subtle: #8f8f8f;
+	--color-faint: #5d5d5d;
+	--color-hairline: rgb(255 255 255 / 0.08);
+	--color-fill: rgb(255 255 255 / 0.045);
+	--color-shell: #101111;
+	--color-sheet: #191a1a;
 
-	/* Mielui's own .dark block re-sets these, so they are repeated here */
-	--color-background: var(--color-page);
-	--color-card: var(--color-plate);
-	--color-panel: #1a1a1a;
-	--color-secondary: var(--color-selected);
-	--color-foreground: var(--color-strong);
-	--color-foreground-muted: var(--color-subtle);
-	--color-wash: var(--color-selected);
-	--color-field: var(--color-plate);
-	--color-primary: var(--color-strong);
-	--color-primary-stroke: transparent;
-	--color-border: #232323;
-	--color-border-strong: #2e2e2e;
-	--color-input: #2a2a2a;
-	--color-primary-hover: color-mix(in srgb, var(--color-strong) 88%, black);
-	--color-on-primary: #141414;
+	--color-amber: #ffb21a;
+	--color-rose: #ff5c7a;
+	--color-periwinkle: #a5a8ff;
+	--color-lavender: #c3aef2;
+	--color-mint: #93dcbc;
 }
 
 @layer base {
-	:root {
-		/* one tile of film grain, shared by everything grainy */
-		--noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
-	}
-
 	html {
 		background-color: var(--color-page);
-		scrollbar-gutter: stable;
 		color-scheme: light;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
@@ -120,11 +81,12 @@
 
 	body {
 		margin: 0;
-		background-color: var(--color-background);
+		background-color: var(--color-page);
 		color: var(--color-default);
 		font-family: var(--font-sans);
-		font-size: var(--font-size-body);
+		font-size: 15px;
 		line-height: 1.5;
+		letter-spacing: -0.005em;
 		font-synthesis-weight: none;
 		-webkit-tap-highlight-color: transparent;
 	}
@@ -150,9 +112,8 @@
 		text-wrap: pretty;
 	}
 
-	/* one visible focus ring for custom links and buttons; :where keeps it overridable */
-	:where(a, button, [role='button'], summary):focus-visible {
-		outline: 2px solid color-mix(in oklab, var(--color-strong) 45%, transparent);
+	:where(a, button, [role='button']):focus-visible {
+		outline: 2px solid color-mix(in oklab, var(--color-strong) 50%, transparent);
 		outline-offset: 2px;
 		border-radius: 6px;
 	}
@@ -163,378 +124,274 @@
 	}
 }
 
-/* A link inside a sentence. */
-@utility link {
+/* The pixel display face: "mathis", page titles, 404. */
+@utility display {
+	font-family: var(--font-display);
+	font-weight: 400;
+	line-height: 0.88;
+	letter-spacing: 0;
 	color: var(--color-strong);
-	text-decoration-line: underline;
-	text-decoration-thickness: 1px;
-	text-underline-offset: 3px;
-	text-decoration-color: var(--color-border-strong);
-	transition: text-decoration-color var(--motion-duration-hover) ease;
+	white-space: nowrap;
+}
 
-	&:hover {
-		text-decoration-color: currentColor;
+/* Press: a small scale while held. Transform only, so hover colors stay instant. Wide surfaces set
+   a gentler --press, since 0.97 moves their edges several pixels. */
+@utility press {
+	transition: transform 120ms var(--ease-out);
+
+	&:active:not(:disabled) {
+		transform: scale(var(--press, 0.97));
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
 	}
 }
 
-/* A list row or nav row: muted until hovered, filled when current. */
-@utility row {
-	display: flex;
-	align-items: center;
-	gap: calc(var(--spacing) * 2.5);
-	border-radius: var(--radius-md);
+/* The first-load entrance for what supports the display word: a fade and a short rise, each block
+   on its own --delay and --rise so the group reads as one wave led by the word, not a queue. CSS
+   only, so it starts from the prerendered page. After the first navigation pages just appear: the
+   layout sets html.revealed and the view transition does the work. */
+@keyframes enter {
+	from {
+		opacity: 0;
+		transform: translateY(var(--rise, 8px));
+	}
+}
+
+@keyframes appear {
+	from {
+		opacity: 0;
+	}
+}
+
+@utility reveal {
+	animation: enter var(--duration, 520ms) var(--ease-out) var(--delay, 0ms) both;
+
+	html.revealed & {
+		animation: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: appear 240ms ease-out both;
+	}
+}
+
+/* A highlighted word in a sentence: a marker stroke under its lower half in a coat color,
+   which grows to cover the whole word on hover and turns solid, with dark ink on it. A see-through
+   warm color over the dark page reads as brown, so the full state is never see-through.
+   Set --mark to the color. */
+@utility mark {
+	color: var(--color-strong);
+	text-decoration: none;
+	background-image: linear-gradient(color-mix(in srgb, var(--mark) 62%, transparent), color-mix(in srgb, var(--mark) 62%, transparent));
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 100% 0.42em;
+	padding-inline: 0.12em;
+	margin-inline: -0.12em;
+	border-radius: 0.2em;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	transition: background-size 120ms var(--ease-out);
 
 	&:hover,
-	&[aria-current='page'] {
-		background-color: var(--color-selected);
-		color: var(--color-strong);
+	&[data-open] {
+		color: #1f1404;
+		background-image: linear-gradient(var(--mark), var(--mark));
+		background-size: 100% 100%;
 	}
 
-	&:focus-visible {
-		outline: none;
-		box-shadow: var(--focus-ring);
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
 	}
 }
 
-/* Pages cross-fade; the floating nav stays put. */
+/* The double-bordered card: a dark rim holding a lighter sheet. Radii are concentric:
+   sheet 13 = shell 18 - padding 5. */
+@utility shell {
+	padding: 5px;
+	border-radius: 18px;
+	background-color: var(--color-shell);
+	box-shadow:
+		0 0 0 1px var(--color-hairline),
+		0 2px 4px rgb(0 0 0 / 0.06),
+		0 18px 44px -12px rgb(0 0 0 / 0.25);
+
+	.dark & {
+		box-shadow:
+			0 0 0 1px rgb(255 255 255 / 0.07),
+			0 2px 4px rgb(0 0 0 / 0.4),
+			0 18px 44px -12px rgb(0 0 0 / 0.85);
+	}
+}
+
+@utility sheet {
+	border-radius: 13px;
+	background-color: var(--color-sheet);
+	box-shadow: inset 0 0 0 1px var(--color-hairline);
+
+	.dark & {
+		box-shadow:
+			inset 0 0 0 1px rgb(255 255 255 / 0.08),
+			inset 0 1px 0 rgb(255 255 255 / 0.05);
+	}
+}
+
+/* Buttons. Primary is the lit one: dark ink on light, a white lamp on dark. */
+@utility btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	height: 36px;
+	padding-inline: 12px 14px;
+	border-radius: 12px;
+	font-size: 14px;
+	font-weight: 500;
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+}
+
+@utility btn-primary {
+	color: #f3f2f2;
+	background-image: linear-gradient(to bottom, #2e2e2e, #0c0d0d);
+	box-shadow:
+		inset 0 1px 0 rgb(255 255 255 / 0.18),
+		0 0 0 1px rgb(0 0 0 / 0.9),
+		0 1px 2px rgb(0 0 0 / 0.2),
+		0 8px 22px -8px rgb(0 0 0 / 0.45);
+
+	&:hover {
+		background-image: linear-gradient(to bottom, #3a3a3a, #141515);
+	}
+
+	.dark & {
+		color: #1a1a1a;
+		background-image: linear-gradient(to bottom, #ffffff, #d4d4d4);
+		box-shadow:
+			inset 0 1px 0 #fff,
+			inset 0 -2px 4px rgb(0 0 0 / 0.14),
+			0 0 0 1px rgb(0 0 0 / 0.6),
+			0 1px 2px rgb(0 0 0 / 0.5),
+			0 8px 22px -6px rgb(0 0 0 / 0.7),
+			0 0 18px rgb(255 255 255 / 0.07);
+	}
+
+	.dark &:hover {
+		background-image: linear-gradient(to bottom, #ffffff, #e4e4e4);
+	}
+}
+
+@utility btn-secondary {
+	color: #1a1a1a;
+	background-image: linear-gradient(to bottom, #ffffff, #ececec);
+	box-shadow:
+		inset 0 1px 0 #fff,
+		0 0 0 1px rgb(12 13 13 / 0.12),
+		0 1px 2px rgb(12 13 13 / 0.08),
+		0 8px 20px -8px rgb(12 13 13 / 0.25);
+
+	&:hover {
+		background-image: linear-gradient(to bottom, #ffffff, #f4f4f4);
+	}
+
+	.dark & {
+		color: #ededed;
+		background-image: linear-gradient(to bottom, #3a3a3a, #2b2b2b);
+		box-shadow:
+			inset 0 1px 0 rgb(255 255 255 / 0.12),
+			0 0 0 1px rgb(0 0 0 / 0.6),
+			0 1px 2px rgb(0 0 0 / 0.5),
+			0 8px 22px -6px rgb(0 0 0 / 0.7);
+	}
+
+	.dark &:hover {
+		background-image: linear-gradient(to bottom, #424242, #303030);
+	}
+}
+
+/* Two-tone icons: paths marked .b take the base tone, .a the accent. The parent sets the tones. */
+@utility duo {
+	--duo-b: #c4c4c4;
+	--duo-a: #7a7a7a;
+
+	.dark & {
+		--duo-b: #3f3f3f;
+		--duo-a: #8f8f8f;
+	}
+
+	& .b {
+		fill: var(--duo-b);
+	}
+	/* hover color is instant; a delay set on a part (the chat dots) still steps it in late */
+	& .a {
+		fill: var(--duo-a);
+		transition: fill 0ms;
+	}
+}
+
+/* The contact card. A native popover, reset from the browser's centered dialog look and placed
+   under its trigger by Contact.svelte. It rises 4px out of 96% from the button, 180ms in and 120ms
+   out; a transition, so closing mid-way turns around. Nothing appears from nothing. */
+.contact-card {
+	position: fixed;
+	inset: auto;
+	border: 0;
+	overflow: visible;
+	color: inherit;
+	transform-origin: var(--origin-x, 100%) top;
+	transition:
+		opacity 120ms var(--ease-out),
+		transform 120ms var(--ease-out),
+		display 120ms allow-discrete,
+		overlay 120ms allow-discrete;
+	opacity: 0;
+	transform: translateY(-4px) scale(0.96);
+
+	&:popover-open {
+		opacity: 1;
+		transform: none;
+		transition-duration: 180ms;
+	}
+
+	@starting-style {
+		&:popover-open {
+			opacity: 0;
+			transform: translateY(-4px) scale(0.96);
+		}
+	}
+
+	&::backdrop {
+		background: transparent;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transform: none;
+
+		&:popover-open {
+			transform: none;
+		}
+	}
+}
+
+/* The nav carries over between pages; everything else cross-fades. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
 	animation-duration: 180ms;
 	animation-timing-function: var(--ease-out);
 }
 
-::view-transition-group(dock) {
+::view-transition-group(nav) {
 	animation: none;
-}
-
-/* The italic serif word inside a sans headline. */
-@utility accent {
-	font-family: var(--font-serif);
-	font-style: italic;
-	font-weight: 400;
-	letter-spacing: -0.01em;
-}
-
-/* Headlines: SF Pro Display picks itself up at these sizes; tracking tightens as they grow. */
-@utility display {
-	color: var(--color-strong);
-	font-weight: 500;
-	letter-spacing: -0.035em;
-	line-height: 1.02;
-}
-
-/* The double-bordered card, from madebyhex.com: a faint rim holding a white sheet.
-   Radii are concentric: sheet = shell 18 - padding 4 - border 1. */
-@utility shell {
-	padding: 4px;
-	border: 1px solid color-mix(in oklab, var(--color-strong) 9%, transparent);
-	border-radius: 18px;
-	background-color: color-mix(in oklab, var(--color-strong) 3.5%, transparent);
-}
-
-@utility sheet {
-	position: relative;
-	border-radius: 13px;
-	background-color: var(--color-plate);
-	box-shadow:
-		0 0 0 1px color-mix(in oklab, var(--color-strong) 7%, transparent),
-		0 1px 3px rgb(0 0 0 / 0.05),
-		0 5px 5px -1px rgb(0 0 0 / 0.04),
-		0 11px 6px -2px rgb(0 0 0 / 0.02);
-}
-
-/* A small raised square holding a glyph or a link, like a logo chip. */
-@utility chip {
-	display: grid;
-	flex-shrink: 0;
-	place-items: center;
-	border-radius: 8px;
-	background-color: var(--color-plate);
-	color: var(--color-strong);
-	box-shadow:
-		0 0 0 1px color-mix(in oklab, var(--color-strong) 9%, transparent),
-		0 1px 2px rgb(0 0 0 / 0.07);
-}
-
-/* Press feedback: a small scale while held, transform only so hover colors stay instant. */
-@utility press {
-	transition: transform 100ms ease-out;
-
-	&:active:not(:disabled) {
-		transform: scale(0.97);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		transition: none;
-	}
-}
-
-/* Large pressables shrink less. */
-@utility press-soft {
-	transition: transform 120ms ease-out;
-
-	&:active {
-		transform: scale(0.99);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		transition: none;
-	}
-}
-
-/* Section rule: a full line, edge to edge. */
-@utility rule {
-	border: 0;
-	border-top: 1px solid var(--color-frame);
-}
-
-/* Small mono tag. */
-@utility tag {
-	display: inline-flex;
-	align-items: center;
-	gap: 5px;
-	border-radius: 6px;
-	padding: 2px 7px;
-	background-color: color-mix(in oklab, var(--color-strong) 7%, transparent);
-	color: var(--color-strong);
-	font-family: var(--font-mono);
-	font-size: 11px;
-}
-
-/* Mielui buttons get the same press. */
-[data-ui='button'] {
-	transition-property: transform, background-color, color, box-shadow;
-}
-
-[data-ui='button']:active:not(:disabled) {
-	transform: scale(0.97);
-}
-
-/* Horizontal scroll fade: only the edge that still has content behind it. */
-@property --fade-start {
-	syntax: '<length>';
-	inherits: false;
-	initial-value: 0px;
-}
-
-@property --fade-end {
-	syntax: '<length>';
-	inherits: false;
-	initial-value: 0px;
-}
-
-@keyframes fade-start {
-	from {
-		--fade-start: 0px;
-	}
-	to {
-		--fade-start: 2.5rem;
-	}
-}
-
-@keyframes fade-end {
-	from {
-		--fade-end: 2.5rem;
-	}
-	to {
-		--fade-end: 0px;
-	}
-}
-
-@utility scroll-fade-x {
-	scrollbar-width: none;
-	mask-image: linear-gradient(to right, transparent, black var(--fade-start), black calc(100% - var(--fade-end)), transparent);
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	@supports (animation-timeline: scroll()) {
-		animation:
-			fade-start 1ms linear both,
-			fade-end 1ms linear both;
-		animation-range:
-			0 3rem,
-			calc(100% - 3rem) 100%;
-		animation-timeline: scroll(self x);
-	}
-}
-
-/* Film grain over whatever background the element has: an SVG noise tile, blended into the color only. */
-@utility grain {
-	position: relative;
-	isolation: isolate;
-	overflow: hidden;
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		pointer-events: none;
-		background-image: var(--noise);
-		background-size: 200px 200px;
-		opacity: 0.22;
-		mix-blend-mode: overlay;
-	}
-}
-
-/* The warm booking card: soft blobs over orange. Pair with grain. */
-@utility sunrise {
-	background:
-		radial-gradient(circle at 18% 20%, #ffe14d 0, transparent 55%),
-		radial-gradient(circle at 85% 25%, #ff7a1a 0, transparent 50%),
-		radial-gradient(circle at 60% 100%, #ff2d87 0, transparent 60%),
-		#ffb21a;
-}
-
-/* Cool lavender mesh for the profile banner. Pair with grain. The mesh is drawn larger than the
-   banner and drifts across it very slowly, so the banner feels alive without anything moving fast. */
-@utility dusk {
-	position: relative;
-	isolation: isolate;
-	overflow: hidden;
-
-	/* the mesh is an oversized layer that slides, so the drift runs on the compositor instead of repainting */
-	&::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 160%;
-		height: 160%;
-		z-index: -1;
-		background:
-			radial-gradient(ellipse at 12% 110%, #ffd9e8 0, transparent 45%),
-			radial-gradient(ellipse at 30% 0%, #8fa2ff 0, transparent 55%),
-			radial-gradient(ellipse at 85% 85%, #6b6bff 0, transparent 55%),
-			radial-gradient(ellipse at 75% 10%, #f1dcff 0, transparent 50%),
-			#b8b4ff;
-		animation: drift 22s ease-in-out infinite alternate;
-
-		@media (prefers-reduced-motion: reduce) {
-			animation: none;
-		}
-	}
-}
-
-@keyframes drift {
-	to {
-		/* 0.6 / 1.6 of the layer: the same path the old background-position 0% to 100% took */
-		translate: -37.5% -37.5%;
-	}
-}
-
-/* For Mielui's glow button: a white lit fill in light mode. In dark mode white light can't
-   show on white, so the fill drops to a lifted grey with light ink. */
-@utility glow-plain {
-	--mielui-glow-color: #fff;
-
-	.dark & {
-		--mielui-glow-color: #333;
-		--mielui-glow-light: 0.45;
-		color: var(--color-strong);
-	}
-}
-
-/* The arrow on the sideways-scroll button leans right now and then. */
-@keyframes nudge {
-	0%,
-	60%,
-	100% {
-		transform: translateX(0);
-	}
-	30% {
-		transform: translateX(3px);
-	}
-}
-
-/* ---- reveal ----
-   Each line of a section fades up out of a slight blur, staggered down the section and across
-   the columns, like the old site's editor lines. Big surfaces only rise: blurring a large bitmap
-   every frame is what stutters. Runs once on load, CSS only, so it needs no JavaScript. */
-@keyframes line-enter {
-	0% {
-		opacity: 0;
-		filter: blur(4px);
-		transform: translateY(0.4em);
-	}
-}
-
-@keyframes rise {
-	0% {
-		opacity: 0;
-		transform: translateY(10px);
-	}
-}
-
-@utility stagger {
-	--stagger-delay: calc(80ms + var(--col, 0) * 70ms + var(--s, 0) * 90ms);
-
-	&:nth-of-type(2) {
-		--s: 1;
-	}
-	&:nth-of-type(3) {
-		--s: 2;
-	}
-
-	& > * {
-		animation: line-enter 520ms var(--ease-out) backwards;
-		animation-delay: calc(var(--stagger-delay) + var(--n, 0) * 50ms);
-	}
-	& > .shell,
-	& > ul,
-	& > img,
-	& > [data-rise] {
-		animation-name: rise;
-	}
-	& > :nth-child(2) {
-		--n: 1;
-	}
-	& > :nth-child(3) {
-		--n: 2;
-	}
-	& > :nth-child(4) {
-		--n: 3;
-	}
-	& > :nth-child(5) {
-		--n: 4;
-	}
-	& > :nth-child(6) {
-		--n: 5;
-	}
-	& > :nth-child(n + 7) {
-		--n: 6;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		& > * {
-			animation: none;
-		}
-	}
-}
-
-/* After the first navigation the reveal is done for the visit; pages just appear. */
-html.revealed :is(.stagger > *, .reveal-once) {
-	animation: none;
-}
-
-/* Vertical scroll fade: only the edge with content behind it. Shares the fade keyframes above. */
-@utility scroll-fade-y {
-	mask-image: linear-gradient(to bottom, transparent, black var(--fade-start), black calc(100% - var(--fade-end)), transparent);
-
-	@supports (animation-timeline: scroll()) {
-		animation:
-			fade-start 1ms linear both,
-			fade-end 1ms linear both;
-		animation-range:
-			0 3rem,
-			calc(100% - 3rem) 100%;
-		animation-timeline: scroll(self y);
-	}
 }
 
 /* The theme switch dithers in from the toggle; the mask frames come from src/lib/dither.ts. */
+html.theming .nav {
+	view-transition-name: none !important;
+}
+
 html.theming::view-transition-old(root),
 html.theming::view-transition-new(root) {
 	animation: none;
@@ -544,71 +401,4 @@ html.theming::view-transition-new(root) {
 html.theming::view-transition-new(root) {
 	mask-size: 100% 100%;
 	mask-repeat: no-repeat;
-}
-
-html.theming header {
-	view-transition-name: none !important;
-}
-
-/* The clock's colon breathes once a second. */
-@keyframes tick {
-	50% {
-		opacity: 0.35;
-	}
-}
-
-/* A little wave when the portrait is clicked. */
-@keyframes wave {
-	0%,
-	100% {
-		transform: rotate(0);
-	}
-	20% {
-		transform: rotate(-9deg) scale(1.04);
-	}
-	45% {
-		transform: rotate(7deg) scale(1.04);
-	}
-	70% {
-		transform: rotate(-4deg);
-	}
-}
-
-/* Bars grow from their start edge. */
-@keyframes grow {
-	0% {
-		transform: scaleX(0);
-	}
-}
-
-/* Mielui's glow for a white button on color. Its light is white, which can't show on a white
-   fill, so the depth comes from elsewhere: bright white at the top easing to a warm grey at the
-   bottom, a crisp top edge, a soft warm shade inside the bottom, a warm drop shadow, and a faint
-   white halo on the color around it. */
-@utility glow-white {
-	--mielui-glow-color: #fff;
-	--mielui-glow-top: #ffffff;
-	--mielui-glow-bottom: #efe6df;
-	--mielui-glow-shadow:
-		inset 0 1px 0 #fff,
-		inset 0 -2px 4px rgb(150 70 20 / 0.14),
-		0 0 0 1px rgb(120 40 0 / 0.14),
-		0 1px 2px rgb(120 40 0 / 0.16),
-		0 10px 28px -6px rgb(120 30 0 / 0.38),
-		0 0 0 5px rgb(255 255 255 / 0.12);
-}
-
-/* Mielui's primary button turns near-white in dark mode, where its white light can't show.
-   Every primary button gets the white glow there instead: neutral, with dark shadows and a faint
-   halo for the dark page. Matched by the variant's own glow-color class, so it covers them all. */
-.dark [data-ui='button'][class*='--mielui-glow-color:var(--color-primary)'] {
-	--mielui-glow-top: #ffffff;
-	--mielui-glow-bottom: #d4d4d4;
-	--mielui-glow-shadow:
-		inset 0 1px 0 #fff,
-		inset 0 -2px 4px rgb(0 0 0 / 0.14),
-		0 0 0 1px rgb(0 0 0 / 0.6),
-		0 1px 2px rgb(0 0 0 / 0.5),
-		0 8px 22px -6px rgb(0 0 0 / 0.7),
-		0 0 18px rgb(255 255 255 / 0.07);
 }
