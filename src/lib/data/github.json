@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-11-18T15:14:19.766Z",
+	"syncedAt": "2026-11-18T21:18:35.494Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 1,
+			"year": 2026,
+			"pushedAt": "2026-11-18T21:18:22Z"
+		},
 		{
 			"name": "mielui",
 			"description": "Tasteful svelte 5 component library",
@@ -10,16 +20,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-11-17T20:50:43Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 1,
-			"year": 2026,
-			"pushedAt": "2026-11-17T15:37:17Z"
 		},
 		{
 			"name": "coss-sv",
@@ -274,6 +274,20 @@
 	],
 	"commits": [
 		{
+			"repo": "www",
+			"message": "design: rebuild the site around an ASCII cat sea, with a light theme",
+			"sha": "f6347e5",
+			"url": "https://github.com/mielsense/www/commit/f6347e5374cca4b18cdbcf3139026eb985bd17cb",
+			"date": "2026-11-18T21:13:52Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "9f52c5c",
+			"url": "https://github.com/mielsense/www/commit/9f52c5ce447ecf5baebbd5d851ea7dc03a78b46e",
+			"date": "2026-11-18T15:14:19Z"
+		},
+		{
 			"repo": "mielui",
 			"message": "feat(docs): redesign the home page (#30)",
 			"sha": "c86f40a",
@@ -342,27 +356,6 @@
 			"sha": "dd73711",
 			"url": "https://github.com/mielsense/www/commit/dd737118fa5e7f95baea11dabe77ba4cfc563b73",
 			"date": "2026-11-11T13:41:42Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "3ed3d43",
-			"url": "https://github.com/mielsense/www/commit/3ed3d4349596d0f45e57021adfbc575c50b509bf",
-			"date": "2026-11-10T14:27:43Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "27a941d",
-			"url": "https://github.com/mielsense/www/commit/27a941dfb7817f27a050bf2c4ca0e5c6a40515d8",
-			"date": "2026-11-09T15:26:18Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "8b88b01",
-			"url": "https://github.com/mielsense/www/commit/8b88b01fb49676b82b392878f128a1d755137168",
-			"date": "2026-11-08T12:52:47Z"
 		},
 		{
 			"repo": "mielwm",
@@ -552,6 +545,13 @@
 			"sha": "c23f43b",
 			"url": "https://github.com/mielsense/coss-sv/commit/c23f43bac43c70d4edeffde580f574aec8a07fd2",
 			"date": "2026-09-08T17:12:04Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(ui): preserve delegated attributes and bound comment checks",
+			"sha": "b569769",
+			"url": "https://github.com/mielsense/coss-sv/commit/b56976926121cb6a8b8f4c5e844f9a7dba7440b8",
+			"date": "2026-09-08T17:08:43Z"
 		}
 	],
 	"contributions": [
@@ -2392,8 +2392,8 @@
 		},
 		{
 			"date": "2026-11-18",
-			"count": 0,
-			"level": 0
+			"count": 2,
+			"level": 1
 		}
 	]
 }
