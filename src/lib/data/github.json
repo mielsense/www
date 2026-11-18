@@ -1,15 +1,15 @@
 {
-	"syncedAt": "2026-11-18T21:45:39.331Z",
+	"syncedAt": "2026-11-18T22:28:37.090Z",
 	"repos": [
 		{
 			"name": "www",
 			"description": "Portfolio website",
 			"url": "https://github.com/mielsense/www",
 			"homepage": "https://miel.my",
-			"language": "Svelte",
+			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-18T21:45:29Z"
+			"pushedAt": "2026-11-18T22:28:25Z"
 		},
 		{
 			"name": "mielui",
@@ -275,6 +275,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "design: drop the cat shadow and soften dark shadows on #1c1c1c",
+			"sha": "ad7e265",
+			"url": "https://github.com/mielsense/www/commit/ad7e265c6b1f42aafb08b8e2a89a038893952593",
+			"date": "2026-11-18T22:28:21Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "3c7997b",
+			"url": "https://github.com/mielsense/www/commit/3c7997b55f966f66d4872e61b3dd137c395c2616",
+			"date": "2026-11-18T21:45:39Z"
+		},
+		{
+			"repo": "www",
 			"message": "design: dark theme on #1c1c1c",
 			"sha": "b2ac28d",
 			"url": "https://github.com/mielsense/www/commit/b2ac28d8122263446a97f390c275cff94e9b1df6",
@@ -342,20 +356,6 @@
 			"sha": "d9ac0f1",
 			"url": "https://github.com/mielsense/www/commit/d9ac0f1a987d86162378aad87970008154dc188a",
 			"date": "2026-11-15T13:33:45Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "be71b64",
-			"url": "https://github.com/mielsense/www/commit/be71b64ac4c9882788ff41310021744dc7a36bd7",
-			"date": "2026-11-14T13:05:11Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "5dfd316",
-			"url": "https://github.com/mielsense/www/commit/5dfd31658fd34cfe2592107c961ad35cfc8484c9",
-			"date": "2026-11-13T14:03:19Z"
 		},
 		{
 			"repo": "mielwm",
