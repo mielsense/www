@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-18T21:18:35.494Z",
+	"syncedAt": "2026-11-18T21:45:39.331Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "Svelte",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-18T21:18:22Z"
+			"pushedAt": "2026-11-18T21:45:29Z"
 		},
 		{
 			"name": "mielui",
@@ -275,6 +275,20 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "design: dark theme on #1c1c1c",
+			"sha": "b2ac28d",
+			"url": "https://github.com/mielsense/www/commit/b2ac28d8122263446a97f390c275cff94e9b1df6",
+			"date": "2026-11-18T21:45:27Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "84a7298",
+			"url": "https://github.com/mielsense/www/commit/84a72981fa4f073212b182bb966da75ea7f0f584",
+			"date": "2026-11-18T21:18:35Z"
+		},
+		{
+			"repo": "www",
 			"message": "design: rebuild the site around an ASCII cat sea, with a light theme",
 			"sha": "f6347e5",
 			"url": "https://github.com/mielsense/www/commit/f6347e5374cca4b18cdbcf3139026eb985bd17cb",
@@ -342,20 +356,6 @@
 			"sha": "5dfd316",
 			"url": "https://github.com/mielsense/www/commit/5dfd31658fd34cfe2592107c961ad35cfc8484c9",
 			"date": "2026-11-13T14:03:19Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "491741d",
-			"url": "https://github.com/mielsense/www/commit/491741dfacd4e479236d574e52dd0ff803687cd8",
-			"date": "2026-11-12T14:45:13Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "dd73711",
-			"url": "https://github.com/mielsense/www/commit/dd737118fa5e7f95baea11dabe77ba4cfc563b73",
-			"date": "2026-11-11T13:41:42Z"
 		},
 		{
 			"repo": "mielwm",
@@ -2392,7 +2392,7 @@
 		},
 		{
 			"date": "2026-11-18",
-			"count": 2,
+			"count": 3,
 			"level": 1
 		}
 	]
