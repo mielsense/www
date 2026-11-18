@@ -103,7 +103,7 @@ function readLook(): Look {
 	const light = !document.documentElement.classList.contains('dark');
 	return light
 		? { light, bg: '#f3f2f2', ink: '12,13,13', edge: 128, shadow: 'rgba(12,13,13,0.10)', accents: ACCENTS_ON_LIGHT }
-		: { light, bg: '#1c1c1c', ink: '236,236,236', edge: 118, shadow: 'rgba(0,0,0,0.45)', accents: ACCENTS };
+		: { light, bg: '#1c1c1c', ink: '236,236,236', edge: 118, shadow: '', accents: ACCENTS };
 }
 
 export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fish?: number } = {}) {
@@ -832,8 +832,9 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 			ctx.fillText(f.vx >= 0 ? sp.g[0] : sp.g[1], c * cw + cw / 2, r * ch + ch / 2 + 1);
 		}
 
+		// a drop shadow under the cats on the light page only; on the dark page it reads as black holes
 		ctx.fillStyle = look.shadow;
-		for (let i = 0; i < n; i++) if (cShadow[i] && !cFlag[i]) ctx.fillRect((i % cols) * cw, ((i / cols) | 0) * ch, cw, ch);
+		if (look.shadow) for (let i = 0; i < n; i++) if (cShadow[i] && !cFlag[i]) ctx.fillRect((i % cols) * cw, ((i / cols) | 0) * ch, cw, ch);
 
 		const flick = Math.floor(time * 2.2);
 		for (let i = 0; i < n; i++) {
