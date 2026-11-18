@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-17T15:37:16.717Z",
+	"syncedAt": "2026-11-18T15:14:19.766Z",
 	"repos": [
 		{
 			"name": "mielui",
@@ -9,7 +9,17 @@
 			"language": "Svelte",
 			"stars": 5,
 			"year": 2026,
-			"pushedAt": "2026-11-17T03:12:35Z"
+			"pushedAt": "2026-11-17T20:50:43Z"
+		},
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "Svelte",
+			"stars": 1,
+			"year": 2026,
+			"pushedAt": "2026-11-17T15:37:17Z"
 		},
 		{
 			"name": "coss-sv",
@@ -20,16 +30,6 @@
 			"stars": 16,
 			"year": 2026,
 			"pushedAt": "2026-11-16T15:50:23Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "Svelte",
-			"stars": 1,
-			"year": 2026,
-			"pushedAt": "2026-11-16T15:00:54Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -274,6 +274,34 @@
 	],
 	"commits": [
 		{
+			"repo": "mielui",
+			"message": "feat(docs): redesign the home page (#30)",
+			"sha": "c86f40a",
+			"url": "https://github.com/mielsense/mielui/commit/c86f40afe8761fa5e4dc17ba81673cfdbb16bccb",
+			"date": "2026-11-17T20:50:40Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(deps): ignore the unpatched picomatch audit advisory (#32)",
+			"sha": "59a0543",
+			"url": "https://github.com/mielsense/mielui/commit/59a0543c126018c1138e5a55a967edaab56929da",
+			"date": "2026-11-17T20:24:06Z"
+		},
+		{
+			"repo": "mielui",
+			"message": "fix(deps): patch sveltekit and adapters for audit advisories (#31)",
+			"sha": "4b15652",
+			"url": "https://github.com/mielsense/mielui/commit/4b156529ada39ebf8034c4667264dffba67fd1c8",
+			"date": "2026-11-17T20:11:39Z"
+		},
+		{
+			"repo": "www",
+			"message": "chore: sync github data",
+			"sha": "6fdc5b9",
+			"url": "https://github.com/mielsense/www/commit/6fdc5b9adf6097281608c96ba68607277f6b2c55",
+			"date": "2026-11-17T15:37:16Z"
+		},
+		{
 			"repo": "www",
 			"message": "chore: sync github data",
 			"sha": "21eca4f",
@@ -335,13 +363,6 @@
 			"sha": "8b88b01",
 			"url": "https://github.com/mielsense/www/commit/8b88b01fb49676b82b392878f128a1d755137168",
 			"date": "2026-11-08T12:52:47Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "1d1196f",
-			"url": "https://github.com/mielsense/www/commit/1d1196f78126d32b1b30f28e379610b2ee3e69a2",
-			"date": "2026-11-07T12:35:31Z"
 		},
 		{
 			"repo": "mielwm",
@@ -447,27 +468,6 @@
 			"sha": "b7147f9",
 			"url": "https://github.com/mielsense/mielui/commit/b7147f9f7bd9e6404ab10b05a40c2d5ab16cfcde",
 			"date": "2026-10-21T00:15:26Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(docs): restore the loading optimisations from #24 and #25",
-			"sha": "cef0ac2",
-			"url": "https://github.com/mielsense/mielui/commit/cef0ac236af68af88d7148e34408abf6225bceec",
-			"date": "2026-10-21T00:11:28Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "revert(docs): undo the loading optimisations from #24 and #25",
-			"sha": "6a8b507",
-			"url": "https://github.com/mielsense/mielui/commit/6a8b507de4009259c48b98338331e31b8ffdb2ac",
-			"date": "2026-10-21T00:01:20Z"
-		},
-		{
-			"repo": "mielui",
-			"message": "fix(docs): render component pages whole and reset scroll before paint",
-			"sha": "556aab2",
-			"url": "https://github.com/mielsense/mielui/commit/556aab2c0ec6333e78f92f59f19a35db0c47cdbe",
-			"date": "2026-10-20T23:25:24Z"
 		},
 		{
 			"repo": "qali",
@@ -2387,8 +2387,13 @@
 		},
 		{
 			"date": "2026-11-17",
-			"count": 3,
+			"count": 7,
 			"level": 1
+		},
+		{
+			"date": "2026-11-18",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
