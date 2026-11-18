@@ -1,18 +1,3 @@
-import {
-	BookIcon,
-	CalendarIcon,
-	ChartIcon,
-	ChatIcon,
-	FolderIcon,
-	GamepadIcon,
-	GlobeIcon,
-	LayersIcon,
-	SidebarIcon,
-	SparkleIcon,
-	TerminalIcon,
-	WrenchIcon,
-	type IconData
-} from '@/icons';
 import github from './github.json';
 
 export type Kind = 'library' | 'app' | 'toolkit' | 'game' | 'template' | 'work' | 'soon';
@@ -33,8 +18,6 @@ export type Project = {
 	/** Last push, ISO date. */
 	updated?: string;
 };
-
-
 
 /* ---- what the sync script can't know ---- */
 
@@ -117,52 +100,5 @@ export const projects: Project[] = [...manual, ...synced].sort(
 	(a, b) => b.year - a.year || Number(b.name === 'mielui') - Number(a.name === 'mielui')
 );
 
-export const byName = (name: string) => projects.find((p) => p.name === name);
-
-/** The front page picks: what is being worked on now. */
-export const featured = ['mielwm', 'mielui', 'benky', 'reecall dashboard', 'sensel']
-	.map(byName)
-	.filter((p): p is Project => p !== undefined);
-
-/** Mielui and mielwm lead; the ports follow by stars, which come from the sync. */
-export const openSource = [
-	byName('mielui'),
-	byName('mielwm'),
-	...['evilcharts-sv', 'sileo-svelte', 'kettle', 'coss-sv'].map(byName).sort((a, b) => (b?.stars ?? 0) - (a?.stars ?? 0))
-].filter((p): p is Project => p !== undefined);
-
-/** Primary language of each listed repo. */
-export const languages = Object.entries(
-	synced.reduce<Record<string, number>>((acc, p) => {
-		if (p.lang) acc[p.lang] = (acc[p.lang] ?? 0) + 1;
-		return acc;
-	}, {})
-)
-	.map(([language, repos]) => ({ language, repos }))
-	.sort((a, b) => b.repos - a.repos);
-
-export const repoCount = languages.reduce((n, l) => n + l.repos, 0);
-export const syncedAt = github.syncedAt;
-
 export type Commit = { repo: string; message: string; sha: string; url: string; date: string };
 export const commits: Commit[] = github.commits ?? [];
-
-/* ---- the glyph each project shows in its chip ---- */
-
-const glyphs: Record<string, IconData> = {
-	mielui: SparkleIcon,
-	mielwm: SidebarIcon,
-	benky: BookIcon,
-	'reecall dashboard': ChartIcon,
-	qali: CalendarIcon,
-	sensel: WrenchIcon,
-	rtype: GamepadIcon,
-	zappy: GamepadIcon,
-	www: GlobeIcon,
-	'evilcharts-sv': ChartIcon,
-	'coss-sv': LayersIcon,
-	'sileo-svelte': ChatIcon,
-	kettle: TerminalIcon
-};
-
-export const glyphOf = (p: Project) => glyphs[p.name] ?? FolderIcon;

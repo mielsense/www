@@ -11,22 +11,21 @@ pnpm sync      # refresh src/lib/data/github.json from the GitHub API
 
 ## Pages
 
-- `/` is one edge-to-edge grid locked to the viewport on desktop. Portrait and intro, links and the sleeping cat, featured projects, a dithered language chart, stack and tools badges, open source with stars.
-- `/projects` lists every repo by year in an editor layout with line numbers. `?lang=Svelte` narrows it; the stack badges link there.
-- `/now` shows what is being built and the last forty commits, grouped by day with a link to each repo touched.
-- `/rss.xml` is the commit feed behind `/now`.
-- Any other path lands on the same editor layout with the status code.
+- `/` is the whole screen: an ASCII sea of cats and fish (`src/lib/cat-sea.ts`, one canvas), "mathis" in FK Raster bottom left with Book a call and Copy email under it, and the intro bottom right. Its three highlighted links open a hover card after 120ms.
+- `/projects` lists every repo by year (this year, last year, earlier), pulled from GitHub.
+- `/about` is the bio, work, stack and links.
+- Contact in the nav opens a card (a native popover, `Contact.svelte`) to book a call or copy the email.
+- `/rss.xml` is the recent-commit feed. `/now` redirects to `/about` (`vercel.json`).
+- Any other path lands on the same full-screen layout as home with the status code.
 
-Keyboard: `⌘K` opens the command palette anywhere (pages, actions, links, projects; ↓ or typing unfolds it, Enter runs), `n` and `p` jump to now and projects. On `/projects`, `/now` and the error page, `j` and `k` move between rows and `b` goes home.
+The sea lives in the root layout and is never remounted: it fills the screen on home and the error page and is a 460px header band (300px on phones) elsewhere, shrinking between them in a view transition. Keyboard: `h`, `a` and `p` jump to home, about and projects; `j` and `k` move between project rows.
 
 ## Where things live
 
-- `src/lib/components/site/` is the site's own components. `Editor.svelte` is the shell shared by the list pages and the error page.
-- `src/lib/components/ui/` and `src/lib/components/evilcharts/` are registry-installed sources from [COSS for Svelte](https://coss-sv.vercel.app) and [EvilCharts for Svelte](https://evilcharts-sv.vercel.app). Two lines in the bar chart's tooltip renderer are local edits. Everything else is stock.
-- `src/lib/data/site.ts` is who and what: name, links, the track in the player, the availability flag, the "lately" lines.
-- `src/lib/data/projects.ts` merges `github.json` with hand-written overrides: hidden repos, better descriptions, badges, the entries that aren't repos, and which names are featured or listed as open source.
-- `src/lib/data/stack.ts` lists the badges. `src/lib/data/palette.ts` is the six chart colors that every section and group borrows for its accent.
-- `src/lib/motion.ts` is the one easing and two durations behind every state swap (`@humanspeak/svelte-motion`). `theme.svelte.ts` mirrors the theme class, `sound.svelte.ts` owns the cuelume press and toggle cues and the mute preference, `palette.svelte.ts` the ⌘K open state, `player.svelte.ts` the shared audio element.
+- `src/lib/cat-sea.ts` is the simulation and renderer: boid fish, cats with a 16-node spine sampled into a character grid, wake, paw prints, colored collars. It reads the theme from `.dark` on `<html>`, pauses off screen and draws one still frame for reduced motion.
+- `src/lib/components/site/` holds `Hero` (home and error layout), `Actions` (the two buttons), `Scramble` (display words that assemble from sea characters), `Contact` and `Footer`.
+- `src/lib/data/site.ts` is who and what: name, links, work. `src/lib/data/projects.ts` merges `github.json` with hand-written overrides: hidden repos, better descriptions, the entries that aren't repos.
+- `src/lib/theme.svelte.ts` mirrors the theme class and runs the dithered theme switch (`src/lib/dither.ts`).
 
 ## Data
 
@@ -34,11 +33,10 @@ Nothing in the chart, the counts or the lists is typed by hand. `scripts/sync-gi
 
 ## Look
 
-- Tokens sit at the top of `src/app.css`. Dark is `#0c0d0d` on `#f3f2f2`, light is the inverse. An inline script in `app.html` applies the stored choice before first paint.
-- JetBrains Mono for text, Geist Pixel for section headings and the marquee. Both preload.
-- A faint dither shader (`BarShader.svelte`, `@devmischief/shaders-svelte`) sits behind the footer, the music strip, the availability pill, the top-left of the header and the palette's input row. Nowhere page-wide.
-- Tailwind utilities where they fit; custom CSS for the grid, the viewport lock, the editor rail and the keyframes. A `short` variant covers screens under 950px tall. Layout class names avoid Tailwind utility names because installed components use them.
-- Imports use `@/` for `src/lib`, set in `vite.config.ts` and `components.json`.
+- Tokens sit at the top of `src/app.css`. Dark is `#f3f2f2` on `#0c0d0d`, light is the inverse. An inline script in `app.html` applies the stored choice before first paint, falling back to the system setting.
+- Allo (OFL) for text, pinned to its rounded cut with only the weight axis kept, and FK Raster Roman Compact Smooth for the big words. Both are subset to Latin in `static/fonts` and preload. FK Raster is a commercial face: the site needs its web license.
+- Color comes only from the cats' collars: coral, pink, lavender, mint and friends. Links in the intro carry them as marker highlights, and the nav icons take them on hover.
+- Buttons, the double-bordered card (`shell` + `sheet`), the highlight (`mark`) and two-tone icons (`duo`) are utilities in `app.css`.
 
 ## Shipping
 
