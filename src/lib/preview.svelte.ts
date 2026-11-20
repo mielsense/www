@@ -56,10 +56,13 @@ export function hide(delay = CLOSE_DELAY) {
 	clearTimeout(openTimer);
 	clearTimeout(closeTimer);
 	if (!preview.open) return;
-	closeTimer = setTimeout(() => {
+	const close = () => {
 		preview.open = false;
 		warmUntil = performance.now() + WARM;
-	}, delay);
+	};
+	// no delay closes now: a timer could be cancelled by the card sliding under the pointer
+	if (delay === 0) close();
+	else closeTimer = setTimeout(close, delay);
 }
 
 /** The pointer reached the card itself: keep it open. */

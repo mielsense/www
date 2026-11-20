@@ -18,7 +18,7 @@ pnpm sync      # refresh src/lib/data/github.json from the GitHub API
 
 ## Where things live
 
-- Links and project rows share one preview card, the way Mielui's tooltip shares one bubble: the first waits 200ms, the next opens at once and the card glides there (`src/lib/preview.svelte.ts`, `Preview.svelte` for triggers, `PreviewCard.svelte` for the card). Star counts and the contribution total come from `github.json`. Mielui's tokens are re-inked onto the site's grays at the top of `src/app.css`.
+- Links and project rows share one preview card, the way Mielui's tooltip shares one bubble: the first waits 200ms, the next opens at once and the card glides there (`src/lib/preview.svelte.ts`, `Preview.svelte` for triggers, `PreviewCard.svelte` for the card). Star counts and the contribution total come from `github.json`. The card's frame is `.float-card` in `src/app.css`.
 - `src/lib/copy.ts` holds every string in both languages and the curated lists. The two intro paragraphs, which carry links and brand marks, are written per language in `src/lib/components/site/Home.svelte`.
 - `src/lib/cat-sea.ts` is the simulation and renderer: boid fish, cats with a 16-node spine sampled into a character grid, wake, paw prints, colored collars. It reads the theme from `.dark` on `<html>`, pauses off screen and draws one still frame for reduced motion.
 - `src/lib/garden.ts` lays out flowers, bushes, grass and a sleeping cat from a fixed seed, then draws them on a canvas: plants sway in the wind and lean away from the pointer. It pauses off screen and holds still for reduced motion.
@@ -38,6 +38,13 @@ pnpm sync      # refresh src/lib/data/github.json from the GitHub API
 - Allo (OFL) for text, pinned to its rounded cut with only the weight axis kept, subset to Latin in `static/fonts` and preloaded.
 - Color comes only from the sea, the garden and the small brand marks in the intro. Everything else is four grays.
 - `prose-link` (links in sentences) and `row` (list lines with a dotted leader) are utilities in `app.css`.
+
+## Performance
+
+- The sea and the garden draw at 30 fps: both sit on a character grid, so 60 looks the same and costs twice the main thread. Both pause off screen and hold still for reduced motion.
+- The sea only takes the four extra edge samples for cells near a cat's outline; cells well inside are counted as covered.
+- The tweaks pane (Tweakpane is most of the page's script) loads on demand, warmed up when the button is hovered or focused.
+- No UI library ships: the one card frame and the copy button are a few lines of CSS. Tailwind's spacing step is set to 3.6px in `app.css`, the step the layout was tuned on.
 
 ## Shipping
 

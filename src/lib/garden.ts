@@ -226,6 +226,10 @@ export function mountGarden(canvas: HTMLCanvasElement) {
 	// the tweaks pane can grow a different garden; it takes over from here
 	let g = garden, grown = DEFAULT_SEED;
 	let bend = new Float32Array(0), speed = new Float32Array(0), phase = new Float32Array(0), anchor = new Float32Array(0);
+	// only the cells that hold something, grouped by color so the canvas changes fill as little as
+	// it can; and each tile's color as a string, built once per theme instead of every frame
+	let cells = new Int32Array(0);
+	let tileStyles: string[] = [];
 	function plant(next: Garden, seed: number) {
 		g = next;
 		grown = seed;
@@ -234,6 +238,7 @@ export function mountGarden(canvas: HTMLCanvasElement) {
 		phase = Float32Array.from({ length: g.groups }, (_, i) => i * 2.39);
 		anchor = new Float32Array(g.groups);
 		for (let i = 0; i < g.ch.length; i++) if (g.group[i] >= 0) anchor[g.group[i]] = i % COLS;
+		cells = Int32Array.from(g.ch.flatMap((c, i) => (c === ' ' ? [] : [i]))).sort((a, b) => g.color[a] - g.color[b]);
 		// a different garden can be taller or shorter than the one the page reserved room for
 		const rows = g.bottom - g.top + 1;
 		canvas.style.aspectRatio = `${COLS * ASPECT} / ${rows}`;
@@ -266,6 +271,10 @@ export function mountGarden(canvas: HTMLCanvasElement) {
 		tiles = palette(dark);
 		colors = tiles.map((c) => `rgb(${c[0] | 0},${c[1] | 0},${c[2] | 0})`);
 		tileAlpha = dark ? 1 : 0.75;
+		tileStyles = Array.from(cells, (i) => {
+			const c = tiles[g.color[i]];
+			return `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${(g.tile[i] * tileAlpha).toFixed(2)})`;
+		});
 	}
 
 	function draw() {
@@ -276,24 +285,23 @@ export function mountGarden(canvas: HTMLCanvasElement) {
 		ctx.clearRect(0, 0, W, H);
 		const { ch: glyphs, color, tile, group, reach } = g;
 		const gap = Math.max(0.5, cw * 0.12);
-		for (let pass = 0; pass < 2; pass++)
-			for (let i = 0; i < glyphs.length; i++) {
-				if (glyphs[i] === ' ') continue;
-				const x = i % COLS, y = ((i / COLS) | 0) - g.top;
-				const p = group[i];
-				const dx = p < 0 ? 0 : bend[p] * reach[i];
-				const left = x0 + (x + dx) * cw;
-				if (pass === 0) {
-					// the tile: the glyph's own color, faint, a hair smaller than its cell
-					if (tile[i] === 0) continue;
-					const c = tiles[color[i]];
-					ctx.fillStyle = `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${(tile[i] * tileAlpha).toFixed(3)})`;
-					ctx.fillRect(left + gap / 2, y * ch + gap / 2, cw - gap, ch - gap);
-				} else {
-					ctx.fillStyle = colors[color[i]];
-					ctx.fillText(glyphs[i], left + cw / 2, (y + 0.54) * ch);
-				}
-			}
+		const at = (i: number) => {
+			const p = group[i];
+			return x0 + ((i % COLS) + (p < 0 ? 0 : bend[p] * reach[i])) * cw;
+		};
+		// tiles first, then glyphs over them: the glyph's own color, faint, a hair smaller than its cell
+		for (let k = 0; k < cells.length; k++) {
+			const i = cells[k];
+			if (tile[i] === 0) continue;
+			ctx.fillStyle = tileStyles[k];
+			ctx.fillRect(at(i) + gap / 2, (((i / COLS) | 0) - g.top) * ch + gap / 2, cw - gap, ch - gap);
+		}
+		let fill = -1;
+		for (let k = 0; k < cells.length; k++) {
+			const i = cells[k];
+			if (color[i] !== fill) ctx.fillStyle = colors[(fill = color[i])];
+			ctx.fillText(glyphs[i], at(i) + cw / 2, (((i / COLS) | 0) - g.top + 0.54) * ch);
+		}
 	}
 
 	// Each leaf and flower is a spring that leans toward the wind and gets pushed by the pointer
@@ -319,6 +327,11 @@ export function mountGarden(canvas: HTMLCanvasElement) {
 	}
 
 	function frame(now: number) {
+		// 30 fps, like the sea: the sway is slow, and the page's own interactions get the time back
+		if (now - last < 1000 / 30 - 2) {
+			raf = requestAnimationFrame(frame);
+			return;
+		}
 		const dt = Math.min(0.05, (now - last) / 1000 || 0);
 		last = now;
 		step(dt);

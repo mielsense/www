@@ -1,5 +1,4 @@
-/* Mielui brings Tailwind with it; its tokens are re-inked onto the site's grays below */
-@import '@mielui/svelte/ui.css';
+@import 'tailwindcss';
 
 /* Allo, OFL, pinned to its fully rounded cut with only the weight axis left (src: AlloVariable, opsz 14, ROND 100) */
 @font-face {
@@ -27,7 +26,7 @@
  */
 @theme {
 	--font-sans: 'Allo', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-	--font-mono: 'SF Mono', ui-monospace, 'Geist Mono', Menlo, monospace;
+	--font-mono: 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
 
 	--color-page: #faf9f6;
 	--color-strong: #0c0d0d;
@@ -40,6 +39,10 @@
 
 
 	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+	--ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+	/* the spacing step the layout was tuned on (0.225rem = 3.6px, not Tailwind's 4px) */
+	--spacing: 0.225rem;
 }
 
 .dark {
@@ -54,26 +57,25 @@
 
 }
 
-/* Mielui's neutrals, re-inked so its cards sit on this page: the card is the lifted surface, its
-   text uses the same inks as the page, and the focus ring is gray, not Mielui's pink. */
+/* The floating card (the link previews): a lifted surface with a hairline edge and a short, soft
+   shadow. Its radius is a 14px control radius plus the 4px it sits in, plus the border. */
 :root {
-	--mielui-neutral-0: #ffffff;
-	--mielui-neutral-10: #faf9f6;
-	--mielui-neutral-500: #737373;
-	--mielui-neutral-900: #0c0d0d;
-	--color-ring: rgb(12 13 13 / 0.3);
+	--color-panel: #ffffff;
+	--color-panel-edge: rgb(12 13 13 / 0.12);
 	--elevation-float: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 12px -4px rgb(0 0 0 / 0.08);
 }
 
 .dark {
-	--mielui-neutral-0: #1c1c1c;
-	--mielui-neutral-10: #1c1c1c;
-	--mielui-neutral-50: #252525;
-	--mielui-neutral-100: #2d2d2d;
-	--mielui-neutral-500: #8f8f8f;
-	--mielui-neutral-900: #f3f2f2;
-	--color-ring: rgb(243 242 242 / 0.3);
+	--color-panel: #252525;
+	--color-panel-edge: rgb(243 242 242 / 0.14);
 	--elevation-float: 0 4px 12px -4px rgb(0 0 0 / 0.3);
+}
+
+.float-card {
+	border: 1px solid var(--color-panel-edge);
+	border-radius: 19px;
+	background-color: var(--color-panel);
+	box-shadow: var(--elevation-float);
 }
 
 @layer base {
@@ -186,14 +188,15 @@
 	}
 }
 
-/* The first-load entrance: a fade and a short rise, each block on its own --delay and --rise so
-   the page reads as one wave, not a queue. CSS
-   only, so it starts from the prerendered page. After the first navigation pages just appear: the
-   layout sets html.revealed and the view transition does the work. */
+/* The first-load entrance: text comes into focus as it fades in and rises a few pixels, each block
+   and each row on its own --delay so the page reads as one wave, top to bottom. CSS only, so it
+   starts from the prerendered page before any script. After the first navigation pages just
+   appear: the layout sets html.revealed and the view transition does the work. */
 @keyframes enter {
 	from {
 		opacity: 0;
 		transform: translateY(var(--rise, 8px));
+		filter: blur(var(--blur, 4px));
 	}
 }
 
@@ -261,7 +264,7 @@ body {
 
 /* running text: the intro paragraphs */
 .copy {
-	line-height: var(--tweak-leading, 1.75);
+	line-height: var(--tweak-leading, 1.65);
 }
 
 /* the sea band, and the column that starts where the band fades out */

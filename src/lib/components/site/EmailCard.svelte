@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Button } from '@mielui/svelte/components/button';
 
 	// The email card is one row: the address, then a button that copies it. "Copy" turns into
 	// "Copied" in place, and the label's width slides between the two words.
@@ -21,8 +20,8 @@
 
 <!-- the button sits 6px in from the card's edge, so its corners nest in the card's -->
 <div class="flex items-center gap-3 p-1.5 ps-4" data-copied={copied || undefined}>
-	<span class="text-[14px] leading-5 whitespace-nowrap text-strong select-all">{email}</span>
-	<Button variant="ghost" size="sm" class="shrink-0 gap-1.5 text-subtle hover:text-strong" onclick={write}>
+	<span class="text-[15px] leading-[1.4] whitespace-nowrap text-strong select-all">{email}</span>
+	<button type="button" class="copy press flex h-8 shrink-0 cursor-pointer items-center gap-1.5 rounded-[12px] px-2.5 text-subtle hover:bg-fill hover:text-strong" onclick={write}>
 		<span class="swap size-3.5" aria-hidden="true">
 			<svg class="icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
 				<rect x="5.25" y="5.25" width="8" height="8" rx="2" />
@@ -32,11 +31,11 @@
 				<path d="M3.5 8.5l3 3 6-7" />
 			</svg>
 		</span>
-		<span class="label swap text-[13px]" style:width={rest ? `${copied ? done_ : rest}px` : undefined}>
+		<span class="label swap text-[15px]" style:width={rest ? `${copied ? done_ : rest}px` : undefined}>
 			<span class="word" bind:clientWidth={rest}>{copy}</span>
 			<span class="word" aria-hidden="true" bind:clientWidth={done_}>{done}</span>
 		</span>
-	</Button>
+	</button>
 	<p class="sr-only" aria-live="polite">{copied ? done : ''}</p>
 </div>
 

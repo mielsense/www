@@ -130,7 +130,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 	const events: { kind: 'eat' | 'splash'; x: number; y: number }[] = [];
 	let perception = 60, gCols = 0, gRows = 0, gHead = new Int32Array(0), gNext = new Int32Array(0);
 	const pointer = { x: 0, y: 0, active: false, movedAt: -99 };
-	const S = { flag: 0, shade: 0, s: 0, u: 0, v: 0, t: 0, head: false, ang: 0, dist: 0 };
+	const S = { flag: 0, shade: 0, s: 0, u: 0, v: 0, t: 0, head: false, ang: 0, dist: 0, margin: 0 };
 	let look = readLook();
 
 	/* ---------- world ---------- */
@@ -535,6 +535,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		const L = c.L, rs = c.rs;
 		S.head = false;
 		S.flag = 0;
+		S.margin = 0;
 		let fx = rs[0] - rs[2], fy = rs[1] - rs[3];
 		const fl = Math.hypot(fx, fy) || 1;
 		fx /= fl;
@@ -551,6 +552,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 			S.head = true;
 			S.s = 0;
 			S.t = dh;
+			S.margin = (1 - dh) * ha;
 			S.shade = 0.82 - 0.36 * dh * dh;
 			return true;
 		}
@@ -602,6 +604,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		if (d <= hw) {
 			S.flag = 1;
 			S.t = d / (hw || 1);
+			S.margin = hw - d;
 			S.shade = 0.74 - 0.42 * S.t * S.t;
 			return true;
 		}
@@ -672,13 +675,18 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 					if (!hit && S.dist > reach) continue;
 					const flag = S.flag, shade = S.shade, ang = S.ang, mark = hit ? marking(c.kind, L) : 0;
 					const key = (Math.floor(S.s * 40) * 131 + Math.round(S.v / cw) * 7 + c.id * 977) >>> 0;
+					const s = S.s, t = S.t;
+					// A cell well inside the cat is fully covered; only cells near its edge need the
+					// four extra samples that soften the outline. Most cells are inside, so this is
+					// most of the sea's work saved.
 					let cover = hit ? 1 : 0;
-					for (let k = 0; k < SUB.length; k += 2) if (sampleCat(c, X + SUB[k] * cw, Y + SUB[k + 1] * ch)) cover++;
+					if (hit && S.margin > reach) cover = 5;
+					else for (let k = 0; k < SUB.length; k += 2) if (sampleCat(c, X + SUB[k] * cw, Y + SUB[k + 1] * ch)) cover++;
 					if (!cover) continue;
 					cCat[i] = ci;
 					cAng[i] = ang;
-					cS[i] = S.s;
-					cT[i] = hit ? S.t : 1;
+					cS[i] = s;
+					cT[i] = hit ? t : 1;
 					cKey[i] = key;
 					if (hit && cover >= 3) {
 						cFlag[i] = mark || flag;
@@ -965,8 +973,9 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 	/* ---------- loop and lifecycle ---------- */
 
 	const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-	// phones run the simulation at 30 fps to save battery
-	const frameMs = matchMedia('(pointer: coarse)').matches ? 1000 / 30 : 0;
+	// 30 fps everywhere: the cats are drawn on a character grid and move a whole cell at a time, so
+	// 60 fps looks the same and only costs twice the main thread the rest of the page wants
+	const frameMs = 1000 / 30;
 	let raf = 0, last = 0, acc = 0, visible = true, disposed = false;
 	let seeded = { cats: tweaks.cats, fish: tweaks.fish };
 

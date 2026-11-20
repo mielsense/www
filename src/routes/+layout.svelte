@@ -4,13 +4,12 @@
 	import { beforeNavigate, onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import favicon from '@/assets/favicon.svg';
+	import favicon from '@/assets/favicon.png';
 	import { mountCatSea } from '@/cat-sea';
 	import { COLS, GARDEN_ROWS, MIN_CELL, mountGarden } from '@/garden';
 	import Preview from '@/components/site/Preview.svelte';
 	import PreviewCard from '@/components/site/PreviewCard.svelte';
 	import { commits } from '@/data/activity';
-	import Tweaks from '@/components/site/Tweaks.svelte';
 	import { copy, langOf } from '@/copy';
 	import { applyTweaks } from '@/tweaks.svelte';
 	import { site } from '@/data/site';
@@ -29,6 +28,10 @@
 	const home = $derived(lang === 'fr' ? '/fr' : '/');
 
 	let tweaking = $state(false);
+	// The pane and Tweakpane are most of the page's script and most visitors never open them, so
+	// they load on demand. Hovering or focusing the button starts the download, so it opens at once.
+	let tweaksModule: Promise<typeof import('@/components/site/Tweaks.svelte')> | undefined;
+	const loadTweaks = () => (tweaksModule ??= import('@/components/site/Tweaks.svelte'));
 
 	// The latest commit, from the daily GitHub sync. How long ago is worked out in the visitor's
 	// browser: the prerendered page shows the date, so it's never stale.
@@ -110,7 +113,8 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} type="image/svg+xml" />
+	<link rel="icon" href={favicon} type="image/png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 	<link rel="canonical" href={canonical} />
 	<link rel="alternate" hreflang="en" href={site.url} />
 	<link rel="alternate" hreflang="fr" href="{site.url}/fr" />
@@ -120,8 +124,8 @@
 	<meta name="color-scheme" content="light dark" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="miel" />
-	<meta property="og:title" content="miel" />
-	<meta name="twitter:title" content="miel" />
+	<meta property="og:title" content="@miel | portfolio" />
+	<meta name="twitter:title" content="@miel | portfolio" />
 	<meta property="og:description" content={t.description} />
 	<meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
 	<meta property="og:url" content={canonical} />
@@ -141,7 +145,9 @@
 
 <!-- outside the zoomed column, so the card's fixed position matches the links it points at -->
 <PreviewCard />
-{#if tweaking}<Tweaks {lang} />{/if}
+{#if tweaking}
+	{#await loadTweaks() then { default: Tweaks }}<Tweaks {lang} />{/await}
+{/if}
 
 <!-- mounted once for the whole visit, so the cats keep swimming when the language changes -->
 <div class="band vt pointer-events-none absolute inset-x-0 top-0 overflow-hidden" style:view-transition-name="sea">
@@ -150,16 +156,16 @@
 
 <div class="relative z-10 mx-auto below-sea flex min-h-dvh max-w-(--column) flex-col px-5">
 	<header class="tweak-zoom reveal flex items-center justify-between pb-8" style:--rise="0px" style:--duration="400ms">
-		<a href={home} class="vt -my-2 py-2 text-[18px] font-medium text-strong hover:text-default" style:view-transition-name="wordmark" aria-current={path === home ? 'page' : undefined}>miel</a>
+		<a href={home} class="vt -my-2 py-2 text-[17px] font-medium text-strong hover:text-default" style:view-transition-name="wordmark" aria-current={path === home ? 'page' : undefined}>miel</a>
 		<!-- The language link is last: "fr" and "en" are the same width, so the group's right edge stays
 		     on the column's edge in both languages. The theme word, the one that changes length when
 		     toggled, is first, so toggling it moves nothing else. No space is reserved anywhere, so
 		     the gaps are always the same. -->
-		<div class="flex items-center gap-5 text-[14px]">
+		<div class="flex items-center gap-5 text-[15px]">
 			<button type="button" class="press flex min-h-11 cursor-pointer items-center text-subtle hover:text-strong" aria-label={t.theme.aria(next)} onclick={(event) => theme.toggle({ x: event.clientX, y: event.clientY })}
 				><!-- CSS picks the word, so the prerendered page is right before the script runs --><span class="dark:hidden">{t.theme.dark}</span><span class="hidden dark:inline">{t.theme.light}</span></button
 			>
-			<button type="button" class="press flex min-h-11 cursor-pointer items-center text-subtle hover:text-strong aria-expanded:text-strong" aria-label={t.tweaks.aria} aria-expanded={tweaking} onclick={() => (tweaking = !tweaking)}>{t.tweaks.open}</button>
+			<button type="button" class="press flex min-h-11 cursor-pointer items-center text-subtle hover:text-strong aria-expanded:text-strong" aria-label={t.tweaks.aria} aria-expanded={tweaking} onpointerenter={loadTweaks} onfocus={loadTweaks} onclick={() => (tweaking = !tweaking)}>{t.tweaks.open}</button>
 			<a href={t.other.href} hreflang={t.other.lang} lang={t.other.lang} aria-label={t.other.aria} data-sveltekit-noscroll class="press flex min-h-11 items-center text-subtle hover:text-strong">{t.other.label}</a>
 		</div>
 	</header>
@@ -167,9 +173,10 @@
 	<!-- the tweaks pane's size slider zooms the header and the page text, not the sea or the garden -->
 	<div class="tweak-zoom">{@render children()}</div>
 
-	<footer class="reveal mt-auto pt-24 lg:pt-32" style:--delay="300ms" style:--rise="0px">
+	<footer class="reveal mt-auto" style:--delay="300ms" style:--rise="0px" style:--blur="0px">
 		<!-- wider than the column: it bleeds out to either side, and is cropped to its middle on phones -->
-		<div class="vt relative left-1/2 w-screen max-w-[1040px] -translate-x-1/2" style:view-transition-name="garden">
+		<!-- pulled up so the tallest flowers grow over the bottom of the page; the page still takes the pointer -->
+		<div class="vt pointer-events-none relative z-10 left-1/2 -mt-8 w-screen max-w-[1040px] -translate-x-1/2 sm:-mt-10" style:view-transition-name="garden">
 			<!-- as tall as the garden's rows at the width's cell size, so nothing shifts when it draws -->
 			<canvas
 				{@attach mountGarden}
@@ -179,7 +186,7 @@
 				aria-hidden="true"
 			></canvas>
 		</div>
-		<div class="flex items-baseline justify-between gap-6 pt-6 pb-10 text-[14px] text-subtle">
+		<div class="flex items-baseline justify-between gap-6 pt-6 pb-10 text-[15px] text-subtle">
 			<p>© {new Date().getFullYear()} {site.name}</p>
 			{#if latest}
 				<Preview href={latest.url} card={{ title: latest.repo, text: latest.message, side: 'bottom' }} class="hover:text-strong">{t.lastCommit(ago)}</Preview>

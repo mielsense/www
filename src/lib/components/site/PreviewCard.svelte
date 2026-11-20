@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { untrack } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import EmailCard from '@/components/site/EmailCard.svelte';
 	import { hide, hold, preview } from '@/preview.svelte';
@@ -12,15 +13,18 @@
 	let x = $state(0);
 	let y = $state(0);
 	let origin = $state('left center');
-	let card = $state<HTMLElement>();
+	let el = $state<HTMLElement>();
+	const card = $derived(preview.card);
 
 	const PAD = 8;
 	const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 
 	function place() {
-		const a = preview.anchor, card = preview.card;
+		const a = preview.anchor;
 		if (!a || !card || !w) return;
 		const r = a.getBoundingClientRect();
+		// its link scrolled away: close rather than stay pinned to the edge, pointing at nothing
+		if (preview.open && (r.bottom < 0 || r.top > innerHeight)) return hide(0);
 		const W = w + 2, H = h + 2; // the card's border sits outside the measured content
 		if (card.side === 'right' && r.right + 12 + W <= innerWidth - PAD) {
 			x = r.right + 12;
@@ -41,7 +45,9 @@
 
 	$effect(() => {
 		void [preview.anchor, preview.card, w, h];
-		place();
+		// place() reads what it writes (y, preview.open); tracking those looped until Svelte gave up
+		// and stopped updating the page, which left the card stuck open
+		untrack(place);
 	});
 
 	$effect(() => {
@@ -59,13 +65,13 @@
 	onkeydown={(e) => e.key === 'Escape' && hide(0)}
 	onpointerdown={(e) => {
 		// a tap anywhere else closes a card opened by a long press
-		if (preview.open && e.pointerType === 'touch' && !card?.contains(e.target as Node) && !preview.anchor?.contains(e.target as Node)) hide(0);
+		if (preview.open && e.pointerType === 'touch' && !el?.contains(e.target as Node) && !preview.anchor?.contains(e.target as Node)) hide(0);
 	}}
 />
 
 <div
-	bind:this={card}
-	class="card mielui-float-frame shadow-[var(--elevation-float)]"
+	bind:this={el}
+	class="card float-card"
 	data-open={preview.open || undefined}
 	data-glide={(preview.open && preview.glide) || undefined}
 	data-instant={preview.instant || undefined}
@@ -78,20 +84,19 @@
 	onpointerenter={hold}
 	onpointerleave={(e) => e.pointerType === 'mouse' && hide()}
 >
-	{#if preview.card}
-		{@const card = preview.card}
+	{#if card}
 		{#key card.id}
 			<div class="body" bind:clientWidth={w} bind:clientHeight={h} in:blur={{ duration: preview.glide && !preview.instant ? 160 : 0, amount: 2, opacity: 0 }}>
 				{#if card.email}
 					<EmailCard email={card.title} copy={card.email.copy} copied={card.email.copied} />
 				{:else}
-					<div class="flex w-72 flex-col gap-3 p-4">
+					<div class="flex w-[300px] flex-col gap-3 p-4">
 						<div class="flex flex-col gap-1">
-							<p class="text-[15px] leading-5 font-medium text-strong">{card.title}</p>
-							{#if card.text}<p class="text-[14px] leading-5 text-pretty text-default">{card.text}</p>{/if}
+							<p class="text-[15px] leading-[1.4] font-medium text-strong">{card.title}</p>
+							{#if card.text}<p class="text-[15px] leading-[1.45] text-pretty text-default">{card.text}</p>{/if}
 						</div>
 						{#if card.host || card.meta}
-							<div class="flex items-baseline justify-between gap-4 text-[13px] leading-5 text-subtle">
+							<div class="flex items-baseline justify-between gap-4 text-[15px] leading-[1.4] text-subtle">
 								<span class="truncate">{card.host}</span>
 								{#if card.meta}<span class="shrink-0 tabular-nums">{card.meta}</span>{/if}
 							</div>

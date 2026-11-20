@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Contributions from '@/components/site/Contributions.svelte';
 	import Preview from '@/components/site/Preview.svelte';
 	import { copy, type Lang, type Row } from '@/copy';
 	import github from '@/data/github.json';
@@ -18,8 +19,8 @@
 	};
 
 	// blocks enter one after another on the first load, gaps closing up down the page
-	const delays = [60, 110, 150, 190, 220, 250];
-	const line = 'row -mx-2 flex min-w-0 flex-col gap-0.5 px-2 py-1.5 text-[15px] leading-6 sm:flex-row sm:items-center sm:gap-4';
+	const delays = [60, 110, 150, 190, 220, 250, 270, 290];
+	const line = 'row -mx-2 flex min-w-0 flex-col gap-0.5 px-2 py-1.5 text-[17px] leading-[1.6] sm:flex-row sm:items-center sm:gap-4';
 </script>
 
 <svelte:head>
@@ -70,11 +71,12 @@
 {/snippet}
 
 {#snippet list(id: string, label: string, rows: Row[], delay: number)}
-	<section class="reveal flex flex-col gap-2" aria-labelledby={id} style:--delay="{delay}ms" style:--rise="6px">
-		<h2 {id} class="text-[14px] leading-6 font-normal text-subtle">{label}</h2>
+	<section class="flex flex-col gap-2" aria-labelledby={id}>
+		<h2 {id} class="reveal text-[15px] leading-[1.6] font-normal text-subtle" style:--delay="{delay}ms" style:--rise="6px">{label}</h2>
 		<ul class="flex flex-col">
-			{#each rows as row (row.name)}
-				<li>
+			{#each rows as row, i (row.name)}
+				<!-- each row a beat after the one above it -->
+				<li class="reveal" style:--delay="{delay + (i + 1) * 40}ms" style:--rise="6px">
 					{#if row.href}
 						<Preview href={row.href} card={{ title: row.name, text: row.card?.text, meta: meta(row), side: 'right' }} row class={line}>
 							{@render cells(row)}
@@ -91,29 +93,29 @@
 <main class="flex flex-col gap-14">
 	<div class="flex flex-col gap-7">
 		<div class="reveal flex items-center gap-3" style:--delay="{delays[0]}ms" style:--rise="8px">
-			<img src="/avatar-288.webp?v=20261001" alt="" width="44" height="44" class="vt size-11 rounded-full" style:view-transition-name="avatar" />
+			<img src="/avatar-288.webp?v=20261001" alt="" width="48" height="48" class="vt size-[48px] rounded-full" style:view-transition-name="avatar" />
 			<div class="flex min-w-0 flex-col">
-				<h1 class="vt text-[16px] leading-5 text-strong" style:view-transition-name="me">{site.name}</h1>
-				<p class="text-[14px] leading-5 text-subtle">{t.role}</p>
+				<h1 class="vt text-[17px] leading-[1.35] text-strong" style:view-transition-name="me">{site.name}</h1>
+				<p class="text-[15px] leading-[1.4] text-subtle">{t.role}</p>
 			</div>
 		</div>
 
-		<div class="copy reveal flex flex-col gap-5 text-[16px]" style:--delay="{delays[1]}ms" style:--rise="8px">
+		<div class="copy flex flex-col gap-5 text-[17px]">
 			{#if lang === 'fr'}
-				<p>
+				<p class="reveal" style:--delay="{delays[1]}ms" style:--rise="8px">
 					Je suis design engineer, en France. Je construis le tableau de bord client de {@render reecall()}, où des agents vocaux IA décrochent et passent
 					des appels. À côté, je suis freelance et je porte vers {@render svelte()} les bibliothèques d’interface que j’aime.
 				</p>
-				<p>
+				<p class="reveal" style:--delay="{delays[1] + 60}ms" style:--rise="8px">
 					Vous pouvez me joindre sur {@render link(site.github, 'GitHub', `@${site.handle}`, t.links.github(new Intl.NumberFormat('fr').format(contributions)))}, {@render link(site.x, 'X', `@${site.handle}`)} ou {@render email('par e-mail')},
 					ou {@render link(site.cal, 'réserver un appel', 'Réserver un appel', t.links.cal)}.
 				</p>
 			{:else}
-				<p>
+				<p class="reveal" style:--delay="{delays[1]}ms" style:--rise="8px">
 					I’m a design engineer in France. I build the customer dashboard at {@render reecall()}, where AI voice agents answer and place calls. On the side I
 					freelance and port the interface libraries I like to {@render svelte()}.
 				</p>
-				<p>
+				<p class="reveal" style:--delay="{delays[1] + 60}ms" style:--rise="8px">
 					You can reach me on {@render link(site.github, 'GitHub', `@${site.handle}`, t.links.github(new Intl.NumberFormat('en').format(contributions)))}, {@render link(site.x, 'X', `@${site.handle}`)} or {@render email('by email')}, or
 					{@render link(site.cal, 'book a call', 'Book a call', t.links.cal)}.
 				</p>
@@ -122,8 +124,11 @@
 	</div>
 
 	{@render list('work', t.work.label, t.work.rows, delays[2])}
-	{@render list('projects', t.projects.label, t.projects.rows, delays[3])}
-	{@render list('stack', t.stack.label, t.stack.rows, delays[4])}
+	{@render list('open-source', t.openSource.label, t.openSource.rows, delays[3])}
+	{@render list('projects', t.projects.label, t.projects.rows, delays[4])}
+	{#if t.events.rows.length}{@render list('events', t.events.label, t.events.rows, delays[5])}{/if}
+	{@render list('stack', t.stack.label, t.stack.rows, delays[6])}
+	<Contributions days={github.contributions} {lang} delay={delays[7]} />
 </main>
 
 

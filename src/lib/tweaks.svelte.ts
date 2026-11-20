@@ -14,7 +14,7 @@ export const DEFAULTS = {
 	/** Below the font's range (9 to 32) the browser picks the optical size from the font size. */
 	opsz: 8,
 	tracking: -0.005,
-	leading: 1.75,
+	leading: 1.65,
 	width: 50,
 	/** Height of the sea band in px; the default leaves it to the breakpoints. */
 	sea: 440,
