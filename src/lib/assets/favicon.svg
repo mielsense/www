@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-	<!-- an "m" for miel: two arches, round ends. Dark on light tabs, light on dark ones. -->
-	<style>path { stroke: #292929 } @media (prefers-color-scheme: dark) { path { stroke: #ededed } }</style>
-	<path d="M7.5 24V12a4.25 4.25 0 0 1 8.5 0v12M16 12a4.25 4.25 0 0 1 8.5 0v12" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>

@@ -9,44 +9,40 @@
 	src: url('/fonts/allo.woff2') format('woff2');
 }
 
-/* FK Raster Roman Compact Smooth, basic Latin only: it sets the big words and nothing else */
+/* the full Allo, every axis (opsz, wght, ROND): only the tweaks pane's roundness slider asks for it */
 @font-face {
-	font-family: 'FK Raster Roman Compact';
+	font-family: 'Allo Full';
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 100 900;
 	font-display: swap;
-	src: url('/fonts/fk-raster-roman-compact-smooth.woff2') format('woff2');
+	src: url('/fonts/allo-full.woff2') format('woff2');
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
- * Light is the inverse of dark. Four inks (strong, default, subtle, faint), the page, and the two
- * layers of the double-bordered card. The link colors come from the cats' coats in the sea: amber,
- * rose and periwinkle, a touch deeper on light so they still read on the pale page.
+ * Light is the inverse of dark: four inks (strong, default, subtle, faint), the page, hairlines and a
+ * fill. The only color on the page is in the sea, the garden and the brand marks.
  */
 @theme {
 	--font-sans: 'Allo', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-	--font-display: 'FK Raster Roman Compact', 'Allo', system-ui, sans-serif;
-	--font-mono: 'SF Mono', ui-monospace, 'Geist Mono', Menlo, monospace;
+	--font-mono: 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
 
-	--color-page: #f3f2f2;
+	--color-page: #faf9f6;
 	--color-strong: #0c0d0d;
 	--color-default: #5b5b5b;
 	--color-subtle: #737373;
 	--color-faint: #9d9d9d;
 	--color-hairline: rgb(12 13 13 / 0.1);
+	--color-hairline-strong: rgb(12 13 13 / 0.22);
 	--color-fill: rgb(12 13 13 / 0.05);
-	--color-shell: #e8e7e7;
-	--color-sheet: #ffffff;
 
-	--color-amber: #f0a000;
-	--color-rose: #e8456a;
-	--color-periwinkle: #7b7ff0;
-	--color-lavender: #8266d6;
-	--color-mint: #289c70;
 
 	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+	--ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+	/* the spacing step the layout was tuned on (0.225rem = 3.6px, not Tailwind's 4px) */
+	--spacing: 0.225rem;
 }
 
 .dark {
@@ -56,15 +52,30 @@
 	--color-subtle: #8f8f8f;
 	--color-faint: #5d5d5d;
 	--color-hairline: rgb(255 255 255 / 0.08);
+	--color-hairline-strong: rgb(255 255 255 / 0.22);
 	--color-fill: rgb(255 255 255 / 0.045);
-	--color-shell: #252525;
-	--color-sheet: #2d2d2d;
 
-	--color-amber: #ffb21a;
-	--color-rose: #ff5c7a;
-	--color-periwinkle: #a5a8ff;
-	--color-lavender: #c3aef2;
-	--color-mint: #93dcbc;
+}
+
+/* The floating card (the link previews): a lifted surface with a hairline edge and a short, soft
+   shadow. Its radius is a 14px control radius plus the 4px it sits in, plus the border. */
+:root {
+	--color-panel: #ffffff;
+	--color-panel-edge: rgb(12 13 13 / 0.12);
+	--elevation-float: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 12px -4px rgb(0 0 0 / 0.08);
+}
+
+.dark {
+	--color-panel: #252525;
+	--color-panel-edge: rgb(243 242 242 / 0.14);
+	--elevation-float: 0 4px 12px -4px rgb(0 0 0 / 0.3);
+}
+
+.float-card {
+	border: 1px solid var(--color-panel-edge);
+	border-radius: 19px;
+	background-color: var(--color-panel);
+	box-shadow: var(--elevation-float);
 }
 
 @layer base {
@@ -124,38 +135,68 @@
 	}
 }
 
-/* The pixel display face: "mathis", page titles, 404. */
-@utility display {
-	font-family: var(--font-display);
-	font-weight: 400;
-	line-height: 0.88;
-	letter-spacing: 0;
+/* A link inside a sentence: strong ink on a faint underline that darkens on hover. */
+.prose-link {
 	color: var(--color-strong);
+	font-weight: 500;
+	text-decoration: underline;
+	text-decoration-color: var(--color-hairline-strong);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
 	white-space: nowrap;
+
+	&:hover {
+		text-decoration-color: currentColor;
+	}
 }
 
-/* Press: a small scale while held. Transform only, so hover colors stay instant. Wide surfaces set
-   a gentler --press, since 0.97 moves their edges several pixels. */
-@utility press {
-	transition: transform 120ms var(--ease-out);
+/* A line of a list: name, dotted leader, note. Hover is instant: rows are reached for, not watched. */
+.row {
+	text-decoration: none;
 
-	&:active:not(:disabled) {
-		transform: scale(var(--press, 0.97));
+	& .leader {
+		height: 1px;
+		background-image: radial-gradient(circle, var(--color-faint) 0.6px, transparent 0.9px);
+		background-size: 4px 1px;
+		background-repeat: repeat-x;
+		opacity: 0.6;
+	}
+
+	&:is(a):is(:hover, :focus-visible) .leader {
+		opacity: 1;
+	}
+
+	&:is(a):is(:hover, :focus-visible) .note {
+		color: var(--color-default);
+	}
+}
+
+/* Press: a small scale while held, transform only so hover colors stay instant. */
+@utility press {
+	transition: transform 160ms var(--ease-out);
+
+	&:active {
+		transform: scale(0.97);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		transition: none;
+
+		&:active {
+			transform: none;
+		}
 	}
 }
 
-/* The first-load entrance for what supports the display word: a fade and a short rise, each block
-   on its own --delay and --rise so the group reads as one wave led by the word, not a queue. CSS
-   only, so it starts from the prerendered page. After the first navigation pages just appear: the
-   layout sets html.revealed and the view transition does the work. */
+/* The first-load entrance: text comes into focus as it fades in and rises a few pixels, each block
+   and each row on its own --delay so the page reads as one wave, top to bottom. CSS only, so it
+   starts from the prerendered page before any script. After the first navigation pages just
+   appear: the layout sets html.revealed and the view transition does the work. */
 @keyframes enter {
 	from {
 		opacity: 0;
 		transform: translateY(var(--rise, 8px));
+		filter: blur(var(--blur, 4px));
 	}
 }
 
@@ -177,221 +218,26 @@
 	}
 }
 
-/* A highlighted word in a sentence: a marker stroke under its lower half in a coat color,
-   which grows to cover the whole word on hover and turns solid, with dark ink on it. A see-through
-   warm color over the dark page reads as brown, so the full state is never see-through.
-   Set --mark to the color. */
-@utility mark {
-	color: var(--color-strong);
-	text-decoration: none;
-	background-image: linear-gradient(color-mix(in srgb, var(--mark) 62%, transparent), color-mix(in srgb, var(--mark) 62%, transparent));
-	background-repeat: no-repeat;
-	background-position: 0 100%;
-	background-size: 100% 0.42em;
-	padding-inline: 0.12em;
-	margin-inline: -0.12em;
-	border-radius: 0.2em;
-	box-decoration-break: clone;
-	-webkit-box-decoration-break: clone;
-	transition: background-size 120ms var(--ease-out);
-
-	&:hover,
-	&[data-open] {
-		color: #1f1404;
-		background-image: linear-gradient(var(--mark), var(--mark));
-		background-size: 100% 100%;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		transition: none;
-	}
-}
-
-/* The double-bordered card: a dark rim holding a lighter sheet. Radii are concentric:
-   sheet 13 = shell 18 - padding 5. */
-@utility shell {
-	padding: 5px;
-	border-radius: 18px;
-	background-color: var(--color-shell);
-	box-shadow:
-		0 0 0 1px var(--color-hairline),
-		0 2px 4px rgb(0 0 0 / 0.06),
-		0 18px 44px -12px rgb(0 0 0 / 0.25);
-
-	.dark & {
-		box-shadow:
-			0 0 0 1px rgb(255 255 255 / 0.07),
-			0 2px 4px rgb(0 0 0 / 0.25),
-			0 18px 44px -12px rgb(0 0 0 / 0.5);
-	}
-}
-
-@utility sheet {
-	border-radius: 13px;
-	background-color: var(--color-sheet);
-	box-shadow: inset 0 0 0 1px var(--color-hairline);
-
-	.dark & {
-		box-shadow:
-			inset 0 0 0 1px rgb(255 255 255 / 0.08),
-			inset 0 1px 0 rgb(255 255 255 / 0.05);
-	}
-}
-
-/* Buttons. Primary is the lit one: dark ink on light, a white lamp on dark. */
-@utility btn {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	height: 36px;
-	padding-inline: 12px 14px;
-	border-radius: 12px;
-	font-size: 14px;
-	font-weight: 500;
-	white-space: nowrap;
-	cursor: pointer;
-	user-select: none;
-}
-
-@utility btn-primary {
-	color: #f3f2f2;
-	background-image: linear-gradient(to bottom, #2e2e2e, #0c0d0d);
-	box-shadow:
-		inset 0 1px 0 rgb(255 255 255 / 0.18),
-		0 0 0 1px rgb(0 0 0 / 0.9),
-		0 1px 2px rgb(0 0 0 / 0.2),
-		0 8px 22px -8px rgb(0 0 0 / 0.45);
-
-	&:hover {
-		background-image: linear-gradient(to bottom, #3a3a3a, #141515);
-	}
-
-	.dark & {
-		color: #1a1a1a;
-		background-image: linear-gradient(to bottom, #ffffff, #d4d4d4);
-		box-shadow:
-			inset 0 1px 0 #fff,
-			inset 0 -2px 4px rgb(0 0 0 / 0.14),
-			0 0 0 1px rgb(0 0 0 / 0.35),
-			0 1px 2px rgb(0 0 0 / 0.3),
-			0 6px 16px -6px rgb(0 0 0 / 0.35),
-			0 0 18px rgb(255 255 255 / 0.07);
-	}
-
-	.dark &:hover {
-		background-image: linear-gradient(to bottom, #ffffff, #e4e4e4);
-	}
-}
-
-@utility btn-secondary {
-	color: #1a1a1a;
-	background-image: linear-gradient(to bottom, #ffffff, #ececec);
-	box-shadow:
-		inset 0 1px 0 #fff,
-		0 0 0 1px rgb(12 13 13 / 0.12),
-		0 1px 2px rgb(12 13 13 / 0.08),
-		0 8px 20px -8px rgb(12 13 13 / 0.25);
-
-	&:hover {
-		background-image: linear-gradient(to bottom, #ffffff, #f4f4f4);
-	}
-
-	.dark & {
-		color: #ededed;
-		background-image: linear-gradient(to bottom, #3a3a3a, #2b2b2b);
-		box-shadow:
-			inset 0 1px 0 rgb(255 255 255 / 0.12),
-			0 0 0 1px rgb(0 0 0 / 0.35),
-			0 1px 2px rgb(0 0 0 / 0.3),
-			0 6px 16px -6px rgb(0 0 0 / 0.35);
-	}
-
-	.dark &:hover {
-		background-image: linear-gradient(to bottom, #424242, #303030);
-	}
-}
-
-/* Two-tone icons: paths marked .b take the base tone, .a the accent. The parent sets the tones. */
-@utility duo {
-	--duo-b: #c4c4c4;
-	--duo-a: #7a7a7a;
-
-	.dark & {
-		--duo-b: #4d4d4d;
-		--duo-a: #8f8f8f;
-	}
-
-	& .b {
-		fill: var(--duo-b);
-	}
-	/* hover color is instant; a delay set on a part (the chat dots) still steps it in late */
-	& .a {
-		fill: var(--duo-a);
-		transition: fill 0ms;
-	}
-}
-
-/* The contact card. A native popover, reset from the browser's centered dialog look and placed
-   under its trigger by Contact.svelte. It rises 4px out of 96% from the button, 180ms in and 120ms
-   out; a transition, so closing mid-way turns around. Nothing appears from nothing. */
-.contact-card {
-	position: fixed;
-	inset: auto;
-	border: 0;
-	overflow: visible;
-	color: inherit;
-	transform-origin: var(--origin-x, 100%) top;
-	transition:
-		opacity 120ms var(--ease-out),
-		transform 120ms var(--ease-out),
-		display 120ms allow-discrete,
-		overlay 120ms allow-discrete;
-	opacity: 0;
-	transform: translateY(-4px) scale(0.96);
-
-	&:popover-open {
-		opacity: 1;
-		transform: none;
-		transition-duration: 180ms;
-	}
-
-	@starting-style {
-		&:popover-open {
-			opacity: 0;
-			transform: translateY(-4px) scale(0.96);
-		}
-	}
-
-	&::backdrop {
-		background: transparent;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		transform: none;
-
-		&:popover-open {
-			transform: none;
-		}
-	}
-}
-
-/* The nav carries over between pages; everything else cross-fades. */
+/* Switching language cross-fades only the words that change. What reads the same in both languages
+   (the sea, the garden, the avatar, the names; marked .vt with a view-transition-name) is captured
+   on its own and holds still, since its old and new pictures are the same. */
 ::view-transition-old(root),
 ::view-transition-new(root) {
 	animation-duration: 180ms;
 	animation-timing-function: var(--ease-out);
 }
 
-::view-transition-group(nav) {
-	animation: none;
+::view-transition-group(*) {
+	animation-duration: 180ms;
+	animation-timing-function: var(--ease-out);
 }
 
-/* The theme switch dithers in from the toggle; the mask frames come from src/lib/dither.ts. */
-html.theming .nav {
+/* the theme switch dithers the whole page as one picture, so nothing is captured apart */
+html.theming .vt {
 	view-transition-name: none !important;
 }
 
+/* The theme switch dithers in from the toggle; the mask frames come from src/lib/dither.ts. */
 html.theming::view-transition-old(root),
 html.theming::view-transition-new(root) {
 	animation: none;
@@ -401,4 +247,50 @@ html.theming::view-transition-new(root) {
 html.theming::view-transition-new(root) {
 	mask-size: 100% 100%;
 	mask-repeat: no-repeat;
+}
+
+/* Tweaks. The pane in the header writes these variables on <html> (src/lib/tweaks.svelte.ts); the
+   fallbacks are the site as designed. Unlayered, so they win over the utility classes. */
+:root {
+	--column: 50rem;
+}
+
+body {
+	font-family: var(--tweak-font, var(--font-sans));
+	font-variation-settings: var(--tweak-fvs, normal);
+	font-weight: var(--tweak-weight, 400);
+	letter-spacing: var(--tweak-tracking, -0.005em);
+}
+
+/* running text: the intro paragraphs */
+.copy {
+	line-height: var(--tweak-leading, 1.65);
+}
+
+/* the sea band, and the column that starts where the band fades out */
+.band {
+	height: var(--sea-height, 300px);
+}
+
+.below-sea {
+	padding-top: calc(var(--sea-height, 300px) - 32px);
+}
+
+@media (width >= 64rem) {
+	.band {
+		height: var(--sea-height, 440px);
+	}
+
+	.below-sea {
+		padding-top: calc(var(--sea-height, 440px) - 36px);
+	}
+}
+
+/* medium text stays one step above the body, whatever the body weight is */
+:is(h1, h2, h3, .font-medium, .prose-link):not(.font-normal) {
+	font-weight: calc(var(--tweak-weight, 400) + 100);
+}
+
+.tweak-zoom {
+	zoom: var(--tweak-size, 1);
 }

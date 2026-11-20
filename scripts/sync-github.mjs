@@ -56,7 +56,7 @@ const repos = [...own, ...extra]
 	.map(shape)
 	.sort((a, b) => b.pushedAt.localeCompare(a.pushedAt));
 
-// recent commits for the /now page: the six most recently pushed repos, ten commits each
+// recent commits for the footer and the feed: the six most recently pushed repos, ten commits each
 const recent = repos.filter((r) => r.name !== USER).slice(0, 6);
 const commits = (
 	await Promise.all(
@@ -66,7 +66,8 @@ const commits = (
 			const list = await get(`/repos/${full}/commits?per_page=10`).catch(
 				() => []
 			);
-			return list.map((c) => ({
+			// the workflow's own sync commits are bookkeeping, not work
+			return list.filter((c) => c.author?.type !== 'Bot' && !c.commit.author?.name?.endsWith('[bot]')).map((c) => ({
 				repo: r.name,
 				message: c.commit.message.split('\n')[0].slice(0, 120),
 				sha: c.sha.slice(0, 7),

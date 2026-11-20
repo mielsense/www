@@ -1,4 +1,4 @@
-import { commits } from '@/data/projects';
+import { commits } from '@/data/activity';
 import { site } from '@/data/site';
 
 export const prerender = true;
@@ -23,7 +23,7 @@ export function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>${escape(`@${site.handle} · commits`)}</title>
-		<link>${site.url}/projects</link>
+		<link>${site.url}</link>
 		<description>${escape(`Recent commits by ${site.name}, straight from GitHub.`)}</description>
 		<language>en</language>
 		<atom:link href="${site.url}/rss.xml" rel="self" type="application/rss+xml" />${items}

@@ -1,10 +1,6 @@
 {
 	"redirects": [
-		{
-			"source": "/now",
-			"destination": "/about",
-			"permanent": true
-		}
+		{ "source": "/(now|about|projects)", "destination": "/", "permanent": true }
 	],
 	"headers": [
 		{

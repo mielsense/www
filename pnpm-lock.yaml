@@ -11,12 +11,15 @@ importers:
       '@vercel/analytics':
         specifier: ^2.0.1
         version: 2.0.1(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)))(svelte@5.57.0)(typescript@6.0.3)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)))(react@19.2.8)(svelte@5.57.0)
+      svelte-tweakpane-ui:
+        specifier: ^1.6.3
+        version: 1.6.3(svelte@5.57.0)
     devDependencies:
       '@sveltejs/adapter-vercel':
         specifier: ^6.3.4
         version: 6.3.4(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)))(svelte@5.57.0)(typescript@6.0.3)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)))
       '@sveltejs/kit':
-        specifier: ^2.63.0
+        specifier: ^2.70.3
         version: 2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)))(svelte@5.57.0)(typescript@6.0.3)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.1.2
@@ -217,6 +220,60 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@kitschpatrol/tweakpane-plugin-camerakit@0.3.1-fork.1':
+    resolution: {integrity: sha512-1TIJ0yDbN46v1rnRXIPhlEaDCiF7BpnQw6sCM7bhFnZZcI15/rjVI8kJsHSfpS4Cq91vWji41SV/a65h+/HQdw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-essentials@0.2.2-fork.1':
+    resolution: {integrity: sha512-YTGmJDgQTurZILH2Th+MTiZoVnYQZE+TyuQBKjCBu9a4pxNxUc1fl3wKwXtXOa6W93e0NOEotBf1HitgkoJIMQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-file-import@1.2.0-fork.1':
+    resolution: {integrity: sha512-1/Lngyo/Mtrq3aQA1xqZY/JQehM2n0oqPh86+m1dXS2dmf2lGeSTpMHVg0UW2HLBNIeYMdRh2tmhz9IpognIWA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-image@2.0.1-fork.1':
+    resolution: {integrity: sha512-0/15JfvjAJNVK55MXksvjov1ACR2bIm0a9aRrdKvQ97ZUawKMYEfcKQbDkycBRYH6XbFJgILnTHTixkRSb09aQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-inputs@1.0.4-fork.1':
+    resolution: {integrity: sha512-s1GW92gdYJmDYvlHuIpkyyFxfgzPQixt0eM8xEL2gox7xHOTHiFgiyed/MvsqSgt/+4WdkrdDt73Rl816K4TRQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-profiler@0.4.2-fork.1':
+    resolution: {integrity: sha512-FXQbOq5xt0kl383e9iuEMTdvfgepRx2y9mE66OJVSBERf4zdaofomaGdD2+Z6/B7h7VsKZiLt2ly0ZYmI85T2g==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-rotation@0.2.1-fork.1':
+    resolution: {integrity: sha512-UyNMKtzEeLbQ6AVeBCHrxgoP/32o409hSg2hSPWMnhi2y3rXnDOcbF3RI0VNcYxbpYRmzlFUwMruZDqT8VrgTw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-textarea@2.0.1-fork.1':
+    resolution: {integrity: sha512-KAKg7kK++Mj1MXVE8Eol6oSYtyzHf/LKposbasqng+H2aS94cDz4FE6xKRkebAf0AEKE9mGNfwgY9hoVSgNUGA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  '@kitschpatrol/tweakpane-plugin-waveform@1.0.4-fork.1':
+    resolution: {integrity: sha512-/pqa1rXebqbMPrVID5rhWlrGh0h/v0zMlcNK9Vc5in+mvaXkqk7kdOVHW75AaDzfZRXhCvkwCLT5IKNuZlxXQw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tweakpane: ^4.0.0
 
   '@mapbox/node-pre-gyp@2.0.3':
     resolution: {integrity: sha512-uwPAhccfFJlsfCxMYTwOdVfOz3xqyj8xYL3zJj8f0pb30tLohnnFPhLuqp4/qoEz8sNxe4SESZedcBojRefIzg==}
@@ -462,6 +519,9 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
+  '@tweakpane/core@2.0.5':
+    resolution: {integrity: sha512-punBgD5rKCF5vcNo6BsSOXiDR/NSs9VM7SG65QSLJIxfRaGgj54ree9zQW6bO3pNFf3AogiGgaNODUVQRk9YqQ==}
+
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
@@ -604,6 +664,13 @@ packages:
 
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
+
+  fast-copy@4.3.2:
+    resolution: {integrity: sha512-Ctcuv1tplX+8bX/VBu6DD8gZyDEtbP+jo+jnNCR9LVNSWR6DWauNol44WGQC2+uMCnFG7oRw/67ldmTIADdtgA==}
+
+  fast-equals@6.3.0:
+    resolution: {integrity: sha512-pfYzJHyXusE4MzPELJOckjvqqN/HVywr53BMWrvbEYUru/srfyzvTTtm8RSSvJ1I7Y7ozTB67z/lu7MVhwJ2NA==}
+    engines: {node: '>=6.0.0'}
 
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
@@ -825,6 +892,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@6.0.2:
+    resolution: {integrity: sha512-hIvVOb9Qr1p/9CNNLOe0OlWvgx/ziTsVwKN/GDSsuArN2K0wDiafP3s0SWmsm7o2BdnyS8Z9Z64NFBUbn6ziBg==}
+    engines: {node: ^22 || ^24 || >=26}
+    hasBin: true
+
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -907,6 +979,17 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: ^5.0.0 || ^6.0.0
 
+  svelte-persisted-store@0.12.0:
+    resolution: {integrity: sha512-BdBQr2SGSJ+rDWH8/aEV5GthBJDapVP0GP3fuUCA7TjYG5ctcB+O9Mj9ZC0+Jo1oJMfZUd1y9H68NFRR5MyIJA==}
+    engines: {node: '>=0.14'}
+    peerDependencies:
+      svelte: ^3.48.0 || ^4 || ^5
+
+  svelte-tweakpane-ui@1.6.3:
+    resolution: {integrity: sha512-X1pgwH7pm+XqeSGbVVm8QVX3fekfz+J5mToVMlQ4wp3KuYS/GhgVeXg4oJZ9QMLB2TGTVWvdyE4NOs10SHGT4Q==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0
+
   svelte@5.57.0:
     resolution: {integrity: sha512-NdbDn7fl4be1ViUG0oq/lvG6OZy3oENolV2ONjiqqsfVoeAfzaQAKUcEX3MrQod/Bebv1PgwET9rfXhgn9s4Kg==}
     engines: {node: '>=18'}
@@ -932,6 +1015,15 @@ packages:
 
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+
+  tweakpane-plugin-color-plus@0.7.1:
+    resolution: {integrity: sha512-cchenJMM0OUpEJAqvOXGxgtF33F7zBkO8MPdCOx1+pqiRW/8VQnAkr/8hcvLUJY6WTRBuU91E71zVw+KWpEw5g==}
+    engines: {node: ^22.0.0 || ^24.0.0 || >=26.0.0}
+    peerDependencies:
+      tweakpane: ^4.0.0
+
+  tweakpane@4.0.5:
+    resolution: {integrity: sha512-rxEXdSI+ArlG1RyO6FghC4ZUX8JkEfz8F3v1JuteXSV0pEtHJzyo07fcDG+NsJfN5L39kSbCYbB9cBGHyuI/tQ==}
 
   typescript@6.0.3:
     resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
@@ -1104,6 +1196,51 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
+
+  '@kitschpatrol/tweakpane-plugin-camerakit@0.3.1-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-essentials@0.2.2-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-file-import@1.2.0-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-image@2.0.1-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-inputs@1.0.4-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-profiler@0.4.2-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-rotation@0.2.1-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-textarea@2.0.1-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  '@kitschpatrol/tweakpane-plugin-waveform@1.0.4-fork.1(tweakpane@4.0.5)':
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
 
   '@mapbox/node-pre-gyp@2.0.3':
     dependencies:
@@ -1290,6 +1427,8 @@ snapshots:
       tailwindcss: 4.3.3
       vite: 8.2.2(esbuild@0.28.2)(jiti@2.7.0)
 
+  '@tweakpane/core@2.0.5': {}
+
   '@types/cookie@0.6.0': {}
 
   '@types/estree@1.0.9': {}
@@ -1408,6 +1547,10 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.6.0
 
   estree-walker@2.0.2: {}
+
+  fast-copy@4.3.2: {}
+
+  fast-equals@6.3.0: {}
 
   fdir@6.5.0(picomatch@4.0.7):
     optionalDependencies:
@@ -1569,6 +1712,8 @@ snapshots:
 
   nanoid@3.3.18: {}
 
+  nanoid@6.0.2: {}
+
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
@@ -1653,6 +1798,31 @@ snapshots:
     transitivePeerDependencies:
       - picomatch
 
+  svelte-persisted-store@0.12.0(svelte@5.57.0):
+    dependencies:
+      svelte: 5.57.0
+
+  svelte-tweakpane-ui@1.6.3(svelte@5.57.0):
+    dependencies:
+      '@kitschpatrol/tweakpane-plugin-camerakit': 0.3.1-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-essentials': 0.2.2-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-file-import': 1.2.0-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-image': 2.0.1-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-inputs': 1.0.4-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-profiler': 0.4.2-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-rotation': 0.2.1-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-textarea': 2.0.1-fork.1(tweakpane@4.0.5)
+      '@kitschpatrol/tweakpane-plugin-waveform': 1.0.4-fork.1(tweakpane@4.0.5)
+      '@tweakpane/core': 2.0.5
+      esm-env: 1.2.2
+      fast-copy: 4.3.2
+      fast-equals: 6.3.0
+      nanoid: 6.0.2
+      svelte: 5.57.0
+      svelte-persisted-store: 0.12.0(svelte@5.57.0)
+      tweakpane: 4.0.5
+      tweakpane-plugin-color-plus: 0.7.1(tweakpane@4.0.5)
+
   svelte@5.57.0:
     dependencies:
       '@jridgewell/remapping': 2.3.5
@@ -1693,6 +1863,13 @@ snapshots:
   totalist@3.0.1: {}
 
   tr46@0.0.3: {}
+
+  tweakpane-plugin-color-plus@0.7.1(tweakpane@4.0.5):
+    dependencies:
+      '@tweakpane/core': 2.0.5
+      tweakpane: 4.0.5
+
+  tweakpane@4.0.5: {}
 
   typescript@6.0.3: {}
 
