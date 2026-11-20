@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-20T13:45:20.387Z",
+	"syncedAt": "2026-11-20T14:59:02.267Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-20T13:45:09Z"
+			"pushedAt": "2026-11-20T13:45:21Z"
 		},
 		{
 			"name": "mielui",
@@ -309,13 +309,6 @@
 			"date": "2026-11-20T10:31:11Z"
 		},
 		{
-			"repo": "www",
-			"message": "feat: one preview card shared by every link, like the mielui tooltip",
-			"sha": "48b665f",
-			"url": "https://github.com/mielsense/www/commit/48b665f0ee40e95ccf6a897e0ff5004b6493fadd",
-			"date": "2026-11-20T10:31:11Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "feat(docs): redesign the home page (#30)",
 			"sha": "c86f40a",
@@ -552,6 +545,13 @@
 			"sha": "4e0080b",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/4e0080b81a0adf778f96e9aa2e03236e7e9d945b",
 			"date": "2026-09-05T22:30:23Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "feat: bring ECharts blocks to provider parity",
+			"sha": "8491081",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/8491081747e5ec83e7ce810368a85ff8f2fe8986",
+			"date": "2026-08-30T19:50:04Z"
 		}
 	],
 	"contributions": [
