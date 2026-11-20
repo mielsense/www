@@ -11,36 +11,37 @@ pnpm sync      # refresh src/lib/data/github.json from the GitHub API
 
 ## Pages
 
-- `/` is the whole screen: an ASCII sea of cats and fish (`src/lib/cat-sea.ts`, one canvas), "mathis" in FK Raster bottom left with Book a call and Copy email under it, and the intro bottom right. Its three highlighted links open a hover card after 120ms.
-- `/projects` lists every repo by year (this year, last year, earlier), pulled from GitHub.
-- `/about` is the bio, work, stack and links.
-- Contact in the nav opens a card (a native popover, `Contact.svelte`) to book a call or copy the email.
-- `/rss.xml` is the recent-commit feed. `/now` redirects to `/about` (`vercel.json`).
-- Any other path lands on the same full-screen layout as home with the status code.
-
-The sea lives in the root layout and is never remounted: it fills the screen on home and the error page and is a 460px header band (300px on phones) elsewhere, shrinking between them in a view transition. Keyboard: `h`, `a` and `p` jump to home, about and projects; `j` and `k` move between project rows.
+- One page, in English at `/` and French at `/fr`. An ASCII sea of cats and fish fills a band at the top (`src/lib/cat-sea.ts`), then the intro, then three lists (work, projects, stack) with dotted leaders, then a garden at the foot of the page (`src/lib/garden.ts`).
+- The header switches language (keeping your scroll position) and theme. `/about`, `/projects` and `/now` redirect to `/` (`vercel.json`).
+- `/rss.xml` is the recent-commit feed. Any other path shows the status code in the same layout.
+- The sea and the garden live in the root layout and are never remounted, so the cats keep swimming when the language changes. Keyboard: `j` and `k` move between list rows. Typing `meow` (or `miaou`) anywhere makes every cat answer over its head; the console says so.
 
 ## Where things live
 
+- Links and project rows share one preview card, the way Mielui's tooltip shares one bubble: the first waits 200ms, the next opens at once and the card glides there (`src/lib/preview.svelte.ts`, `Preview.svelte` for triggers, `PreviewCard.svelte` for the card). Star counts and the contribution total come from `github.json`. Mielui's tokens are re-inked onto the site's grays at the top of `src/app.css`.
+- `src/lib/copy.ts` holds every string in both languages and the curated lists. The two intro paragraphs, which carry links and brand marks, are written per language in `src/lib/components/site/Home.svelte`.
 - `src/lib/cat-sea.ts` is the simulation and renderer: boid fish, cats with a 16-node spine sampled into a character grid, wake, paw prints, colored collars. It reads the theme from `.dark` on `<html>`, pauses off screen and draws one still frame for reduced motion.
-- `src/lib/components/site/` holds `Hero` (home and error layout), `Actions` (the two buttons), `Scramble` (display words that assemble from sea characters), `Contact` and `Footer`.
-- `src/lib/data/site.ts` is who and what: name, links, work. `src/lib/data/projects.ts` merges `github.json` with hand-written overrides: hidden repos, better descriptions, the entries that aren't repos.
+- `src/lib/garden.ts` lays out flowers, bushes, grass and a sleeping cat from a fixed seed, then draws them on a canvas: plants sway in the wind and lean away from the pointer. It pauses off screen and holds still for reduced motion.
+- `tweak` in the header opens a Tweakpane (`svelte-tweakpane-ui`, `Tweaks.svelte`). Type: font, size, weight, roundness, optical size, tracking, leading. Layout: column width, sea height. Sea: cats, fish, speed. Garden: wind, grow another. Plus an FPS graph. Type and layout are CSS variables on `<html>` (`cssVars` in `src/lib/tweaks.svelte.ts`, the end of `app.css`), saved in localStorage and written before paint by `app.html`; the sea and the garden read `tweaks` every frame. Roundness and optical size need every axis of Allo, so `static/fonts/allo-full.woff2` (237KB, OFL, see `allo-OFL.txt`) only downloads when one of them moves.
+- The footer links the latest commit (`src/lib/data/activity.ts`, the sync bot's own commits left out), its age worked out in the visitor's browser.
+- `src/hooks.server.ts` sets `<html lang>` from the path, prerendered pages included.
+- `src/lib/data/site.ts` is who and what: name, links, work.
 - `src/lib/theme.svelte.ts` mirrors the theme class and runs the dithered theme switch (`src/lib/dither.ts`).
 
 ## Data
 
-Nothing in the chart, the counts or the lists is typed by hand. `scripts/sync-github.mjs` pulls the public non-fork repos, the extra repos named at the top of the script, and the last commits of the six most recently pushed repos. `.github/workflows/sync-github.yml` runs it daily and commits when the JSON changed, which redeploys the site. A new repo appears on the next sync. Add a line to the overrides only when the GitHub description isn't good enough.
+`scripts/sync-github.mjs` pulls the public repos and the last commits of the most recently pushed ones into `src/lib/data/github.json`; `.github/workflows/sync-github.yml` runs it daily. The page lists are curated by hand in `copy.ts`; the feed reads the commits.
 
 ## Look
 
-- Tokens sit at the top of `src/app.css`. Dark is `#f3f2f2` on `#1c1c1c`, light is `#0c0d0d` on `#f3f2f2`. An inline script in `app.html` applies the stored choice before first paint, falling back to the system setting.
-- Allo (OFL) for text, pinned to its rounded cut with only the weight axis kept, and FK Raster Roman Compact Smooth for the big words. Both are subset to Latin in `static/fonts` and preload. FK Raster is a commercial face: the site needs its web license.
-- Color comes only from the cats' collars: coral, pink, lavender, mint and friends. Links in the intro carry them as marker highlights, and the nav icons take them on hover.
-- Buttons, the double-bordered card (`shell` + `sheet`), the highlight (`mark`) and two-tone icons (`duo`) are utilities in `app.css`.
+- Tokens sit at the top of `src/app.css`. Dark is `#f3f2f2` on `#1c1c1c`, light is `#0c0d0d` on `#faf9f6`. An inline script in `app.html` applies the stored choice before first paint, falling back to the system setting.
+- Allo (OFL) for text, pinned to its rounded cut with only the weight axis kept, subset to Latin in `static/fonts` and preloaded.
+- Color comes only from the sea, the garden and the small brand marks in the intro. Everything else is four grays.
+- `prose-link` (links in sentences) and `row` (list lines with a dotted leader) are utilities in `app.css`.
 
 ## Shipping
 
 - Site URL is `https://miel.my`, set once in `data/site.ts` and used for canonical, Open Graph, JSON-LD, the sitemap and the feed.
-- `static/og.png` is the share card. Run `python3 -m http.server 8765` from the repo root, open `http://localhost:8765/scripts/share-card.html`, and capture it at 1200 × 630 with the site fonts loaded. Regenerate it if the portrait or intro changes, and bump the image version in the page and layout.
+- `static/og.png` is the share card: the home page itself, dark, at 1200 × 630, with the header links and everything below the intro hidden and `:root { --sea-height: 290px; --tweak-size: 1.55; --column: 66rem }` forced, captured on a frame where the cats are in view. Regenerate it if the portrait or intro changes, and bump the image version in the layout.
 - Vercel Web Analytics is wired in the root layout. Turn on Analytics for the project in the Vercel dashboard.
 - Deploy through the Vercel Git integration so the sync workflow's commits redeploy. The adapter pins the Node 22 runtime.

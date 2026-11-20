@@ -1,12 +1,18 @@
 <script lang="ts">
 	import '../app.css';
 	import { dev } from '$app/environment';
-	import { beforeNavigate, goto, onNavigate } from '$app/navigation';
+	import { beforeNavigate, onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import favicon from '@/assets/favicon.svg';
 	import { mountCatSea } from '@/cat-sea';
-	import Contact from '@/components/site/Contact.svelte';
+	import { COLS, GARDEN_ROWS, MIN_CELL, mountGarden } from '@/garden';
+	import Preview from '@/components/site/Preview.svelte';
+	import PreviewCard from '@/components/site/PreviewCard.svelte';
+	import { commits } from '@/data/activity';
+	import Tweaks from '@/components/site/Tweaks.svelte';
+	import { copy, langOf } from '@/copy';
+	import { applyTweaks } from '@/tweaks.svelte';
 	import { site } from '@/data/site';
 	import { theme } from '@/theme.svelte';
 
@@ -16,8 +22,34 @@
 
 	const path = $derived(page.url.pathname.replace(/\/$/, '') || '/');
 	const canonical = $derived(site.url + (path === '/' ? '' : path));
-	// the sea fills the screen on the home and error pages, and is a header band everywhere else
-	const full = $derived(path === '/' || page.error !== null);
+	const lang = $derived(langOf(path));
+	const t = $derived(copy[lang]);
+	// the theme button names the theme it switches to
+	const next = $derived(theme.dark ? t.theme.light : t.theme.dark);
+	const home = $derived(lang === 'fr' ? '/fr' : '/');
+
+	let tweaking = $state(false);
+
+	// The latest commit, from the daily GitHub sync. How long ago is worked out in the visitor's
+	// browser: the prerendered page shows the date, so it's never stale.
+	const latest = commits[0];
+	let now = $state<number | null>(null);
+	$effect(() => {
+		now = Date.now();
+	});
+	const ago = $derived.by(() => {
+		if (!latest) return '';
+		const date = new Date(latest.date);
+		if (now === null) return new Intl.DateTimeFormat(lang, { month: 'short', day: 'numeric' }).format(date);
+		const rel = new Intl.RelativeTimeFormat(lang, { numeric: 'auto' });
+		const minutes = Math.round((date.getTime() - now) / 60000);
+		if (Math.abs(minutes) < 60) return rel.format(minutes, 'minute');
+		const hours = Math.round(minutes / 60);
+		if (Math.abs(hours) < 24) return rel.format(hours, 'hour');
+		const days = Math.round(hours / 24);
+		return Math.abs(days) < 30 ? rel.format(days, 'day') : rel.format(Math.round(days / 30), 'month');
+	});
+	applyTweaks();
 
 	const person = JSON.stringify({
 		'@context': 'https://schema.org',
@@ -32,17 +64,10 @@
 		sameAs: [site.github, site.x]
 	});
 
-	// h, a and p jump between pages from anywhere; j and k walk the rows of a list
-	const routes: Record<string, string> = { h: '/', a: '/about', p: '/projects' };
+	// j and k walk the rows of the lists
 	function onKey(event: KeyboardEvent) {
 		if (event.metaKey || event.ctrlKey || event.altKey) return;
 		if (event.target instanceof HTMLElement && event.target.closest('input, textarea, [contenteditable]')) return;
-		const href = routes[event.key];
-		if (href && path !== href) {
-			event.preventDefault();
-			goto(href);
-			return;
-		}
 		if (event.key !== 'j' && event.key !== 'k') return;
 		const rows = [...document.querySelectorAll<HTMLAnchorElement>('main a[data-row]')];
 		if (rows.length === 0) return;
@@ -50,20 +75,28 @@
 		const at = rows.indexOf(document.activeElement as HTMLAnchorElement);
 		const next = event.key === 'j' ? Math.min(rows.length - 1, at + 1) : Math.max(0, at === -1 ? 0 : at - 1);
 		rows[next].focus({ preventScroll: true });
-		rows[next].scrollIntoView({ block: 'center', behavior: 'smooth' });
+		// keyboard navigation never waits on motion: the row is simply there
+		rows[next].scrollIntoView({ block: 'nearest' });
 	}
+
+	// for whoever opens the console
+	$effect(() => console.log('%cmrrp. type "meow" anywhere on the page.', 'color: #8f8f8f'));
+
+	// <html lang> is set on the server; switching language in the browser has to keep it in step
+	$effect(() => {
+		document.documentElement.lang = lang;
+	});
 
 	// The browser's own chrome follows the theme the visitor picked, not only their system setting.
 	$effect(() => {
-		const color = theme.dark ? '#1c1c1c' : '#f3f2f2';
+		const color = theme.dark ? '#1c1c1c' : '#faf9f6';
 		for (const meta of document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]')) meta.content = color;
 	});
 
-	// Entrances belong to the first page of the visit. From the first navigation on, pages just
-	// appear and display words only do a quick scramble.
+	// Entrances belong to the first page of the visit. From the first navigation on, pages just appear.
 	beforeNavigate(() => document.documentElement.classList.add('revealed'));
 
-	// Pages cross-fade and the nav carries over. The sea shrinks into the header band on its own (see below).
+	// Switching language cross-fades the text; the sea and the garden keep going under it.
 	onNavigate((navigation) => {
 		if (!document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 		return new Promise((resolve) => {
@@ -74,34 +107,31 @@
 		});
 	});
 
-	const links = [
-		{ href: '/about', label: 'About', collar: 'var(--color-amber)', icon: 'about' },
-		{ href: '/projects', label: 'Projects', collar: 'var(--color-rose)', icon: 'projects' },
-		// no page of its own: it opens the contact card
-		{ href: null, label: 'Contact', collar: 'var(--color-periwinkle)', icon: 'contact' }
-	] as const;
-
-	let contactOpen = $state(false);
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} type="image/svg+xml" />
 	<link rel="canonical" href={canonical} />
+	<link rel="alternate" hreflang="en" href={site.url} />
+	<link rel="alternate" hreflang="fr" href="{site.url}/fr" />
+	<link rel="alternate" hreflang="x-default" href={site.url} />
 	<link rel="alternate" type="application/rss+xml" title="@{site.handle} · commits" href="{site.url}/rss.xml" />
 	<meta name="author" content={site.name} />
 	<meta name="color-scheme" content="light dark" />
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="@{site.handle}" />
-	<meta property="og:title" content="@{site.handle} | portfolio" />
-	<meta property="og:description" content={site.description} />
+	<meta property="og:site_name" content="miel" />
+	<meta property="og:title" content="miel" />
+	<meta name="twitter:title" content="miel" />
+	<meta property="og:description" content={t.description} />
+	<meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
 	<meta property="og:url" content={canonical} />
-	<meta property="og:image" content="{site.url}/og.png?v=20261001" />
+	<meta property="og:image" content="{site.url}/og.png?v=20261120" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="mielsense, Mathis. Design engineer at Reecall." />
+	<meta property="og:image:alt" content="ASCII cats swimming over the words miel and Mathis, design engineer, with the start of his intro." />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="{site.url}/og.png?v=20261001" />
-	<meta name="twitter:image:alt" content="mielsense, Mathis. Design engineer at Reecall." />
+	<meta name="twitter:image" content="{site.url}/og.png?v=20261120" />
+	<meta name="twitter:image:alt" content="ASCII cats swimming over the words miel and Mathis, design engineer, with the start of his intro." />
 	<meta name="twitter:site" content="@mielsense" />
 	<meta name="twitter:creator" content="@mielsense" />
 	{@html `<script type="application/ld+json">${person}</script>`}
@@ -109,113 +139,62 @@
 
 <svelte:window onkeydown={onKey} />
 
-<!-- one canvas for the whole visit: it is never remounted, so the cats keep swimming across pages -->
-<!-- not a view-transition layer of its own: those paint above the page and the sea is opaque, so it
-     would cover the text mid-transition. It shrinks with a height transition under the cross-fade. -->
-<div class={['sea pointer-events-none absolute inset-x-0 top-0 overflow-hidden transition-[height] duration-400 ease-(--ease-out) motion-reduce:transition-none', full ? 'h-dvh min-h-[560px]' : 'band h-[300px] lg:h-[460px]']}>
-	<canvas {@attach mountCatSea} class="absolute top-0 left-0 h-lvh min-h-[560px] w-full font-mono" aria-hidden="true"></canvas>
+<!-- outside the zoomed column, so the card's fixed position matches the links it points at -->
+<PreviewCard />
+{#if tweaking}<Tweaks {lang} />{/if}
+
+<!-- mounted once for the whole visit, so the cats keep swimming when the language changes -->
+<div class="band vt pointer-events-none absolute inset-x-0 top-0 overflow-hidden" style:view-transition-name="sea">
+	<canvas {@attach mountCatSea} class="absolute inset-0 size-full font-mono" aria-hidden="true"></canvas>
 </div>
 
-<header class="nav reveal absolute inset-x-0 top-0 z-20 flex items-center justify-between ps-5 pe-3 pt-[max(1rem,env(safe-area-inset-top))] lg:ps-9 lg:pe-6 lg:pt-6" style:view-transition-name="nav" style:--rise="0px" style:--duration="400ms">
-	<a href="/" class="press flex items-center gap-2.5 rounded-full text-[16px] font-medium text-strong" aria-current={path === '/' ? 'page' : undefined}>
-		<img src="/avatar-288.webp?v=20261001" alt="" width="28" height="28" class="size-7 rounded-full" />
-		miel
-	</a>
-	<nav aria-label="Site" class="flex items-center gap-0.5">
-		{#each links as link (link.label)}
-			<svelte:element
-				this={link.href ? 'a' : 'button'}
-				href={link.href ?? undefined}
-				type={link.href ? undefined : 'button'}
-				popovertarget={link.href ? undefined : 'contact'}
-				aria-haspopup={link.href ? undefined : 'dialog'}
-				aria-expanded={link.href ? undefined : contactOpen}
-				aria-current={link.href && path === link.href ? 'page' : undefined}
-				class="nav-link press flex h-11 items-center gap-2 rounded-xl ps-2.5 pe-3 text-[15px] text-default hover:text-strong aria-[current=page]:text-strong aria-expanded:text-strong max-sm:w-11 max-sm:justify-center max-sm:px-0 max-sm:aria-[current=page]:bg-fill max-sm:aria-expanded:bg-fill"
-				style:--collar={link.collar}
+<div class="relative z-10 mx-auto below-sea flex min-h-dvh max-w-(--column) flex-col px-5">
+	<header class="tweak-zoom reveal flex items-center justify-between pb-8" style:--rise="0px" style:--duration="400ms">
+		<a href={home} class="vt -my-2 py-2 text-[18px] font-medium text-strong hover:text-default" style:view-transition-name="wordmark" aria-current={path === home ? 'page' : undefined}>miel</a>
+		<!-- The language link is last: "fr" and "en" are the same width, so the group's right edge stays
+		     on the column's edge in both languages. The theme word, the one that changes length when
+		     toggled, is first, so toggling it moves nothing else. No space is reserved anywhere, so
+		     the gaps are always the same. -->
+		<div class="flex items-center gap-5 text-[14px]">
+			<button type="button" class="press flex min-h-11 cursor-pointer items-center text-subtle hover:text-strong" aria-label={t.theme.aria(next)} onclick={(event) => theme.toggle({ x: event.clientX, y: event.clientY })}
+				><!-- CSS picks the word, so the prerendered page is right before the script runs --><span class="dark:hidden">{t.theme.dark}</span><span class="hidden dark:inline">{t.theme.light}</span></button
 			>
-				<svg class="duo shrink-0 max-sm:size-5" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
-					{#if link.icon === 'projects'}
-						<rect class="a tile" x="3" y="3" width="8" height="8" rx="2.5" />
-						<rect class="b" x="13" y="3" width="8" height="8" rx="2.5" />
-						<rect class="b" x="3" y="13" width="8" height="8" rx="2.5" />
-						<rect class="a" x="13" y="13" width="8" height="8" rx="2.5" />
-					{:else if link.icon === 'about'}
-						<circle class="a head" cx="12" cy="7.5" r="4" />
-						<path class="b" d="M4.5 19.5c0-3.6 3.4-6 7.5-6s7.5 2.4 7.5 6c0 .8-.6 1.5-1.5 1.5H6c-.9 0-1.5-.7-1.5-1.5z" />
-					{:else}
-						<path class="b" d="M3.5 7A3.5 3.5 0 0 1 7 3.5h10A3.5 3.5 0 0 1 20.5 7v6.5A3.5 3.5 0 0 1 17 17h-5.6l-4.1 3.2c-.7.5-1.6 0-1.6-.8V17A3 3 0 0 1 3.5 14z" />
-						<circle class="a" cx="8.5" cy="10.3" r="1.4" style:transition-delay="0ms" />
-						<circle class="a" cx="12" cy="10.3" r="1.4" style:transition-delay="40ms" />
-						<circle class="a" cx="15.5" cy="10.3" r="1.4" style:transition-delay="80ms" />
-					{/if}
-				</svg>
-				<span class="max-sm:sr-only">{link.label}</span>
-			</svelte:element>
-		{/each}
-		<button
-			type="button"
-			class="nav-link press flex size-11 items-center justify-center rounded-xl"
-			style:--collar="var(--color-lavender)"
-			aria-label="Switch between light and dark"
-			onclick={(event) => theme.toggle({ x: event.clientX, y: event.clientY })}
-		>
-			<!-- both glyphs are rendered and CSS picks one, so the prerendered page never shows the wrong one -->
-			<svg class="duo dark:hidden" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-				<path class="a" d="M11.97 3.41A9 9 0 1 0 20.6 12.34A6.4 6.4 0 0 1 11.97 3.41Z" />
-				<circle class="b" cx="18" cy="5" r="1.6" />
-			</svg>
-			<svg class="duo hidden dark:block" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-				<circle class="a" cx="12" cy="12" r="4.6" />
-				<path class="b" d="M12 1.8a1.3 1.3 0 0 1 1.3 1.3v1.2a1.3 1.3 0 0 1-2.6 0V3.1A1.3 1.3 0 0 1 12 1.8zm0 16.6a1.3 1.3 0 0 1 1.3 1.3v1.2a1.3 1.3 0 0 1-2.6 0v-1.2a1.3 1.3 0 0 1 1.3-1.3zM1.8 12a1.3 1.3 0 0 1 1.3-1.3h1.2a1.3 1.3 0 0 1 0 2.6H3.1A1.3 1.3 0 0 1 1.8 12zm16.6 0a1.3 1.3 0 0 1 1.3-1.3h1.2a1.3 1.3 0 0 1 0 2.6h-1.2a1.3 1.3 0 0 1-1.3-1.3zM4.8 4.8a1.3 1.3 0 0 1 1.8 0l.9.9a1.3 1.3 0 0 1-1.8 1.8l-.9-.9a1.3 1.3 0 0 1 0-1.8zm11.7 11.7a1.3 1.3 0 0 1 1.8 0l.9.9a1.3 1.3 0 0 1-1.8 1.8l-.9-.9a1.3 1.3 0 0 1 0-1.8zM4.8 19.2a1.3 1.3 0 0 1 0-1.8l.9-.9a1.3 1.3 0 0 1 1.8 1.8l-.9.9a1.3 1.3 0 0 1-1.8 0zM16.5 7.5a1.3 1.3 0 0 1 0-1.8l.9-.9a1.3 1.3 0 0 1 1.8 1.8l-.9.9a1.3 1.3 0 0 1-1.8 0z" />
-			</svg>
-		</button>
-	</nav>
-</header>
+			<button type="button" class="press flex min-h-11 cursor-pointer items-center text-subtle hover:text-strong aria-expanded:text-strong" aria-label={t.tweaks.aria} aria-expanded={tweaking} onclick={() => (tweaking = !tweaking)}>{t.tweaks.open}</button>
+			<a href={t.other.href} hreflang={t.other.lang} lang={t.other.lang} aria-label={t.other.aria} data-sveltekit-noscroll class="press flex min-h-11 items-center text-subtle hover:text-strong">{t.other.label}</a>
+		</div>
+	</header>
 
-<Contact bind:open={contactOpen} />
+	<!-- the tweaks pane's size slider zooms the header and the page text, not the sea or the garden -->
+	<div class="tweak-zoom">{@render children()}</div>
 
-{@render children()}
+	<footer class="reveal mt-auto pt-24 lg:pt-32" style:--delay="300ms" style:--rise="0px">
+		<!-- wider than the column: it bleeds out to either side, and is cropped to its middle on phones -->
+		<div class="vt relative left-1/2 w-screen max-w-[1040px] -translate-x-1/2" style:view-transition-name="garden">
+			<!-- as tall as the garden's rows at the width's cell size, so nothing shifts when it draws -->
+			<canvas
+				{@attach mountGarden}
+				class="block w-full font-mono"
+				style:aspect-ratio="{COLS * 0.6} / {GARDEN_ROWS}"
+				style:min-height="{(GARDEN_ROWS * MIN_CELL) / 0.6}px"
+				aria-hidden="true"
+			></canvas>
+		</div>
+		<div class="flex items-baseline justify-between gap-6 pt-6 pb-10 text-[14px] text-subtle">
+			<p>© {new Date().getFullYear()} {site.name}</p>
+			{#if latest}
+				<Preview href={latest.url} card={{ title: latest.repo, text: latest.message, side: 'bottom' }} class="hover:text-strong">{t.lastCommit(ago)}</Preview>
+			{/if}
+		</div>
+	</footer>
+</div>
 
 <style>
-	/* the band fades into the page at its bottom edge */
+	/* the sea fades into the page at its bottom edge */
 	.band::after {
 		content: '';
 		position: absolute;
 		inset: auto 0 0;
-		height: 50%;
+		height: 55%;
 		background: linear-gradient(to bottom, transparent, var(--color-page));
-	}
-
-	/* Nav icons wake up on hover and on the current page: the accent takes the link's collar color
-	   and the icon makes one small move. Color is instant on the label, 150ms on the icon. */
-	.nav-link:is(:hover, [aria-current='page'], [aria-expanded='true']) :global(.duo) {
-		--duo-a: var(--collar);
-		--duo-b: #a3a3a3;
-	}
-
-	:global(.dark) .nav-link:is(:hover, [aria-current='page'], [aria-expanded='true']) :global(.duo) {
-		--duo-b: #6e6e6e;
-	}
-
-	/* the color is instant (hover fires constantly); only the one small move eases */
-	.tile,
-	.head {
-		transition: transform 150ms var(--ease-out);
-	}
-
-	.nav-link:hover .tile {
-		transform: translateY(-1px);
-	}
-
-	.nav-link:hover .head {
-		transform: translateY(-0.8px);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.tile,
-		.head {
-			transition: none;
-		}
 	}
 </style>
