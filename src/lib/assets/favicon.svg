@@ -1,5 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-	<!-- an "m" for miel: two arches, round ends. Dark on light tabs, light on dark ones. -->
-	<style>path { stroke: #292929 } @media (prefers-color-scheme: dark) { path { stroke: #ededed } }</style>
-	<path d="M7.5 24V12a4.25 4.25 0 0 1 8.5 0v12M16 12a4.25 4.25 0 0 1 8.5 0v12" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+	<!-- a cat face in tiles, like the cats in the sea: amber coat, pink ears and nose, the eyes left open -->
+	<rect x="0.25" y="1.85" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="29.05" y="1.85" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="0.25" y="5.05" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="3.45" y="5.05" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="25.85" y="5.05" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="29.05" y="5.05" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="0.25" y="8.25" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="3.45" y="8.25" width="2.70" height="2.70" rx="0.6" fill="#ff8fb0"/>
+	<rect x="6.65" y="8.25" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="22.65" y="8.25" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="25.85" y="8.25" width="2.70" height="2.70" rx="0.6" fill="#ff8fb0"/>
+	<rect x="29.05" y="8.25" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="0.25" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="3.45" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="6.65" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="9.85" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="13.05" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="16.25" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="19.45" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="22.65" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="25.85" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="29.05" y="11.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="0.25" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="3.45" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="9.85" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="13.05" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="16.25" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="19.45" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="25.85" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="29.05" y="14.65" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="0.25" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="3.45" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="6.65" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="9.85" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="13.05" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="16.25" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="19.45" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="22.65" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="25.85" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="29.05" y="17.85" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="0.25" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="3.45" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="6.65" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="9.85" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="13.05" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ff8fb0"/>
+	<rect x="16.25" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ff8fb0"/>
+	<rect x="19.45" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="22.65" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="25.85" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="29.05" y="21.05" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="3.45" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="6.65" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="9.85" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="13.05" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="16.25" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="19.45" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="22.65" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#ffb21a"/>
+	<rect x="25.85" y="24.25" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="6.65" y="27.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="9.85" y="27.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="13.05" y="27.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="16.25" y="27.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="19.45" y="27.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
+	<rect x="22.65" y="27.45" width="2.70" height="2.70" rx="0.6" fill="#f29400"/>
 </svg>

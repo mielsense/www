@@ -5,6 +5,8 @@
  * The canvas parent is the visible area: clicks outside it don't splash.
  */
 
+import { tweaks } from '@/tweaks.svelte';
+
 type Species = {
 	g: [string, string];
 	cruise: number;
@@ -44,11 +46,14 @@ type Cat = {
 	hunger: number;
 	blink: number;
 	playCool: number;
+	/** What it said when someone typed meow, and when. */
+	says: string;
+	saidAt: number;
 	paws: Float32Array;
 	lastPaw: Float32Array;
 };
 type RGB = readonly [number, number, number];
-type Look = { light: boolean; bg: string; ink: string; edge: number; shadow: string; accents: readonly RGB[] };
+type Look = { light: boolean; bg: string; ink: string; edge: number; accents: readonly RGB[] };
 
 const TAU = Math.PI * 2;
 const clamp = (x: number, a: number, b: number) => (x < a ? a : x > b ? b : x);
@@ -72,16 +77,18 @@ const smooth = (a: number, b: number, x: number) => {
 const N = 16; // spine nodes, head first
 const KINDS: Kind[] = ['tabby', 'void', 'snow', 'tuxedo'];
 // each cat is close to one flat warm color, shifting a little from head to tail; the collar contrasts
-type Coat = { a: RGB; b: RGB; collar: RGB };
+// `deep` inks the glyphs on the light page, where the coat itself is too pale to read
+type Coat = { a: RGB; b: RGB; deep: RGB; collar: RGB };
 const COATS: Coat[] = [
-	{ a: [255, 204, 72], b: [255, 176, 52], collar: [107, 107, 255] },
-	{ a: [255, 128, 84], b: [255, 104, 104], collar: [255, 214, 92] },
-	{ a: [168, 170, 255], b: [184, 172, 250], collar: [255, 140, 60] },
-	{ a: [255, 186, 206], b: [255, 166, 190], collar: [143, 162, 255] }
+	{ a: [255, 204, 72], b: [255, 176, 52], deep: [206, 128, 0], collar: [107, 107, 255] },
+	{ a: [255, 128, 84], b: [255, 104, 104], deep: [214, 72, 52], collar: [255, 214, 92] },
+	{ a: [168, 170, 255], b: [184, 172, 250], deep: [96, 98, 220], collar: [255, 140, 60] },
+	{ a: [255, 186, 206], b: [255, 166, 190], deep: [204, 84, 128], collar: [143, 162, 255] }
 ];
+const EAR: RGB = [255, 150, 176];
+const BELL: RGB = [255, 206, 84];
 // shade toward plum and light toward white, never toward black, so warm coats don't go brown
 const PLUM: RGB = [112, 46, 132];
-const INK: RGB = [58, 18, 62];
 const WHITE: RGB = [255, 255, 255];
 const mix = (p: RGB, q: RGB, t: number): RGB => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t, p[2] + (q[2] - p[2]) * t];
 const SPECIES: Species[] = [
@@ -94,16 +101,19 @@ const ACCENTS: readonly RGB[] = [[255, 204, 72], [255, 176, 52], [255, 128, 84],
 const ACCENTS_ON_LIGHT: readonly RGB[] = [[214, 150, 0], [224, 120, 20], [226, 90, 50], [220, 70, 90], [210, 100, 140], [110, 110, 230], [90, 110, 230]];
 const rgb = (c: RGB, a = 1) => (a >= 1 ? `rgb(${c[0] | 0},${c[1] | 0},${c[2] | 0})` : `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${a.toFixed(3)})`);
 const grey = (g: number, a = 1) => (a >= 1 ? `rgb(${g | 0},${g | 0},${g | 0})` : `rgba(${g | 0},${g | 0},${g | 0},${a})`);
-const RAMP = ':;=+cxoX%8#@';
+// the cats use the garden's ramp, so the top and the foot of the page are drawn alike
+const FUR_RAMP = ':+*xo%#@';
 const FUR = ['-', '\\', '|', '/'];
+/** The stroke that runs along angle `a`. */
+const stroke = (a: number) => FUR[Math.round((((a % Math.PI) + Math.PI) % Math.PI) / (Math.PI / 4)) % 4];
 const SUB = [0.25, 0.3, 0.75, 0.3, 0.25, 0.72, 0.75, 0.72];
 const STEP = 1 / 60;
 
 function readLook(): Look {
 	const light = !document.documentElement.classList.contains('dark');
 	return light
-		? { light, bg: '#f3f2f2', ink: '12,13,13', edge: 128, shadow: 'rgba(12,13,13,0.10)', accents: ACCENTS_ON_LIGHT }
-		: { light, bg: '#1c1c1c', ink: '236,236,236', edge: 118, shadow: '', accents: ACCENTS };
+		? { light, bg: '#faf9f6', ink: '12,13,13', edge: 128, accents: ACCENTS_ON_LIGHT }
+		: { light, bg: '#1c1c1c', ink: '236,236,236', edge: 118, accents: ACCENTS };
 }
 
 export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fish?: number } = {}) {
@@ -113,7 +123,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 	let W = 0, H = 0, dpr = 1, cw = 10, ch = 14, cols = 0, rows = 0, seededShort = 0, font = '';
 	let energy = new Float32Array(0), energyTmp = new Float32Array(0);
 	let twinkle = new Float32Array(0), heat = new Float32Array(0);
-	let cS = new Float32Array(0), cFlag = new Uint8Array(0), cShade = new Float32Array(0), cCat = new Uint8Array(0), cAng = new Float32Array(0), cKey = new Uint32Array(0), cShadow = new Uint8Array(0);
+	let cT = new Float32Array(0), cS = new Float32Array(0), cFlag = new Uint8Array(0), cShade = new Float32Array(0), cCat = new Uint8Array(0), cAng = new Float32Array(0), cKey = new Uint32Array(0);
 	let fishStamp = new Uint32Array(0), frameId = 0;
 	let fish: Fish[] = [], cats: Cat[] = [], time = 0;
 	const prints: { x: number; y: number; t: number }[] = [];
@@ -134,11 +144,14 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 
 	function seed() {
 		const short = Math.min(W, H);
-		const catN = opts.cats ?? clamp(Math.round(W / 460), 2, 4);
+		// one cat on a phone, where two would cover most of the band; up to three on a wide screen
+		const catN = opts.cats ?? (tweaks.cats || clamp(Math.round(W / 520), W < 600 ? 1 : 2, 3));
+		seeded = { cats: tweaks.cats, fish: tweaks.fish };
 		const sizes = [1, 0.84, 0.92, 0.78];
 		cats = [];
 		for (let i = 0; i < catN; i++) {
-			const L = clamp(short * 0.52, 160, 470) * sizes[i % sizes.length];
+			// smaller on a phone, so the band shows sea around the cat
+			const L = clamp(short * (W < 600 ? 0.62 : 0.82), 160, 560) * sizes[i % sizes.length];
 			const x = ((i + rand(0.25, 0.75)) / catN) * W, y = rand(0.2, 0.8) * H, heading = rand(0, TAU);
 			const nodes = new Float32Array(N * 2);
 			const seg = L / (N - 1);
@@ -149,12 +162,12 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 			cats.push({
 				id: i + 1, kind: KINDS[i % KINDS.length], coat: COATS[i % COATS.length], accent: COATS[i % COATS.length].collar, L, nodes, rs: new Float32Array(N * 2), arc: new Float32Array(N),
 				heading, speed: 20, turn: 0, wander: 0, gait: rand(0, TAU), tail: rand(0, TAU),
-				state: 'wander', until: 0, retarget: 0, target: null, hunger: rand(0.2, 0.7), blink: rand(1, 5), playCool: 0,
+				state: 'wander', until: 0, retarget: 0, target: null, hunger: rand(0.2, 0.7), blink: rand(1, 5), playCool: 0, says: '', saidAt: -99,
 				paws: new Float32Array(8), lastPaw: new Float32Array(4)
 			});
 		}
 		cats.sort((a, b) => a.L - b.L); // big cats draw on top
-		const count = opts.fish ?? clamp(Math.round((W * H) / 5200), 60, 280);
+		const count = opts.fish ?? Math.round(clamp(Math.round((W * H) / 5200), 60, 280) * tweaks.fish);
 		fish = [];
 		while (fish.length < count) {
 			const sp = pickSpecies(), spec = SPECIES[sp];
@@ -443,7 +456,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 
 			// diagonal gait: FL+BR, FR+BL; a paw leaves a print when it lands
 			const stride = 0.045 * c.L;
-			const legs = [[0.26, -1, 0], [0.26, 1, Math.PI], [0.52, -1, Math.PI], [0.52, 1, 0]];
+			const legs = [[0.33, -1, 0], [0.33, 1, Math.PI], [0.62, -1, Math.PI], [0.62, 1, 0]];
 			for (let p = 0; p < 4; p++) {
 				const [s, side, ph] = legs[p];
 				const swing = Math.sin(c.gait + ph);
@@ -479,12 +492,14 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 
 	/* ---------- cat shape (top-down) ---------- */
 
+	// Proportions of a cat, not a rat: a big round head, a short neck, a plump body with round
+	// haunches, and a thick tail that only thins a little toward its tip.
 	function halfWidth(s: number) {
-		if (s < 0.14) return 0.06;
-		if (s < 0.22) return 0.06 + 0.035 * smooth(0.14, 0.22, s);
-		if (s < 0.58) return 0.095 + 0.02 * Math.sin((Math.PI * (s - 0.22)) / 0.36);
-		if (s < 0.64) return 0.095 - 0.067 * smooth(0.58, 0.64, s);
-		return 0.028 - (0.012 * (s - 0.64)) / 0.36;
+		if (s < 0.22) return 0.05; // the neck, mostly under the head
+		if (s < 0.32) return 0.05 + 0.055 * smooth(0.22, 0.32, s);
+		if (s < 0.64) return 0.105 + 0.01 * Math.sin((Math.PI * (s - 0.3)) / 0.34); // a long torso
+		if (s < 0.72) return 0.105 - 0.063 * smooth(0.64, 0.72, s);
+		return 0.042 - (0.012 * (s - 0.72)) / 0.28;
 	}
 
 	function inTri(x: number, y: number, ax: number, ay: number, bx: number, by: number, cx: number, cy: number) {
@@ -526,29 +541,41 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		fy /= fl;
 		const qx = px - rs[0], qy = py - rs[1];
 		const u = -(qx * fx + qy * fy), v = -qx * fy + qy * fx, av = Math.abs(v);
-		const R = 0.1 * L, hc = 0.085 * L, dh = Math.hypot(u - hc, v);
+		// the head is a little wider than it is long, like a cat's seen from above
+		const ha = 0.1 * L, hb = 0.118 * L, hc = 0.1 * L, R = hb, dh = Math.hypot((u - hc) / ha, v / hb);
 		S.u = u;
 		S.v = v;
 		S.ang = Math.atan2(fy, fx);
-		if (dh < R) {
+		if (dh < 1) {
 			S.flag = 1;
 			S.head = true;
 			S.s = 0;
-			S.t = dh / R;
-			S.shade = 0.8 - 0.38 * S.t * S.t;
+			S.t = dh;
+			S.shade = 0.82 - 0.36 * dh * dh;
 			return true;
 		}
-		if (inTri(u, av, 0.04 * L, 0.035 * L, 0.11 * L, 0.095 * L, -0.04 * L, 0.105 * L)) {
+		// Big pointed ears on top of the head, tipped out and a little forward.
+		// Their base sits on the head's rim; the middle of each is pink.
+		const deg = Math.PI / 180;
+		const ax = hc + ha * Math.cos(48 * deg), ay = hb * Math.sin(48 * deg);
+		const bx = hc + ha * Math.cos(128 * deg), by = hb * Math.sin(128 * deg);
+		const tx = hc + ha * Math.cos(104 * deg) * 1.6, ty = hb * Math.sin(104 * deg) * 1.6;
+		if (inTri(u, av, ax, ay, bx, by, tx, ty)) {
+			const gx = (ax + bx + tx) / 3, gy = (ay + by + ty) / 3, k = 0.45;
 			S.flag = 2;
-			S.shade = 0.55;
+			S.shade = inTri(u, av, gx + (ax - gx) * k, gy + (ay - gy) * k, gx + (bx - gx) * k, gy + (by - gy) * k, gx + (tx - gx) * k, gy + (ty - gy) * k) ? 0.9 : 0.3;
 			S.s = 0;
 			S.t = 1;
 			return true;
 		}
-		if (u > -0.03 * L && u < 0.08 * L && av > R * 0.9 && av < 0.2 * L) {
-			const w1 = Math.abs(u - (0.045 * L - (av - R) * 0.2));
-			const w2 = Math.abs(u - (0.065 * L + (av - R) * 0.25));
+		// two whiskers a side, out from the muzzle and swept back
+		if (u > -0.03 * L && u < 0.11 * L && av > 0.4 * R && av < 0.28 * L) {
+			const w1 = Math.abs(u - (0.012 * L + (av - 0.4 * R) * 0.12));
+			const w2 = Math.abs(u - (0.03 * L + (av - 0.4 * R) * 0.35));
 			if (Math.min(w1, w2) < 0.3 * ch) {
+				// out from the cheek, swept a little back
+				const sv = v < 0 ? -1 : 1, du = w1 < w2 ? 0.12 : 0.35;
+				S.ang = Math.atan2(-fy * du + fx * sv, -fx * du - fy * sv);
 				S.flag = 7;
 				S.shade = 0;
 				S.dist = Infinity;
@@ -579,7 +606,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 			return true;
 		}
 		for (let p = 0; p < 4; p++) {
-			if (Math.hypot(px - c.paws[2 * p], py - c.paws[2 * p + 1]) < 0.04 * L) {
+			if (Math.hypot(px - c.paws[2 * p], py - c.paws[2 * p + 1]) < 0.034 * L) {
 				S.flag = 5;
 				S.shade = 0.7;
 				return true;
@@ -589,31 +616,33 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		return false;
 	}
 
-	// 0 coat, 6 dark marking, 8 light marking, 10 collar
+	// 0 coat, 6 dark patch, 8 light patch, 10 collar, 11 stripe
 	function marking(kind: Kind, L: number) {
 		const s = S.s, t = S.t;
-		if (S.flag === 1 && !S.head && s > 0.19 && s < 0.235) return 10; // collar, just behind the head
+		if (S.flag === 1 && !S.head && s > 0.21 && s < 0.25) return 10; // collar, just behind the head
 		if (S.flag === 5) return kind === 'tuxedo' ? 8 : kind === 'snow' ? 6 : 0;
 		if (S.flag === 2) return kind === 'snow' ? 6 : 0;
+		// every cat has a pale muzzle round its nose
+		if (S.head && S.u < 0.035 * L && Math.abs(S.v) < 0.05 * L) return kind === 'snow' ? 6 : 8;
 		if (kind === 'tabby') {
-			if (S.head) return S.u > 0.02 * L && S.u < 0.09 * L && Math.abs(S.v) < 0.022 * L ? 6 : 0;
-			if (s > 0.2 && s < 0.58) return t < 0.16 || Math.sin((s - 0.2) * TAU * 10 + t * 2.2) > 0.55 ? 6 : 0;
-			if (s > 0.64) return Math.sin(s * TAU * 12) > 0.35 ? 6 : 0;
+			// the M on the forehead, between the ears
+			if (S.head) return S.u > 0.08 * L && S.u < 0.18 * L && Math.abs(Math.abs(S.v) - 0.026 * L) < 0.012 * L ? 11 : 0;
+			if (s > 0.3 && s < 0.66) return t < 0.14 ? 6 : Math.sin((s - 0.3) * TAU * 9 + t * 2.2) > 0.55 ? 11 : 0;
+			if (s > 0.72) return Math.sin(s * TAU * 11) > 0.35 ? 11 : 0;
 		}
 		if (kind === 'snow') {
-			if (S.head) return S.u < 0.065 * L ? 6 : 0;
-			if (s > 0.72) return 6;
+			if (S.head) return S.u < 0.06 * L ? 6 : 0;
+			if (s > 0.78) return 6;
 		}
 		if (kind === 'tuxedo') {
-			if (S.head) return S.u < 0.06 * L && Math.abs(S.v) < 0.055 * L ? 8 : 0;
-			if (s > 0.93) return 8;
+			if (S.head) return S.u < 0.055 * L && Math.abs(S.v) < 0.06 * L ? 8 : 0;
+			if (s > 0.92) return 8;
 		}
 		return 0;
 	}
 
 	function rasterizeCats() {
 		cFlag.fill(0);
-		cShadow.fill(0);
 		for (let ci = 0; ci < cats.length; ci++) {
 			const c = cats[ci], L = c.L, rs = c.rs;
 			buildSpine(c);
@@ -624,7 +653,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 				y0 = Math.min(y0, rs[2 * k + 1]);
 				y1 = Math.max(y1, rs[2 * k + 1]);
 			}
-			const pad = 0.2 * L;
+			const pad = 0.32 * L;
 			const c0 = Math.max(0, Math.floor((x0 - pad) / cw)), c1 = Math.min(cols - 1, Math.floor((x1 + pad) / cw));
 			const r0 = Math.max(0, Math.floor((y0 - pad) / ch)), r1 = Math.min(rows - 1, Math.floor((y1 + pad) / ch));
 			const reach = Math.hypot(cw, ch);
@@ -636,6 +665,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 						if (!cFlag[i]) {
 							cFlag[i] = 7;
 							cCat[i] = ci;
+							cAng[i] = S.ang;
 						}
 						continue;
 					}
@@ -648,11 +678,11 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 					cCat[i] = ci;
 					cAng[i] = ang;
 					cS[i] = S.s;
+					cT[i] = hit ? S.t : 1;
 					cKey[i] = key;
 					if (hit && cover >= 3) {
 						cFlag[i] = mark || flag;
 						cShade[i] = shade;
-						if (col + 1 < cols && r + 1 < rows) cShadow[(r + 1) * cols + col + 1] = 1;
 					} else {
 						cFlag[i] = 9; // soft edge, glyph only
 						cShade[i] = cover / 5;
@@ -669,14 +699,16 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 				const col = Math.floor(x / cw), r = Math.floor(y / ch);
 				return col < 0 || r < 0 || col >= cols || r >= rows ? -1 : r * cols + col;
 			};
-			for (const sgn of [-1, 1]) {
-				const e = at(0.06 * L, sgn * 0.045 * L);
-				if (e >= 0) {
-					cFlag[e] = 3;
-					cCat[e] = ci;
+			// eyes two cells long, the nose at the front of the muzzle
+			for (const sgn of [-1, 1])
+				for (const du of [0, 0.012 * L]) {
+					const e = at(0.05 * L + du, sgn * 0.052 * L);
+					if (e >= 0) {
+						cFlag[e] = 3;
+						cCat[e] = ci;
+					}
 				}
-			}
-			const nose = at(0.008 * L, 0);
+			const nose = at(0.01 * L, 0);
 			if (nose >= 0 && cFlag[nose] !== 3) {
 				cFlag[nose] = 4;
 				cCat[nose] = ci;
@@ -693,14 +725,15 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		W = rect.width;
 		H = rect.height;
 		dpr = Math.min(devicePixelRatio || 1, 2);
-		cw = clamp(Math.round(W / 124), 8, 13);
-		ch = Math.round(cw * 1.45);
+		// fine cells, close to the garden's, so a cat is thirty-odd glyphs long and has room for detail
+		cw = clamp(Math.round(W / 235), 5, 8);
+		ch = Math.round(cw * 1.62);
 		cols = Math.ceil(W / cw);
 		rows = Math.ceil(H / ch);
 		canvas.width = Math.round(W * dpr);
 		canvas.height = Math.round(H * dpr);
 		// read once per resize, not per frame: getComputedStyle forces style work
-		font = `600 ${Math.round(0.74 * ch)}px ${getComputedStyle(canvas).fontFamily}`;
+		font = `600 ${(0.9 * ch).toFixed(1)}px ${getComputedStyle(canvas).fontFamily}`;
 		perception = Math.max(3 * ch, 5.5 * cw);
 		const n = cols * rows;
 		energy = new Float32Array(n);
@@ -713,7 +746,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		cAng = new Float32Array(n);
 		cKey = new Uint32Array(n);
 		cS = new Float32Array(n);
-		cShadow = new Uint8Array(n);
+		cT = new Float32Array(n);
 		fishStamp = new Uint32Array(n);
 		for (let i = 0; i < n; i++) {
 			const x = i % cols, y = (i / cols) | 0;
@@ -832,61 +865,100 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 			ctx.fillText(f.vx >= 0 ? sp.g[0] : sp.g[1], c * cw + cw / 2, r * ch + ch / 2 + 1);
 		}
 
-		// a drop shadow under the cats on the light page only; on the dark page it reads as black holes
-		ctx.fillStyle = look.shadow;
-		if (look.shadow) for (let i = 0; i < n; i++) if (cShadow[i] && !cFlag[i]) ctx.fillRect((i % cols) * cw, ((i / cols) | 0) * ch, cw, ch);
-
+		// Cats are drawn like the garden: glyphs in the coat color on faint tiles of it, dense in the
+		// middle and thinning out, with the outline in strokes along the body and stripes across it.
 		const flick = Math.floor(time * 2.2);
+		const light = look.light;
+		const tile = (X: number, Y: number, c: RGB, a: number) => {
+			ctx.fillStyle = rgb(c, a * (light ? 0.85 : 1));
+			ctx.fillRect(X + 1, Y + 1, cw - 1.5, ch - 1.5);
+		};
 		for (let i = 0; i < n; i++) {
 			const flag = cFlag[i];
 			if (!flag) continue;
 			const c = cats[cCat[i]], X = (i % cols) * cw, Y = ((i / cols) | 0) * ch, cx = X + cw / 2, cy = Y + ch / 2 + 1;
 			const key = cKey[i], jitter = hash(key, flick + (key % 7), 5);
+			const ink = (p: RGB) => rgb(light ? mix(c.coat.deep, p, 0.15) : p);
 			if (flag === 7) {
-				ctx.fillStyle = grey(look.edge, 0.55);
-				ctx.fillText('-', cx, cy);
+				ctx.fillStyle = grey(look.edge, 0.6);
+				ctx.fillText(stroke(cAng[i]), cx, cy);
 				continue;
 			}
 			const t = clamp(cS[i] * 1.15, 0, 1);
 			const base = mix(c.coat.a, c.coat.b, t * t * (3 - 2 * t));
+			const sh = cShade[i];
 			if (flag === 9) {
-				ctx.fillStyle = jitter < 0.12 ? rgb(c.accent) : rgb(base, 0.35 + 0.5 * cShade[i]);
-				ctx.fillText(cShade[i] >= 0.4 ? ':' : '.', cx, cy);
+				ctx.fillStyle = jitter < 0.12 ? rgb(c.accent) : rgb(light ? c.coat.deep : base, 0.3 + 0.5 * sh);
+				ctx.fillText(sh >= 0.4 ? ':' : '.', cx, cy);
 				continue;
 			}
 			if (flag === 10) {
-				ctx.fillStyle = rgb(c.accent);
-				ctx.fillRect(X + 1, Y + 1, cw - 1, ch - 1);
-				ctx.fillStyle = 'rgba(40,12,44,0.6)';
-				ctx.fillText(jitter < 0.2 ? 'o' : '=', cx, cy);
+				// the collar: a band across the neck, a bell where it crosses the middle
+				const bell = cT[i] < 0.16;
+				tile(X, Y, bell ? BELL : c.accent, 0.42);
+				ctx.fillStyle = rgb(bell ? (light ? mix(BELL, PLUM, 0.35) : BELL) : light ? mix(c.accent, PLUM, 0.2) : c.accent);
+				ctx.fillText(bell ? 'o' : stroke(cAng[i] + Math.PI / 2), cx, cy);
 				continue;
 			}
-			const sh = cShade[i];
-			let tile = sh > 0.55 ? mix(base, WHITE, (sh - 0.55) * 0.5) : mix(base, PLUM, (0.55 - sh) * 0.32);
-			if (flag === 6) tile = mix(base, PLUM, 0.2);
-			else if (flag === 8) tile = mix(base, WHITE, 0.6);
-			else if (flag === 2) tile = mix(base, PLUM, 0.18);
-			else if (flag === 3) tile = [30, 14, 34];
-			ctx.fillStyle = rgb(tile);
-			ctx.fillRect(X + 1, Y + 1, cw - 1, ch - 1);
-			let g: string, col: string;
 			if (flag === 3) {
-				g = c.blink < 0 || c.state === 'rest' ? '-' : 'o';
-				col = rgb(c.accent);
-			} else if (flag === 4) {
-				g = 'v';
-				col = 'rgba(40,12,24,0.8)';
-			} else {
-				col = jitter < 0.13 ? '#ffffff' : jitter < 0.17 ? rgb(c.accent) : rgb(mix(tile, INK, 0.62));
-				if (flag === 2) g = '^';
-				else if (flag === 5) g = 'm';
-				else if (jitter < 0.22 && cShade[i] < 0.75) {
-					const a = ((cAng[i] % Math.PI) + Math.PI) % Math.PI; // fur runs along the spine
-					g = FUR[Math.round(a / (Math.PI / 4)) % 4];
-				} else g = RAMP[clamp(Math.floor(cShade[i] * RAMP.length + (jitter - 0.5) * 2), 0, RAMP.length - 1)];
+				// eyes: a dark tile so they read as eyes from far away, shut while it rests or blinks
+				tile(X, Y, [30, 14, 34], 0.85);
+				ctx.fillStyle = rgb(c.accent);
+				ctx.fillText(c.blink < 0 || c.state === 'rest' ? '-' : 'o', cx, cy);
+				continue;
 			}
-			ctx.fillStyle = col;
+			if (flag === 4) {
+				tile(X, Y, EAR, 0.35);
+				ctx.fillStyle = rgb(light ? mix(EAR, PLUM, 0.4) : EAR);
+				ctx.fillText('v', cx, cy);
+				continue;
+			}
+			if (flag === 2) {
+				// ears: pink in the middle, coat round the edge
+				const inner = sh > 0.6;
+				tile(X, Y, inner ? EAR : base, inner ? 0.42 : 0.3);
+				ctx.fillStyle = ink(inner ? EAR : mix(base, PLUM, light ? 0 : 0.15));
+				ctx.fillText(inner ? 'o' : FUR_RAMP[5 + (key % 3)], cx, cy);
+				continue;
+			}
+			let fill = sh > 0.55 ? mix(base, WHITE, (sh - 0.55) * 0.9) : base;
+			// the head's edge is a shade deeper, so its round shape stands out from the neck
+			if (cS[i] === 0 && cT[i] > 0.8 && flag === 1) fill = mix(base, PLUM, light ? 0.1 : 0.22);
+			if (flag === 6 || flag === 11) fill = mix(base, PLUM, 0.3);
+			else if (flag === 8) fill = mix(base, WHITE, 0.65);
+			tile(X, Y, flag === 6 || flag === 11 ? mix(base, PLUM, 0.22) : base, 0.18 + 0.3 * sh);
+			const rim = cT[i] > 0.84 && cS[i] > 0; // the head has no outline, it reads as one soft shape
+			let g: string;
+			if (flag === 5) g = 'm';
+			else if (flag === 11) g = stroke(cAng[i] + Math.PI / 2); // tabby stripes cross the back
+			else if (rim) g = stroke(cAng[i]); // the outline runs along the body
+			else g = FUR_RAMP[clamp(Math.floor(sh * FUR_RAMP.length + (jitter - 0.5) * 1.6), 0, FUR_RAMP.length - 1)];
+			// now and then a hair catches the light
+			ctx.fillStyle = jitter < 0.05 ? (light ? rgb(c.accent) : '#ffffff') : ink(rim ? mix(fill, PLUM, light ? 0.1 : 0.25) : fill);
 			ctx.fillText(g, cx, cy);
+		}
+
+		// The easter egg: type "meow" and each cat answers over its head, a letter at a time, on
+		// tiles of its collar color. It fades after a couple of seconds.
+		for (const c of cats) {
+			const age = time - c.saidAt;
+			if (age < 0 || age > 2.6) continue;
+			const word = c.says.slice(0, Math.ceil(age / 0.07));
+			const fade = age > 2 ? 1 - (age - 2) / 0.6 : 1;
+			// drawn on a grid twice as coarse as the sea's, so the words read from across the page
+			const bw = cw * 1.8, bh = ch * 1.8, wide = c.says.length * bw;
+			const up = c.rs[1] - 0.3 * c.L > bh * 1.5;
+			const top = clamp(c.rs[1] + (up ? -0.3 * c.L - bh : 0.3 * c.L), 0, H - bh);
+			const left = clamp(c.rs[0] - wide / 2, 0, Math.max(0, W - wide));
+			ctx.font = font.replace(/[\d.]+px/, `${(0.9 * bh).toFixed(1)}px`);
+			for (let k = 0; k < word.length; k++) {
+				const X = left + k * bw;
+				ctx.fillStyle = rgb(c.accent, 0.4 * fade);
+				ctx.fillRect(X + 1, top + 1, bw - 2, bh - 2);
+				ctx.fillStyle = rgb(light ? mix(c.accent, PLUM, 0.35) : c.accent, fade);
+				ctx.fillText(word[k], X + bw / 2, top + bh / 2 + 1);
+			}
+			ctx.font = font;
 		}
 	}
 
@@ -896,6 +968,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 	// phones run the simulation at 30 fps to save battery
 	const frameMs = matchMedia('(pointer: coarse)').matches ? 1000 / 30 : 0;
 	let raf = 0, last = 0, acc = 0, visible = true, disposed = false;
+	let seeded = { cats: tweaks.cats, fish: tweaks.fish };
 
 	function frame(now: number) {
 		if (frameMs && now - last < frameMs - 2) {
@@ -904,7 +977,9 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		}
 		const dt = Math.min(0.1, (now - last) / 1000);
 		last = now;
-		acc += dt;
+		// the tweaks pane can change how many cats and fish there are, and how fast time runs
+		if (tweaks.cats !== seeded.cats || tweaks.fish !== seeded.fish) seed();
+		acc += dt * tweaks.speed;
 		let steps = 0;
 		while (acc >= STEP && steps < 4) {
 			step(STEP);
@@ -965,6 +1040,32 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		}
 	};
 	const onLeave = () => (pointer.active = false);
+
+	// type "meow" (or "miaou") anywhere and the cats answer, one after another
+	let typed = '';
+	const onKey = (e: KeyboardEvent) => {
+		if (e.metaKey || e.ctrlKey || e.altKey || e.key.length !== 1) return;
+		if (e.target instanceof HTMLElement && e.target.closest('input, textarea, [contenteditable]')) return;
+		typed = (typed + e.key.toLowerCase()).slice(-5);
+		if (!typed.endsWith('meow') && !typed.endsWith('miaou')) return;
+		typed = '';
+		const fr = document.documentElement.lang === 'fr';
+		const words = fr ? ['miaou', 'mrrr', 'miaou ?', 'prrr'] : ['meow!', 'mrrp?', 'mrow', 'prrr'];
+		cats.forEach((c, i) => {
+			c.says = words[(i + Math.floor(Math.random() * words.length)) % words.length];
+			c.saidAt = time + i * 0.25;
+			events.push({ kind: 'splash', x: c.rs[0], y: c.rs[1] });
+		});
+		if (reduced.matches) {
+			// no motion: show the words whole, then clear them
+			for (const c of cats) c.saidAt = time - 1;
+			render(0);
+			setTimeout(() => {
+				for (const c of cats) c.saidAt = -99;
+				render(0);
+			}, 2400);
+		}
+	};
 	// redraw right away, so a view transition snapshot of the theme switch already has the new colors;
 	// <html> gets other classes too (js, revealed, theming), which leave the sea alone
 	const onTheme = () => {
@@ -991,6 +1092,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 	document.addEventListener('visibilitychange', schedule);
 	addEventListener('pointermove', onMove, { passive: true });
 	addEventListener('pointerdown', onDown, { passive: true });
+	addEventListener('keydown', onKey);
 	document.documentElement.addEventListener('pointerleave', onLeave);
 	addEventListener('blur', onLeave);
 	resize();
@@ -1010,6 +1112,7 @@ export function mountCatSea(canvas: HTMLCanvasElement, opts: { cats?: number; fi
 		document.removeEventListener('visibilitychange', schedule);
 		removeEventListener('pointermove', onMove);
 		removeEventListener('pointerdown', onDown);
+		removeEventListener('keydown', onKey);
 		document.documentElement.removeEventListener('pointerleave', onLeave);
 		removeEventListener('blur', onLeave);
 	};
