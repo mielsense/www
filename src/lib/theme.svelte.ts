@@ -3,6 +3,9 @@ import { ditherFrames } from '@/dither';
 
 const KEY = 'theme';
 
+/** iPhone, iPad (which reports itself as a Mac with touch), and every browser on them: all WebKit. */
+const ios = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
 /** Mirrors the `.dark` class on `<html>`, which the inline script in app.html sets before paint. */
 class Theme {
 	dark = $state(false);
@@ -27,7 +30,8 @@ class Theme {
 				// no storage, the choice just won't persist
 			}
 		};
-		if (!from || !document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) return apply();
+		// iOS stutters and flashes through the full-screen mask frames, so there it just switches
+		if (!from || ios() || !document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) return apply();
 
 		// The new theme is masked by frames of an ordered dither spreading out from the click,
 		// so it arrives in chunky pixels, like the dither shaders the old site was built on.
