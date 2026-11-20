@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-20T13:37:24.015Z",
+	"syncedAt": "2026-11-20T13:45:20.387Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-20T13:37:12Z"
+			"pushedAt": "2026-11-20T13:45:09Z"
 		},
 		{
 			"name": "mielui",
@@ -275,6 +275,13 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "fix: switch theme instantly on ios instead of the dither",
+			"sha": "de9cce8",
+			"url": "https://github.com/mielsense/www/commit/de9cce8248b728e5d03018c86d3554906eac32c9",
+			"date": "2026-11-20T13:45:07Z"
+		},
+		{
+			"repo": "www",
 			"message": "chore: pin node and pnpm with mise, allow esbuild's build script",
 			"sha": "bfdc53f",
 			"url": "https://github.com/mielsense/www/commit/bfdc53f4132409ac5da2842f68b7274bef4b2787",
@@ -307,13 +314,6 @@
 			"sha": "48b665f",
 			"url": "https://github.com/mielsense/www/commit/48b665f0ee40e95ccf6a897e0ff5004b6493fadd",
 			"date": "2026-11-20T10:31:11Z"
-		},
-		{
-			"repo": "www",
-			"message": "design: ascii cats with cat proportions, and a garden at the foot of the page",
-			"sha": "c57270c",
-			"url": "https://github.com/mielsense/www/commit/c57270c0a6c11908d8e657bf89724b04395512a2",
-			"date": "2026-11-20T10:31:10Z"
 		},
 		{
 			"repo": "mielui",
@@ -2402,7 +2402,7 @@
 		},
 		{
 			"date": "2026-11-20",
-			"count": 10,
+			"count": 11,
 			"level": 1
 		}
 	]
