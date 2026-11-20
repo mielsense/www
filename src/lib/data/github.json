@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-19T15:21:51.377Z",
+	"syncedAt": "2026-11-20T13:36:04.925Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-18T22:28:37Z"
+			"pushedAt": "2026-11-20T13:35:53Z"
 		},
 		{
 			"name": "mielui",
@@ -275,10 +275,38 @@
 	"commits": [
 		{
 			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "a5c6cb1",
-			"url": "https://github.com/mielsense/www/commit/a5c6cb1eb5da0e87592f41d45a4833a945bdf41d",
-			"date": "2026-11-18T22:28:37Z"
+			"message": "feat: contribution graph, one type scale, text reveal, lighter page",
+			"sha": "d6aa586",
+			"url": "https://github.com/mielsense/www/commit/d6aa586e5b2fe7a601e5416f18773df9ce750a4b",
+			"date": "2026-11-20T13:32:19Z"
+		},
+		{
+			"repo": "www",
+			"message": "design: one page in english and french, like unvalley.me",
+			"sha": "70918d5",
+			"url": "https://github.com/mielsense/www/commit/70918d5f8e630073d89768725e41e9195a13e2c9",
+			"date": "2026-11-20T10:31:12Z"
+		},
+		{
+			"repo": "www",
+			"message": "feat: tweakpane for type, layout, the sea and the garden",
+			"sha": "d025b6a",
+			"url": "https://github.com/mielsense/www/commit/d025b6a1bc0d98e6ccb44b61baf7e9dc6a767ea6",
+			"date": "2026-11-20T10:31:11Z"
+		},
+		{
+			"repo": "www",
+			"message": "feat: one preview card shared by every link, like the mielui tooltip",
+			"sha": "48b665f",
+			"url": "https://github.com/mielsense/www/commit/48b665f0ee40e95ccf6a897e0ff5004b6493fadd",
+			"date": "2026-11-20T10:31:11Z"
+		},
+		{
+			"repo": "www",
+			"message": "design: ascii cats with cat proportions, and a garden at the foot of the page",
+			"sha": "c57270c",
+			"url": "https://github.com/mielsense/www/commit/c57270c0a6c11908d8e657bf89724b04395512a2",
+			"date": "2026-11-20T10:31:10Z"
 		},
 		{
 			"repo": "www",
@@ -286,41 +314,6 @@
 			"sha": "ad7e265",
 			"url": "https://github.com/mielsense/www/commit/ad7e265c6b1f42aafb08b8e2a89a038893952593",
 			"date": "2026-11-18T22:28:21Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "3c7997b",
-			"url": "https://github.com/mielsense/www/commit/3c7997b55f966f66d4872e61b3dd137c395c2616",
-			"date": "2026-11-18T21:45:39Z"
-		},
-		{
-			"repo": "www",
-			"message": "design: dark theme on #1c1c1c",
-			"sha": "b2ac28d",
-			"url": "https://github.com/mielsense/www/commit/b2ac28d8122263446a97f390c275cff94e9b1df6",
-			"date": "2026-11-18T21:45:27Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "84a7298",
-			"url": "https://github.com/mielsense/www/commit/84a72981fa4f073212b182bb966da75ea7f0f584",
-			"date": "2026-11-18T21:18:35Z"
-		},
-		{
-			"repo": "www",
-			"message": "design: rebuild the site around an ASCII cat sea, with a light theme",
-			"sha": "f6347e5",
-			"url": "https://github.com/mielsense/www/commit/f6347e5374cca4b18cdbcf3139026eb985bd17cb",
-			"date": "2026-11-18T21:13:52Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "9f52c5c",
-			"url": "https://github.com/mielsense/www/commit/9f52c5ce447ecf5baebbd5d851ea7dc03a78b46e",
-			"date": "2026-11-18T15:14:19Z"
 		},
 		{
 			"repo": "mielui",
@@ -342,20 +335,6 @@
 			"sha": "4b15652",
 			"url": "https://github.com/mielsense/mielui/commit/4b156529ada39ebf8034c4667264dffba67fd1c8",
 			"date": "2026-11-17T20:11:39Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "6fdc5b9",
-			"url": "https://github.com/mielsense/www/commit/6fdc5b9adf6097281608c96ba68607277f6b2c55",
-			"date": "2026-11-17T15:37:16Z"
-		},
-		{
-			"repo": "www",
-			"message": "chore: sync github data",
-			"sha": "21eca4f",
-			"url": "https://github.com/mielsense/www/commit/21eca4faa95df9170e2ad31948c9a542c23a0f25",
-			"date": "2026-11-16T15:00:53Z"
 		},
 		{
 			"repo": "mielwm",
@@ -552,6 +531,27 @@
 			"sha": "b569769",
 			"url": "https://github.com/mielsense/coss-sv/commit/b56976926121cb6a8b8f4c5e844f9a7dba7440b8",
 			"date": "2026-09-08T17:08:43Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "feat(combobox): add typed item collections",
+			"sha": "af4d63f",
+			"url": "https://github.com/mielsense/coss-sv/commit/af4d63f36befe2093a6ae7eeb491f40b40444201",
+			"date": "2026-09-08T17:00:18Z"
+		},
+		{
+			"repo": "coss-sv",
+			"message": "fix(combobox): align popup anchors and default selections",
+			"sha": "80214ea",
+			"url": "https://github.com/mielsense/coss-sv/commit/80214ea9387e2ed665fc906e102c2c48dc047dd3",
+			"date": "2026-09-08T16:52:04Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "docs(readme): point website links to charts.miel.my",
+			"sha": "4e0080b",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/4e0080b81a0adf778f96e9aa2e03236e7e9d945b",
+			"date": "2026-09-05T22:30:23Z"
 		}
 	],
 	"contributions": [
@@ -2399,6 +2399,11 @@
 			"date": "2026-11-19",
 			"count": 0,
 			"level": 0
+		},
+		{
+			"date": "2026-11-20",
+			"count": 7,
+			"level": 1
 		}
 	]
 }
