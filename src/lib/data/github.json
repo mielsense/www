@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-20T13:36:04.925Z",
+	"syncedAt": "2026-11-20T13:37:24.015Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-20T13:35:53Z"
+			"pushedAt": "2026-11-20T13:37:12Z"
 		},
 		{
 			"name": "mielui",
@@ -275,6 +275,13 @@
 	"commits": [
 		{
 			"repo": "www",
+			"message": "chore: pin node and pnpm with mise, allow esbuild's build script",
+			"sha": "bfdc53f",
+			"url": "https://github.com/mielsense/www/commit/bfdc53f4132409ac5da2842f68b7274bef4b2787",
+			"date": "2026-11-20T13:36:11Z"
+		},
+		{
+			"repo": "www",
 			"message": "feat: contribution graph, one type scale, text reveal, lighter page",
 			"sha": "d6aa586",
 			"url": "https://github.com/mielsense/www/commit/d6aa586e5b2fe7a601e5416f18773df9ce750a4b",
@@ -307,13 +314,6 @@
 			"sha": "c57270c",
 			"url": "https://github.com/mielsense/www/commit/c57270c0a6c11908d8e657bf89724b04395512a2",
 			"date": "2026-11-20T10:31:10Z"
-		},
-		{
-			"repo": "www",
-			"message": "design: drop the cat shadow and soften dark shadows on #1c1c1c",
-			"sha": "ad7e265",
-			"url": "https://github.com/mielsense/www/commit/ad7e265c6b1f42aafb08b8e2a89a038893952593",
-			"date": "2026-11-18T22:28:21Z"
 		},
 		{
 			"repo": "mielui",
@@ -2402,7 +2402,7 @@
 		},
 		{
 			"date": "2026-11-20",
-			"count": 7,
+			"count": 10,
 			"level": 1
 		}
 	]
