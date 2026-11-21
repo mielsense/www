@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-20T14:59:02.267Z",
+	"syncedAt": "2026-11-21T14:20:18.367Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-20T13:45:21Z"
+			"pushedAt": "2026-11-20T14:59:03Z"
 		},
 		{
 			"name": "mielui",
@@ -302,13 +302,6 @@
 			"date": "2026-11-20T10:31:12Z"
 		},
 		{
-			"repo": "www",
-			"message": "feat: tweakpane for type, layout, the sea and the garden",
-			"sha": "d025b6a",
-			"url": "https://github.com/mielsense/www/commit/d025b6a1bc0d98e6ccb44b61baf7e9dc6a767ea6",
-			"date": "2026-11-20T10:31:11Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "feat(docs): redesign the home page (#30)",
 			"sha": "c86f40a",
@@ -552,6 +545,13 @@
 			"sha": "8491081",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/8491081747e5ec83e7ce810368a85ff8f2fe8986",
 			"date": "2026-08-30T19:50:04Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "fix: preserve provider navigation and ECharts intros",
+			"sha": "e56bfe3",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/e56bfe3f1032357385e42b5654b80816de7f2932",
+			"date": "2026-08-30T18:58:23Z"
 		}
 	],
 	"contributions": [
@@ -2404,6 +2404,11 @@
 			"date": "2026-11-20",
 			"count": 11,
 			"level": 1
+		},
+		{
+			"date": "2026-11-21",
+			"count": 0,
+			"level": 0
 		}
 	]
 }
