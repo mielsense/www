@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-21T14:20:18.367Z",
+	"syncedAt": "2026-11-22T14:11:46.135Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-20T14:59:03Z"
+			"pushedAt": "2026-11-21T14:20:19Z"
 		},
 		{
 			"name": "mielui",
@@ -295,13 +295,6 @@
 			"date": "2026-11-20T13:32:19Z"
 		},
 		{
-			"repo": "www",
-			"message": "design: one page in english and french, like unvalley.me",
-			"sha": "70918d5",
-			"url": "https://github.com/mielsense/www/commit/70918d5f8e630073d89768725e41e9195a13e2c9",
-			"date": "2026-11-20T10:31:12Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "feat(docs): redesign the home page (#30)",
 			"sha": "c86f40a",
@@ -552,44 +545,16 @@
 			"sha": "e56bfe3",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/e56bfe3f1032357385e42b5654b80816de7f2932",
 			"date": "2026-08-30T18:58:23Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "docs(repo): add agent guide and review workflow",
+			"sha": "af287c7",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/af287c7a9847af4b409c6105b628b3c7f362b5f9",
+			"date": "2026-08-30T17:46:48Z"
 		}
 	],
 	"contributions": [
-		{
-			"date": "2025-11-16",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-17",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-18",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-19",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-20",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-21",
-			"count": 0,
-			"level": 0
-		},
-		{
-			"date": "2025-11-22",
-			"count": 0,
-			"level": 0
-		},
 		{
 			"date": "2025-11-23",
 			"count": 0,
@@ -2407,6 +2372,11 @@
 		},
 		{
 			"date": "2026-11-21",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-11-22",
 			"count": 0,
 			"level": 0
 		}
