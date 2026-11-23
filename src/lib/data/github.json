@@ -1,6 +1,26 @@
 {
-	"syncedAt": "2026-11-22T14:11:46.135Z",
+	"syncedAt": "2026-11-23T17:33:39.209Z",
 	"repos": [
+		{
+			"name": "evilcharts-sv",
+			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
+			"url": "https://github.com/mielsense/evilcharts-sv",
+			"homepage": "https://charts.miel.my",
+			"language": "Svelte",
+			"stars": 29,
+			"year": 2026,
+			"pushedAt": "2026-11-23T05:25:37Z"
+		},
+		{
+			"name": "coss-sv",
+			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
+			"url": "https://github.com/mielsense/coss-sv",
+			"homepage": "https://coss.miel.my",
+			"language": "Svelte",
+			"stars": 16,
+			"year": 2026,
+			"pushedAt": "2026-11-23T05:23:26Z"
+		},
 		{
 			"name": "www",
 			"description": "Portfolio website",
@@ -9,7 +29,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-21T14:20:19Z"
+			"pushedAt": "2026-11-22T14:11:47Z"
 		},
 		{
 			"name": "mielui",
@@ -20,26 +40,6 @@
 			"stars": 5,
 			"year": 2026,
 			"pushedAt": "2026-11-17T20:50:43Z"
-		},
-		{
-			"name": "coss-sv",
-			"description": "Unofficial high-fidelity Svelte 5 port of COSS UI, built on Shards UI.",
-			"url": "https://github.com/mielsense/coss-sv",
-			"homepage": "https://coss.miel.my",
-			"language": "Svelte",
-			"stars": 16,
-			"year": 2026,
-			"pushedAt": "2026-11-16T15:50:23Z"
-		},
-		{
-			"name": "evilcharts-sv",
-			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
-			"url": "https://github.com/mielsense/evilcharts-sv",
-			"homepage": "https://charts.miel.my",
-			"language": "Svelte",
-			"stars": 29,
-			"year": 2026,
-			"pushedAt": "2026-11-09T05:24:39Z"
 		},
 		{
 			"name": "mielwm",
@@ -286,13 +286,6 @@
 			"sha": "bfdc53f",
 			"url": "https://github.com/mielsense/www/commit/bfdc53f4132409ac5da2842f68b7274bef4b2787",
 			"date": "2026-11-20T13:36:11Z"
-		},
-		{
-			"repo": "www",
-			"message": "feat: contribution graph, one type scale, text reveal, lighter page",
-			"sha": "d6aa586",
-			"url": "https://github.com/mielsense/www/commit/d6aa586e5b2fe7a601e5416f18773df9ce750a4b",
-			"date": "2026-11-20T13:32:19Z"
 		},
 		{
 			"repo": "mielui",
@@ -552,6 +545,13 @@
 			"sha": "af287c7",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/af287c7a9847af4b409c6105b628b3c7f362b5f9",
 			"date": "2026-08-30T17:46:48Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "refactor(site): harden registry and docs delivery",
+			"sha": "c7c41c2",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/c7c41c2b933a9937ffd0178689f9de73387a1756",
+			"date": "2026-08-30T17:46:33Z"
 		}
 	],
 	"contributions": [
@@ -2377,6 +2377,11 @@
 		},
 		{
 			"date": "2026-11-22",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-11-23",
 			"count": 0,
 			"level": 0
 		}
