@@ -1,6 +1,16 @@
 {
-	"syncedAt": "2026-11-23T17:33:39.209Z",
+	"syncedAt": "2026-11-24T17:04:16.854Z",
 	"repos": [
+		{
+			"name": "www",
+			"description": "Portfolio website",
+			"url": "https://github.com/mielsense/www",
+			"homepage": "https://miel.my",
+			"language": "TypeScript",
+			"stars": 1,
+			"year": 2026,
+			"pushedAt": "2026-11-23T17:33:40Z"
+		},
 		{
 			"name": "evilcharts-sv",
 			"description": "Animated Svelte 5 chart components with LayerChart and Apache ECharts providers, installed through shadcn-svelte.",
@@ -20,16 +30,6 @@
 			"stars": 16,
 			"year": 2026,
 			"pushedAt": "2026-11-23T05:23:26Z"
-		},
-		{
-			"name": "www",
-			"description": "Portfolio website",
-			"url": "https://github.com/mielsense/www",
-			"homepage": "https://miel.my",
-			"language": "TypeScript",
-			"stars": 1,
-			"year": 2026,
-			"pushedAt": "2026-11-22T14:11:47Z"
 		},
 		{
 			"name": "mielui",
@@ -2192,8 +2192,8 @@
 		},
 		{
 			"date": "2026-10-16",
-			"count": 0,
-			"level": 0
+			"count": 19,
+			"level": 1
 		},
 		{
 			"date": "2026-10-17",
@@ -2207,12 +2207,12 @@
 		},
 		{
 			"date": "2026-10-19",
-			"count": 6,
+			"count": 35,
 			"level": 1
 		},
 		{
 			"date": "2026-10-20",
-			"count": 1,
+			"count": 2,
 			"level": 1
 		},
 		{
@@ -2292,7 +2292,7 @@
 		},
 		{
 			"date": "2026-11-05",
-			"count": 3,
+			"count": 28,
 			"level": 1
 		},
 		{
@@ -2367,7 +2367,7 @@
 		},
 		{
 			"date": "2026-11-20",
-			"count": 11,
+			"count": 33,
 			"level": 1
 		},
 		{
@@ -2382,8 +2382,13 @@
 		},
 		{
 			"date": "2026-11-23",
-			"count": 0,
-			"level": 0
+			"count": 4,
+			"level": 1
+		},
+		{
+			"date": "2026-11-24",
+			"count": 62,
+			"level": 1
 		}
 	]
 }
