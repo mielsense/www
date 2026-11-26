@@ -1,5 +1,5 @@
 {
-	"syncedAt": "2026-11-25T16:53:37.384Z",
+	"syncedAt": "2026-11-26T16:30:58.882Z",
 	"repos": [
 		{
 			"name": "www",
@@ -9,7 +9,7 @@
 			"language": "TypeScript",
 			"stars": 1,
 			"year": 2026,
-			"pushedAt": "2026-11-24T17:04:18Z"
+			"pushedAt": "2026-11-25T16:53:38Z"
 		},
 		{
 			"name": "evilcharts-sv",
@@ -281,13 +281,6 @@
 			"date": "2026-11-20T13:45:07Z"
 		},
 		{
-			"repo": "www",
-			"message": "chore: pin node and pnpm with mise, allow esbuild's build script",
-			"sha": "bfdc53f",
-			"url": "https://github.com/mielsense/www/commit/bfdc53f4132409ac5da2842f68b7274bef4b2787",
-			"date": "2026-11-20T13:36:11Z"
-		},
-		{
 			"repo": "mielui",
 			"message": "feat(docs): redesign the home page (#30)",
 			"sha": "c86f40a",
@@ -552,6 +545,13 @@
 			"sha": "c7c41c2",
 			"url": "https://github.com/mielsense/evilcharts-sv/commit/c7c41c2b933a9937ffd0178689f9de73387a1756",
 			"date": "2026-08-30T17:46:33Z"
+		},
+		{
+			"repo": "evilcharts-sv",
+			"message": "fix(charts): harden ECharts data contracts",
+			"sha": "c43b590",
+			"url": "https://github.com/mielsense/evilcharts-sv/commit/c43b59000d927b23773b72834703bd9b59a4561c",
+			"date": "2026-08-30T17:46:09Z"
 		}
 	],
 	"contributions": [
@@ -2392,6 +2392,11 @@
 		},
 		{
 			"date": "2026-11-25",
+			"count": 0,
+			"level": 0
+		},
+		{
+			"date": "2026-11-26",
 			"count": 0,
 			"level": 0
 		}
